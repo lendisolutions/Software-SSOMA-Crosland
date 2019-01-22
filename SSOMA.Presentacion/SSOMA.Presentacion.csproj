@@ -726,6 +726,12 @@
     <Compile Include="Modulos\Capacitacion\Registros\frmRegCapacitacionEdit.Designer.cs">
       <DependentUpon>frmRegCapacitacionEdit.cs</DependentUpon>
     </Compile>
+    <Compile Include="Modulos\Capacitacion\Registros\frmRegCapacitacionVirtual.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\Capacitacion\Registros\frmRegCapacitacionVirtual.Designer.cs">
+      <DependentUpon>frmRegCapacitacionVirtual.cs</DependentUpon>
+    </Compile>
     <Compile Include="Modulos\Capacitacion\Registros\frmRegPlanAnual.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -2801,6 +2807,9 @@
     <EmbeddedResource Include="Modulos\Capacitacion\Registros\frmRegCapacitacionEdit.resx">
       <DependentUpon>frmRegCapacitacionEdit.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Capacitacion\Registros\frmRegCapacitacionVirtual.resx">
+      <DependentUpon>frmRegCapacitacionVirtual.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Modulos\Capacitacion\Registros\frmRegPlanAnual.resx">
       <DependentUpon>frmRegPlanAnual.cs</DependentUpon>
     </EmbeddedResource>
@@ -3899,6 +3908,12 @@
     <None Include="Resources\ActividadTrabajo_32x32.gif" />
     <None Include="Resources\CategoriaTema_32x32.gif" />
     <None Include="Resources\CapacitacionVirtual_32x32.gif" />
+    <None Include="Resources\SSOMA_1.jpg" />
+    <None Include="Resources\SSOMA_2.jpg" />
+    <None Include="Resources\SSOMA_3.jpg" />
+    <None Include="Resources\SSOMA_4.jpg" />
+    <None Include="Resources\SSOMA_5.jpg" />
+    <None Include="Resources\SSOMA_6.jpg" />
     <Content Include="Seguimiento de Accidentes.xlsx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
