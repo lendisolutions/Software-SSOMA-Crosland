@@ -106,7 +106,6 @@ namespace SSOMA.Presentacion.Modulos.Capacitacion.Maestros
         {
             this.Close();
         }
-
         private void txtDescripcion_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == (char)(Keys.Enter))

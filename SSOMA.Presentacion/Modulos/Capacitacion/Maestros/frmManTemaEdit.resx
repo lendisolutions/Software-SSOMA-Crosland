@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="btnCancelar.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnCancelar.ImageOptions.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         R0lGODlhEAAQAIf/AGxGP3Bvb50hGJ4lHI00J4k5KpY0IpQ+N6MiF6YjF6ckF6gpHK0oGrYqGLorGLsu
         Gr4tGLIxHb42HqMsIKMvJLU2Jbs9I4FGP4FtaqxWU7JqZrdrZ8EuGMQvGMEwGsI2HcYwGcY6HskxGck3
@@ -140,7 +140,7 @@
         FAAQoLXtgQEBADs=
 </value>
   </data>
-  <data name="btnGrabar.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnGrabar.ImageOptions.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         R0lGODlhEAAQAIYAAAAAALC4wGBg0CBIsP///1BQUJCI4ODg8BA4oGBYsEA4cFBIkLC4/zAwYLSwxaCg
         8NDY8IB40FBQsHB4kEBAoLC48CAwQGBogPDw8LCo8JCQ8DBAQICI8EBIsDA4oHBo0MDI4FBYcPD4/1BY

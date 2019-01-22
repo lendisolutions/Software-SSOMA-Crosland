@@ -32,6 +32,8 @@
             this.tlbMenu = new SSOMA.Presentacion.ControlUser.UIToolBar();
             this.splitContainerControl1 = new DevExpress.XtraEditors.SplitContainerControl();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.txtPeriodo = new DevExpress.XtraEditors.SpinEdit();
+            this.lblFecha = new DevExpress.XtraEditors.LabelControl();
             this.btnBuscar = new DevExpress.XtraEditors.SimpleButton();
             this.txtDescripcion = new DevExpress.XtraEditors.TextEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
@@ -39,19 +41,17 @@
             this.gvTema = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.txtPeriodo = new DevExpress.XtraEditors.SpinEdit();
-            this.lblFecha = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).BeginInit();
             this.splitContainerControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPeriodo.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDescripcion.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcTema)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvTema)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtPeriodo.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // tlbMenu
@@ -59,7 +59,7 @@
             this.tlbMenu.Dock = System.Windows.Forms.DockStyle.Top;
             this.tlbMenu.Ensamblado = "";
             this.tlbMenu.Location = new System.Drawing.Point(0, 0);
-            this.tlbMenu.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.tlbMenu.Margin = new System.Windows.Forms.Padding(5);
             this.tlbMenu.Name = "tlbMenu";
             this.tlbMenu.Size = new System.Drawing.Size(842, 30);
             this.tlbMenu.TabIndex = 30;
@@ -83,7 +83,7 @@
             this.splitContainerControl1.Panel2.Controls.Add(this.gcTema);
             this.splitContainerControl1.Panel2.Text = "Panel2";
             this.splitContainerControl1.Size = new System.Drawing.Size(842, 526);
-            this.splitContainerControl1.SplitterPosition = 58;
+            this.splitContainerControl1.SplitterPosition = 66;
             this.splitContainerControl1.TabIndex = 31;
             this.splitContainerControl1.Text = "splitContainerControl1";
             // 
@@ -102,9 +102,43 @@
             this.groupControl1.TabIndex = 32;
             this.groupControl1.Text = "Criterios de Búsqueda";
             // 
+            // txtPeriodo
+            // 
+            this.txtPeriodo.EditValue = new decimal(new int[] {
+            2017,
+            0,
+            0,
+            0});
+            this.txtPeriodo.Location = new System.Drawing.Point(62, 38);
+            this.txtPeriodo.Name = "txtPeriodo";
+            this.txtPeriodo.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.txtPeriodo.Properties.Mask.EditMask = "n0";
+            this.txtPeriodo.Properties.MaxValue = new decimal(new int[] {
+            2200,
+            0,
+            0,
+            0});
+            this.txtPeriodo.Properties.MinValue = new decimal(new int[] {
+            2017,
+            0,
+            0,
+            0});
+            this.txtPeriodo.Size = new System.Drawing.Size(60, 22);
+            this.txtPeriodo.TabIndex = 189;
+            // 
+            // lblFecha
+            // 
+            this.lblFecha.Location = new System.Drawing.Point(8, 40);
+            this.lblFecha.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.lblFecha.Name = "lblFecha";
+            this.lblFecha.Size = new System.Drawing.Size(48, 16);
+            this.lblFecha.TabIndex = 188;
+            this.lblFecha.Text = "Periodo:";
+            // 
             // btnBuscar
             // 
-            this.btnBuscar.Image = ((System.Drawing.Image)(resources.GetObject("btnBuscar.Image")));
+            this.btnBuscar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnBuscar.ImageOptions.Image")));
             this.btnBuscar.Location = new System.Drawing.Point(128, 37);
             this.btnBuscar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnBuscar.Name = "btnBuscar";
@@ -141,7 +175,7 @@
             this.gcTema.MainView = this.gvTema;
             this.gcTema.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.gcTema.Name = "gcTema";
-            this.gcTema.Size = new System.Drawing.Size(842, 462);
+            this.gcTema.Size = new System.Drawing.Size(842, 454);
             this.gcTema.TabIndex = 34;
             this.gcTema.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvTema});
@@ -176,6 +210,16 @@
             this.gridColumn2.OptionsColumn.AllowEdit = false;
             this.gridColumn2.OptionsColumn.AllowFocus = false;
             // 
+            // gridColumn5
+            // 
+            this.gridColumn5.Caption = "Periodo";
+            this.gridColumn5.FieldName = "Periodo";
+            this.gridColumn5.Name = "gridColumn5";
+            this.gridColumn5.OptionsColumn.AllowEdit = false;
+            this.gridColumn5.OptionsColumn.AllowFocus = false;
+            this.gridColumn5.Visible = true;
+            this.gridColumn5.VisibleIndex = 0;
+            // 
             // gridColumn3
             // 
             this.gridColumn3.Caption = "Descripción";
@@ -196,50 +240,6 @@
             this.gridColumn4.OptionsColumn.AllowFocus = false;
             this.gridColumn4.Width = 69;
             // 
-            // gridColumn5
-            // 
-            this.gridColumn5.Caption = "Periodo";
-            this.gridColumn5.FieldName = "Periodo";
-            this.gridColumn5.Name = "gridColumn5";
-            this.gridColumn5.OptionsColumn.AllowEdit = false;
-            this.gridColumn5.OptionsColumn.AllowFocus = false;
-            this.gridColumn5.Visible = true;
-            this.gridColumn5.VisibleIndex = 0;
-            // 
-            // txtPeriodo
-            // 
-            this.txtPeriodo.EditValue = new decimal(new int[] {
-            2017,
-            0,
-            0,
-            0});
-            this.txtPeriodo.Location = new System.Drawing.Point(62, 38);
-            this.txtPeriodo.Name = "txtPeriodo";
-            this.txtPeriodo.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.txtPeriodo.Properties.Mask.EditMask = "n0";
-            this.txtPeriodo.Properties.MaxValue = new decimal(new int[] {
-            2200,
-            0,
-            0,
-            0});
-            this.txtPeriodo.Properties.MinValue = new decimal(new int[] {
-            2017,
-            0,
-            0,
-            0});
-            this.txtPeriodo.Size = new System.Drawing.Size(60, 22);
-            this.txtPeriodo.TabIndex = 189;
-            // 
-            // lblFecha
-            // 
-            this.lblFecha.Location = new System.Drawing.Point(8, 40);
-            this.lblFecha.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.lblFecha.Name = "lblFecha";
-            this.lblFecha.Size = new System.Drawing.Size(48, 16);
-            this.lblFecha.TabIndex = 188;
-            this.lblFecha.Text = "Periodo:";
-            // 
             // frmManTema
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -258,10 +258,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             this.groupControl1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPeriodo.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDescripcion.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcTema)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvTema)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtPeriodo.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }

@@ -32,10 +32,10 @@
             this.btnCancelar = new DevExpress.XtraEditors.SimpleButton();
             this.btnGrabar = new DevExpress.XtraEditors.SimpleButton();
             this.grdDatos = new DevExpress.XtraEditors.GroupControl();
+            this.lblFecha = new DevExpress.XtraEditors.LabelControl();
             this.lblDescripcion = new DevExpress.XtraEditors.LabelControl();
             this.txtDescripcion = new DevExpress.XtraEditors.TextEdit();
             this.txtPeriodo = new DevExpress.XtraEditors.SpinEdit();
-            this.lblFecha = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.grdDatos)).BeginInit();
             this.grdDatos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtDescripcion.Properties)).BeginInit();
@@ -44,9 +44,9 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelar.Image")));
-            this.btnCancelar.ImageIndex = 0;
-            this.btnCancelar.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleLeft;
+            this.btnCancelar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelar.ImageOptions.Image")));
+            this.btnCancelar.ImageOptions.ImageIndex = 0;
+            this.btnCancelar.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleLeft;
             this.btnCancelar.Location = new System.Drawing.Point(701, 91);
             this.btnCancelar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnCancelar.Name = "btnCancelar";
@@ -57,9 +57,9 @@
             // 
             // btnGrabar
             // 
-            this.btnGrabar.Image = ((System.Drawing.Image)(resources.GetObject("btnGrabar.Image")));
-            this.btnGrabar.ImageIndex = 1;
-            this.btnGrabar.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleLeft;
+            this.btnGrabar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnGrabar.ImageOptions.Image")));
+            this.btnGrabar.ImageOptions.ImageIndex = 1;
+            this.btnGrabar.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleLeft;
             this.btnGrabar.Location = new System.Drawing.Point(607, 91);
             this.btnGrabar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnGrabar.Name = "btnGrabar";
@@ -81,6 +81,15 @@
             this.grdDatos.Size = new System.Drawing.Size(794, 84);
             this.grdDatos.TabIndex = 15;
             this.grdDatos.Text = "Datos";
+            // 
+            // lblFecha
+            // 
+            this.lblFecha.Location = new System.Drawing.Point(13, 32);
+            this.lblFecha.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.lblFecha.Name = "lblFecha";
+            this.lblFecha.Size = new System.Drawing.Size(48, 16);
+            this.lblFecha.TabIndex = 190;
+            this.lblFecha.Text = "Periodo:";
             // 
             // lblDescripcion
             // 
@@ -127,15 +136,6 @@
             this.txtPeriodo.Size = new System.Drawing.Size(60, 22);
             this.txtPeriodo.TabIndex = 191;
             // 
-            // lblFecha
-            // 
-            this.lblFecha.Location = new System.Drawing.Point(13, 32);
-            this.lblFecha.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.lblFecha.Name = "lblFecha";
-            this.lblFecha.Size = new System.Drawing.Size(48, 16);
-            this.lblFecha.TabIndex = 190;
-            this.lblFecha.Text = "Periodo:";
-            // 
             // frmManTemaEdit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -166,7 +166,7 @@
         private DevExpress.XtraEditors.GroupControl grdDatos;
         private DevExpress.XtraEditors.LabelControl lblDescripcion;
         private DevExpress.XtraEditors.TextEdit txtDescripcion;
-        private DevExpress.XtraEditors.SpinEdit txtPeriodo;
         private DevExpress.XtraEditors.LabelControl lblFecha;
+        private DevExpress.XtraEditors.SpinEdit txtPeriodo;
     }
 }
