@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="reporteseguroviaje"
+    targetNamespace="http://tempuri.org/reporteseguroviaje.xsd"
+    elementFormDefault="qualified"
+    xmlns="http://tempuri.org/reporteseguroviaje.xsd"
+    xmlns:mstns="http://tempuri.org/reporteseguroviaje.xsd"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+
+  <xs:element name="reporteseguroviaje">
+    <xs:complexType>
+      <xs:sequence />
+      <xs:attribute name="RazonSocial" type="xs:string" />
+      <xs:attribute name="Numero" type="xs:string" />
+      <xs:attribute name="FechaSalida" type="xs:string" />
+      <xs:attribute name="FechaLlegada" type="xs:string" />
+      <xs:attribute name="Dias" type="xs:int" />
+      <xs:attribute name="Pais" type="xs:string" />
+      <xs:attribute name="Dni" type="xs:string" />
+      <xs:attribute name="Pasaporte" type="xs:string" />
+      <xs:attribute name="Solicitante" type="xs:string" />
+      <xs:attribute name="FechaNacimiento" type="xs:string" />
+      <xs:attribute name="Direccion" type="xs:string" />
+      <xs:attribute name="Distrito" type="xs:string" />
+      <xs:attribute name="Telefono" type="xs:string" />
+      <xs:attribute name="Email" type="xs:string" />
+      <xs:attribute name="EmailPersonal" type="xs:string" />
+      <xs:attribute name="Cargo" type="xs:string" />
+      <xs:attribute name="Contacto" type="xs:string" />
+      <xs:attribute name="TelefonoContacto1" type="xs:string" />
+      <xs:attribute name="TelefonoContacto2" type="xs:string" />
+      <xs:attribute name="EmpresaBoleta" type="xs:string" />
+      <xs:attribute name="EmpresaFactura" type="xs:string" />
+      <xs:attribute name="Ruc" type="xs:string" />
+      <xs:attribute name="Autoriza" type="xs:string" />
+      <xs:attribute name="DescSituacion" type="xs:string" />
+
+    </xs:complexType>
+  </xs:element>
+  
+</xs:schema>

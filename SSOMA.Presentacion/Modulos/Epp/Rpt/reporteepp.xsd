@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="reporteepp"
+    targetNamespace="http://tempuri.org/reporteepp.xsd"
+    elementFormDefault="qualified"
+    xmlns="http://tempuri.org/reporteepp.xsd"
+    xmlns:mstns="http://tempuri.org/reporteepp.xsd"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="reporteepp">
+    <xs:complexType>
+      <xs:sequence />
+      <xs:attribute name="RazonSocial" type="xs:string" />
+      <xs:attribute name="Logo" type="xs:base64Binary" />
+      <xs:attribute name="DescUnidadMinera" type="xs:string" />
+      <xs:attribute name="DescArea" type="xs:string" />
+      <xs:attribute name="NumeroSolicitud" type="xs:string" />
+      <xs:attribute name="Numero" type="xs:string" />
+      <xs:attribute name="Responsable" type="xs:string" />
+      <xs:attribute name="EmpresaResponsable" type="xs:string" />
+      <xs:attribute name="DescNegocio" type="xs:string" />
+      <xs:attribute name="UnidadMineraResponsable" type="xs:string" />
+      <xs:attribute name="AreaResponsable" type="xs:string" />
+      <xs:attribute name="SectorResponsable" type="xs:string" />
+      <xs:attribute name="Cargo" type="xs:string" />
+      <xs:attribute name="Fecha" type="xs:string" />
+      <xs:attribute name="Observacion" type="xs:string" />
+      <xs:attribute name="Periodo" type="xs:string" />
+      <xs:attribute name="Mes" type="xs:string" />
+      <xs:attribute name="Item" type="xs:int" />
+      <xs:attribute name="Codigo" type="xs:string" />
+      <xs:attribute name="DescEquipo" type="xs:string" />
+      <xs:attribute name="FechaVencimiento" type="xs:string" />
+      <xs:attribute name="Cantidad" type="xs:int" />
+      <xs:attribute name="Precio" type="xs:decimal" />
+      <xs:attribute name="Total" type="xs:decimal" />
+      <xs:attribute name="DescTipoEntrega" type="xs:string" />
+    </xs:complexType>
+  </xs:element>
+
+
+</xs:schema>

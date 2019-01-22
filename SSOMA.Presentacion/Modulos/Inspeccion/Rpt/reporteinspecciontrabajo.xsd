@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="reporteinspecciontrabajo"
+    targetNamespace="http://tempuri.org/reporteinspecciontrabajo.xsd"
+    elementFormDefault="qualified"
+    xmlns="http://tempuri.org/reporteinspecciontrabajo.xsd"
+    xmlns:mstns="http://tempuri.org/reporteinspecciontrabajo.xsd"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="reporteinspecciontrabajo">
+    <xs:complexType>
+      <xs:sequence />
+      <xs:attribute name="Ruc" type="xs:string" />
+      <xs:attribute name="RazonSocial" type="xs:string" />
+      <xs:attribute name="Logo" type="xs:base64Binary" />
+      <xs:attribute name="Direccion" type="xs:string" />
+      <xs:attribute name="ActividadEconomica" type="xs:string" />
+      <xs:attribute name="DescUnidadMinera" type="xs:string" />
+      <xs:attribute name="DescArea" type="xs:string" />
+      <xs:attribute name="DescSector" type="xs:string" />
+      <xs:attribute name="EmpresaContratista" type="xs:string" />
+      <xs:attribute name="DescTipoInspeccion" type="xs:string" />
+      <xs:attribute name="Numero" type="xs:string" />
+      <xs:attribute name="Fecha" type="xs:string" />
+      <xs:attribute name="Hora" type="xs:dateTime" />
+      <xs:attribute name="Objetivo" type="xs:string" />
+      <xs:attribute name="Lugar" type="xs:string" />
+      <xs:attribute name="InspeccionadoPor" type="xs:string" />
+      <xs:attribute name="ResponsableArea" type="xs:string" />
+      <xs:attribute name="ResponsableSector" type="xs:string" />
+      <xs:attribute name="NumeroTrabajadores" type="xs:int" />
+      <xs:attribute name="PersonaRegistro" type="xs:string" />
+      <xs:attribute name="PersonaCargo" type="xs:string" />
+      <xs:attribute name="Item" type="xs:int" />
+      <xs:attribute name="Foto" type="xs:base64Binary" />
+      <xs:attribute name="CondicionSubEstandar" type="xs:string" />
+      <xs:attribute name="AccionCorrectiva" type="xs:string" />
+      <xs:attribute name="Responsable" type="xs:string" />
+      <xs:attribute name="FechaEjecucion" type="xs:string" />
+      <xs:attribute name="FotoCumplimiento" type="xs:base64Binary" />
+      <xs:attribute name="Observacion" type="xs:string" />
+      <xs:attribute name="DescSituacion" type="xs:string" />
+      <xs:attribute name="Periodo" type="xs:string" />
+      <xs:attribute name="Mes" type="xs:string" />
+      <xs:attribute name="Cantidad" type="xs:int" />
+    </xs:complexType>
+  </xs:element>
+  
+  
+</xs:schema>

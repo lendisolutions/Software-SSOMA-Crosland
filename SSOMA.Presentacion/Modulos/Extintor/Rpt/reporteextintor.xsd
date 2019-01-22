@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="reporteextintor"
+    targetNamespace="http://tempuri.org/reporteextintor.xsd"
+    elementFormDefault="qualified"
+    xmlns="http://tempuri.org/reporteextintor.xsd"
+    xmlns:mstns="http://tempuri.org/reporteextintor.xsd"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="reporteextintor">
+    <xs:complexType>
+      <xs:sequence />
+      <xs:attribute name="RazonSocial" type="xs:string" />
+      <xs:attribute name="DescUnidadMinera" type="xs:string" />
+      <xs:attribute name="Codigo" type="xs:string" />
+      <xs:attribute name="Serie" type="xs:string" />
+      <xs:attribute name="AbreviaturaClasificacion" type="xs:string" />
+      <xs:attribute name="AbreviaturaTipo" type="xs:string" />
+      <xs:attribute name="Proveedor" type="xs:string" />
+      <xs:attribute name="Marca" type="xs:string" />
+      <xs:attribute name="Capacidad" type="xs:string" />
+      <xs:attribute name="FechaIngreso" type="xs:date" />
+      <xs:attribute name="FechaVencimiento" type="xs:date" />
+      <xs:attribute name="Ubicacion" type="xs:string" />
+      <xs:attribute name="Dias" type="xs:int" />
+    </xs:complexType>
+  </xs:element>
+  
+  
+</xs:schema>

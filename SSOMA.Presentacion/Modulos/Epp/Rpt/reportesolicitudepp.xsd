@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="reportesolicitudepp"
+    targetNamespace="http://tempuri.org/reportesolicitudepp.xsd"
+    elementFormDefault="qualified"
+    xmlns="http://tempuri.org/reportesolicitudepp.xsd"
+    xmlns:mstns="http://tempuri.org/reportesolicitudepp.xsd"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="reporteequipo">
+    <xs:complexType>
+      <xs:sequence />
+      <xs:attribute name="RazonSocial" type="xs:string" />
+      <xs:attribute name="Logo" type="xs:base64Binary" />
+      <xs:attribute name="DescUnidadMinera" type="xs:string" />
+      <xs:attribute name="DescArea" type="xs:string" />
+      <xs:attribute name="Numero" type="xs:string" />
+      <xs:attribute name="Jefe" type="xs:string" />
+      <xs:attribute name="Responsable" type="xs:string" />
+      <xs:attribute name="Cargo" type="xs:string" />
+      <xs:attribute name="EmpresaResponsable" type="xs:string" />
+      <xs:attribute name="UnidadMineraResponsable" type="xs:string" />
+      <xs:attribute name="AreaResponsable" type="xs:string" />
+      <xs:attribute name="SectorResponsable" type="xs:string" />
+      <xs:attribute name="Fecha" type="xs:date" />
+      <xs:attribute name="FechaVencimiento" type="xs:date" />
+      <xs:attribute name="Situacion" type="xs:string" />
+      <xs:attribute name="Dias" type="xs:integer" />
+
+    </xs:complexType>
+  </xs:element>
+  
+  
+</xs:schema>

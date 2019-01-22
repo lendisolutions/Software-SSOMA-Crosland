@@ -1,0 +1,188 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{DB393915-F958-4F69-BAAE-312470F80671}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SSOMA.DataLogic</RootNamespace>
+    <AssemblyName>SSOMA.DataLogic</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <RunCodeAnalysis>false</RunCodeAnalysis>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Common, Version=4.1.0.0, Culture=neutral, PublicKeyToken=e44a2bc38ed2c13c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\COM ISS\Microsoft.Practices.EnterpriseLibrary.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Data">
+      <HintPath>..\..\..\..\COM ISS\Microsoft.Practices.EnterpriseLibrary.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ObjectBuilder">
+      <HintPath>..\..\..\..\COM ISS\Microsoft.Practices.ObjectBuilder.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AccesoDL.cs" />
+    <Compile Include="AccesoUsuarioDL.cs" />
+    <Compile Include="AccidenteAccionCorrectivaDL.cs" />
+    <Compile Include="AccidenteActoSubEstandarDL.cs" />
+    <Compile Include="AccidenteCondicionSubEstandarDL.cs" />
+    <Compile Include="AccidenteCostoDL.cs" />
+    <Compile Include="AccidenteDL.cs" />
+    <Compile Include="AccidenteDocumentoDL.cs" />
+    <Compile Include="AccidenteEntrevistadoDL.cs" />
+    <Compile Include="AccidenteFactorPersonalDL.cs" />
+    <Compile Include="AccidenteFactorTrabajoDL.cs" />
+    <Compile Include="AccidenteFotoDL.cs" />
+    <Compile Include="AccidenteMedidaPrevencionDL.cs" />
+    <Compile Include="AccidenteTestigoDL.cs" />
+    <Compile Include="ActividadContratistaDetalleDL.cs" />
+    <Compile Include="ActividadContratistaDL.cs" />
+    <Compile Include="ActividadDL.cs" />
+    <Compile Include="ActoSubEstandarDL.cs" />
+    <Compile Include="AnomaliaDL.cs" />
+    <Compile Include="AreaDL.cs" />
+    <Compile Include="AreaEquipoDL.cs" />
+    <Compile Include="CapacitacionDetalleDL.cs" />
+    <Compile Include="CapacitacionDL.cs" />
+    <Compile Include="CarpetaDL.cs" />
+    <Compile Include="CategoriaDiagnosticoDL.cs" />
+    <Compile Include="ClasificacionExtintorDL.cs" />
+    <Compile Include="CondicionDescansoMedicoDL.cs" />
+    <Compile Include="CondicionSubEstandarDL.cs" />
+    <Compile Include="ContingenciaDL.cs" />
+    <Compile Include="DescansoMedicoDL.cs" />
+    <Compile Include="DocumentoDL.cs" />
+    <Compile Include="DocumentoPersonaDL.cs" />
+    <Compile Include="EliminacionDL.cs" />
+    <Compile Include="EmailDL.cs" />
+    <Compile Include="EmpresaArchivoDL.cs" />
+    <Compile Include="EmpresaDL.cs" />
+    <Compile Include="EppDetalleDL.cs" />
+    <Compile Include="EppDL.cs" />
+    <Compile Include="EquipoDL.cs" />
+    <Compile Include="EquipoProteccionDL.cs" />
+    <Compile Include="ExpositorDL.cs" />
+    <Compile Include="ExtintorDetalleDL.cs" />
+    <Compile Include="ExtintorDL.cs" />
+    <Compile Include="ExtintorInspeccionDetalleDL.cs" />
+    <Compile Include="ExtintorInspeccionDL.cs" />
+    <Compile Include="FactorPersonalDL.cs" />
+    <Compile Include="FactorTrabajoDL.cs" />
+    <Compile Include="FuenteLesionDL.cs" />
+    <Compile Include="HoraTrabajadaDL.cs" />
+    <Compile Include="InspeccionTrabajoDetalleDL.cs" />
+    <Compile Include="InspeccionTrabajoDL.cs" />
+    <Compile Include="KardexDL.cs" />
+    <Compile Include="LugarDL.cs" />
+    <Compile Include="MenuDL.cs" />
+    <Compile Include="MesDL.cs" />
+    <Compile Include="MovimientoExtintorDL.cs" />
+    <Compile Include="NegocioDL.cs" />
+    <Compile Include="OrdenInternaDL.cs" />
+    <Compile Include="ParteLesionadaDL.cs" />
+    <Compile Include="PeligroDL.cs" />
+    <Compile Include="PerfilDL.cs" />
+    <Compile Include="PersonaAdryanDL.cs" />
+    <Compile Include="PersonaArchivoDL.cs" />
+    <Compile Include="PersonaDL.cs" />
+    <Compile Include="PlanAnualDetalleDL.cs" />
+    <Compile Include="PlanAnualDL.cs" />
+    <Compile Include="PlanillaDL.cs" />
+    <Compile Include="ProbabilidadDL.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ProveedorDL.cs" />
+    <Compile Include="Reportes\ReporteAccidenteDL.cs" />
+    <Compile Include="Reportes\ReporteCapacitacionDL.cs" />
+    <Compile Include="Reportes\ReporteDocumentoDL.cs" />
+    <Compile Include="Reportes\ReporteDocumentoPersonaDL.cs" />
+    <Compile Include="Reportes\ReporteEppDL.cs" />
+    <Compile Include="Reportes\ReporteEquipoDL.cs" />
+    <Compile Include="Reportes\ReporteExtintorDL.cs" />
+    <Compile Include="Reportes\ReporteExtintorServicioDL.cs" />
+    <Compile Include="Reportes\ReporteInspeccionTrabajoDL.cs" />
+    <Compile Include="Reportes\ReportePlanAnualDL.cs" />
+    <Compile Include="Reportes\ReporteSeguroSctrDL.cs" />
+    <Compile Include="Reportes\ReporteSeguroViajeDL.cs" />
+    <Compile Include="Reportes\ReporteSolicitudDL.cs" />
+    <Compile Include="Reportes\ReporteSolicitudEppDL.cs" />
+    <Compile Include="RiesgoDL.cs" />
+    <Compile Include="SctrDL.cs" />
+    <Compile Include="SectorDL.cs" />
+    <Compile Include="SeguroViajeDL.cs" />
+    <Compile Include="SenalizacionDL.cs" />
+    <Compile Include="ServicioExtintorDL.cs" />
+    <Compile Include="SeveridadDL.cs" />
+    <Compile Include="SolicitudDL.cs" />
+    <Compile Include="SolicitudEppDetalleDL.cs" />
+    <Compile Include="SolicitudEppDL.cs" />
+    <Compile Include="SustitucionDL.cs" />
+    <Compile Include="TablaDL.cs" />
+    <Compile Include="TablaElementoDL.cs" />
+    <Compile Include="TemaDL.cs" />
+    <Compile Include="TipoAccidenteDL.cs" />
+    <Compile Include="TipoCapacitacionDL.cs" />
+    <Compile Include="TipoDescansoMedicoDL.cs" />
+    <Compile Include="TipoEntregaDL.cs" />
+    <Compile Include="TipoExtintorDL.cs" />
+    <Compile Include="TipoInspeccionDL.cs" />
+    <Compile Include="TipoLesionDL.cs" />
+    <Compile Include="TipoPeligroDL.cs" />
+    <Compile Include="TratamientoDL.cs" />
+    <Compile Include="UnidadMineraDL.cs" />
+    <Compile Include="UsuarioDL.cs" />
+    <Compile Include="UsuarioUnidadMineraDL.cs" />
+    <Compile Include="ValoracionRiesgoDL.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SSOMA.BusinessEntity\SSOMA.BusinessEntity.csproj">
+      <Project>{dd728183-08a9-49fc-90de-c69c55e602e3}</Project>
+      <Name>SSOMA.BusinessEntity</Name>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

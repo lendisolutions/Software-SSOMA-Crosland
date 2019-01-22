@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="reportedocumentopersona"
+    targetNamespace="http://tempuri.org/reportedocumentopersona.xsd"
+    elementFormDefault="qualified"
+    xmlns="http://tempuri.org/reportedocumentopersona.xsd"
+    xmlns:mstns="http://tempuri.org/reportedocumentopersona.xsd"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="reportedocumentopersona">
+    <xs:complexType>
+      <xs:sequence />
+      <xs:attribute name="RazonSocial" type="xs:string" />
+      <xs:attribute name="DescUnidadMinera" type="xs:string" />
+      <xs:attribute name="DescArea" type="xs:string" />
+      <xs:attribute name="ApeNom" type="xs:string" />
+      <xs:attribute name="DescCarpeta" type="xs:string" />
+      <xs:attribute name="Codigo" type="xs:string" />
+      <xs:attribute name="NombreArchivo" type="xs:string" />
+      <xs:attribute name="Lectura" type="xs:int" />
+     
+    </xs:complexType>
+  </xs:element>
+  
+  
+</xs:schema>

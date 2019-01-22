@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="reportesegurosctr"
+    targetNamespace="http://tempuri.org/reportesegurosctr.xsd"
+    elementFormDefault="qualified"
+    xmlns="http://tempuri.org/reportesegurosctr.xsd"
+    xmlns:mstns="http://tempuri.org/reportesegurosctr.xsd"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+
+  <xs:element name="reportesegurosctr">
+    <xs:complexType>
+      <xs:sequence />
+      <xs:attribute name="RazonSocial" type="xs:string" />
+      <xs:attribute name="Numero" type="xs:string" />
+      <xs:attribute name="Fecha" type="xs:string" />
+      <xs:attribute name="Mes" type="xs:int" />
+      <xs:attribute name="DescMes" type="xs:string" />
+      <xs:attribute name="TipoDocumento" type="xs:string" />
+      <xs:attribute name="NumeroDocumento" type="xs:string" />
+      <xs:attribute name="Solicitante" type="xs:string" />
+      <xs:attribute name="Sexo" type="xs:string" />
+      <xs:attribute name="Cargo" type="xs:string" />
+      <xs:attribute name="FechaNacimiento" type="xs:string" />
+      <xs:attribute name="Nacionalidad" type="xs:string" />
+      <xs:attribute name="DescSituacion" type="xs:string" />
+
+    </xs:complexType>
+  </xs:element>
+  
+</xs:schema>

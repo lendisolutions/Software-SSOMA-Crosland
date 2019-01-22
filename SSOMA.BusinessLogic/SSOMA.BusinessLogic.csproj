@@ -1,0 +1,180 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{86A72B88-30FD-40BB-9BAD-82276001D12E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SSOMA.BusinessLogic</RootNamespace>
+    <AssemblyName>SSOMA.BusinessLogic</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AccesoBL.cs" />
+    <Compile Include="AccesoUsuarioBL.cs" />
+    <Compile Include="AccidenteAccionCorrectivaBL.cs" />
+    <Compile Include="AccidenteActoSubEstandarBL.cs" />
+    <Compile Include="AccidenteBL.cs" />
+    <Compile Include="AccidenteCondicionSubEstandarBL.cs" />
+    <Compile Include="AccidenteCostoBL.cs" />
+    <Compile Include="AccidenteDocumentoBL.cs" />
+    <Compile Include="AccidenteEntrevistadoBL.cs" />
+    <Compile Include="AccidenteFactorPersonalBL.cs" />
+    <Compile Include="AccidenteFactorTrabajoBL.cs" />
+    <Compile Include="AccidenteFotoBL.cs" />
+    <Compile Include="AccidenteMedidaPrevencionBL.cs" />
+    <Compile Include="AccidenteTestigoBL.cs" />
+    <Compile Include="ActividadBL.cs" />
+    <Compile Include="ActividadContratistaBL.cs" />
+    <Compile Include="ActividadContratistaDetalleBL.cs" />
+    <Compile Include="ActoSubEstandarBL.cs" />
+    <Compile Include="AnomaliaBL.cs" />
+    <Compile Include="AreaBL.cs" />
+    <Compile Include="AreaEquipoBL.cs" />
+    <Compile Include="CapacitacionBL.cs" />
+    <Compile Include="CapatacitacionDetalleBL.cs" />
+    <Compile Include="CarpetaBL.cs" />
+    <Compile Include="CategoriaDiagnosticoBL.cs" />
+    <Compile Include="ClasificacionExtintorBL.cs" />
+    <Compile Include="CondicionDescansoMedicoBL.cs" />
+    <Compile Include="CondicionSubEstandarBL.cs" />
+    <Compile Include="ContingenciaBL.cs" />
+    <Compile Include="DescansoMedicoBL.cs" />
+    <Compile Include="DocumentoBL.cs" />
+    <Compile Include="DocumentoPersonaBL.cs" />
+    <Compile Include="EliminacionBL.cs" />
+    <Compile Include="EmpresaArchivoBL.cs" />
+    <Compile Include="EmpresaBL.cs" />
+    <Compile Include="EppBL.cs" />
+    <Compile Include="EppDetalleBL.cs" />
+    <Compile Include="EquipoBL.cs" />
+    <Compile Include="EquipoProteccionBL.cs" />
+    <Compile Include="ExpositorBL.cs" />
+    <Compile Include="ExtintorBL.cs" />
+    <Compile Include="ExtintorDetalleBL.cs" />
+    <Compile Include="ExtintorInspeccionBL.cs" />
+    <Compile Include="ExtintorInspeccionDetalleBL.cs" />
+    <Compile Include="FactorPersonalBL.cs" />
+    <Compile Include="FactorTrabajoBL.cs" />
+    <Compile Include="FuenteLesionBL.cs" />
+    <Compile Include="HoraTrabajadaBL.cs" />
+    <Compile Include="InspeccionTrabajoBL.cs" />
+    <Compile Include="InspeccionTrabajoDetalleBL.cs" />
+    <Compile Include="KardexBL.cs" />
+    <Compile Include="LugarBL.cs" />
+    <Compile Include="MenuBL.cs" />
+    <Compile Include="MesBL.cs" />
+    <Compile Include="MovimientoExtintorBL.cs" />
+    <Compile Include="NegocioBL.cs" />
+    <Compile Include="OrdenInternaBL.cs" />
+    <Compile Include="Parametros.cs" />
+    <Compile Include="ParteLesionadaBL.cs" />
+    <Compile Include="PeligroBL.cs" />
+    <Compile Include="PerfilBL.cs" />
+    <Compile Include="PersonaAdryanBL.cs" />
+    <Compile Include="PersonaArchivoBL.cs" />
+    <Compile Include="PersonaBL.cs" />
+    <Compile Include="PlanAnualBL.cs" />
+    <Compile Include="PlanAnualDetalleBL.cs" />
+    <Compile Include="PlanillaBL.cs" />
+    <Compile Include="ProbabilidadBL.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ProveedorBL.cs" />
+    <Compile Include="Reportes\ReporteAccidenteBL.cs" />
+    <Compile Include="Reportes\ReporteCapacitacionBL.cs" />
+    <Compile Include="Reportes\ReporteDocumentoBL.cs" />
+    <Compile Include="Reportes\ReporteDocumentoPersonaBL.cs" />
+    <Compile Include="Reportes\ReporteEppBL.cs" />
+    <Compile Include="Reportes\ReporteEquipoBL.cs" />
+    <Compile Include="Reportes\ReporteExtintorBL.cs" />
+    <Compile Include="Reportes\ReporteExtintorServicioBL.cs" />
+    <Compile Include="Reportes\ReporteInspeccionTrabajoBL.cs" />
+    <Compile Include="Reportes\ReportePlanAnualBL.cs" />
+    <Compile Include="Reportes\ReporteSeguroSctrBL.cs" />
+    <Compile Include="Reportes\ReporteSeguroViajeBL.cs" />
+    <Compile Include="Reportes\ReporteSolicitudBL.cs" />
+    <Compile Include="Reportes\ReporteSolicitudEppBL.cs" />
+    <Compile Include="RiesgoBL.cs" />
+    <Compile Include="SctrBL.cs" />
+    <Compile Include="SectorBL.cs" />
+    <Compile Include="SeguroViajeBL.cs" />
+    <Compile Include="SenalizacionBL.cs" />
+    <Compile Include="ServicioExtintorBL.cs" />
+    <Compile Include="SeveridadBL.cs" />
+    <Compile Include="SolicitudBL.cs" />
+    <Compile Include="SolicitudEppBL.cs" />
+    <Compile Include="SolicitudEppDetalleBL.cs" />
+    <Compile Include="SustitucionBL.cs" />
+    <Compile Include="TablaBL.cs" />
+    <Compile Include="TablaElementoBL.cs" />
+    <Compile Include="TemaBL.cs" />
+    <Compile Include="TipoAccidenteBL.cs" />
+    <Compile Include="TipoCapacitacionBL.cs" />
+    <Compile Include="TipoDescansoMedicoBL.cs" />
+    <Compile Include="TipoEntregaBL.cs" />
+    <Compile Include="TipoExtintorBL.cs" />
+    <Compile Include="TipoInspeccionBL.cs" />
+    <Compile Include="TipoLesionBL.cs" />
+    <Compile Include="TipoPeligroBL.cs" />
+    <Compile Include="TratamientoBL.cs" />
+    <Compile Include="UnidadMineraBL.cs" />
+    <Compile Include="UsuarioBL.cs" />
+    <Compile Include="UsuarioUnidadMineraBL.cs" />
+    <Compile Include="ValoracionRiesgoBL.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SSOMA.BusinessEntity\SSOMA.BusinessEntity.csproj">
+      <Project>{dd728183-08a9-49fc-90de-c69c55e602e3}</Project>
+      <Name>SSOMA.BusinessEntity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SSOMA.DataLogic\SSOMA.DataLogic.csproj">
+      <Project>{db393915-f958-4f69-baae-312470f80671}</Project>
+      <Name>SSOMA.DataLogic</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

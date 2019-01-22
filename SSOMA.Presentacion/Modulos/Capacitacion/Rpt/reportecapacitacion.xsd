@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="reportecapacitacion"
+    targetNamespace="http://tempuri.org/reportecapacitacion.xsd"
+    elementFormDefault="qualified"
+    xmlns="http://tempuri.org/reportecapacitacion.xsd"
+    xmlns:mstns="http://tempuri.org/reportecapacitacion.xsd"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+
+  <xs:element name="reportecapacitacion">
+  <xs:complexType>
+    <xs:sequence />
+    <xs:attribute name="Ruc" type="xs:string" />
+    <xs:attribute name="Direccion" type="xs:string" />
+    <xs:attribute name="RazonSocial" type="xs:string" />
+    <xs:attribute name="Logo" type="xs:base64Binary" />
+    <xs:attribute name="DescUnidadMinera" type="xs:string" />
+    <xs:attribute name="DescProveedor" type="xs:string" />
+    <xs:attribute name="Numero" type="xs:string" />
+    <xs:attribute name="Fecha" type="xs:string" />
+    <xs:attribute name="FechaIni" type="xs:string" />
+    <xs:attribute name="FechaFin" type="xs:string" />
+    <xs:attribute name="Participantes" type="xs:integer" />
+    <xs:attribute name="DescLugar" type="xs:string" />
+    <xs:attribute name="DescTipoCapacitacion" type="xs:string" />
+    <xs:attribute name="DescClasificacionCapacitacion" type="xs:string" />
+    <xs:attribute name="DescTema" type="xs:string" />
+    <xs:attribute name="DescEmpresa" type="xs:string" />
+    <xs:attribute name="DescExpositor" type="xs:string" />
+    <xs:attribute name="CargoExpositor" type="xs:string" />
+    <xs:attribute name="Item" type="xs:integer" />
+    <xs:attribute name="Codigo" type="xs:string" />
+    <xs:attribute name="ApeNom" type="xs:string" />
+    <xs:attribute name="EmpresaPersona" type="xs:string" />
+    <xs:attribute name="DescArea" type="xs:string" />
+    <xs:attribute name="Cargo" type="xs:string" />
+    <xs:attribute name="Horas" type="xs:decimal" />
+    <xs:attribute name="Nota" type="xs:integer" />
+    <xs:attribute name="Periodo" type="xs:string" />
+    <xs:attribute name="Mes" type="xs:string" />
+    <xs:attribute name="DescNegocio" type="xs:string" />
+    <xs:attribute name="EmpresaResponsable" type="xs:string" />
+    <xs:attribute name="UnidadMineraResponsable" type="xs:string" />
+    <xs:attribute name="AreaResponsable" type="xs:string" />
+  </xs:complexType>
+  </xs:element>
+  
+</xs:schema>

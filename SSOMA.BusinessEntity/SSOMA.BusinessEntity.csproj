@@ -1,0 +1,169 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{DD728183-08A9-49FC-90DE-C69C55E602E3}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SSOMA.BusinessEntity</RootNamespace>
+    <AssemblyName>SSOMA.BusinessEntity</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AccesoBE.cs" />
+    <Compile Include="AccesoUsuarioBE.cs" />
+    <Compile Include="AccidenteAccionCorrectivaBE.cs" />
+    <Compile Include="AccidenteBE.cs" />
+    <Compile Include="AccidenteCondicionSubEstandarBE.cs" />
+    <Compile Include="AccidenteCostoBE.cs" />
+    <Compile Include="AccidenteDocumentoBE.cs" />
+    <Compile Include="AccidenteEntrevistadoBE.cs" />
+    <Compile Include="AccidenteFactorPersonalBE.cs" />
+    <Compile Include="AccidenteFactorTrabajoBE.cs" />
+    <Compile Include="AccidenteFotoBE.cs" />
+    <Compile Include="AccidenteActoSubEstandarBE.cs" />
+    <Compile Include="AccidenteMedidaPrevencionBE.cs" />
+    <Compile Include="AccidenteTestigoBE.cs" />
+    <Compile Include="ActividadBE.cs" />
+    <Compile Include="ActividadContratistaBE.cs" />
+    <Compile Include="ActividadContratistaDetalleBE.cs" />
+    <Compile Include="ActoSubEstandarBE.cs" />
+    <Compile Include="AnomaliaBE.cs" />
+    <Compile Include="AreaBE.cs" />
+    <Compile Include="AreaEquipoBE.cs" />
+    <Compile Include="CapacitacionBE.cs" />
+    <Compile Include="CapacitacionDetalleBE.cs" />
+    <Compile Include="CarpetaBE.cs" />
+    <Compile Include="CategoriaDiagnosticoBE.cs" />
+    <Compile Include="ClasificacionExtintorBE.cs" />
+    <Compile Include="CondicionDescansoMedicoBE.cs" />
+    <Compile Include="CondicionSubEstandarBE.cs" />
+    <Compile Include="ContingenciaBE.cs" />
+    <Compile Include="DescansoMedicoBE.cs" />
+    <Compile Include="DocumentoBE.cs" />
+    <Compile Include="DocumentoPersonaBE.cs" />
+    <Compile Include="EliminacionBE.cs" />
+    <Compile Include="EmpresaArchivoBE.cs" />
+    <Compile Include="EmpresaBE.cs" />
+    <Compile Include="EppBE.cs" />
+    <Compile Include="EppDetalleBE.cs" />
+    <Compile Include="EquipoBE.cs" />
+    <Compile Include="EquipoProteccionBE.cs" />
+    <Compile Include="ExpositorBE.cs" />
+    <Compile Include="ExtintorInspeccionDetalleBE.cs" />
+    <Compile Include="ExtintorBE.cs" />
+    <Compile Include="ExtintorDetalleBE.cs" />
+    <Compile Include="ExtintorInspeccionBE.cs" />
+    <Compile Include="FactorPersonalBE.cs" />
+    <Compile Include="FactorTrabajoBE.cs" />
+    <Compile Include="FuenteLesionBE.cs" />
+    <Compile Include="HoraTrabajadaBE.cs" />
+    <Compile Include="InspeccionTrabajoBE.cs" />
+    <Compile Include="InspeccionTrabajoDetalleBE.cs" />
+    <Compile Include="KardexBE.cs" />
+    <Compile Include="LugarBE.cs" />
+    <Compile Include="MenuBE.cs" />
+    <Compile Include="MesBE.cs" />
+    <Compile Include="MovimientoExtintorBE.cs" />
+    <Compile Include="NegocioBE.cs" />
+    <Compile Include="OrdenInternaBE.cs" />
+    <Compile Include="ParteLesionadaBE.cs" />
+    <Compile Include="PeligroBE.cs" />
+    <Compile Include="PerfilBE.cs" />
+    <Compile Include="PersonaAdryanBE.cs" />
+    <Compile Include="PersonaArchivoBE.cs" />
+    <Compile Include="PersonaBE.cs" />
+    <Compile Include="PlanAnualBE.cs" />
+    <Compile Include="PlanAnualDetalleBE.cs" />
+    <Compile Include="PlanillaBE.cs" />
+    <Compile Include="ProbabilidadBE.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ProveedorBE.cs" />
+    <Compile Include="Reportes\ReporteAccidenteBE.cs" />
+    <Compile Include="Reportes\ReporteCapacitacionBE.cs" />
+    <Compile Include="Reportes\ReporteDocumentoBE.cs" />
+    <Compile Include="Reportes\ReporteDocumentoPersonaBE.cs" />
+    <Compile Include="Reportes\ReporteEppBE.cs" />
+    <Compile Include="Reportes\ReporteEquipoBE.cs" />
+    <Compile Include="Reportes\ReporteExtintorBE.cs" />
+    <Compile Include="Reportes\ReporteExtintorServicioBE.cs" />
+    <Compile Include="Reportes\ReporteInspeccionTrabajoBE.cs" />
+    <Compile Include="Reportes\ReportePlanAnualBE.cs" />
+    <Compile Include="Reportes\ReporteSeguroSctrBE.cs" />
+    <Compile Include="Reportes\ReporteSeguroViajeBE.cs" />
+    <Compile Include="Reportes\ReporteSolicitudBE.cs" />
+    <Compile Include="Reportes\ReporteSolicitudEppBE.cs" />
+    <Compile Include="RiesgoBE.cs" />
+    <Compile Include="SctrBE.cs" />
+    <Compile Include="SectorBE.cs" />
+    <Compile Include="SeguroViajeBE.cs" />
+    <Compile Include="SenalizacionBE.cs" />
+    <Compile Include="ServicioExtintorBE.cs" />
+    <Compile Include="SeveridadBE.cs" />
+    <Compile Include="SolicitudBE.cs" />
+    <Compile Include="SolicitudEppBE.cs" />
+    <Compile Include="SolicitudEppDetalleBE.cs" />
+    <Compile Include="SustitucionBE.cs" />
+    <Compile Include="TablaBE.cs" />
+    <Compile Include="TablaElementoBE.cs" />
+    <Compile Include="TemaBE.cs" />
+    <Compile Include="TipoAccidenteBE.cs" />
+    <Compile Include="TipoCapacitacionBE.cs" />
+    <Compile Include="TipoDescansoMedicoBE.cs" />
+    <Compile Include="TipoEntregaBE.cs" />
+    <Compile Include="TipoExtintorBE.cs" />
+    <Compile Include="TipoInspeccionBE.cs" />
+    <Compile Include="TipoLesionBE.cs" />
+    <Compile Include="TipoPeligroBE.cs" />
+    <Compile Include="TratamientoBE.cs" />
+    <Compile Include="UnidadMineraBE.cs" />
+    <Compile Include="UsuarioBE.cs" />
+    <Compile Include="UsuarioUnidadMineraBE.cs" />
+    <Compile Include="ValoracionRiesgoBE.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

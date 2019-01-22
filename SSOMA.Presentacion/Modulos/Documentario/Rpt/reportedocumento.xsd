@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="reportedocumento"
+    targetNamespace="http://tempuri.org/reportedocumento.xsd"
+    elementFormDefault="qualified"
+    xmlns="http://tempuri.org/reportedocumento.xsd"
+    xmlns:mstns="http://tempuri.org/reportedocumento.xsd"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="reportedocumento">
+    <xs:complexType>
+      <xs:sequence />
+      <xs:attribute name="RazonSocial" type="xs:string" />
+      <xs:attribute name="DescCarpeta" type="xs:string" />
+      <xs:attribute name="Codigo" type="xs:string" />
+      <xs:attribute name="NombreArchivo" type="xs:string" />
+      <xs:attribute name="Revision" type="xs:string" />
+      <xs:attribute name="FechaAprobacion" type="xs:string" />
+    </xs:complexType>
+  </xs:element>
+
+
+</xs:schema>

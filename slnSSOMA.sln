@@ -1,0 +1,79 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27428.2002
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 Entidades", "1 Entidades", "{C0503CD2-C3B3-454E-B795-C5C72783157B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2 Acceso a Datos", "2 Acceso a Datos", "{07397C3F-7ADD-4B31-AD22-C77B5857CDEC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 Logica", "3 Logica", "{8A654D4D-EE2C-48AF-82C6-21A28D15F98D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4 Presentacion", "4 Presentacion", "{31C86F5C-6C07-4D62-A546-16543E3A71FE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SSOMA.BusinessEntity", "SSOMA.BusinessEntity\SSOMA.BusinessEntity.csproj", "{DD728183-08A9-49FC-90DE-C69C55E602E3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SSOMA.DataLogic", "SSOMA.DataLogic\SSOMA.DataLogic.csproj", "{DB393915-F958-4F69-BAAE-312470F80671}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SSOMA.BusinessLogic", "SSOMA.BusinessLogic\SSOMA.BusinessLogic.csproj", "{86A72B88-30FD-40BB-9BAD-82276001D12E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SSOMA.Presentacion", "SSOMA.Presentacion\SSOMA.Presentacion.csproj", "{701312EB-D896-4806-B4B6-154100FC56BA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DD728183-08A9-49FC-90DE-C69C55E602E3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DD728183-08A9-49FC-90DE-C69C55E602E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DD728183-08A9-49FC-90DE-C69C55E602E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DD728183-08A9-49FC-90DE-C69C55E602E3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DB393915-F958-4F69-BAAE-312470F80671}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DB393915-F958-4F69-BAAE-312470F80671}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DB393915-F958-4F69-BAAE-312470F80671}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DB393915-F958-4F69-BAAE-312470F80671}.Release|Any CPU.Build.0 = Release|Any CPU
+		{86A72B88-30FD-40BB-9BAD-82276001D12E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{86A72B88-30FD-40BB-9BAD-82276001D12E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{86A72B88-30FD-40BB-9BAD-82276001D12E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{86A72B88-30FD-40BB-9BAD-82276001D12E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{701312EB-D896-4806-B4B6-154100FC56BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{701312EB-D896-4806-B4B6-154100FC56BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{701312EB-D896-4806-B4B6-154100FC56BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{701312EB-D896-4806-B4B6-154100FC56BA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{DD728183-08A9-49FC-90DE-C69C55E602E3} = {C0503CD2-C3B3-454E-B795-C5C72783157B}
+		{DB393915-F958-4F69-BAAE-312470F80671} = {07397C3F-7ADD-4B31-AD22-C77B5857CDEC}
+		{86A72B88-30FD-40BB-9BAD-82276001D12E} = {8A654D4D-EE2C-48AF-82C6-21A28D15F98D}
+		{701312EB-D896-4806-B4B6-154100FC56BA} = {31C86F5C-6C07-4D62-A546-16543E3A71FE}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4FE1D909-AF6A-4C6E-AAED-1286D71CFECE}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 5
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://lendiapplications.visualstudio.com/
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = SSOMA.BusinessEntity\\SSOMA.BusinessEntity.csproj
+		SccProjectTopLevelParentUniqueName1 = slnSSOMA.sln
+		SccProjectName1 = SSOMA.BusinessEntity
+		SccLocalPath1 = SSOMA.BusinessEntity
+		SccProjectUniqueName2 = SSOMA.BusinessLogic\\SSOMA.BusinessLogic.csproj
+		SccProjectTopLevelParentUniqueName2 = slnSSOMA.sln
+		SccProjectName2 = SSOMA.BusinessLogic
+		SccLocalPath2 = SSOMA.BusinessLogic
+		SccProjectUniqueName3 = SSOMA.DataLogic\\SSOMA.DataLogic.csproj
+		SccProjectTopLevelParentUniqueName3 = slnSSOMA.sln
+		SccProjectName3 = SSOMA.DataLogic
+		SccLocalPath3 = SSOMA.DataLogic
+		SccProjectUniqueName4 = SSOMA.Presentacion\\SSOMA.Presentacion.csproj
+		SccProjectTopLevelParentUniqueName4 = slnSSOMA.sln
+		SccProjectName4 = SSOMA.Presentacion
+		SccLocalPath4 = SSOMA.Presentacion
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="reporteaccidente"
+    targetNamespace="http://tempuri.org/reporteaccidente.xsd"
+    elementFormDefault="qualified"
+    xmlns="http://tempuri.org/reporteaccidente.xsd"
+    xmlns:mstns="http://tempuri.org/reporteaccidente.xsd"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="reporteaccidente">
+    <xs:complexType>
+      <xs:sequence />
+      <xs:attribute name="DescTipo" type="xs:string" />
+      <xs:attribute name="DescDanio" type="xs:string" />
+      <xs:attribute name="Numero" type="xs:string" />
+      <xs:attribute name="Responsable" type="xs:string" />
+      <xs:attribute name="Dni" type="xs:string" />
+      <xs:attribute name="Edad" type="xs:int" />
+      <xs:attribute name="Cargo" type="xs:string" />
+      <xs:attribute name="TipoMaterial" type="xs:string" />
+      <xs:attribute name="DescTipoContrato" type="xs:string" />
+      <xs:attribute name="EmpresaResponsable" type="xs:string" />
+      <xs:attribute name="Logo" type="xs:base64Binary" />
+      <xs:attribute name="UnidadMineraResponsable" type="xs:string" />
+      <xs:attribute name="AreaResponsable" type="xs:string" />
+      <xs:attribute name="JefeDirecto" type="xs:string" />
+      <xs:attribute name="EmpresaContratista" type="xs:string" />
+      <xs:attribute name="TiempoExperiencia" type="xs:string" />
+      <xs:attribute name="Fecha" type="xs:string" />
+      <xs:attribute name="Hora" type="xs:dateTime" />
+      <xs:attribute name="FechaInicio" type="xs:string" />
+      <xs:attribute name="Lugar" type="xs:string" />
+      <xs:attribute name="HoraTrabajada" type="xs:string" />
+      <xs:attribute name="DescPotencialDanio" type="xs:string" />
+      <xs:attribute name="DescGradoAccidente" type="xs:string" />
+      <xs:attribute name="DescProbabilidadOcurrencia" type="xs:string" />
+      <xs:attribute name="Porque" type="xs:string" />
+      <xs:attribute name="TrabajoOrdenadoPor" type="xs:string" />
+      <xs:attribute name="DescTipoAccidente" type="xs:string" />
+      <xs:attribute name="DescParteLesionada" type="xs:string" />
+      <xs:attribute name="DescTipoLesion" type="xs:string" />
+      <xs:attribute name="DescFuenteLesion" type="xs:string" />
+      <xs:attribute name="DiasPerdido" type="xs:int" />
+      <xs:attribute name="CostoTotal" type="xs:decimal" />
+      <xs:attribute name="TrabajadoresAfectado" type="xs:int" />
+      <xs:attribute name="Descripcion" type="xs:string" />
+      <xs:attribute name="InvestigadoPor" type="xs:string" />
+      <xs:attribute name="RevisadoPor" type="xs:string" />
+      <xs:attribute name="DescActoSubEstandar" type="xs:string" />
+      <xs:attribute name="DescCondicionSubEstandar" type="xs:string" />
+      <xs:attribute name="DescFactorPersonal" type="xs:string" />
+      <xs:attribute name="DescFactorTrabajo" type="xs:string" />
+      <xs:attribute name="DescAccionCorrectiva" type="xs:string" />
+      <xs:attribute name="ResponsableAccionCorrectiva" type="xs:string" />
+      <xs:attribute name="FechaCumplimiento" type="xs:string" />
+      <xs:attribute name="DescSituacion" type="xs:string" />
+      <xs:attribute name="Periodo" type="xs:string" />
+      <xs:attribute name="Mes" type="xs:string" />
+      <xs:attribute name="DescNegocio" type="xs:string" />
+      <xs:attribute name="Cantidad" type="xs:int" />
+    </xs:complexType>
+  </xs:element>
+  
+  
+</xs:schema>
