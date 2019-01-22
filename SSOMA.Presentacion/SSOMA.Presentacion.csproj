@@ -654,6 +654,18 @@
     <Compile Include="Modulos\Capacitacion\Consultas\frmConCapacitacionDesaprobada.Designer.cs">
       <DependentUpon>frmConCapacitacionDesaprobada.cs</DependentUpon>
     </Compile>
+    <Compile Include="Modulos\Capacitacion\Maestros\frmManCategoriaTema.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\Capacitacion\Maestros\frmManCategoriaTema.Designer.cs">
+      <DependentUpon>frmManCategoriaTema.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Capacitacion\Maestros\frmManCategoriaTemaEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\Capacitacion\Maestros\frmManCategoriaTemaEdit.Designer.cs">
+      <DependentUpon>frmManCategoriaTemaEdit.cs</DependentUpon>
+    </Compile>
     <Compile Include="Modulos\Capacitacion\Maestros\frmManExpositor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -2752,6 +2764,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Modulos\Capacitacion\Consultas\frmConCapacitacionDesaprobada.resx">
       <DependentUpon>frmConCapacitacionDesaprobada.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Capacitacion\Maestros\frmManCategoriaTema.resx">
+      <DependentUpon>frmManCategoriaTema.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Capacitacion\Maestros\frmManCategoriaTemaEdit.resx">
+      <DependentUpon>frmManCategoriaTemaEdit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Modulos\Capacitacion\Maestros\frmManExpositor.resx">
       <DependentUpon>frmManExpositor.cs</DependentUpon>

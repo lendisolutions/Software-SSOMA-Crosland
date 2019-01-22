@@ -72,6 +72,7 @@
     <Compile Include="CapacitacionDetalleBE.cs" />
     <Compile Include="CarpetaBE.cs" />
     <Compile Include="CategoriaDiagnosticoBE.cs" />
+    <Compile Include="CategoriaTemaBE.cs" />
     <Compile Include="ClasificacionExtintorBE.cs" />
     <Compile Include="CondicionDescansoMedicoBE.cs" />
     <Compile Include="CondicionSubEstandarBE.cs" />

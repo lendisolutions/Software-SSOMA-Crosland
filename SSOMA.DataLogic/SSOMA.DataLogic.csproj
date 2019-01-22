@@ -83,6 +83,7 @@
     <Compile Include="CapacitacionDL.cs" />
     <Compile Include="CarpetaDL.cs" />
     <Compile Include="CategoriaDiagnosticoDL.cs" />
+    <Compile Include="CategoriaTemaDL.cs" />
     <Compile Include="ClasificacionExtintorDL.cs" />
     <Compile Include="CondicionDescansoMedicoDL.cs" />
     <Compile Include="CondicionSubEstandarDL.cs" />
