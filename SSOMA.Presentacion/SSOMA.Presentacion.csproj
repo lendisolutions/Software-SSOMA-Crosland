@@ -3897,6 +3897,7 @@
     <None Include="Resources\Logo DataSafety.jpg" />
     <None Include="Resources\Logo DataSafety Sin Fondo.png" />
     <None Include="Resources\ActividadTrabajo_32x32.gif" />
+    <None Include="Resources\CategoriaTema_32x32.gif" />
     <Content Include="Seguimiento de Accidentes.xlsx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
