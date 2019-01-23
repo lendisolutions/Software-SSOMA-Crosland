@@ -3914,6 +3914,7 @@
     <None Include="Resources\SSOMA_4.jpg" />
     <None Include="Resources\SSOMA_5.jpg" />
     <None Include="Resources\SSOMA_6.jpg" />
+    <None Include="Resources\CategoriaTema_16x16.gif" />
     <Content Include="Seguimiento de Accidentes.xlsx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
