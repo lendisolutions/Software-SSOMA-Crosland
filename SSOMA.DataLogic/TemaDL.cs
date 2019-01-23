@@ -11,20 +11,31 @@ namespace SSOMA.DataLogic
     {
         public TemaDL() { }
 
-        public void Inserta(TemaBE pItem)
+        public Int32 Inserta(TemaBE pItem)
         {
+            Int32 intTema = 0;
             Database db = DatabaseFactory.CreateDatabase("cnSSOMABD");
             DbCommand dbCommand = db.GetStoredProcCommand("usp_Tema_Inserta");
 
-            db.AddInParameter(dbCommand, "pIdTema", DbType.Int32, pItem.IdTema);
+            db.AddOutParameter(dbCommand, "pIdTema", DbType.Int32, pItem.IdTema);
             db.AddInParameter(dbCommand, "pIdEmpresa", DbType.Int32, pItem.IdEmpresa);
+            db.AddInParameter(dbCommand, "pIdCategoriaTema", DbType.Int32, pItem.IdCategoriaTema);
             db.AddInParameter(dbCommand, "pPeriodo", DbType.Int32, pItem.Periodo);
+            db.AddInParameter(dbCommand, "pObjetivo", DbType.String, pItem.Objetivo);
             db.AddInParameter(dbCommand, "pDescTema", DbType.String, pItem.DescTema);
+            db.AddInParameter(dbCommand, "pFechaIni", DbType.DateTime, pItem.FechaIni);
+            db.AddInParameter(dbCommand, "pFechaFin", DbType.DateTime, pItem.FechaFin);
+            db.AddInParameter(dbCommand, "pLogo", DbType.Binary, pItem.Logo);
+            db.AddInParameter(dbCommand, "pIdSituacion", DbType.Int32, pItem.IdSituacion);
             db.AddInParameter(dbCommand, "pFlagEstado", DbType.Boolean, pItem.FlagEstado);
             db.AddInParameter(dbCommand, "pUsuario", DbType.String, pItem.Usuario);
             db.AddInParameter(dbCommand, "pMaquina", DbType.String, pItem.Maquina);
 
             db.ExecuteNonQuery(dbCommand);
+
+            intTema = (int)db.GetParameterValue(dbCommand, "pIdTema");
+
+            return intTema;
 
         }
 
@@ -35,11 +46,29 @@ namespace SSOMA.DataLogic
 
             db.AddInParameter(dbCommand, "pIdTema", DbType.Int32, pItem.IdTema);
             db.AddInParameter(dbCommand, "pIdEmpresa", DbType.Int32, pItem.IdEmpresa);
+            db.AddInParameter(dbCommand, "pIdCategoriaTema", DbType.Int32, pItem.IdCategoriaTema);
             db.AddInParameter(dbCommand, "pPeriodo", DbType.Int32, pItem.Periodo);
+            db.AddInParameter(dbCommand, "pObjetivo", DbType.String, pItem.Objetivo);
             db.AddInParameter(dbCommand, "pDescTema", DbType.String, pItem.DescTema);
+            db.AddInParameter(dbCommand, "pFechaIni", DbType.DateTime, pItem.FechaIni);
+            db.AddInParameter(dbCommand, "pFechaFin", DbType.DateTime, pItem.FechaFin);
+            db.AddInParameter(dbCommand, "pLogo", DbType.Binary, pItem.Logo);
+            db.AddInParameter(dbCommand, "pIdSituacion", DbType.Int32, pItem.IdSituacion);
             db.AddInParameter(dbCommand, "pFlagEstado", DbType.Boolean, pItem.FlagEstado);
             db.AddInParameter(dbCommand, "pUsuario", DbType.String, pItem.Usuario);
             db.AddInParameter(dbCommand, "pMaquina", DbType.String, pItem.Maquina);
+
+            db.ExecuteNonQuery(dbCommand);
+
+        }
+
+        public void ActualizaSituacion(int IdTema, int IdSituacion)
+        {
+            Database db = DatabaseFactory.CreateDatabase("cnERPBD");
+            DbCommand dbCommand = db.GetStoredProcCommand("usp_Tema_ActualizaSituacion");
+
+            db.AddInParameter(dbCommand, "pIdTema", DbType.Int32, IdTema);
+            db.AddInParameter(dbCommand, "pIdSituacion", DbType.Int32, IdSituacion);
 
             db.ExecuteNonQuery(dbCommand);
 
@@ -72,30 +101,18 @@ namespace SSOMA.DataLogic
             {
                 Tema = new TemaBE();
                 Tema.IdTema = Int32.Parse(reader["idTema"].ToString());
-                Tema.DescTema = reader["descTema"].ToString();
-                Tema.FlagEstado = Boolean.Parse(reader["flagestado"].ToString());
-            }
-            reader.Close();
-            reader.Dispose();
-            return Tema;
-        }
-
-        public TemaBE SeleccionaParametros(string CODUNIDADP, string CODCENTROP)
-        {
-            Database db = DatabaseFactory.CreateDatabase("cnSSOMABD");
-            DbCommand dbCommand = db.GetStoredProcCommand("usp_Tema_SeleccionaParametro");
-            db.AddInParameter(dbCommand, "pCODUNIDADP", DbType.String, CODUNIDADP);
-            db.AddInParameter(dbCommand, "pCODCENTROP", DbType.String, CODCENTROP);
-
-            IDataReader reader = db.ExecuteReader(dbCommand);
-            TemaBE Tema = null;
-            while (reader.Read())
-            {
-                Tema = new TemaBE();
-                Tema.IdTema = Int32.Parse(reader["idTema"].ToString());
-                Tema.DescTema = reader["descTema"].ToString();
                 Tema.IdEmpresa = Int32.Parse(reader["IdEmpresa"].ToString());
                 Tema.RazonSocial = reader["RazonSocial"].ToString();
+                Tema.IdCategoriaTema = Int32.Parse(reader["IdCategoriaTema"].ToString());
+                Tema.DescCategoriaTema = reader["DescCategoriaTema"].ToString();
+                Tema.Periodo = Int32.Parse(reader["Periodo"].ToString());
+                Tema.Objetivo = reader["Objetivo"].ToString();
+                Tema.DescTema = reader["descTema"].ToString();
+                Tema.FechaIni = DateTime.Parse(reader["FechaIni"].ToString());
+                Tema.FechaFin = DateTime.Parse(reader["FechaFin"].ToString());
+                Tema.Logo = (byte[])reader["Logo"];
+                Tema.IdSituacion = Int32.Parse(reader["IdSituacion"].ToString());
+                Tema.DescSituacion = reader["DescSituacion"].ToString();
                 Tema.FlagEstado = Boolean.Parse(reader["flagestado"].ToString());
             }
             reader.Close();
@@ -103,11 +120,12 @@ namespace SSOMA.DataLogic
             return Tema;
         }
 
-        public List<TemaBE> ListaTodosActivo(int IdEmpresa, int Periodo)
+        public List<TemaBE> ListaTodosActivo(int IdEmpresa, int IdCategoriaTema, int Periodo)
         {
             Database db = DatabaseFactory.CreateDatabase("cnSSOMABD");
             DbCommand dbCommand = db.GetStoredProcCommand("usp_Tema_ListaTodosActivo");
             db.AddInParameter(dbCommand, "pIdEmpresa", DbType.Int32, IdEmpresa);
+            db.AddInParameter(dbCommand, "pIdCategoriaTema", DbType.Int32, IdCategoriaTema);
             db.AddInParameter(dbCommand, "pPeriodo", DbType.Int32, Periodo);
 
             IDataReader reader = db.ExecuteReader(dbCommand);
@@ -116,10 +134,18 @@ namespace SSOMA.DataLogic
             while (reader.Read())
             {
                 Tema = new TemaBE();
-                Tema.IdEmpresa = Int32.Parse(reader["IdEmpresa"].ToString());
                 Tema.IdTema = Int32.Parse(reader["idTema"].ToString());
+                Tema.IdEmpresa = Int32.Parse(reader["IdEmpresa"].ToString());
+                Tema.RazonSocial = reader["RazonSocial"].ToString();
+                Tema.IdCategoriaTema = Int32.Parse(reader["IdCategoriaTema"].ToString());
+                Tema.DescCategoriaTema = reader["DescCategoriaTema"].ToString();
                 Tema.Periodo = Int32.Parse(reader["Periodo"].ToString());
+                Tema.Objetivo = reader["Objetivo"].ToString();
                 Tema.DescTema = reader["descTema"].ToString();
+                Tema.FechaIni = DateTime.Parse(reader["FechaIni"].ToString());
+                Tema.FechaFin = DateTime.Parse(reader["FechaFin"].ToString());
+                Tema.IdSituacion = Int32.Parse(reader["IdSituacion"].ToString());
+                Tema.DescSituacion = reader["DescSituacion"].ToString();
                 Tema.FlagEstado = Boolean.Parse(reader["flagestado"].ToString());
                 Temalist.Add(Tema);
             }

@@ -174,5 +174,9 @@ namespace SSOMA.Presentacion
         //EMPRESA CONTRISTA
         public static int intEmpresaContratistaNinguno = 13;
 
+        //SITUACION TEMA
+        public static int intTEMAActivo = 87;
+        public static int intTEMAInactivo = 88;
+
     }
 }

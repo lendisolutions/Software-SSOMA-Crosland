@@ -145,6 +145,7 @@
     <Compile Include="TablaBE.cs" />
     <Compile Include="TablaElementoBE.cs" />
     <Compile Include="TemaBE.cs" />
+    <Compile Include="TemaDetalleBE.cs" />
     <Compile Include="TipoAccidenteBE.cs" />
     <Compile Include="TipoCapacitacionBE.cs" />
     <Compile Include="TipoDescansoMedicoBE.cs" />

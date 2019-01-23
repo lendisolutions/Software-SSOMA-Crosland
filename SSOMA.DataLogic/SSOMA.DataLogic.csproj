@@ -156,6 +156,7 @@
     <Compile Include="SustitucionDL.cs" />
     <Compile Include="TablaDL.cs" />
     <Compile Include="TablaElementoDL.cs" />
+    <Compile Include="TemaDetalleDL.cs" />
     <Compile Include="TemaDL.cs" />
     <Compile Include="TipoAccidenteDL.cs" />
     <Compile Include="TipoCapacitacionDL.cs" />
