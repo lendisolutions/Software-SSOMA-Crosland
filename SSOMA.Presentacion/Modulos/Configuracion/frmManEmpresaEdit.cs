@@ -109,6 +109,8 @@ namespace SSOMA.Presentacion.Modulos.Configuracion
         {
             this.picImage.Image = SSOMA.Presentacion.Properties.Resources.noImage;
         }
+
+
         private void btnGrabar_Click(object sender, EventArgs e)
         {
             try

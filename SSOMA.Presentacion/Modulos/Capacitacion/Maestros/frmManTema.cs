@@ -21,7 +21,9 @@ namespace SSOMA.Presentacion.Modulos.Capacitacion.Maestros
         #region "Propiedades"
 
         private List<TemaBE> mLista = new List<TemaBE>();
-        
+
+        int IdCategoriaTema = 0;
+
         #endregion
 
         #region "Eventos"
@@ -35,13 +37,19 @@ namespace SSOMA.Presentacion.Modulos.Capacitacion.Maestros
         {
             tlbMenu.Ensamblado = this.Tag.ToString();
             txtPeriodo.EditValue = Parametros.intPeriodo;
-            Cargar();
+            CargaTreeview();
         }
 
         private void tlbMenu_NewClick()
         {
             try
             {
+                if (IdCategoriaTema == 0)
+                {
+                    XtraMessageBox.Show("Debe seleccionar la categoría.", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
+
                 frmManTemaEdit objManTema = new frmManTemaEdit();
                 objManTema.lstTema = mLista;
                 objManTema.pOperacion = frmManTemaEdit.Operacion.Nuevo;
@@ -66,20 +74,21 @@ namespace SSOMA.Presentacion.Modulos.Capacitacion.Maestros
             try
             {
                 Cursor = Cursors.WaitCursor;
-                if (XtraMessageBox.Show("Esta seguro de eliminar el registro?", this.Text, MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                if (XtraMessageBox.Show("Esta seguro de anular el Tema?", this.Text, MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    if (!ValidarIngreso())
-                    {
-                        TemaBE objE_Tema = new TemaBE();
-                        objE_Tema.IdTema = int.Parse(gvTema.GetFocusedRowCellValue("IdTema").ToString());
-                        objE_Tema.Usuario = Parametros.strUsuarioLogin;
-                        objE_Tema.Maquina = WindowsIdentity.GetCurrent().Name.ToString();
-                        objE_Tema.IdEmpresa = Parametros.intEmpresaId;
+                    int intIdTema = int.Parse(gvTema.GetFocusedRowCellValue("IdTema").ToString());
+                    int intIdSituacion = int.Parse(gvTema.GetFocusedRowCellValue("IdSituacion").ToString());
 
+                    if (intIdSituacion == Parametros.intTEMAActivo)
+                    {
                         TemaBL objBL_Tema = new TemaBL();
-                        objBL_Tema.Elimina(objE_Tema);
-                        XtraMessageBox.Show("El registro se eliminó correctamente", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        objBL_Tema.ActualizaSituacion(intIdTema, Parametros.intTEMAInactivo);
+                        XtraMessageBox.Show("El Tema se anuló correctamente", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
                         Cargar();
+                    }
+                    else
+                    {
+                        XtraMessageBox.Show("No se puede anular un Tema diferente al Estado Activo", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
                 Cursor = Cursors.Default;
@@ -164,13 +173,80 @@ namespace SSOMA.Presentacion.Modulos.Capacitacion.Maestros
             Cargar();
         }
 
+        private void tvwDatos_AfterSelect(object sender, TreeViewEventArgs e)
+        {
+            if (e.Node.Tag == null) { return; }
+
+            switch (e.Node.Tag.ToString().Substring(0, 3))
+            {
+                case "CAT":
+                    IdCategoriaTema = Convert.ToInt32(e.Node.Tag.ToString().Substring(3, e.Node.Tag.ToString().Length - 3));
+                    Cargar();
+                    break;
+            }
+        }
+
+        private void gvTema_RowCellStyle(object sender, RowCellStyleEventArgs e)
+        {
+            try
+            {
+                GridView View = sender as GridView;
+                if (e.RowHandle >= 0)
+                {
+                    if (e.Column.FieldName == "DescSituacion")
+                    {
+                        string Situacion = View.GetRowCellDisplayText(e.RowHandle, View.Columns["DescSituacion"]);
+                        if (Situacion == "ACTIVO")
+                        {
+                            e.Appearance.ForeColor = Color.Blue;
+                        }
+                        if (Situacion == "INACTIVO")
+                        {
+                            e.Appearance.ForeColor = Color.Red;
+                        }
+
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                XtraMessageBox.Show(ex.Message, this.Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
         #endregion
 
         #region "Metodos"
 
+        private void CargaTreeview()
+        {
+            tvwDatos.Nodes.Clear();
+
+            TreeNode nuevoNodo = new TreeNode();
+            nuevoNodo.Text = "CATEGORIAS";
+            nuevoNodo.ImageIndex = 0;
+            nuevoNodo.SelectedImageIndex = 0;
+            tvwDatos.Nodes.Add(nuevoNodo);
+
+            List<CategoriaTemaBE> lstCategoriaTema = null;
+            lstCategoriaTema = new CategoriaTemaBL().ListaTodosActivo(Parametros.intEmpresaId);
+            foreach (var item in lstCategoriaTema)
+            {
+                TreeNode nuevoNodoChild = new TreeNode();
+                nuevoNodoChild.ImageIndex = 1;
+                nuevoNodoChild.SelectedImageIndex = 1;
+                nuevoNodoChild.Text = item.DescCategoriaTema;
+                nuevoNodoChild.Tag = "CAT" + item.IdCategoriaTema.ToString();
+                nuevoNodo.Nodes.Add(nuevoNodoChild);
+
+            }
+
+            tvwDatos.ExpandAll();
+        }
+
         private void Cargar()
         {
-            mLista = new TemaBL().ListaTodosActivo(Parametros.intEmpresaId, Convert.ToInt32(txtPeriodo.EditValue));
+            mLista = new TemaBL().ListaTodosActivo(Parametros.intEmpresaId, IdCategoriaTema, Convert.ToInt32(txtPeriodo.EditValue));
             gcTema.DataSource = mLista;
         }
 
@@ -185,13 +261,13 @@ namespace SSOMA.Presentacion.Modulos.Capacitacion.Maestros
             if (gvTema.RowCount > 0)
             {
                 TemaBE objTema = new TemaBE();
+                objTema.IdCategoriaTema = int.Parse(gvTema.GetFocusedRowCellValue("IdCategoriaTema").ToString());
                 objTema.IdTema = int.Parse(gvTema.GetFocusedRowCellValue("IdTema").ToString());
-                objTema.Periodo = int.Parse(gvTema.GetFocusedRowCellValue("Periodo").ToString());
-                objTema.DescTema = gvTema.GetFocusedRowCellValue("DescTema").ToString();
-                objTema.FlagEstado = Convert.ToBoolean(gvTema.GetFocusedRowCellValue("FlagEstado").ToString());
 
                 frmManTemaEdit objManTemaEdit = new frmManTemaEdit();
                 objManTemaEdit.pOperacion = frmManTemaEdit.Operacion.Modificar;
+
+                objManTemaEdit.IdCategoriaTema = objTema.IdCategoriaTema;
                 objManTemaEdit.IdTema = objTema.IdTema;
                 objManTemaEdit.pTemaBE = objTema;
                 objManTemaEdit.StartPosition = FormStartPosition.CenterParent;
@@ -228,7 +304,9 @@ namespace SSOMA.Presentacion.Modulos.Capacitacion.Maestros
             return flag;
         }
 
+
         #endregion
+
         
     }
 }
