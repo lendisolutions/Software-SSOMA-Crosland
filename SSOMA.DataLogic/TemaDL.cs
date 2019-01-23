@@ -64,7 +64,7 @@ namespace SSOMA.DataLogic
 
         public void ActualizaSituacion(int IdTema, int IdSituacion)
         {
-            Database db = DatabaseFactory.CreateDatabase("cnERPBD");
+            Database db = DatabaseFactory.CreateDatabase("cnSSOMABD");
             DbCommand dbCommand = db.GetStoredProcCommand("usp_Tema_ActualizaSituacion");
 
             db.AddInParameter(dbCommand, "pIdTema", DbType.Int32, IdTema);

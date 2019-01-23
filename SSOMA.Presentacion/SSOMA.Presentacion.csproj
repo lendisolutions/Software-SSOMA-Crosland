@@ -2466,6 +2466,12 @@
     <Compile Include="Modulos\Otros\frmBusPersona.designer.cs">
       <DependentUpon>frmBusPersona.cs</DependentUpon>
     </Compile>
+    <Compile Include="Modulos\Otros\frmReproducirVideo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\Otros\frmReproducirVideo.Designer.cs">
+      <DependentUpon>frmReproducirVideo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Modulos\Otros\frmSeleccionaEmpresa.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -3744,6 +3750,9 @@
     <EmbeddedResource Include="Modulos\Otros\frmBusPersona.resx">
       <DependentUpon>frmBusPersona.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Otros\frmReproducirVideo.resx">
+      <DependentUpon>frmReproducirVideo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Modulos\Otros\frmSeleccionaEmpresa.resx">
       <DependentUpon>frmSeleccionaEmpresa.cs</DependentUpon>
     </EmbeddedResource>
@@ -3915,6 +3924,9 @@
     <None Include="Resources\SSOMA_5.jpg" />
     <None Include="Resources\SSOMA_6.jpg" />
     <None Include="Resources\CategoriaTema_16x16.gif" />
+    <None Include="Resources\Parar_16x16.gif" />
+    <None Include="Resources\Pausa_16x16.gif" />
+    <None Include="Resources\Reproducir_16x16.gif" />
     <Content Include="Seguimiento de Accidentes.xlsx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -5925,12 +5937,29 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <COMReference Include="AxWMPLib">
+      <Guid>{6BF52A50-394A-11D3-B153-00C04F79FAA6}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
     <COMReference Include="Microsoft.Office.Core">
       <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
       <VersionMajor>2</VersionMajor>
       <VersionMinor>8</VersionMinor>
       <Lcid>0</Lcid>
       <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="WMPLib">
+      <Guid>{6BF52A50-394A-11D3-B153-00C04F79FAA6}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
       <Isolated>False</Isolated>
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>

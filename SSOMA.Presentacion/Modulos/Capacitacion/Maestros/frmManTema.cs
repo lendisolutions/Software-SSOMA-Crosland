@@ -53,6 +53,7 @@ namespace SSOMA.Presentacion.Modulos.Capacitacion.Maestros
                 frmManTemaEdit objManTema = new frmManTemaEdit();
                 objManTema.lstTema = mLista;
                 objManTema.pOperacion = frmManTemaEdit.Operacion.Nuevo;
+                objManTema.IdCategoriaTema = IdCategoriaTema;
                 objManTema.IdTema = 0;
                 objManTema.StartPosition = FormStartPosition.CenterParent;
                 objManTema.ShowDialog();
@@ -261,7 +262,7 @@ namespace SSOMA.Presentacion.Modulos.Capacitacion.Maestros
             if (gvTema.RowCount > 0)
             {
                 TemaBE objTema = new TemaBE();
-                objTema.IdCategoriaTema = int.Parse(gvTema.GetFocusedRowCellValue("IdCategoriaTema").ToString());
+                objTema.IdCategoriaTema = IdCategoriaTema;
                 objTema.IdTema = int.Parse(gvTema.GetFocusedRowCellValue("IdTema").ToString());
 
                 frmManTemaEdit objManTemaEdit = new frmManTemaEdit();

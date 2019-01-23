@@ -45,13 +45,13 @@
             this.gvTema = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn9 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn8 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn9 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).BeginInit();
             this.splitContainerControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl2)).BeginInit();
@@ -246,6 +246,7 @@
             this.gvTema.OptionsView.ShowViewCaption = true;
             this.gvTema.ViewCaption = "LISTADO DE TEMAS DE CAPACITACION";
             this.gvTema.RowCellStyle += new DevExpress.XtraGrid.Views.Grid.RowCellStyleEventHandler(this.gvTema_RowCellStyle);
+            this.gvTema.DoubleClick += new System.EventHandler(this.gvTema_DoubleClick);
             // 
             // gridColumn1
             // 
@@ -262,6 +263,14 @@
             this.gridColumn2.Name = "gridColumn2";
             this.gridColumn2.OptionsColumn.AllowEdit = false;
             this.gridColumn2.OptionsColumn.AllowFocus = false;
+            // 
+            // gridColumn9
+            // 
+            this.gridColumn9.Caption = "IdCategoriaTema";
+            this.gridColumn9.FieldName = "IdCategoriaTema";
+            this.gridColumn9.Name = "gridColumn9";
+            this.gridColumn9.OptionsColumn.AllowEdit = false;
+            this.gridColumn9.OptionsColumn.AllowFocus = false;
             // 
             // gridColumn5
             // 
@@ -282,7 +291,7 @@
             this.gridColumn3.OptionsColumn.AllowFocus = false;
             this.gridColumn3.Visible = true;
             this.gridColumn3.VisibleIndex = 1;
-            this.gridColumn3.Width = 700;
+            this.gridColumn3.Width = 1100;
             // 
             // gridColumn4
             // 
@@ -299,6 +308,8 @@
             this.gridColumn6.Caption = "Fecha Fin";
             this.gridColumn6.FieldName = "FechaFin";
             this.gridColumn6.Name = "gridColumn6";
+            this.gridColumn6.OptionsColumn.AllowEdit = false;
+            this.gridColumn6.OptionsColumn.AllowFocus = false;
             this.gridColumn6.Visible = true;
             this.gridColumn6.VisibleIndex = 3;
             // 
@@ -322,14 +333,6 @@
             this.gridColumn7.Visible = true;
             this.gridColumn7.VisibleIndex = 4;
             this.gridColumn7.Width = 80;
-            // 
-            // gridColumn9
-            // 
-            this.gridColumn9.Caption = "IdCategoriaTema";
-            this.gridColumn9.FieldName = "IdCategoriaTema";
-            this.gridColumn9.Name = "gridColumn9";
-            this.gridColumn9.OptionsColumn.AllowEdit = false;
-            this.gridColumn9.OptionsColumn.AllowFocus = false;
             // 
             // frmManTema
             // 

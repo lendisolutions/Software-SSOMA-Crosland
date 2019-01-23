@@ -15,6 +15,7 @@ using DevExpress.XtraEditors;
 using System.Diagnostics;
 using SSOMA.Presentacion.Funciones;
 using SSOMA.Presentacion.Utils;
+using SSOMA.Presentacion.Modulos.Otros;
 using SSOMA.BusinessEntity;
 using SSOMA.BusinessLogic;
 
@@ -68,6 +69,7 @@ namespace SSOMA.Presentacion.Modulos.Capacitacion.Maestros
 
         private void frmManTemaEdit_Load(object sender, EventArgs e)
         {
+            txtPeriodo.EditValue = Parametros.intPeriodo;
             BSUtils.LoaderLook(cboCategoriaTema, new CategoriaTemaBL().ListaCombo(Parametros.intEmpresaId), "DescCategoriaTema", "IdCategoriaTema", true);
             cboCategoriaTema.EditValue = IdCategoriaTema;
 
@@ -103,7 +105,7 @@ namespace SSOMA.Presentacion.Modulos.Capacitacion.Maestros
 
             }
 
-            txtPeriodo.Select();
+            txtObjetivo.Select();
             CargaTemaDetalle();
         }
 
@@ -253,6 +255,17 @@ namespace SSOMA.Presentacion.Modulos.Capacitacion.Maestros
                     File.Move(sFilePath, Path.ChangeExtension(sFilePath, ".pptx"));
                     sFilePath = Path.ChangeExtension(sFilePath, ".pptx");
                 }
+
+                if (strExtension == ".mp4")
+                {
+                    File.Move(sFilePath, Path.ChangeExtension(sFilePath, ".mp4"));
+                    sFilePath = Path.ChangeExtension(sFilePath, ".mp4");
+                    frmReproducirVideo frmVideo = new frmReproducirVideo();
+                    frmVideo.strRuta = sFilePath;
+                    frmVideo.Show();
+                    return;
+                }
+
 
                 File.WriteAllBytes(sFilePath, Buffer);
 

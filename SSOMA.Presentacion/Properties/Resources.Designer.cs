@@ -793,9 +793,29 @@ namespace SSOMA.Presentacion.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Parar_16x16 {
+            get {
+                object obj = ResourceManager.GetObject("Parar_16x16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap ParteLesionada_32x32 {
             get {
                 object obj = ResourceManager.GetObject("ParteLesionada_32x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Pausa_16x16 {
+            get {
+                object obj = ResourceManager.GetObject("Pausa_16x16", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -976,6 +996,16 @@ namespace SSOMA.Presentacion.Properties {
         internal static System.Drawing.Bitmap Reportes_32x32 {
             get {
                 object obj = ResourceManager.GetObject("Reportes_32x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Reproducir_16x16 {
+            get {
+                object obj = ResourceManager.GetObject("Reproducir_16x16", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
