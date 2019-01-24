@@ -254,56 +254,22 @@ namespace SSOMA.Presentacion.Modulos.Contratistas.Maestros
         {
             if (gvActividadContratistaDetalle.RowCount > 0)
             {
-                string sFilePath = "";
-                string strExtension = "";
-                byte[] Buffer;
+                string strNombreArchivo = (string)gvActividadContratistaDetalle.GetFocusedRowCellValue("NombreArchivo");
+                byte[] Buffer = (byte[])gvActividadContratistaDetalle.GetFocusedRowCellValue("Archivo");
 
-                Buffer = (byte[])gvActividadContratistaDetalle.GetFocusedRowCellValue("Archivo");
-                strExtension = (string)gvActividadContratistaDetalle.GetFocusedRowCellValue("Extension");
+                string strPath = AppDomain.CurrentDomain.BaseDirectory;
+                string strFolder = strPath + "/temp/";
+                string strFullFilePath = strFolder + strNombreArchivo;
 
-                sFilePath = Path.GetTempFileName();
+                if (!Directory.Exists(strFolder))
+                    Directory.CreateDirectory(strFolder);
 
-                if (strExtension == ".pdf")
-                {
-                    File.Move(sFilePath, Path.ChangeExtension(sFilePath, ".pdf"));
-                    sFilePath = Path.ChangeExtension(sFilePath, ".pdf");
-                }
+                if (File.Exists(strFullFilePath))
+                    Directory.Delete(strFullFilePath);
 
-                if (strExtension == ".docx")
-                {
-                    File.Move(sFilePath, Path.ChangeExtension(sFilePath, ".docx"));
-                    sFilePath = Path.ChangeExtension(sFilePath, ".docx");
-                }
+                File.WriteAllBytes(strFullFilePath, Buffer);
 
-                if (strExtension == ".xlsx")
-                {
-                    File.Move(sFilePath, Path.ChangeExtension(sFilePath, ".xlsx"));
-                    sFilePath = Path.ChangeExtension(sFilePath, ".xlsx");
-                }
-
-                if (strExtension == ".pptx")
-                {
-                    File.Move(sFilePath, Path.ChangeExtension(sFilePath, ".pptx"));
-                    sFilePath = Path.ChangeExtension(sFilePath, ".pptx");
-                }
-
-                File.WriteAllBytes(sFilePath, Buffer);
-
-                ProcessStartInfo start = new ProcessStartInfo();
-                start.FileName = sFilePath;
-                // Do you want to show a console window?
-                start.WindowStyle = ProcessWindowStyle.Hidden;
-                start.CreateNoWindow = true;
-                int exitCode;
-
-                // Run the external process & wait for it to finish
-                using (Process proc = Process.Start(start))
-                {
-                    proc.WaitForExit();
-
-                    // Retrieve the app's exit code
-                    exitCode = proc.ExitCode;
-                }
+                Process.Start(strFullFilePath);
             }
         }
 
