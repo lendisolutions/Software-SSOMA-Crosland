@@ -21,7 +21,6 @@ namespace SSOMA.Presentacion.Modulos.Capacitacion.Maestros
         #region "Propiedades"
 
         private List<TemaBE> mLista = new List<TemaBE>();
-
         int IdCategoriaTema = 0;
 
         #endregion

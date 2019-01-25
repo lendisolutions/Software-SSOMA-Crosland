@@ -32,7 +32,11 @@ namespace SSOMA.BusinessEntity
         [DataMember]
         public String DescArea { get; set; }
         [DataMember]
+        public String Dni { get; set; }
+        [DataMember]
         public String ApeNom { get; set; }
+        [DataMember]
+        public Boolean FlagAsigna { get; set; }
         [DataMember]
         public Int32 TipoOper { get; set; }
         #endregion

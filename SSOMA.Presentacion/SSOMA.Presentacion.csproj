@@ -690,6 +690,12 @@
     <Compile Include="Modulos\Capacitacion\Maestros\frmManLugarEdit.Designer.cs">
       <DependentUpon>frmManLugarEdit.cs</DependentUpon>
     </Compile>
+    <Compile Include="Modulos\Capacitacion\Maestros\frmManMatriculaTema.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\Capacitacion\Maestros\frmManMatriculaTema.Designer.cs">
+      <DependentUpon>frmManMatriculaTema.cs</DependentUpon>
+    </Compile>
     <Compile Include="Modulos\Capacitacion\Maestros\frmManTema.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -2795,6 +2801,9 @@
     <EmbeddedResource Include="Modulos\Capacitacion\Maestros\frmManLugarEdit.resx">
       <DependentUpon>frmManLugarEdit.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Capacitacion\Maestros\frmManMatriculaTema.resx">
+      <DependentUpon>frmManMatriculaTema.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Modulos\Capacitacion\Maestros\frmManTema.resx">
       <DependentUpon>frmManTema.cs</DependentUpon>
     </EmbeddedResource>
@@ -3928,6 +3937,7 @@
     <None Include="Resources\Pausa_16x16.gif" />
     <None Include="Resources\Reproducir_16x16.gif" />
     <None Include="Resources\MatriculaTema_32x32.gif" />
+    <None Include="Resources\Tema_16x16.gif" />
     <Content Include="Seguimiento de Accidentes.xlsx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

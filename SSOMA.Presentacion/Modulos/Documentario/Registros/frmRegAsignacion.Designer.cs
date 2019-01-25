@@ -36,6 +36,7 @@
             this.imgLista = new System.Windows.Forms.ImageList(this.components);
             this.splitContainerControl2 = new DevExpress.XtraEditors.SplitContainerControl();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.btnGrabar = new DevExpress.XtraEditors.SimpleButton();
             this.btnBuscar = new DevExpress.XtraEditors.SimpleButton();
             this.txtArchivo = new DevExpress.XtraEditors.TextEdit();
             this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
@@ -52,7 +53,6 @@
             this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn10 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.btnGrabar = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).BeginInit();
             this.splitContainerControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl2)).BeginInit();
@@ -130,7 +130,7 @@
             this.splitContainerControl2.Panel2.Controls.Add(this.gcDocumentoPersona);
             this.splitContainerControl2.Panel2.Text = "Panel2";
             this.splitContainerControl2.Size = new System.Drawing.Size(1019, 704);
-            this.splitContainerControl2.SplitterPosition = 58;
+            this.splitContainerControl2.SplitterPosition = 63;
             this.splitContainerControl2.TabIndex = 0;
             this.splitContainerControl2.Text = "splitContainerControl2";
             // 
@@ -144,13 +144,26 @@
             this.groupControl1.Location = new System.Drawing.Point(0, 0);
             this.groupControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(1019, 58);
+            this.groupControl1.Size = new System.Drawing.Size(1019, 63);
             this.groupControl1.TabIndex = 28;
             this.groupControl1.Text = "Criterios de Búsqueda";
             // 
+            // btnGrabar
+            // 
+            this.btnGrabar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnGrabar.ImageOptions.Image")));
+            this.btnGrabar.ImageOptions.ImageIndex = 1;
+            this.btnGrabar.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleLeft;
+            this.btnGrabar.Location = new System.Drawing.Point(641, 31);
+            this.btnGrabar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnGrabar.Name = "btnGrabar";
+            this.btnGrabar.Size = new System.Drawing.Size(176, 28);
+            this.btnGrabar.TabIndex = 130;
+            this.btnGrabar.Text = "Grabar Asignación";
+            this.btnGrabar.Click += new System.EventHandler(this.btnGrabar_Click);
+            // 
             // btnBuscar
             // 
-            this.btnBuscar.Image = ((System.Drawing.Image)(resources.GetObject("btnBuscar.Image")));
+            this.btnBuscar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnBuscar.ImageOptions.Image")));
             this.btnBuscar.Location = new System.Drawing.Point(543, 31);
             this.btnBuscar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnBuscar.Name = "btnBuscar";
@@ -187,7 +200,7 @@
             this.gcDocumentoPersona.Name = "gcDocumentoPersona";
             this.gcDocumentoPersona.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemCheckEdit1});
-            this.gcDocumentoPersona.Size = new System.Drawing.Size(1019, 640);
+            this.gcDocumentoPersona.Size = new System.Drawing.Size(1019, 635);
             this.gcDocumentoPersona.TabIndex = 36;
             this.gcDocumentoPersona.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvDocumentoPersona});
@@ -271,10 +284,10 @@
             // 
             this.repositoryItemCheckEdit1.AutoHeight = false;
             this.repositoryItemCheckEdit1.CheckStyle = DevExpress.XtraEditors.Controls.CheckStyles.UserDefined;
+            this.repositoryItemCheckEdit1.ImageOptions.ImageChecked = global::SSOMA.Presentacion.Properties.Resources.Documento_16x16;
+            this.repositoryItemCheckEdit1.ImageOptions.ImageGrayed = global::SSOMA.Presentacion.Properties.Resources.Documento_16x16;
+            this.repositoryItemCheckEdit1.ImageOptions.ImageUnchecked = global::SSOMA.Presentacion.Properties.Resources.Documento_16x16;
             this.repositoryItemCheckEdit1.Name = "repositoryItemCheckEdit1";
-            this.repositoryItemCheckEdit1.PictureChecked = global::SSOMA.Presentacion.Properties.Resources.Documento_16x16;
-            this.repositoryItemCheckEdit1.PictureGrayed = global::SSOMA.Presentacion.Properties.Resources.Documento_16x16;
-            this.repositoryItemCheckEdit1.PictureUnchecked = global::SSOMA.Presentacion.Properties.Resources.Documento_16x16;
             // 
             // gridColumn8
             // 
@@ -331,19 +344,6 @@
             this.gridColumn7.Visible = true;
             this.gridColumn7.VisibleIndex = 6;
             this.gridColumn7.Width = 80;
-            // 
-            // btnGrabar
-            // 
-            this.btnGrabar.Image = ((System.Drawing.Image)(resources.GetObject("btnGrabar.Image")));
-            this.btnGrabar.ImageIndex = 1;
-            this.btnGrabar.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleLeft;
-            this.btnGrabar.Location = new System.Drawing.Point(641, 31);
-            this.btnGrabar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnGrabar.Name = "btnGrabar";
-            this.btnGrabar.Size = new System.Drawing.Size(176, 28);
-            this.btnGrabar.TabIndex = 130;
-            this.btnGrabar.Text = "Grabar Asignación";
-            this.btnGrabar.Click += new System.EventHandler(this.btnGrabar_Click);
             // 
             // frmRegAsignacion
             // 

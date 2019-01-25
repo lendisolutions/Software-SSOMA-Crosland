@@ -77,13 +77,48 @@ namespace SSOMA.BusinessLogic
                 {
                     foreach (TemaPersonaBE item in pListaTemaPersona)
                     {
-                        if (item.TipoOper == Convert.ToInt32(Operacion.Nuevo)) //Nuevo
+                        if (item.IdTemaPersona == 0 && item.FlagAsigna == true) //INSERTAR Tema PERSONA
                         {
-                            TemaPersona.Inserta(item);
+                            TemaPersonaBE objE_TemaPersona = new TemaPersonaBE();
+                            objE_TemaPersona.IdEmpresa = item.IdEmpresa;
+                            objE_TemaPersona.IdTemaPersona = item.IdTemaPersona;
+                            objE_TemaPersona.IdPersona = IdPersona;
+                            objE_TemaPersona.IdTema = item.IdTema;
+                            objE_TemaPersona.FlagMatricula = item.FlagMatricula;
+                            objE_TemaPersona.FlagEstado = true;
+                            objE_TemaPersona.Usuario = Usuario;
+                            objE_TemaPersona.Maquina = Maquina;
+
+                            TemaPersona.Inserta(objE_TemaPersona);
+
                         }
-                        else
+
+                        if (item.IdTemaPersona > 0 && item.FlagAsigna == true) //ACTUALIZAR Tema PERSONA
                         {
-                            TemaPersona.Actualiza(item);
+                            TemaPersonaBE objE_TemaPersona = new TemaPersonaBE();
+                            objE_TemaPersona.IdEmpresa = item.IdEmpresa;
+                            objE_TemaPersona.IdTemaPersona = item.IdTemaPersona;
+                            objE_TemaPersona.IdPersona = IdPersona;
+                            objE_TemaPersona.IdTema = item.IdTema;
+                            objE_TemaPersona.FlagMatricula = item.FlagMatricula;
+                            objE_TemaPersona.FlagEstado = true;
+                            objE_TemaPersona.Usuario = Usuario;
+                            objE_TemaPersona.Maquina = Maquina;
+
+                            TemaPersona.Actualiza(objE_TemaPersona);
+
+                        }
+
+                        if (item.IdTemaPersona > 0 && item.FlagAsigna == false) //ELIMINAR Tema PERSONA
+                        {
+                            TemaPersonaBE objE_TemaPersona = new TemaPersonaBE();
+                            objE_TemaPersona.IdEmpresa = item.IdEmpresa;
+                            objE_TemaPersona.IdTemaPersona = item.IdTemaPersona;
+                            objE_TemaPersona.Usuario = Usuario;
+                            objE_TemaPersona.Maquina = Maquina;
+
+                            TemaPersona.Elimina(objE_TemaPersona);
+
                         }
                     }
 
