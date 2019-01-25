@@ -147,6 +147,7 @@
     <Compile Include="TablaElementoBL.cs" />
     <Compile Include="TemaBL.cs" />
     <Compile Include="TemaDetalleBL.cs" />
+    <Compile Include="TemaPersonaBL.cs" />
     <Compile Include="TipoAccidenteBL.cs" />
     <Compile Include="TipoCapacitacionBL.cs" />
     <Compile Include="TipoDescansoMedicoBL.cs" />
