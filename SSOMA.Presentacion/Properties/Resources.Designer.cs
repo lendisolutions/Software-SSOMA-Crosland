@@ -733,6 +733,16 @@ namespace SSOMA.Presentacion.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap MatriculaTema_32x32 {
+            get {
+                object obj = ResourceManager.GetObject("MatriculaTema_32x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap MatrizIPERC_32x32 {
             get {
                 object obj = ResourceManager.GetObject("MatrizIPERC_32x32", resourceCulture);

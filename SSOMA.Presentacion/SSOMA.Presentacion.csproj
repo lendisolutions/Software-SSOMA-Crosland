@@ -3927,6 +3927,7 @@
     <None Include="Resources\Parar_16x16.gif" />
     <None Include="Resources\Pausa_16x16.gif" />
     <None Include="Resources\Reproducir_16x16.gif" />
+    <None Include="Resources\MatriculaTema_32x32.gif" />
     <Content Include="Seguimiento de Accidentes.xlsx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
