@@ -233,8 +233,6 @@ namespace SSOMA.Presentacion.Modulos.Documentario.Registros
                 Cursor = Cursors.WaitCursor;
                 
                 DocumentoPersonaBL objBL_DocumentoPersona = new DocumentoPersonaBL();
-
-                    
                 objBL_DocumentoPersona.Actualiza(mLista, intIdPersonaResponsable, Parametros.strUsuarioLogin, WindowsIdentity.GetCurrent().Name.ToString());
                 XtraMessageBox.Show("La asignación de los documentos se actualizó correctamente. ", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
 

@@ -111,7 +111,6 @@ namespace SSOMA.DataLogic
                 TemaPersona.DescArea = reader["DescArea"].ToString();
                 TemaPersona.Dni = reader["Dni"].ToString();
                 TemaPersona.ApeNom = reader["ApeNom"].ToString();
-                TemaPersona.FlagAsigna = Boolean.Parse(reader["FlagAsigna"].ToString());
                 TemaPersona.FlagMatricula = Boolean.Parse(reader["FlagMatricula"].ToString());
                 TemaPersona.FlagEstado = Boolean.Parse(reader["flagestado"].ToString());
                 TemaPersona.TipoOper = 4; //CONSULTAR

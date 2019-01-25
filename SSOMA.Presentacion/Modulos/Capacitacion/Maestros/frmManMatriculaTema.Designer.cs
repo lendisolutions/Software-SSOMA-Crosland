@@ -33,8 +33,10 @@
             this.tlbMenu = new SSOMA.Presentacion.ControlUser.UIToolBar();
             this.splitContainerControl1 = new DevExpress.XtraEditors.SplitContainerControl();
             this.tvwDatos = new System.Windows.Forms.TreeView();
+            this.imgLista = new System.Windows.Forms.ImageList(this.components);
             this.splitContainerControl2 = new DevExpress.XtraEditors.SplitContainerControl();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.chkSelecciona = new DevExpress.XtraEditors.CheckEdit();
             this.btnGrabar = new DevExpress.XtraEditors.SimpleButton();
             this.btnBuscar = new DevExpress.XtraEditors.SimpleButton();
             this.txtDescripcion = new DevExpress.XtraEditors.TextEdit();
@@ -47,17 +49,17 @@
             this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemCheckEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
+            this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn11 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.imgLista = new System.Windows.Forms.ImageList(this.components);
             this.gridColumn9 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).BeginInit();
             this.splitContainerControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl2)).BeginInit();
             this.splitContainerControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chkSelecciona.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDescripcion.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcTemaPersona)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvTemaPersona)).BeginInit();
@@ -71,7 +73,7 @@
             this.tlbMenu.Location = new System.Drawing.Point(0, 0);
             this.tlbMenu.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tlbMenu.Name = "tlbMenu";
-            this.tlbMenu.Size = new System.Drawing.Size(1382, 30);
+            this.tlbMenu.Size = new System.Drawing.Size(1752, 30);
             this.tlbMenu.TabIndex = 31;
             this.tlbMenu.ExitClick += new SSOMA.Presentacion.ControlUser.UIToolBar.delegateExitClick(this.tlbMenu_ExitClick);
             // 
@@ -85,7 +87,7 @@
             this.splitContainerControl1.Panel1.Text = "Panel1";
             this.splitContainerControl1.Panel2.Controls.Add(this.splitContainerControl2);
             this.splitContainerControl1.Panel2.Text = "Panel2";
-            this.splitContainerControl1.Size = new System.Drawing.Size(1382, 604);
+            this.splitContainerControl1.Size = new System.Drawing.Size(1752, 604);
             this.splitContainerControl1.SplitterPosition = 627;
             this.splitContainerControl1.TabIndex = 32;
             this.splitContainerControl1.Text = "splitContainerControl1";
@@ -103,6 +105,14 @@
             this.tvwDatos.TabIndex = 2;
             this.tvwDatos.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.tvwDatos_AfterSelect);
             // 
+            // imgLista
+            // 
+            this.imgLista.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imgLista.ImageStream")));
+            this.imgLista.TransparentColor = System.Drawing.Color.Transparent;
+            this.imgLista.Images.SetKeyName(0, "Empresa_16x16.gif");
+            this.imgLista.Images.SetKeyName(1, "CategoriaTema_16x16.gif");
+            this.imgLista.Images.SetKeyName(2, "Tema_16x16.gif");
+            // 
             // splitContainerControl2
             // 
             this.splitContainerControl2.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -114,13 +124,14 @@
             this.splitContainerControl2.Panel1.Text = "Panel1";
             this.splitContainerControl2.Panel2.Controls.Add(this.gcTemaPersona);
             this.splitContainerControl2.Panel2.Text = "Panel2";
-            this.splitContainerControl2.Size = new System.Drawing.Size(749, 604);
+            this.splitContainerControl2.Size = new System.Drawing.Size(1119, 604);
             this.splitContainerControl2.SplitterPosition = 68;
             this.splitContainerControl2.TabIndex = 0;
             this.splitContainerControl2.Text = "splitContainerControl2";
             // 
             // groupControl1
             // 
+            this.groupControl1.Controls.Add(this.chkSelecciona);
             this.groupControl1.Controls.Add(this.btnGrabar);
             this.groupControl1.Controls.Add(this.btnBuscar);
             this.groupControl1.Controls.Add(this.txtDescripcion);
@@ -129,9 +140,18 @@
             this.groupControl1.Location = new System.Drawing.Point(0, 0);
             this.groupControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(749, 78);
+            this.groupControl1.Size = new System.Drawing.Size(1119, 78);
             this.groupControl1.TabIndex = 34;
             this.groupControl1.Text = "Criterios de Búsqueda";
+            // 
+            // chkSelecciona
+            // 
+            this.chkSelecciona.Location = new System.Drawing.Point(980, 39);
+            this.chkSelecciona.Name = "chkSelecciona";
+            this.chkSelecciona.Properties.Caption = "Seleccionar Todos";
+            this.chkSelecciona.Size = new System.Drawing.Size(139, 20);
+            this.chkSelecciona.TabIndex = 132;
+            this.chkSelecciona.CheckedChanged += new System.EventHandler(this.chkSelecciona_CheckedChanged);
             // 
             // btnGrabar
             // 
@@ -185,7 +205,7 @@
             this.gcTemaPersona.Name = "gcTemaPersona";
             this.gcTemaPersona.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemCheckEdit1});
-            this.gcTemaPersona.Size = new System.Drawing.Size(749, 530);
+            this.gcTemaPersona.Size = new System.Drawing.Size(1119, 530);
             this.gcTemaPersona.TabIndex = 37;
             this.gcTemaPersona.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvTemaPersona});
@@ -271,6 +291,18 @@
             this.repositoryItemCheckEdit1.ImageOptions.ImageUnchecked = global::SSOMA.Presentacion.Properties.Resources.Persona_16x16;
             this.repositoryItemCheckEdit1.Name = "repositoryItemCheckEdit1";
             // 
+            // gridColumn7
+            // 
+            this.gridColumn7.Caption = "N° Documento";
+            this.gridColumn7.FieldName = "Dni";
+            this.gridColumn7.Name = "gridColumn7";
+            this.gridColumn7.OptionsColumn.AllowEdit = false;
+            this.gridColumn7.OptionsColumn.AllowFocus = false;
+            this.gridColumn7.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
+            this.gridColumn7.Visible = true;
+            this.gridColumn7.VisibleIndex = 2;
+            this.gridColumn7.Width = 100;
+            // 
             // gridColumn4
             // 
             this.gridColumn4.Caption = "Apellidos y Nombres";
@@ -290,16 +322,8 @@
             this.gridColumn11.Name = "gridColumn11";
             this.gridColumn11.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.gridColumn11.Visible = true;
-            this.gridColumn11.VisibleIndex = 3;
+            this.gridColumn11.VisibleIndex = 4;
             this.gridColumn11.Width = 80;
-            // 
-            // imgLista
-            // 
-            this.imgLista.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imgLista.ImageStream")));
-            this.imgLista.TransparentColor = System.Drawing.Color.Transparent;
-            this.imgLista.Images.SetKeyName(0, "Empresa_16x16.gif");
-            this.imgLista.Images.SetKeyName(1, "CategoriaTema_16x16.gif");
-            this.imgLista.Images.SetKeyName(2, "Tema_16x16.gif");
             // 
             // gridColumn9
             // 
@@ -313,23 +337,11 @@
             this.gridColumn9.VisibleIndex = 0;
             this.gridColumn9.Width = 160;
             // 
-            // gridColumn7
-            // 
-            this.gridColumn7.Caption = "N° Documento";
-            this.gridColumn7.FieldName = "Dni";
-            this.gridColumn7.Name = "gridColumn7";
-            this.gridColumn7.OptionsColumn.AllowEdit = false;
-            this.gridColumn7.OptionsColumn.AllowFocus = false;
-            this.gridColumn7.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
-            this.gridColumn7.Visible = true;
-            this.gridColumn7.VisibleIndex = 2;
-            this.gridColumn7.Width = 100;
-            // 
             // frmManMatriculaTema
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1382, 634);
+            this.ClientSize = new System.Drawing.Size(1752, 634);
             this.Controls.Add(this.splitContainerControl1);
             this.Controls.Add(this.tlbMenu);
             this.Name = "frmManMatriculaTema";
@@ -343,6 +355,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             this.groupControl1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chkSelecciona.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDescripcion.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcTemaPersona)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvTemaPersona)).EndInit();
@@ -375,5 +388,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn11;
         public DevExpress.XtraEditors.SimpleButton btnGrabar;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn7;
+        private DevExpress.XtraEditors.CheckEdit chkSelecciona;
     }
 }

@@ -96,6 +96,24 @@ namespace SSOMA.Presentacion.Modulos.Capacitacion.Maestros
             }
         }
 
+        private void chkSelecciona_CheckedChanged(object sender, EventArgs e)
+        {
+            if (gvTemaPersona.RowCount > 0)
+            {
+                if (chkSelecciona.Checked)
+                {
+                    for (int i = 0; i < gvTemaPersona.RowCount; i++)
+                        gvTemaPersona.SetRowCellValue(i, "FlagMatricula", true);
+                }
+                else
+                {
+                    for (int i = 0; i < gvTemaPersona.RowCount; i++)
+                        gvTemaPersona.SetRowCellValue(i, "FlagMatricula", false);
+                }
+            }
+            
+        }
+
         #endregion
 
         #region "Metodos"
@@ -147,6 +165,9 @@ namespace SSOMA.Presentacion.Modulos.Capacitacion.Maestros
         {
             mLista = new TemaPersonaBL().ListaTodosActivo(Parametros.intEmpresaId, IdTema,0);
             gcTemaPersona.DataSource = mLista;
+
+            
+
         }
 
         private void CargarBusqueda()
@@ -154,6 +175,7 @@ namespace SSOMA.Presentacion.Modulos.Capacitacion.Maestros
             gcTemaPersona.DataSource = mLista.Where(obj =>
                                                    obj.ApeNom.ToUpper().Contains(txtDescripcion.Text.ToUpper())).ToList();
         }
+
 
 
 

@@ -72,7 +72,7 @@
             this.tlbMenu.Location = new System.Drawing.Point(0, 0);
             this.tlbMenu.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tlbMenu.Name = "tlbMenu";
-            this.tlbMenu.Size = new System.Drawing.Size(1370, 30);
+            this.tlbMenu.Size = new System.Drawing.Size(1487, 30);
             this.tlbMenu.TabIndex = 2;
             this.tlbMenu.NewClick += new SSOMA.Presentacion.ControlUser.UIToolBar.delegateNewClick(this.tlbMenu_NewClick);
             this.tlbMenu.EditClick += new SSOMA.Presentacion.ControlUser.UIToolBar.delegateEditClick(this.tlbMenu_EditClick);
@@ -91,7 +91,7 @@
             this.splitContainerControl1.Panel1.Text = "Panel1";
             this.splitContainerControl1.Panel2.Controls.Add(this.splitContainerControl2);
             this.splitContainerControl1.Panel2.Text = "Panel2";
-            this.splitContainerControl1.Size = new System.Drawing.Size(1370, 704);
+            this.splitContainerControl1.Size = new System.Drawing.Size(1487, 704);
             this.splitContainerControl1.SplitterPosition = 345;
             this.splitContainerControl1.TabIndex = 3;
             this.splitContainerControl1.Text = "splitContainerControl1";
@@ -129,7 +129,7 @@
             this.splitContainerControl2.Panel1.Text = "Panel1";
             this.splitContainerControl2.Panel2.Controls.Add(this.gcDocumentoPersona);
             this.splitContainerControl2.Panel2.Text = "Panel2";
-            this.splitContainerControl2.Size = new System.Drawing.Size(1019, 704);
+            this.splitContainerControl2.Size = new System.Drawing.Size(1136, 704);
             this.splitContainerControl2.SplitterPosition = 63;
             this.splitContainerControl2.TabIndex = 0;
             this.splitContainerControl2.Text = "splitContainerControl2";
@@ -144,7 +144,7 @@
             this.groupControl1.Location = new System.Drawing.Point(0, 0);
             this.groupControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(1019, 63);
+            this.groupControl1.Size = new System.Drawing.Size(1136, 63);
             this.groupControl1.TabIndex = 28;
             this.groupControl1.Text = "Criterios de Búsqueda";
             // 
@@ -200,7 +200,7 @@
             this.gcDocumentoPersona.Name = "gcDocumentoPersona";
             this.gcDocumentoPersona.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemCheckEdit1});
-            this.gcDocumentoPersona.Size = new System.Drawing.Size(1019, 635);
+            this.gcDocumentoPersona.Size = new System.Drawing.Size(1136, 635);
             this.gcDocumentoPersona.TabIndex = 36;
             this.gcDocumentoPersona.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvDocumentoPersona});
@@ -349,7 +349,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1370, 734);
+            this.ClientSize = new System.Drawing.Size(1487, 734);
             this.Controls.Add(this.splitContainerControl1);
             this.Controls.Add(this.tlbMenu);
             this.Name = "frmRegAsignacion";
