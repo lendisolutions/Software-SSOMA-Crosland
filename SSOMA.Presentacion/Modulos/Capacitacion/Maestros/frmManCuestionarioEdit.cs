@@ -80,11 +80,11 @@ namespace SSOMA.Presentacion.Modulos.Capacitacion.Maestros
             {
                 this.Text = "Cuestionario - Modificar";
                 CuestionarioBE  objE_Cuestionario = null;
-                objE_Cuestionario = new CuestionarioBL().Selecciona(Parametros.intEmpresaId, IdTema);
+                objE_Cuestionario = new CuestionarioBL().Selecciona(Parametros.intEmpresaId, IdCuestionario);
                 if (objE_Cuestionario != null)
                 {
                     
-                    txtDescripcion.Text = objE_Cuestionario.DescTema;
+                    txtDescripcion.Text = objE_Cuestionario.DescCuestionario;
                     deFechaIni.DateTime = objE_Cuestionario.FechaIni;
                     deFechaFin.DateTime = objE_Cuestionario.FechaFin;
                     txtNotaMaxima.EditValue = objE_Cuestionario.NotaMaxima;
