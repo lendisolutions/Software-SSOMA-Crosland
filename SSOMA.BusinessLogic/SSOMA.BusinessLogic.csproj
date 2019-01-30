@@ -77,6 +77,7 @@
     <Compile Include="CondicionDescansoMedicoBL.cs" />
     <Compile Include="CondicionSubEstandarBL.cs" />
     <Compile Include="ContingenciaBL.cs" />
+    <Compile Include="CuestionarioBL.cs" />
     <Compile Include="DescansoMedicoBL.cs" />
     <Compile Include="DocumentoBL.cs" />
     <Compile Include="DocumentoPersonaBL.cs" />

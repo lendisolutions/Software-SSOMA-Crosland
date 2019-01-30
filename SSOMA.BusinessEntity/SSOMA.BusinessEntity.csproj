@@ -74,6 +74,7 @@
     <Compile Include="CategoriaDiagnosticoBE.cs" />
     <Compile Include="CategoriaTemaBE.cs" />
     <Compile Include="ClasificacionExtintorBE.cs" />
+    <Compile Include="CuestionarioBE.cs" />
     <Compile Include="CondicionDescansoMedicoBE.cs" />
     <Compile Include="CondicionSubEstandarBE.cs" />
     <Compile Include="ContingenciaBE.cs" />

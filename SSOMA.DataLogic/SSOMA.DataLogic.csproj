@@ -88,6 +88,7 @@
     <Compile Include="CondicionDescansoMedicoDL.cs" />
     <Compile Include="CondicionSubEstandarDL.cs" />
     <Compile Include="ContingenciaDL.cs" />
+    <Compile Include="CuestionarioDL.cs" />
     <Compile Include="DescansoMedicoDL.cs" />
     <Compile Include="DocumentoDL.cs" />
     <Compile Include="DocumentoPersonaDL.cs" />

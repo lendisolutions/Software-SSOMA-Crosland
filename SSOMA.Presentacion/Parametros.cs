@@ -178,5 +178,9 @@ namespace SSOMA.Presentacion
         public static int intTEMAActivo = 87;
         public static int intTEMAInactivo = 88;
 
+        //SITUACION CUESTIONARIO
+        public static int intCUESTIONARIOActivo = 89;
+        public static int intCUESTIONARIOInactivo = 90;
+
     }
 }
