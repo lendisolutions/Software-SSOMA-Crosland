@@ -57,6 +57,16 @@ namespace SSOMA.Presentacion.Modulos.Capacitacion.Maestros
             }
         }
 
+        private void txtDescripcion_KeyUp(object sender, KeyEventArgs e)
+        {
+            CargarBusqueda();
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            Cargar();
+        }
+
         private void gvTemaPersona_RowCellStyle(object sender, RowCellStyleEventArgs e)
         {
             GridView view = (GridView)sender;

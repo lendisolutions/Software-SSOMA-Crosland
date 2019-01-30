@@ -175,6 +175,7 @@
             this.btnBuscar.Size = new System.Drawing.Size(78, 23);
             this.btnBuscar.TabIndex = 29;
             this.btnBuscar.Text = "Buscar";
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // txtDescripcion
             // 
@@ -185,6 +186,7 @@
             this.txtDescripcion.Properties.MaxLength = 50;
             this.txtDescripcion.Size = new System.Drawing.Size(362, 22);
             this.txtDescripcion.TabIndex = 28;
+            this.txtDescripcion.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtDescripcion_KeyUp);
             // 
             // labelControl1
             // 
