@@ -88,7 +88,7 @@
             this.splitContainerControl1.Panel2.Controls.Add(this.splitContainerControl2);
             this.splitContainerControl1.Panel2.Text = "Panel2";
             this.splitContainerControl1.Size = new System.Drawing.Size(1752, 604);
-            this.splitContainerControl1.SplitterPosition = 627;
+            this.splitContainerControl1.SplitterPosition = 558;
             this.splitContainerControl1.TabIndex = 32;
             this.splitContainerControl1.Text = "splitContainerControl1";
             // 
@@ -101,7 +101,7 @@
             this.tvwDatos.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tvwDatos.Name = "tvwDatos";
             this.tvwDatos.SelectedImageIndex = 0;
-            this.tvwDatos.Size = new System.Drawing.Size(627, 604);
+            this.tvwDatos.Size = new System.Drawing.Size(558, 604);
             this.tvwDatos.TabIndex = 2;
             this.tvwDatos.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.tvwDatos_AfterSelect);
             // 
@@ -124,7 +124,7 @@
             this.splitContainerControl2.Panel1.Text = "Panel1";
             this.splitContainerControl2.Panel2.Controls.Add(this.gcTemaPersona);
             this.splitContainerControl2.Panel2.Text = "Panel2";
-            this.splitContainerControl2.Size = new System.Drawing.Size(1119, 604);
+            this.splitContainerControl2.Size = new System.Drawing.Size(1188, 604);
             this.splitContainerControl2.SplitterPosition = 68;
             this.splitContainerControl2.TabIndex = 0;
             this.splitContainerControl2.Text = "splitContainerControl2";
@@ -140,7 +140,7 @@
             this.groupControl1.Location = new System.Drawing.Point(0, 0);
             this.groupControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(1119, 78);
+            this.groupControl1.Size = new System.Drawing.Size(1188, 78);
             this.groupControl1.TabIndex = 34;
             this.groupControl1.Text = "Criterios de Búsqueda";
             // 
@@ -207,7 +207,7 @@
             this.gcTemaPersona.Name = "gcTemaPersona";
             this.gcTemaPersona.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemCheckEdit1});
-            this.gcTemaPersona.Size = new System.Drawing.Size(1119, 530);
+            this.gcTemaPersona.Size = new System.Drawing.Size(1188, 530);
             this.gcTemaPersona.TabIndex = 37;
             this.gcTemaPersona.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvTemaPersona});
