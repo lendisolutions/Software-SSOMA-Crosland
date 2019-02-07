@@ -42,12 +42,12 @@
             this.gcPregunta = new DevExpress.XtraGrid.GridControl();
             this.gvPregunta = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.repositoryItemCheckEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
             this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemCheckEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
             this.imgLista = new System.Windows.Forms.ImageList(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).BeginInit();
             this.splitContainerControl1.SuspendLayout();
@@ -71,6 +71,13 @@
             this.tlbMenu.Name = "tlbMenu";
             this.tlbMenu.Size = new System.Drawing.Size(1752, 30);
             this.tlbMenu.TabIndex = 32;
+            this.tlbMenu.NewClick += new SSOMA.Presentacion.ControlUser.UIToolBar.delegateNewClick(this.tlbMenu_NewClick);
+            this.tlbMenu.EditClick += new SSOMA.Presentacion.ControlUser.UIToolBar.delegateEditClick(this.tlbMenu_EditClick);
+            this.tlbMenu.DeleteClick += new SSOMA.Presentacion.ControlUser.UIToolBar.delegateDeleteClick(this.tlbMenu_DeleteClick);
+            this.tlbMenu.RefreshClick += new SSOMA.Presentacion.ControlUser.UIToolBar.delegateRefreshClick(this.tlbMenu_RefreshClick);
+            this.tlbMenu.PrintClick += new SSOMA.Presentacion.ControlUser.UIToolBar.delegatePrintClick(this.tlbMenu_PrintClick);
+            this.tlbMenu.ExportClick += new SSOMA.Presentacion.ControlUser.UIToolBar.delegateExportClick(this.tlbMenu_ExportClick);
+            this.tlbMenu.ExitClick += new SSOMA.Presentacion.ControlUser.UIToolBar.delegateExitClick(this.tlbMenu_ExitClick);
             // 
             // splitContainerControl1
             // 
@@ -90,11 +97,15 @@
             // tvwDatos
             // 
             this.tvwDatos.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tvwDatos.ImageIndex = 0;
+            this.tvwDatos.ImageList = this.imgLista;
             this.tvwDatos.Location = new System.Drawing.Point(0, 0);
             this.tvwDatos.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tvwDatos.Name = "tvwDatos";
+            this.tvwDatos.SelectedImageIndex = 0;
             this.tvwDatos.Size = new System.Drawing.Size(617, 604);
             this.tvwDatos.TabIndex = 2;
+            this.tvwDatos.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.tvwDatos_AfterSelect);
             // 
             // splitContainerControl2
             // 
@@ -143,6 +154,7 @@
             this.btnBuscar.Size = new System.Drawing.Size(78, 23);
             this.btnBuscar.TabIndex = 29;
             this.btnBuscar.Text = "Buscar";
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // txtDescripcion
             // 
@@ -153,6 +165,7 @@
             this.txtDescripcion.Properties.MaxLength = 50;
             this.txtDescripcion.Size = new System.Drawing.Size(362, 22);
             this.txtDescripcion.TabIndex = 28;
+            this.txtDescripcion.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtDescripcion_KeyUp);
             // 
             // labelControl1
             // 
@@ -177,6 +190,7 @@
             this.gcPregunta.TabIndex = 37;
             this.gcPregunta.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvPregunta});
+            this.gcPregunta.DoubleClick += new System.EventHandler(this.gvTema_DoubleClick);
             // 
             // gvPregunta
             // 
@@ -207,6 +221,14 @@
             this.gridColumn2.OptionsColumn.AllowEdit = false;
             this.gridColumn2.OptionsColumn.AllowFocus = false;
             // 
+            // gridColumn5
+            // 
+            this.gridColumn5.Caption = "IdPregunta";
+            this.gridColumn5.FieldName = "IdPregunta";
+            this.gridColumn5.Name = "gridColumn5";
+            this.gridColumn5.OptionsColumn.AllowEdit = false;
+            this.gridColumn5.OptionsColumn.AllowFocus = false;
+            // 
             // gridColumn1
             // 
             this.gridColumn1.Caption = "IdTema";
@@ -215,14 +237,6 @@
             this.gridColumn1.OptionsColumn.AllowEdit = false;
             this.gridColumn1.OptionsColumn.AllowFocus = false;
             this.gridColumn1.Width = 90;
-            // 
-            // gridColumn5
-            // 
-            this.gridColumn5.Caption = "IdPregunta";
-            this.gridColumn5.FieldName = "IdPregunta";
-            this.gridColumn5.Name = "gridColumn5";
-            this.gridColumn5.OptionsColumn.AllowEdit = false;
-            this.gridColumn5.OptionsColumn.AllowFocus = false;
             // 
             // gridColumn3
             // 
@@ -233,15 +247,6 @@
             this.gridColumn3.OptionsColumn.AllowFocus = false;
             this.gridColumn3.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.gridColumn3.Width = 300;
-            // 
-            // repositoryItemCheckEdit1
-            // 
-            this.repositoryItemCheckEdit1.AutoHeight = false;
-            this.repositoryItemCheckEdit1.CheckStyle = DevExpress.XtraEditors.Controls.CheckStyles.UserDefined;
-            this.repositoryItemCheckEdit1.ImageOptions.ImageChecked = global::SSOMA.Presentacion.Properties.Resources.Persona_16x16;
-            this.repositoryItemCheckEdit1.ImageOptions.ImageGrayed = global::SSOMA.Presentacion.Properties.Resources.Persona_16x16;
-            this.repositoryItemCheckEdit1.ImageOptions.ImageUnchecked = global::SSOMA.Presentacion.Properties.Resources.Persona_16x16;
-            this.repositoryItemCheckEdit1.Name = "repositoryItemCheckEdit1";
             // 
             // gridColumn7
             // 
@@ -267,6 +272,15 @@
             this.gridColumn4.VisibleIndex = 1;
             this.gridColumn4.Width = 100;
             // 
+            // repositoryItemCheckEdit1
+            // 
+            this.repositoryItemCheckEdit1.AutoHeight = false;
+            this.repositoryItemCheckEdit1.CheckStyle = DevExpress.XtraEditors.Controls.CheckStyles.UserDefined;
+            this.repositoryItemCheckEdit1.ImageOptions.ImageChecked = global::SSOMA.Presentacion.Properties.Resources.Persona_16x16;
+            this.repositoryItemCheckEdit1.ImageOptions.ImageGrayed = global::SSOMA.Presentacion.Properties.Resources.Persona_16x16;
+            this.repositoryItemCheckEdit1.ImageOptions.ImageUnchecked = global::SSOMA.Presentacion.Properties.Resources.Persona_16x16;
+            this.repositoryItemCheckEdit1.Name = "repositoryItemCheckEdit1";
+            // 
             // imgLista
             // 
             this.imgLista.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imgLista.ImageStream")));
@@ -286,6 +300,7 @@
             this.Name = "frmManPregunta";
             this.Text = "frmManPregunta";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.frmManPregunta_Load);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).EndInit();
             this.splitContainerControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl2)).EndInit();

@@ -10,12 +10,12 @@ namespace SSOMA.BusinessLogic
 {
     public class RespuestaBL
     {
-        public List<RespuestaBE> ListaTodosActivo(int IdTema)
+        public List<RespuestaBE> ListaTodosActivo(int IdPregunta)
         {
             try
             {
                 RespuestaDL Respuesta = new RespuestaDL();
-                return Respuesta.ListaTodosActivo(IdTema);
+                return Respuesta.ListaTodosActivo(IdPregunta);
             }
             catch (Exception ex)
             { throw ex; }
