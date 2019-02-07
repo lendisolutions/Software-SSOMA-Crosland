@@ -173,7 +173,7 @@ namespace SSOMA.Presentacion.Modulos.Capacitacion.Maestros
 
         private void Cargar()
         {
-            mLista = new TemaPersonaBL().ListaTodosActivo(0, IdTema,0);
+            mLista = new TemaPersonaBL().ListaTodosActivo(Parametros.intEmpresaId, IdTema,0);
             gcTemaPersona.DataSource = mLista;
 
             

@@ -708,6 +708,18 @@
     <Compile Include="Modulos\Capacitacion\Maestros\frmManMatriculaTema.Designer.cs">
       <DependentUpon>frmManMatriculaTema.cs</DependentUpon>
     </Compile>
+    <Compile Include="Modulos\Capacitacion\Maestros\frmManPregunta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\Capacitacion\Maestros\frmManPregunta.Designer.cs">
+      <DependentUpon>frmManPregunta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Capacitacion\Maestros\frmManPreguntaEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\Capacitacion\Maestros\frmManPreguntaEdit.Designer.cs">
+      <DependentUpon>frmManPreguntaEdit.cs</DependentUpon>
+    </Compile>
     <Compile Include="Modulos\Capacitacion\Maestros\frmManTema.cs">
       <SubType>Form</SubType>
     </Compile>
