@@ -115,6 +115,7 @@
     <Compile Include="PlanAnualBE.cs" />
     <Compile Include="PlanAnualDetalleBE.cs" />
     <Compile Include="PlanillaBE.cs" />
+    <Compile Include="PreguntaBE.cs" />
     <Compile Include="ProbabilidadBE.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ProveedorBE.cs" />
@@ -132,6 +133,7 @@
     <Compile Include="Reportes\ReporteSeguroViajeBE.cs" />
     <Compile Include="Reportes\ReporteSolicitudBE.cs" />
     <Compile Include="Reportes\ReporteSolicitudEppBE.cs" />
+    <Compile Include="RespuestaBE.cs" />
     <Compile Include="RiesgoBE.cs" />
     <Compile Include="SctrBE.cs" />
     <Compile Include="SectorBE.cs" />
