@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="reportepregunta"
+    targetNamespace="http://tempuri.org/reportepregunta.xsd"
+    elementFormDefault="qualified"
+    xmlns="http://tempuri.org/reportepregunta.xsd"
+    xmlns:mstns="http://tempuri.org/reportepregunta.xsd"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="reportepregunta">
+    <xs:complexType>
+      <xs:sequence />
+      <xs:attribute name="Logo" type="xs:base64Binary" />
+      <xs:attribute name="RazonSocial" type="xs:string" />
+      <xs:attribute name="DescTema" type="xs:string" />
+      <xs:attribute name="DescCuestionario" type="xs:string" />
+      <xs:attribute name="DescPregunta" type="xs:string" />
+      <xs:attribute name="Puntaje" type="xs:integer" />
+      <xs:attribute name="DescRespuesta" type="xs:string" />
+      <xs:attribute name="FlagCorrecto" type="xs:boolean" />
+    </xs:complexType>
+  </xs:element>
+  
+</xs:schema>

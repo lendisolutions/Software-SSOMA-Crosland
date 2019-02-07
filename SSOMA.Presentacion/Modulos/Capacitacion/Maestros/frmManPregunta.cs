@@ -119,31 +119,34 @@ namespace SSOMA.Presentacion.Modulos.Capacitacion.Maestros
 
         private void tlbMenu_PrintClick()
         {
-            //try
-            //{
-            //    Cursor = Cursors.WaitCursor;
+            try
+            {
+                Cursor = Cursors.WaitCursor;
 
-            //    List<ReporteTemaElementoBE> lstReporte = null;
-            //    lstReporte = new ReporteTemaElementoBL().Listado();
+                if (gvPregunta.RowCount > 0)
+                {
+                    List<ReportePreguntaBE> lstReporte = null;
 
-            //    if (lstReporte != null)
-            //    {
-            //        if (lstReporte.Count > 0)
-            //        {
-            //            RptVistaReportes objRptTemaElemento = new RptVistaReportes();
-            //            objRptTemaElemento.VerRptTemaElemento(lstReporte);
-            //            objRptTemaElemento.ShowDialog();
-            //        }
-            //        else
-            //            XtraMessageBox.Show("No hay información para el periodo seleccionado", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            //    }
-            //    Cursor = Cursors.Default;
-            //}
-            //catch (Exception ex)
-            //{
-            //    Cursor = Cursors.Default;
-            //    XtraMessageBox.Show(ex.Message, this.Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //}
+                    lstReporte = new ReportePreguntaBL().Listado(IdCuestionario);
+
+                    if (lstReporte != null)
+                    {
+                        RptVistaReportes objRptCapacitacion = new RptVistaReportes();
+                        objRptCapacitacion.VerRptPregunta(lstReporte);
+                        objRptCapacitacion.ShowDialog();
+
+                    }
+                    else
+                        XtraMessageBox.Show("No hay información para el periodo seleccionado", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+
+                Cursor = Cursors.Default;
+            }
+            catch (Exception ex)
+            {
+                Cursor = Cursors.Default;
+                XtraMessageBox.Show(ex.Message, this.Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void tlbMenu_ExportClick()

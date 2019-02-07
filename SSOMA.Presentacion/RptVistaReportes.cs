@@ -434,6 +434,13 @@ namespace SSOMA.Presentacion
             this.crystalReportViewer1.ReportSource = objReporte;
         }
 
+        public void VerRptPregunta(List<ReportePreguntaBE> lstReporte)
+        {
+            rptPregunta objReporte = new rptPregunta();
+            objReporte.SetDataSource(lstReporte);
+            this.crystalReportViewer1.ReportSource = objReporte;
+        }
+
         public void VerRptCapacitacionPersona(List<ReporteCapacitacionBE> lstReporte, string FechaIni, string FechaFin)
         {
             ParameterFields paramFields = new ParameterFields();

@@ -130,6 +130,7 @@
     <Compile Include="Reportes\ReporteExtintorServicioBL.cs" />
     <Compile Include="Reportes\ReporteInspeccionTrabajoBL.cs" />
     <Compile Include="Reportes\ReportePlanAnualBL.cs" />
+    <Compile Include="Reportes\ReportePreguntaBL.cs" />
     <Compile Include="Reportes\ReporteSeguroSctrBL.cs" />
     <Compile Include="Reportes\ReporteSeguroViajeBL.cs" />
     <Compile Include="Reportes\ReporteSolicitudBL.cs" />

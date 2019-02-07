@@ -1032,6 +1032,12 @@
       <DependentUpon>rptPlanAnual.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Modulos\Capacitacion\Rpt\rptPregunta.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptPregunta.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Modulos\Configuracion\frmManArea.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -3019,6 +3025,10 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rptPlanAnual.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Capacitacion\Rpt\rptPregunta.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptPregunta.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Modulos\Configuracion\frmManArea.resx">
       <DependentUpon>frmManArea.cs</DependentUpon>
     </EmbeddedResource>
@@ -3832,6 +3842,9 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="Modulos\Capacitacion\Rpt\reporteplannual.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Modulos\Capacitacion\Rpt\reportepregunta.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Modulos\Documentario\Rpt\reportedocumento.xsd">
