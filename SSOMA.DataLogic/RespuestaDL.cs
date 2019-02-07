@@ -88,11 +88,11 @@ namespace SSOMA.DataLogic
             return Respuesta;
         }
 
-        public List<RespuestaBE> ListaTodosActivo(int IdTema)
+        public List<RespuestaBE> ListaTodosActivo(int IdPregunta)
         {
             Database db = DatabaseFactory.CreateDatabase("cnSSOMABD");
             DbCommand dbCommand = db.GetStoredProcCommand("usp_Respuesta_ListaTodosActivo");
-            db.AddInParameter(dbCommand, "pIdTema", DbType.Int32, IdTema);
+            db.AddInParameter(dbCommand, "pIdPregunta", DbType.Int32, IdPregunta);
 
             IDataReader reader = db.ExecuteReader(dbCommand);
             List<RespuestaBE> Respuestalist = new List<RespuestaBE>();
@@ -102,7 +102,7 @@ namespace SSOMA.DataLogic
                 Respuesta = new RespuestaBE();
                 Respuesta.IdEmpresa = Int32.Parse(reader["IdEmpresa"].ToString());
                 Respuesta.IdPregunta = Int32.Parse(reader["IdPregunta"].ToString());
-                Respuesta.IdRespuesta = Int32.Parse(reader["idRespuesta"].ToString());
+                Respuesta.IdRespuesta = Int32.Parse(reader["IdRespuesta"].ToString());
                 Respuesta.IdTema = Int32.Parse(reader["IdTema"].ToString());
                 Respuesta.IdCuestionario = Int32.Parse(reader["IdCuestionario"].ToString());
                 Respuesta.DescRespuesta = reader["DescRespuesta"].ToString();

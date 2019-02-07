@@ -33,6 +33,7 @@
             this.tlbMenu = new SSOMA.Presentacion.ControlUser.UIToolBar();
             this.splitContainerControl1 = new DevExpress.XtraEditors.SplitContainerControl();
             this.tvwDatos = new System.Windows.Forms.TreeView();
+            this.imgLista = new System.Windows.Forms.ImageList(this.components);
             this.splitContainerControl2 = new DevExpress.XtraEditors.SplitContainerControl();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.chkSelecciona = new DevExpress.XtraEditors.CheckEdit();
@@ -48,7 +49,6 @@
             this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemCheckEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
-            this.imgLista = new System.Windows.Forms.ImageList(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).BeginInit();
             this.splitContainerControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl2)).BeginInit();
@@ -106,6 +106,15 @@
             this.tvwDatos.Size = new System.Drawing.Size(617, 604);
             this.tvwDatos.TabIndex = 2;
             this.tvwDatos.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.tvwDatos_AfterSelect);
+            // 
+            // imgLista
+            // 
+            this.imgLista.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imgLista.ImageStream")));
+            this.imgLista.TransparentColor = System.Drawing.Color.Transparent;
+            this.imgLista.Images.SetKeyName(0, "Empresa_16x16.gif");
+            this.imgLista.Images.SetKeyName(1, "CategoriaTema_16x16.gif");
+            this.imgLista.Images.SetKeyName(2, "Tema_16x16.gif");
+            this.imgLista.Images.SetKeyName(3, "Cuestionario_16x16.gif");
             // 
             // splitContainerControl2
             // 
@@ -190,7 +199,6 @@
             this.gcPregunta.TabIndex = 37;
             this.gcPregunta.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvPregunta});
-            this.gcPregunta.DoubleClick += new System.EventHandler(this.gvTema_DoubleClick);
             // 
             // gvPregunta
             // 
@@ -207,11 +215,12 @@
             this.gridColumn4});
             this.gvPregunta.GridControl = this.gcPregunta;
             this.gvPregunta.Name = "gvPregunta";
-            this.gvPregunta.OptionsView.AllowCellMerge = true;
+            this.gvPregunta.OptionsSelection.MultiSelect = true;
             this.gvPregunta.OptionsView.ColumnAutoWidth = false;
             this.gvPregunta.OptionsView.ShowGroupPanel = false;
             this.gvPregunta.OptionsView.ShowViewCaption = true;
             this.gvPregunta.ViewCaption = "LISTADO DE PREGUNTAS DEL CUESTIONARIO";
+            this.gvPregunta.DoubleClick += new System.EventHandler(this.gvPregunta_DoubleClick);
             // 
             // gridColumn2
             // 
@@ -263,7 +272,7 @@
             // gridColumn4
             // 
             this.gridColumn4.Caption = "Puntaje";
-            this.gridColumn4.FieldName = "Punta";
+            this.gridColumn4.FieldName = "Puntaje";
             this.gridColumn4.Name = "gridColumn4";
             this.gridColumn4.OptionsColumn.AllowEdit = false;
             this.gridColumn4.OptionsColumn.AllowFocus = false;
@@ -280,15 +289,6 @@
             this.repositoryItemCheckEdit1.ImageOptions.ImageGrayed = global::SSOMA.Presentacion.Properties.Resources.Persona_16x16;
             this.repositoryItemCheckEdit1.ImageOptions.ImageUnchecked = global::SSOMA.Presentacion.Properties.Resources.Persona_16x16;
             this.repositoryItemCheckEdit1.Name = "repositoryItemCheckEdit1";
-            // 
-            // imgLista
-            // 
-            this.imgLista.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imgLista.ImageStream")));
-            this.imgLista.TransparentColor = System.Drawing.Color.Transparent;
-            this.imgLista.Images.SetKeyName(0, "Empresa_16x16.gif");
-            this.imgLista.Images.SetKeyName(1, "CategoriaTema_16x16.gif");
-            this.imgLista.Images.SetKeyName(2, "Tema_16x16.gif");
-            this.imgLista.Images.SetKeyName(3, "Cuestionario_16x16.gif");
             // 
             // frmManPregunta
             // 

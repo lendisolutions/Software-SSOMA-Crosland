@@ -168,7 +168,7 @@ namespace SSOMA.Presentacion.Modulos.Capacitacion.Maestros
             this.Close();
         }
 
-        private void gvTema_DoubleClick(object sender, EventArgs e)
+        private void gvPregunta_DoubleClick(object sender, EventArgs e)
         {
             GridView view = (GridView)sender;
             Point pt = view.GridControl.PointToClient(Control.MousePosition);

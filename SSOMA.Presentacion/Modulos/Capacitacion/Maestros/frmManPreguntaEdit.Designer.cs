@@ -45,7 +45,6 @@
             this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn29 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.repositoryItemMemoExEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemMemoExEdit();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn33 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
@@ -55,6 +54,7 @@
             this.btnCancelar = new DevExpress.XtraEditors.SimpleButton();
             this.btnGrabar = new DevExpress.XtraEditors.SimpleButton();
             this.bsListadoRespuesta = new System.Windows.Forms.BindingSource(this.components);
+            this.gcTxtDescRespuesta = new DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit();
             ((System.ComponentModel.ISupportInitialize)(this.gcTxtArchivo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
             this.xtraTabControl1.SuspendLayout();
@@ -62,10 +62,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.gcRespuesta)).BeginInit();
             this.mnuContextualRespuesta.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gvRespuesta)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoExEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPuntaje.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDescPregunta.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsListadoRespuesta)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gcTxtDescRespuesta)).BeginInit();
             this.SuspendLayout();
             // 
             // gcTxtArchivo
@@ -105,7 +105,7 @@
             this.gcRespuesta.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.gcRespuesta.Name = "gcRespuesta";
             this.gcRespuesta.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
-            this.repositoryItemMemoExEdit1});
+            this.gcTxtDescRespuesta});
             this.gcRespuesta.Size = new System.Drawing.Size(1030, 350);
             this.gcRespuesta.TabIndex = 203;
             this.gcRespuesta.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -133,14 +133,14 @@
             // 
             this.eliminarRespuestaToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("eliminarRespuestaToolStripMenuItem.Image")));
             this.eliminarRespuestaToolStripMenuItem.Name = "eliminarRespuestaToolStripMenuItem";
-            this.eliminarRespuestaToolStripMenuItem.Size = new System.Drawing.Size(214, 26);
+            this.eliminarRespuestaToolStripMenuItem.Size = new System.Drawing.Size(136, 26);
             this.eliminarRespuestaToolStripMenuItem.Text = "Eliminar";
             this.eliminarRespuestaToolStripMenuItem.Click += new System.EventHandler(this.eliminarRespuestaToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(211, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(133, 6);
             // 
             // gvRespuesta
             // 
@@ -194,8 +194,6 @@
             this.gridColumn4.Name = "gridColumn4";
             this.gridColumn4.OptionsColumn.AllowEdit = false;
             this.gridColumn4.OptionsColumn.AllowFocus = false;
-            this.gridColumn4.Visible = true;
-            this.gridColumn4.VisibleIndex = 2;
             // 
             // gridColumn29
             // 
@@ -211,20 +209,12 @@
             // gridColumn2
             // 
             this.gridColumn2.Caption = "Descripción de la Respuesta";
-            this.gridColumn2.ColumnEdit = this.repositoryItemMemoExEdit1;
+            this.gridColumn2.ColumnEdit = this.gcTxtDescRespuesta;
             this.gridColumn2.FieldName = "DescRespuesta";
             this.gridColumn2.Name = "gridColumn2";
             this.gridColumn2.Visible = true;
             this.gridColumn2.VisibleIndex = 0;
-            this.gridColumn2.Width = 800;
-            // 
-            // repositoryItemMemoExEdit1
-            // 
-            this.repositoryItemMemoExEdit1.AutoHeight = false;
-            this.repositoryItemMemoExEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.repositoryItemMemoExEdit1.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.repositoryItemMemoExEdit1.Name = "repositoryItemMemoExEdit1";
+            this.gridColumn2.Width = 900;
             // 
             // gridColumn1
             // 
@@ -269,7 +259,7 @@
             0,
             0});
             this.txtPuntaje.Properties.MinValue = new decimal(new int[] {
-            10,
+            1,
             0,
             0,
             0});
@@ -321,6 +311,11 @@
             this.btnGrabar.Text = "Grabar";
             this.btnGrabar.Click += new System.EventHandler(this.btnGrabar_Click);
             // 
+            // gcTxtDescRespuesta
+            // 
+            this.gcTxtDescRespuesta.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.gcTxtDescRespuesta.Name = "gcTxtDescRespuesta";
+            // 
             // frmManPreguntaEdit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -343,10 +338,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.gcRespuesta)).EndInit();
             this.mnuContextualRespuesta.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gvRespuesta)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoExEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPuntaje.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDescPregunta.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsListadoRespuesta)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gcTxtDescRespuesta)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -370,7 +365,6 @@
         private DevExpress.XtraEditors.SimpleButton btnCancelar;
         private DevExpress.XtraEditors.SimpleButton btnGrabar;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
-        private DevExpress.XtraEditors.Repository.RepositoryItemMemoExEdit repositoryItemMemoExEdit1;
         public System.Windows.Forms.ContextMenuStrip mnuContextualRespuesta;
         private System.Windows.Forms.ToolStripMenuItem nuevoRespuestaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem eliminarRespuestaToolStripMenuItem;
@@ -378,5 +372,6 @@
         private System.Windows.Forms.BindingSource bsListadoRespuesta;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
         private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit gcTxtArchivo;
+        private DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit gcTxtDescRespuesta;
     }
 }

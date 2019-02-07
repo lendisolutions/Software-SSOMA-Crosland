@@ -40,6 +40,7 @@ namespace SSOMA.DataLogic
             Database db = DatabaseFactory.CreateDatabase("cnSSOMABD");
             DbCommand dbCommand = db.GetStoredProcCommand("usp_Pregunta_Actualiza");
 
+            db.AddInParameter(dbCommand, "pIdPregunta", DbType.Int32, pItem.IdPregunta);
             db.AddInParameter(dbCommand, "pIdEmpresa", DbType.Int32, pItem.IdEmpresa);
             db.AddInParameter(dbCommand, "pIdTema", DbType.Int32, pItem.IdTema);
             db.AddInParameter(dbCommand, "pIdCuestionario", DbType.Int32, pItem.IdCuestionario);
@@ -85,6 +86,7 @@ namespace SSOMA.DataLogic
                 Pregunta.DescTema = reader["DescTema"].ToString();
                 Pregunta.IdCuestionario = Int32.Parse(reader["IdCuestionario"].ToString());
                 Pregunta.DescCuestionario = reader["DescCuestionario"].ToString();
+                Pregunta.DescPregunta = reader["DescPregunta"].ToString();
                 Pregunta.Puntaje = Int32.Parse(reader["Puntaje"].ToString());
                 Pregunta.FlagEstado = Boolean.Parse(reader["flagestado"].ToString());
             }
@@ -114,6 +116,7 @@ namespace SSOMA.DataLogic
                 Pregunta.DescTema = reader["DescTema"].ToString();
                 Pregunta.IdCuestionario = Int32.Parse(reader["IdCuestionario"].ToString());
                 Pregunta.DescCuestionario = reader["DescCuestionario"].ToString();
+                Pregunta.DescPregunta = reader["DescPregunta"].ToString();
                 Pregunta.Puntaje = Int32.Parse(reader["Puntaje"].ToString());
                 Pregunta.FlagEstado = Boolean.Parse(reader["flagestado"].ToString());
                 Preguntalist.Add(Pregunta);
