@@ -3975,6 +3975,7 @@
     <None Include="Resources\MatriculaTema_32x32.gif" />
     <None Include="Resources\Tema_16x16.gif" />
     <None Include="Resources\Cuestionario_32x32.gif" />
+    <None Include="Resources\Pregunta_32x32.gif" />
     <Content Include="Seguimiento de Accidentes.xlsx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
