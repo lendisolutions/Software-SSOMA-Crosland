@@ -264,8 +264,15 @@ namespace SSOMA.Presentacion.Modulos.Contratistas.Maestros
                 if (!Directory.Exists(strFolder))
                     Directory.CreateDirectory(strFolder);
 
-                if (File.Exists(strFullFilePath))
-                    Directory.Delete(strFullFilePath);
+                //ELIMINAMOS LOR ARCHIVOS CREADOS
+                foreach (var item in Directory.GetFiles(strFolder, "*.*"))
+                {
+                    File.SetAttributes(item, FileAttributes.Normal);
+                    File.Delete(item);
+                }
+
+                //if (File.Exists(strFullFilePath))
+                //    Directory.Delete(strFullFilePath);
 
                 File.WriteAllBytes(strFullFilePath, Buffer);
 

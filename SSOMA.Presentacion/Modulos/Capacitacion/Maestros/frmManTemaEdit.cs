@@ -221,26 +221,42 @@ namespace SSOMA.Presentacion.Modulos.Capacitacion.Maestros
 
         private void gcTxtArchivo_DoubleClick(object sender, EventArgs e)
         {
-            if (gvTemaDetalle.RowCount > 0)
+            try
             {
-                string strNombreArchivo = (string)gvTemaDetalle.GetFocusedRowCellValue("NombreArchivo");
-                byte[] Buffer = (byte[])gvTemaDetalle.GetFocusedRowCellValue("Archivo");
+                if (gvTemaDetalle.RowCount > 0)
+                {
+                    string strNombreArchivo = (string)gvTemaDetalle.GetFocusedRowCellValue("NombreArchivo");
+                    byte[] Buffer = (byte[])gvTemaDetalle.GetFocusedRowCellValue("Archivo");
 
-                string strPath = AppDomain.CurrentDomain.BaseDirectory;
-                string strFolder = strPath + "/temp/";
-                string strFullFilePath = strFolder + strNombreArchivo;
+                    string strPath = AppDomain.CurrentDomain.BaseDirectory;
+                    string strFolder = strPath + "temp\\";
+                    string strFullFilePath = strFolder + strNombreArchivo;
 
-                if (!Directory.Exists(strFolder))
-                    Directory.CreateDirectory(strFolder);
+                    if (!Directory.Exists(strFolder))
+                        Directory.CreateDirectory(strFolder);
 
-                if (File.Exists(strFullFilePath))
-                    Directory.Delete(strFullFilePath);
+                    //ELIMINAMOS LOR ARCHIVOS CREADOS
+                    foreach (var item in Directory.GetFiles(strFolder, "*.*"))
+                    {
+                        File.SetAttributes(item, FileAttributes.Normal);
+                        File.Delete(item);
+                    }
 
-                File.WriteAllBytes(strFullFilePath, Buffer);
+                    //if (File.Exists(strFullFilePath))
+                    //    Directory.Delete(strFullFilePath);
 
-                Process.Start(strFullFilePath);
-               
+                    File.WriteAllBytes(strFullFilePath, Buffer);
+
+                    Process.Start(strFullFilePath);
+
+                }
             }
+            catch (Exception ex)
+            {
+                Cursor = Cursors.Default;
+                XtraMessageBox.Show(ex.Message, this.Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
         }
 
         private void btnGrabar_Click(object sender, EventArgs e)
