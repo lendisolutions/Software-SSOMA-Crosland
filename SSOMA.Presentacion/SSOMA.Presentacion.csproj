@@ -2834,6 +2834,9 @@
     <EmbeddedResource Include="Modulos\Capacitacion\Maestros\frmManMatriculaTema.resx">
       <DependentUpon>frmManMatriculaTema.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Capacitacion\Maestros\frmManPregunta.resx">
+      <DependentUpon>frmManPregunta.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Modulos\Capacitacion\Maestros\frmManTema.resx">
       <DependentUpon>frmManTema.cs</DependentUpon>
     </EmbeddedResource>
