@@ -136,6 +136,8 @@
     <Compile Include="Reportes\ReporteSolicitudBL.cs" />
     <Compile Include="Reportes\ReporteSolicitudEppBL.cs" />
     <Compile Include="RespuestaBL.cs" />
+    <Compile Include="RespuestaPersonaBL.cs" />
+    <Compile Include="ResumenPersonaBL.cs" />
     <Compile Include="RiesgoBL.cs" />
     <Compile Include="SctrBL.cs" />
     <Compile Include="SectorBL.cs" />

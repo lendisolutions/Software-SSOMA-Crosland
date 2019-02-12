@@ -147,6 +147,8 @@
     <Compile Include="Reportes\ReporteSolicitudDL.cs" />
     <Compile Include="Reportes\ReporteSolicitudEppDL.cs" />
     <Compile Include="RespuestaDL.cs" />
+    <Compile Include="RespuestaPersonaDL.cs" />
+    <Compile Include="ResumenPersonaDL.cs" />
     <Compile Include="RiesgoDL.cs" />
     <Compile Include="SctrDL.cs" />
     <Compile Include="SectorDL.cs" />
