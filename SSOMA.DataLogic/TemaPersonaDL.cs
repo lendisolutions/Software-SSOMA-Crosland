@@ -120,5 +120,31 @@ namespace SSOMA.DataLogic
             reader.Dispose();
             return TemaPersonalist;
         }
+
+        public List<TemaPersonaBE> ListaPersona(int IdEmpresa, int IdPersona)
+        {
+            Database db = DatabaseFactory.CreateDatabase("cnSSOMABD");
+            DbCommand dbCommand = db.GetStoredProcCommand("usp_TemaPersona_ListaPersona");
+            db.AddInParameter(dbCommand, "pIdEmpresa", DbType.Int32, IdEmpresa);
+            db.AddInParameter(dbCommand, "pIdPersona", DbType.Int32, IdPersona);
+
+            IDataReader reader = db.ExecuteReader(dbCommand);
+            List<TemaPersonaBE> TemaPersonalist = new List<TemaPersonaBE>();
+            TemaPersonaBE TemaPersona;
+            while (reader.Read())
+            {
+                TemaPersona = new TemaPersonaBE();
+                TemaPersona.IdTemaPersona = Int32.Parse(reader["idTemaPersona"].ToString());
+                TemaPersona.IdEmpresa = Int32.Parse(reader["IdEmpresa"].ToString());
+                TemaPersona.IdTema = Int32.Parse(reader["IdTema"].ToString());
+                TemaPersona.DescTema = reader["DescTema"].ToString();
+                TemaPersona.FechaFin = DateTime.Parse(reader["FechaFin"].ToString());
+                TemaPersona.Logo = (byte[])reader["Logo"];
+                TemaPersonalist.Add(TemaPersona);
+            }
+            reader.Close();
+            reader.Dispose();
+            return TemaPersonalist;
+        }
     }
 }

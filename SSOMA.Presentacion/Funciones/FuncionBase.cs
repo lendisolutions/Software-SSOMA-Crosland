@@ -237,7 +237,7 @@ namespace SSOMA.Presentacion.Funciones
             return nuevo.Substring(nuevo.Length - digitos, digitos);
         }
 
-        public static DataTable ToDataTable<T>(List<T> items)
+        public DataTable ToDataTable<T>(List<T> items)
         {
 
             var tb = new DataTable(typeof(T).Name);

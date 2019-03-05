@@ -28,6 +28,17 @@ namespace SSOMA.BusinessLogic
             { throw ex; }
         }
 
+        public List<TemaPersonaBE> ListaPersona(int IdEmpresa, int IdPersona)
+        {
+            try
+            {
+                TemaPersonaDL TemaPersona = new TemaPersonaDL();
+                return TemaPersona.ListaPersona(IdEmpresa, IdPersona);
+            }
+            catch (Exception ex)
+            { throw ex; }
+        }
+
         public TemaPersonaBE Selecciona(int IdTemaPersona)
         {
             try

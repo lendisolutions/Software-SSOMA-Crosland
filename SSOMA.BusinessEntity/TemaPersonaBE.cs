@@ -39,6 +39,10 @@ namespace SSOMA.BusinessEntity
         public Boolean FlagAsigna { get; set; }
         [DataMember]
         public Int32 TipoOper { get; set; }
+        [DataMember]
+        public DateTime FechaFin { get; set; }
+        [DataMember]
+        public byte[] Logo { get; set; }
         #endregion
     }
 }
