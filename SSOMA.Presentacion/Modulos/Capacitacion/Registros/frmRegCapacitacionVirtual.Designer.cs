@@ -35,9 +35,9 @@
             this.txtDescripcion = new DevExpress.XtraEditors.TextEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
-            this.lstCursos = new System.Windows.Forms.ListView();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.tileView1 = new DevExpress.XtraGrid.Views.Tile.TileView();
+            this.lstCursos = new System.Windows.Forms.ListView();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).BeginInit();
             this.splitContainerControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
@@ -118,15 +118,6 @@
             this.groupControl2.TabIndex = 35;
             this.groupControl2.Text = "Cursos Virtuales Asignados";
             // 
-            // lstCursos
-            // 
-            this.lstCursos.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lstCursos.Location = new System.Drawing.Point(2, 25);
-            this.lstCursos.Name = "lstCursos";
-            this.lstCursos.Size = new System.Drawing.Size(1106, 639);
-            this.lstCursos.TabIndex = 0;
-            this.lstCursos.UseCompatibleStateImageBehavior = false;
-            // 
             // gridControl1
             // 
             this.gridControl1.Cursor = System.Windows.Forms.Cursors.Default;
@@ -146,6 +137,16 @@
             this.tileView1.DetailHeight = 458;
             this.tileView1.GridControl = this.gridControl1;
             this.tileView1.Name = "tileView1";
+            this.tileView1.DoubleClick += new System.EventHandler(this.tileView1_DoubleClick);
+            // 
+            // lstCursos
+            // 
+            this.lstCursos.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lstCursos.Location = new System.Drawing.Point(2, 25);
+            this.lstCursos.Name = "lstCursos";
+            this.lstCursos.Size = new System.Drawing.Size(1106, 639);
+            this.lstCursos.TabIndex = 0;
+            this.lstCursos.UseCompatibleStateImageBehavior = false;
             // 
             // frmRegCapacitacionVirtual
             // 

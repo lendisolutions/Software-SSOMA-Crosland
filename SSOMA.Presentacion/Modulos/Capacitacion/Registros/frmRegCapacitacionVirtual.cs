@@ -35,6 +35,7 @@ namespace SSOMA.Presentacion.Modulos.Capacitacion.Registros
         {
             try
             {
+                Cursor = Cursors.WaitCursor;
                 //TRAEMOS LA INFORMACION DE LA BASE DE DATOS
                 List<TemaPersonaBE> lstTemaPersonal = null;
                 lstTemaPersonal = new TemaPersonaBL().ListaPersona(Parametros.intEmpresaId, Parametros.intPersonaId);
@@ -51,8 +52,13 @@ namespace SSOMA.Presentacion.Modulos.Capacitacion.Registros
                 }
 
                 gridControl1.DataSource = homesTable;
+                Cursor = Cursors.Default;
             }
-            catch { }
+            catch (Exception ex)
+            {
+                Cursor = Cursors.Default;
+                XtraMessageBox.Show(ex.Message, this.Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         void SetupView()
@@ -134,6 +140,25 @@ namespace SSOMA.Presentacion.Modulos.Capacitacion.Registros
             }
         }
 
+        private void tileView1_DoubleClick(object sender, EventArgs e)
+        {
+            if (tileView1.RowCount > 0)
+            {
+                int intIdEmpresa = int.Parse(tileView1.GetFocusedRowCellValue("IdEmpresa").ToString());
+                int intIdTema = int.Parse(tileView1.GetFocusedRowCellValue("IdTema").ToString());
 
+                TemaBE objE_Tema = null;
+                objE_Tema = new TemaBL().Selecciona(intIdEmpresa, intIdTema);
+                if (objE_Tema != null)
+                {
+                    if (objE_Tema.IdSituacion == Parametros.intTEMAInactivo)
+                    {
+                        XtraMessageBox.Show("El Curso se encuentra inactivo no puede ingresar", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+
+
+            }
+        }
     }
 }
