@@ -27,7 +27,7 @@ namespace SSOMA.Presentacion.Modulos.Capacitacion.Registros
         {
             InitData();
             SetupView();
-            tileView1.OptionsTiles.Orientation = Orientation.Horizontal;
+            tileView1.OptionsTiles.Orientation = Orientation.Vertical;
             tileView1.OptionsBehavior.AllowSmoothScrolling = true;
         }
 
@@ -47,7 +47,7 @@ namespace SSOMA.Presentacion.Modulos.Capacitacion.Registros
                 {
                     var img = DevExpress.XtraEditors.Controls.ByteImageConverter.FromByteArray(row["Logo"] as byte[]);
                     row["Image"] = new Bitmap(img, new Size(351, 234));
-                    row["Curso"] = "CURSO";
+                    row["Curso"] = row["DescSituacion"].ToString();
                 }
 
                 gridControl1.DataSource = homesTable;
@@ -65,7 +65,7 @@ namespace SSOMA.Presentacion.Modulos.Capacitacion.Registros
                 tileView1.OptionsTiles.Padding = new Padding(20);
                 tileView1.OptionsTiles.ItemPadding = new Padding(10);
                 tileView1.OptionsTiles.IndentBetweenItems = 20;
-                tileView1.OptionsTiles.ItemSize = new Size(355, 200);
+                tileView1.OptionsTiles.ItemSize = new Size(450, 250);
                 tileView1.Appearance.ItemNormal.ForeColor = Color.White;
                 tileView1.Appearance.ItemNormal.BorderColor = Color.Transparent;
                 //Setup tiles template
@@ -87,15 +87,15 @@ namespace SSOMA.Presentacion.Modulos.Capacitacion.Registros
                 tileView1.TileTemplate.Add(image);
                 //
                 leftPanel.StretchVertical = true;
-                leftPanel.Width = 122;
+                leftPanel.Width = 135;
                 leftPanel.TextLocation = new Point(-10, 0);
                 leftPanel.Appearance.Normal.BackColor = Color.FromArgb(58, 166, 101);
                 //
-                splitLine.StretchVertical = true;
-                splitLine.Width = 3;
-                splitLine.TextAlignment = TileItemContentAlignment.Manual;
-                splitLine.TextLocation = new Point(110, 0);
-                splitLine.Appearance.Normal.BackColor = Color.White;
+                //splitLine.StretchVertical = true;
+                //splitLine.Width = 3;
+                //splitLine.TextAlignment = TileItemContentAlignment.Manual;
+                //splitLine.TextLocation = new Point(110, 0);
+                //splitLine.Appearance.Normal.BackColor = Color.White;
                 //
                 addressCaption.Text = "CURSO";
                 addressCaption.TextAlignment = TileItemContentAlignment.TopLeft;
@@ -104,7 +104,7 @@ namespace SSOMA.Presentacion.Modulos.Capacitacion.Registros
                 addressValue.Column = tileView1.Columns["DescTema"];
                 addressValue.AnchorElement = addressCaption;
                 addressValue.AnchorIndent = 2;
-                addressValue.MaxWidth = 100;
+                addressValue.MaxWidth = 120;
                 addressValue.Appearance.Normal.FontStyleDelta = FontStyle.Bold;
                 //
                 yearBuiltCaption.Text = "FECHA TERMINO";
@@ -119,13 +119,13 @@ namespace SSOMA.Presentacion.Modulos.Capacitacion.Registros
                 //
                 price.Column = tileView1.Columns["Curso"];
                 price.TextAlignment = TileItemContentAlignment.BottomLeft;
-                price.Appearance.Normal.Font = new Font("Segoe UI Semilight", 25.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                price.Appearance.Normal.Font = new Font("Segoe UI Semilight", 16.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
                 //
                 image.Column = tileView1.Columns["Image"];
-                image.ImageSize = new Size(280, 220);
+                image.ImageSize = new Size(308, 233);
                 image.ImageAlignment = TileItemContentAlignment.MiddleRight;
                 image.ImageScaleMode = TileItemImageScaleMode.ZoomOutside;
-                image.ImageLocation = new Point(10, 10);
+                image.ImageLocation = new Point(8, 4);
 
             }
             finally

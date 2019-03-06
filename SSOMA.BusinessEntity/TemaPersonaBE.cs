@@ -43,6 +43,8 @@ namespace SSOMA.BusinessEntity
         public DateTime FechaFin { get; set; }
         [DataMember]
         public byte[] Logo { get; set; }
+        [DataMember]
+        public String DescSituacion { get; set; }
         #endregion
     }
 }

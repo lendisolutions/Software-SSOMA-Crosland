@@ -140,6 +140,7 @@ namespace SSOMA.DataLogic
                 TemaPersona.DescTema = reader["DescTema"].ToString();
                 TemaPersona.FechaFin = DateTime.Parse(reader["FechaFin"].ToString());
                 TemaPersona.Logo = (byte[])reader["Logo"];
+                TemaPersona.DescSituacion = reader["DescSituacion"].ToString();
                 TemaPersonalist.Add(TemaPersona);
             }
             reader.Close();
