@@ -553,4 +553,13 @@
   <data name="Pregunta_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Pregunta_32x32.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="certificado_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\certificado_32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DesarrolloCurso_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DesarrolloCurso_32x32.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ExamenFinal_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ExamenFinal_32x32.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

@@ -91,6 +91,7 @@
     <Reference Include="DevExpress.XtraBars.v18.1, Version=18.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraEditors.v18.1, Version=18.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraGrid.v18.1, Version=18.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraNavBar.v18.1, Version=18.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraPrinting.v18.1, Version=18.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraScheduler.v18.1, Version=18.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraScheduler.v18.1.Core, Version=18.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
@@ -2873,6 +2874,9 @@
     <EmbeddedResource Include="Modulos\Capacitacion\Registros\frmRegCapacitacionVirtual.resx">
       <DependentUpon>frmRegCapacitacionVirtual.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Capacitacion\Registros\frmRegCapacitacionVirtualEdit.resx">
+      <DependentUpon>frmRegCapacitacionVirtualEdit.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Modulos\Capacitacion\Registros\frmRegPlanAnual.resx">
       <DependentUpon>frmRegPlanAnual.cs</DependentUpon>
     </EmbeddedResource>
@@ -3995,6 +3999,9 @@
     <None Include="Resources\Tema_16x16.gif" />
     <None Include="Resources\Cuestionario_32x32.gif" />
     <None Include="Resources\Pregunta_32x32.gif" />
+    <None Include="Resources\ExamenFinal_32x32.gif" />
+    <None Include="Resources\certificado_32x32.png" />
+    <None Include="Resources\DesarrolloCurso_32x32.gif" />
     <Content Include="Seguimiento de Accidentes.xlsx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

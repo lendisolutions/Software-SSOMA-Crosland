@@ -283,6 +283,16 @@ namespace SSOMA.Presentacion.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap certificado_32x32 {
+            get {
+                object obj = ResourceManager.GetObject("certificado_32x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Check_16x16 {
             get {
                 object obj = ResourceManager.GetObject("Check_16x16", resourceCulture);
@@ -433,6 +443,16 @@ namespace SSOMA.Presentacion.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap DesarrolloCurso_32x32 {
+            get {
+                object obj = ResourceManager.GetObject("DesarrolloCurso_32x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap DescandoMedico_32x32 {
             get {
                 object obj = ResourceManager.GetObject("DescandoMedico_32x32", resourceCulture);
@@ -516,6 +536,16 @@ namespace SSOMA.Presentacion.Properties {
         internal static System.Drawing.Bitmap Estandares_32x32 {
             get {
                 object obj = ResourceManager.GetObject("Estandares_32x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ExamenFinal_32x32 {
+            get {
+                object obj = ResourceManager.GetObject("ExamenFinal_32x32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
