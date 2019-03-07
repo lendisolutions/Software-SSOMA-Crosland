@@ -27,7 +27,7 @@ namespace SSOMA.Presentacion.Modulos.Capacitacion.Registros
     {
         #region "Propiedades"
 
-        public List<CTemaDetalle> mListaTemaDetalleOrigen = new List<CTemaDetalle>();
+        public List<TemaDetallePersonaBE> mListaTemaDetallePersona = new List<TemaDetallePersonaBE>();
 
         public int intIdTema { get; set; }
         public string  strDescTema { get; set; }
@@ -47,17 +47,39 @@ namespace SSOMA.Presentacion.Modulos.Capacitacion.Registros
             txtDescripcion.Text = strDescTema;
             txtParticipante.Text = strParticipante;
 
-            CargaTemaDetalle();
+            mListaTemaDetallePersona = new TemaDetallePersonaBL().ListaTodosActivo(intIdTema, Parametros.intPersonaId);
+
+            if (mListaTemaDetallePersona.Count > 0)
+            {
+                bsListadoTemaDetalle.DataSource = mListaTemaDetallePersona;
+                gcTemaDetallePersona.DataSource = bsListadoTemaDetalle;
+                gcTemaDetallePersona.RefreshDataSource();
+            }
+            else
+            {
+                CargaTemaDetalle();
+            }
+            
         }
 
         private void gvTemaDetalle_DoubleClick(object sender, EventArgs e)
         {
             try
             {
-                if (gvTemaDetalle.RowCount > 0)
+                if (gvTemaDetallePersona.RowCount > 0)
                 {
-                    string strNombreArchivo = (string)gvTemaDetalle.GetFocusedRowCellValue("NombreArchivo");
-                    byte[] Buffer = (byte[])gvTemaDetalle.GetFocusedRowCellValue("Archivo");
+                    int intIdTemaDetallePersona = (int)gvTemaDetallePersona.GetFocusedRowCellValue("IdTemaDetallePersona");
+                    string strNombreArchivo = (string)gvTemaDetallePersona.GetFocusedRowCellValue("NombreArchivo");
+                    byte[] Buffer = (byte[])gvTemaDetallePersona.GetFocusedRowCellValue("Archivo");
+
+                    TemaDetallePersonaBE objE_TemaDetallePersona = new TemaDetallePersonaBE();
+                    TemaDetallePersonaBL objBL_TemaDetallePersona = new TemaDetallePersonaBL();
+
+                    objE_TemaDetallePersona.IdTemaDetallePersona = intIdTemaDetallePersona;
+                    objE_TemaDetallePersona.DescSituacion = "VISTO";
+                    objE_TemaDetallePersona.ImageSituacion = new FuncionBase().Image2Bytes(SSOMA.Presentacion.Properties.Resources.Visto);
+
+                    objBL_TemaDetallePersona.ActualizaSituacion(objE_TemaDetallePersona);
 
                     string strPath = AppDomain.CurrentDomain.BaseDirectory;
                     string strFolder = strPath + "temp\\";
@@ -77,6 +99,10 @@ namespace SSOMA.Presentacion.Modulos.Capacitacion.Registros
 
                     Process.Start(strFullFilePath);
 
+                    mListaTemaDetallePersona = new TemaDetallePersonaBL().ListaTodosActivo(intIdTema, Parametros.intPersonaId);
+                    bsListadoTemaDetalle.DataSource = mListaTemaDetallePersona;
+                    gcTemaDetallePersona.DataSource = bsListadoTemaDetalle;
+                    gcTemaDetallePersona.RefreshDataSource();
                 }
             }
             catch (Exception ex)
@@ -112,51 +138,45 @@ namespace SSOMA.Presentacion.Modulos.Capacitacion.Registros
 
             foreach (TemaDetalleBE item in lstTmpTemaDetalle)
             {
-                CTemaDetalle objE_TemaDetalle = new CTemaDetalle();
-                objE_TemaDetalle.IdEmpresa = item.IdEmpresa;
-                objE_TemaDetalle.IdTemaDetalle = item.IdTemaDetalle;
-                objE_TemaDetalle.IdTema = item.IdTema;
+                TemaDetallePersonaBE objE_TemaDetallePersona = new TemaDetallePersonaBE();
+                TemaDetallePersonaBL objBL_TemaDetallePersona = new TemaDetallePersonaBL();
+
+                objE_TemaDetallePersona.IdEmpresa = item.IdEmpresa;
+                objE_TemaDetallePersona.IdTemaDetallePersona = 0;
+                objE_TemaDetallePersona.IdTema = item.IdTema;
+                objE_TemaDetallePersona.IdPersona = Parametros.intPersonaId;
                 if (item.Extension == ".xlsx")
-                    objE_TemaDetalle.Image = new FuncionBase().Image2Bytes(SSOMA.Presentacion.Properties.Resources.MSExcel_48x48);
+                    objE_TemaDetallePersona.Image = new FuncionBase().Image2Bytes(SSOMA.Presentacion.Properties.Resources.MSExcel_48x48);
                 if (item.Extension == ".pptx")
-                    objE_TemaDetalle.Image = new FuncionBase().Image2Bytes(SSOMA.Presentacion.Properties.Resources.MSPowerPoint_48x48);
+                    objE_TemaDetallePersona.Image = new FuncionBase().Image2Bytes(SSOMA.Presentacion.Properties.Resources.MSPowerPoint_48x48);
                 if (item.Extension == ".docx")
-                    objE_TemaDetalle.Image = new FuncionBase().Image2Bytes(SSOMA.Presentacion.Properties.Resources.MSWord_48x48);
+                    objE_TemaDetallePersona.Image = new FuncionBase().Image2Bytes(SSOMA.Presentacion.Properties.Resources.MSWord_48x48);
                 if (item.Extension == ".pdf")
-                    objE_TemaDetalle.Image = new FuncionBase().Image2Bytes(SSOMA.Presentacion.Properties.Resources.Pdf_48x48);
+                    objE_TemaDetallePersona.Image = new FuncionBase().Image2Bytes(SSOMA.Presentacion.Properties.Resources.Pdf_48x48);
                 if (item.Extension == ".mp4")
-                    objE_TemaDetalle.Image = new FuncionBase().Image2Bytes(SSOMA.Presentacion.Properties.Resources.Video_48x48);
-                objE_TemaDetalle.Archivo = item.Archivo;
-                objE_TemaDetalle.NombreArchivo = item.NombreArchivo;
-                objE_TemaDetalle.Extension = item.Extension;
-                objE_TemaDetalle.Descripcion = item.Descripcion;
-                mListaTemaDetalleOrigen.Add(objE_TemaDetalle);
+                    objE_TemaDetallePersona.Image = new FuncionBase().Image2Bytes(SSOMA.Presentacion.Properties.Resources.Video_48x48);
+                objE_TemaDetallePersona.Archivo = item.Archivo;
+                objE_TemaDetallePersona.NombreArchivo = item.NombreArchivo;
+                objE_TemaDetallePersona.Extension = item.Extension;
+                objE_TemaDetallePersona.Descripcion = item.Descripcion;
+                objE_TemaDetallePersona.DescSituacion = "NO VISTO";
+                objE_TemaDetallePersona.ImageSituacion = new FuncionBase().Image2Bytes(SSOMA.Presentacion.Properties.Resources.NoVisto);
+                objE_TemaDetallePersona.FlagEstado = true;
+
+                objBL_TemaDetallePersona.Inserta(objE_TemaDetallePersona);
             }
 
-            bsListadoTemaDetalle.DataSource = mListaTemaDetalleOrigen;
-            gcTemaDetalle.DataSource = bsListadoTemaDetalle;
-            gcTemaDetalle.RefreshDataSource();
+            mListaTemaDetallePersona = new TemaDetallePersonaBL().ListaTodosActivo(intIdTema, Parametros.intPersonaId);
+
+            bsListadoTemaDetalle.DataSource = mListaTemaDetallePersona;
+            gcTemaDetallePersona.DataSource = bsListadoTemaDetalle;
+            gcTemaDetallePersona.RefreshDataSource();
         }
 
 
         #endregion
 
-        public class CTemaDetalle
-        {
-            public Int32 IdEmpresa { get; set; }
-            public Int32 IdTema { get; set; }
-            public Int32 IdTemaDetalle { get; set; }
-            public byte[] Image { get; set; }
-            public byte[] Archivo { get; set; }
-            public string NombreArchivo { get; set; }
-            public string Extension { get; set; }
-            public string Descripcion { get; set; }
-
-            public CTemaDetalle()
-            {
-
-            }
-        }
+        
 
         
     }

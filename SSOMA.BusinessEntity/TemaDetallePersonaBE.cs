@@ -15,7 +15,7 @@ namespace SSOMA.BusinessEntity
         [DataMember]
         public Int32 IdTema { get; set; }
         [DataMember]
-        public Int32 Idpersona { get; set; }
+        public Int32 IdPersona { get; set; }
         [DataMember]
         public byte[] Image { get; set; }
         [DataMember]

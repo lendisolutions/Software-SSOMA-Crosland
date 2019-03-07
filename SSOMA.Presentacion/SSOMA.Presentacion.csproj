@@ -4007,6 +4007,8 @@
     <None Include="Resources\MSPowerPoint_48x48.gif" />
     <None Include="Resources\MSWord_48x48.gif" />
     <None Include="Resources\Pdf_48x48.gif" />
+    <None Include="Resources\NoVisto.png" />
+    <None Include="Resources\Visto.png" />
     <Content Include="Seguimiento de Accidentes.xlsx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

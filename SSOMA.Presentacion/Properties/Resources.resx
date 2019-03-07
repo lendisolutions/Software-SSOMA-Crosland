@@ -577,4 +577,10 @@
   <data name="Video_48x48" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Video_48x48.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="NoVisto" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\NoVisto.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Visto" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Visto.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

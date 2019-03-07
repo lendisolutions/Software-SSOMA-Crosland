@@ -18,7 +18,7 @@ namespace SSOMA.DataLogic
 
             db.AddInParameter(dbCommand, "pIdTemaDetallePersona", DbType.Int32, pItem.IdTemaDetallePersona);
             db.AddInParameter(dbCommand, "pIdTema", DbType.Int32, pItem.IdTema);
-            db.AddInParameter(dbCommand, "pIdPeersona", DbType.Int32, pItem.Idpersona);
+            db.AddInParameter(dbCommand, "pIdPersona", DbType.Int32, pItem.IdPersona);
             db.AddInParameter(dbCommand, "pImage", DbType.Binary, pItem.Image);
             db.AddInParameter(dbCommand, "pArchivo", DbType.Binary, pItem.Archivo);
             db.AddInParameter(dbCommand, "pNombreArchivo", DbType.String, pItem.NombreArchivo);
@@ -41,7 +41,7 @@ namespace SSOMA.DataLogic
 
             db.AddInParameter(dbCommand, "pIdTemaDetallePersona", DbType.Int32, pItem.IdTemaDetallePersona);
             db.AddInParameter(dbCommand, "pIdTema", DbType.Int32, pItem.IdTema);
-            db.AddInParameter(dbCommand, "pIdPeersona", DbType.Int32, pItem.Idpersona);
+            db.AddInParameter(dbCommand, "pIdPersona", DbType.Int32, pItem.IdPersona);
             db.AddInParameter(dbCommand, "pImage", DbType.Binary, pItem.Image);
             db.AddInParameter(dbCommand, "pArchivo", DbType.Binary, pItem.Archivo);
             db.AddInParameter(dbCommand, "pNombreArchivo", DbType.String, pItem.NombreArchivo);
@@ -60,7 +60,7 @@ namespace SSOMA.DataLogic
         public void ActualizaSituacion(TemaDetallePersonaBE pItem)
         {
             Database db = DatabaseFactory.CreateDatabase("cnSSOMABD");
-            DbCommand dbCommand = db.GetStoredProcCommand("usp_TemaDetallePersona_Actualiza");
+            DbCommand dbCommand = db.GetStoredProcCommand("usp_TemaDetallePersona_ActualizaSituacion");
 
             db.AddInParameter(dbCommand, "pIdTemaDetallePersona", DbType.Int32, pItem.IdTemaDetallePersona);
             db.AddInParameter(dbCommand, "pDescSituacion", DbType.String, pItem.DescSituacion);
@@ -97,7 +97,7 @@ namespace SSOMA.DataLogic
                 TemaDetallePersona.IdEmpresa = Int32.Parse(reader["IdEmpresa"].ToString());
                 TemaDetallePersona.IdTemaDetallePersona = Int32.Parse(reader["idTemaDetallePersona"].ToString());
                 TemaDetallePersona.IdTema = Int32.Parse(reader["IdTema"].ToString());
-                TemaDetallePersona.Idpersona = Int32.Parse(reader["Idpersona"].ToString());
+                TemaDetallePersona.IdPersona = Int32.Parse(reader["IdPersona"].ToString());
                 TemaDetallePersona.Image = (byte[])reader["Image"];
                 TemaDetallePersona.Archivo = (byte[])reader["Archivo"];
                 TemaDetallePersona.NombreArchivo = reader["NombreArchivo"].ToString();
@@ -128,7 +128,7 @@ namespace SSOMA.DataLogic
                 TemaDetallePersona.IdEmpresa = Int32.Parse(reader["IdEmpresa"].ToString());
                 TemaDetallePersona.IdTemaDetallePersona = Int32.Parse(reader["idTemaDetallePersona"].ToString());
                 TemaDetallePersona.IdTema = Int32.Parse(reader["IdTema"].ToString());
-                TemaDetallePersona.Idpersona = Int32.Parse(reader["Idpersona"].ToString());
+                TemaDetallePersona.IdPersona = Int32.Parse(reader["IdPersona"].ToString());
                 TemaDetallePersona.Image = (byte[])reader["Image"];
                 TemaDetallePersona.Archivo = (byte[])reader["Archivo"];
                 TemaDetallePersona.NombreArchivo = reader["NombreArchivo"].ToString();
