@@ -148,8 +148,9 @@ namespace SSOMA.DataLogic
                 Pregunta.IdCuestionario = Int32.Parse(reader["IdCuestionario"].ToString());
                 Pregunta.DescCuestionario = reader["DescCuestionario"].ToString();
                 Pregunta.DescPregunta = reader["DescPregunta"].ToString();
-                Pregunta.DescRespuesta = reader["DescRespuesta"].ToString();
                 Pregunta.FlagCorrecto = Boolean.Parse(reader["FlagCorrecto"].ToString());
+                Pregunta.IdRespuesta = Int32.Parse(reader["IdRespuesta"].ToString());
+                Pregunta.DescRespuesta = reader["DescRespuesta"].ToString();
                 Preguntalist.Add(Pregunta);
             }
             reader.Close();

@@ -28,6 +28,7 @@ namespace SSOMA.Presentacion.Modulos.Capacitacion.Registros
         #region "Propiedades"
 
         public List<TemaDetallePersonaBE> mListaTemaDetallePersona = new List<TemaDetallePersonaBE>();
+        public List<PreguntaBE> mListaPregunta = new List<PreguntaBE>();
 
         public int intIdTema { get; set; }
         public string  strDescTema { get; set; }
@@ -36,6 +37,8 @@ namespace SSOMA.Presentacion.Modulos.Capacitacion.Registros
         int intIdCuestionario = 0;
         int intNotaAprobatoria = 0;
         int intDuracion = 0;
+
+        int h = 0, m = 0, s = 0;
 
         #endregion
 
@@ -63,7 +66,8 @@ namespace SSOMA.Presentacion.Modulos.Capacitacion.Registros
             {
                 CargaTemaDetalle();
             }
-            
+
+           
         }
 
         private void gvTemaDetalle_DoubleClick(object sender, EventArgs e)
@@ -116,6 +120,53 @@ namespace SSOMA.Presentacion.Modulos.Capacitacion.Registros
             }
         }
 
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            s = s + 1;
+            if (s == 60)
+            {
+                s = 0;
+                m = m + 1;
+                if (m == 60)
+                {
+                    m = 0;
+                    h++;
+                    if (h == 24) h = 0;
+                }
+            }
+
+            ls.Text = Convert.ToString(s);
+            lm.Text = Convert.ToString(m);
+            lh.Text = Convert.ToString(h);
+            if (s < 10) ls.Text = "0" + ls.Text;
+            if (m < 10) lm.Text = "0" + lm.Text;
+            if (h < 10) lh.Text = "0" + lh.Text;
+
+            if (h == intDuracion)
+            {
+                timer1.Enabled = false;
+                XtraMessageBox.Show("El tiempo de la evaluación a terminado. se procederá a emitir la calificación", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                btnGrabar.Enabled = false;
+            }
+        }
+
+        private void btnGrabar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                timer1.Enabled = false;
+                if (XtraMessageBox.Show("¿Estas de seguro de grabar la evaluación? \n Has verificado las respuestas correctamente.", this.Text, MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+
+                }
+            }
+            catch (Exception ex)
+            {
+                Cursor = Cursors.Default;
+                XtraMessageBox.Show(ex.Message, this.Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
         private void xtraTabControl1_SelectedPageChanged(object sender, DevExpress.XtraTab.TabPageChangedEventArgs e)
         {
             if (e.Page.Name.ToString() == "xtraTabPage2")
@@ -144,7 +195,22 @@ namespace SSOMA.Presentacion.Modulos.Capacitacion.Registros
 
                     if (XtraMessageBox.Show("Dispone de " + intDuracion + " minutos para resolver la evaluación? \n Tenga en cuenta que se activará un cronómetro y no podrá cancelar.", this.Text, MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
-                        
+                        mListaPregunta = new PreguntaBL().ListaEvaluacion(Parametros.intEmpresaId, intIdTema, intIdCuestionario);
+                        bsListadoPregunta.DataSource = mListaPregunta;
+                        gcPregunta.DataSource = bsListadoPregunta;
+                        gcPregunta.RefreshDataSource();
+                        gvPregunta.ExpandAllGroups();
+
+                        h = 0;
+                        m = 0;
+                        s = 0;
+
+                        lh.Text = "00";
+                        lm.Text = "00";
+                        ls.Text = "00";
+
+                        timer1.Enabled = true;
+                        btnGrabar.Enabled = true;
                     }
                     else
                     {
@@ -201,10 +267,7 @@ namespace SSOMA.Presentacion.Modulos.Capacitacion.Registros
             gcTemaDetallePersona.RefreshDataSource();
         }
 
-
         #endregion
-
-        
 
         
     }

@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmRegCapacitacionVirtualEdit));
             this.splitContainerControl1 = new DevExpress.XtraEditors.SplitContainerControl();
             this.txtParticipante = new DevExpress.XtraEditors.TextEdit();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
@@ -55,11 +56,9 @@
             this.gcTxtSituacion = new DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit();
             this.gcTxtObservacion = new DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit();
             this.xtraTabPage2 = new DevExpress.XtraTab.XtraTabPage();
-            this.xtraTabPage3 = new DevExpress.XtraTab.XtraTabPage();
-            this.bsListadoTemaDetalle = new System.Windows.Forms.BindingSource(this.components);
             this.splitContainerControl2 = new DevExpress.XtraEditors.SplitContainerControl();
-            this.gridControl1 = new DevExpress.XtraGrid.GridControl();
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gcPregunta = new DevExpress.XtraGrid.GridControl();
+            this.gvPregunta = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn8 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn9 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn10 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -67,15 +66,17 @@
             this.gridColumn13 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn14 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn15 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.repositoryItemMemoEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit();
             this.gridColumn16 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.repositoryItemMemoEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit();
-            this.gridColumn19 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.repositoryItemMemoEdit3 = new DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit();
-            this.gridColumn20 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn21 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.repositoryItemMemoEdit4 = new DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit();
-            this.repositoryItemMemoEdit5 = new DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit();
+            this.repositoryItemMemoEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit();
+            this.btnGrabar = new DevExpress.XtraEditors.SimpleButton();
+            this.xtraTabPage3 = new DevExpress.XtraTab.XtraTabPage();
+            this.bsListadoTemaDetalle = new System.Windows.Forms.BindingSource(this.components);
+            this.bsListadoPregunta = new System.Windows.Forms.BindingSource(this.components);
+            this.label1 = new System.Windows.Forms.Label();
+            this.ls = new System.Windows.Forms.Label();
+            this.lm = new System.Windows.Forms.Label();
+            this.lh = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).BeginInit();
             this.splitContainerControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtParticipante.Properties)).BeginInit();
@@ -91,16 +92,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.gcTxtSituacion)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcTxtObservacion)).BeginInit();
             this.xtraTabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bsListadoTemaDetalle)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl2)).BeginInit();
             this.splitContainerControl2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gcPregunta)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvPregunta)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsListadoTemaDetalle)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsListadoPregunta)).BeginInit();
             this.SuspendLayout();
             // 
             // splitContainerControl1
@@ -225,6 +223,10 @@
             // 
             // gvTemaDetallePersona
             // 
+            this.gvTemaDetallePersona.Appearance.GroupRow.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
+            this.gvTemaDetallePersona.Appearance.GroupRow.ForeColor = System.Drawing.Color.DarkSlateBlue;
+            this.gvTemaDetallePersona.Appearance.GroupRow.Options.UseFont = true;
+            this.gvTemaDetallePersona.Appearance.GroupRow.Options.UseForeColor = true;
             this.gvTemaDetallePersona.Appearance.ViewCaption.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold);
             this.gvTemaDetallePersona.Appearance.ViewCaption.ForeColor = System.Drawing.Color.Navy;
             this.gvTemaDetallePersona.Appearance.ViewCaption.Options.UseFont = true;
@@ -389,53 +391,53 @@
             this.xtraTabPage2.Size = new System.Drawing.Size(1134, 693);
             this.xtraTabPage2.Text = "Examén FInal";
             // 
-            // xtraTabPage3
-            // 
-            this.xtraTabPage3.ImageOptions.Image = global::SSOMA.Presentacion.Properties.Resources.certificado_32x32;
-            this.xtraTabPage3.Name = "xtraTabPage3";
-            this.xtraTabPage3.Size = new System.Drawing.Size(1134, 693);
-            this.xtraTabPage3.Text = "Certificado";
-            // 
             // splitContainerControl2
             // 
             this.splitContainerControl2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainerControl2.Horizontal = false;
             this.splitContainerControl2.Location = new System.Drawing.Point(0, 0);
             this.splitContainerControl2.Name = "splitContainerControl2";
-            this.splitContainerControl2.Panel1.Controls.Add(this.gridControl1);
+            this.splitContainerControl2.Panel1.Controls.Add(this.gcPregunta);
             this.splitContainerControl2.Panel1.Text = "Panel1";
+            this.splitContainerControl2.Panel2.Controls.Add(this.label1);
+            this.splitContainerControl2.Panel2.Controls.Add(this.ls);
+            this.splitContainerControl2.Panel2.Controls.Add(this.lm);
+            this.splitContainerControl2.Panel2.Controls.Add(this.lh);
+            this.splitContainerControl2.Panel2.Controls.Add(this.btnGrabar);
             this.splitContainerControl2.Panel2.Text = "Panel2";
             this.splitContainerControl2.Size = new System.Drawing.Size(1134, 693);
-            this.splitContainerControl2.SplitterPosition = 652;
+            this.splitContainerControl2.SplitterPosition = 638;
             this.splitContainerControl2.TabIndex = 0;
             this.splitContainerControl2.Text = "splitContainerControl2";
             // 
-            // gridControl1
+            // gcPregunta
             // 
-            this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl1.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.gridControl1.Location = new System.Drawing.Point(0, 0);
-            this.gridControl1.MainView = this.gridView1;
-            this.gridControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.gridControl1.Name = "gridControl1";
-            this.gridControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
-            this.repositoryItemMemoEdit2,
-            this.repositoryItemMemoEdit3,
-            this.repositoryItemMemoEdit4,
-            this.repositoryItemMemoEdit1,
-            this.repositoryItemMemoEdit5});
-            this.gridControl1.Size = new System.Drawing.Size(1134, 652);
-            this.gridControl1.TabIndex = 79;
-            this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView1});
+            this.gcPregunta.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gcPregunta.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.gcPregunta.Location = new System.Drawing.Point(0, 0);
+            this.gcPregunta.MainView = this.gvPregunta;
+            this.gcPregunta.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.gcPregunta.Name = "gcPregunta";
+            this.gcPregunta.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.repositoryItemMemoEdit1});
+            this.gcPregunta.Size = new System.Drawing.Size(1134, 638);
+            this.gcPregunta.TabIndex = 79;
+            this.gcPregunta.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gvPregunta});
             // 
-            // gridView1
+            // gvPregunta
             // 
-            this.gridView1.Appearance.ViewCaption.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold);
-            this.gridView1.Appearance.ViewCaption.ForeColor = System.Drawing.Color.Navy;
-            this.gridView1.Appearance.ViewCaption.Options.UseFont = true;
-            this.gridView1.Appearance.ViewCaption.Options.UseForeColor = true;
-            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gvPregunta.Appearance.GroupPanel.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold);
+            this.gvPregunta.Appearance.GroupPanel.Options.UseFont = true;
+            this.gvPregunta.Appearance.GroupRow.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
+            this.gvPregunta.Appearance.GroupRow.ForeColor = System.Drawing.Color.Indigo;
+            this.gvPregunta.Appearance.GroupRow.Options.UseFont = true;
+            this.gvPregunta.Appearance.GroupRow.Options.UseForeColor = true;
+            this.gvPregunta.Appearance.ViewCaption.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold);
+            this.gvPregunta.Appearance.ViewCaption.ForeColor = System.Drawing.Color.Navy;
+            this.gvPregunta.Appearance.ViewCaption.Options.UseFont = true;
+            this.gvPregunta.Appearance.ViewCaption.Options.UseForeColor = true;
+            this.gvPregunta.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.gridColumn8,
             this.gridColumn9,
             this.gridColumn10,
@@ -443,19 +445,20 @@
             this.gridColumn13,
             this.gridColumn14,
             this.gridColumn15,
-            this.gridColumn16,
-            this.gridColumn19,
-            this.gridColumn20,
-            this.gridColumn21});
-            this.gridView1.GridControl = this.gridControl1;
-            this.gridView1.Name = "gridView1";
-            this.gridView1.OptionsSelection.MultiSelect = true;
-            this.gridView1.OptionsView.AllowHtmlDrawHeaders = true;
-            this.gridView1.OptionsView.ColumnAutoWidth = false;
-            this.gridView1.OptionsView.RowAutoHeight = true;
-            this.gridView1.OptionsView.ShowGroupPanel = false;
-            this.gridView1.OptionsView.ShowViewCaption = true;
-            this.gridView1.ViewCaption = "LISTADO DE ARCHIVOS DEL CONTENIDO DEL CURSO";
+            this.gridColumn16});
+            this.gvPregunta.GridControl = this.gcPregunta;
+            this.gvPregunta.GroupCount = 1;
+            this.gvPregunta.Name = "gvPregunta";
+            this.gvPregunta.OptionsSelection.MultiSelect = true;
+            this.gvPregunta.OptionsView.AllowHtmlDrawHeaders = true;
+            this.gvPregunta.OptionsView.ColumnAutoWidth = false;
+            this.gvPregunta.OptionsView.RowAutoHeight = true;
+            this.gvPregunta.OptionsView.ShowGroupPanel = false;
+            this.gvPregunta.OptionsView.ShowViewCaption = true;
+            this.gvPregunta.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
+            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.gridColumn14, DevExpress.Data.ColumnSortOrder.Ascending)});
+            this.gvPregunta.ViewCaption = "LEA LAS PREGUNTAS CORRECTAMENTE Y LUEGO MARQUE UNA RESPUESTA POR CADA UNA DE ELLA" +
+    "S";
             // 
             // gridColumn8
             // 
@@ -473,118 +476,136 @@
             // 
             // gridColumn10
             // 
-            this.gridColumn10.Caption = "IdTemaDetallePersona";
-            this.gridColumn10.FieldName = "IdTemaDetallePersona";
+            this.gridColumn10.Caption = "IdCuestionario";
+            this.gridColumn10.FieldName = "IdCuestionario";
             this.gridColumn10.Name = "gridColumn10";
             // 
             // gridColumn12
             // 
-            this.gridColumn12.Caption = "IdPersona";
-            this.gridColumn12.FieldName = "IdPersona";
+            this.gridColumn12.Caption = "IdPregunta";
+            this.gridColumn12.FieldName = "IdPregunta";
             this.gridColumn12.Name = "gridColumn12";
             this.gridColumn12.OptionsColumn.AllowEdit = false;
             this.gridColumn12.OptionsColumn.AllowFocus = false;
             // 
             // gridColumn13
             // 
-            this.gridColumn13.Caption = "Tipo de Documento";
-            this.gridColumn13.FieldName = "Image";
+            this.gridColumn13.Caption = "IdRespuesta";
+            this.gridColumn13.FieldName = "IdRespuesta";
             this.gridColumn13.Name = "gridColumn13";
             this.gridColumn13.OptionsColumn.AllowEdit = false;
             this.gridColumn13.OptionsColumn.AllowFocus = false;
-            this.gridColumn13.Visible = true;
-            this.gridColumn13.VisibleIndex = 0;
             this.gridColumn13.Width = 130;
             // 
             // gridColumn14
             // 
-            this.gridColumn14.Caption = "Archivo";
-            this.gridColumn14.FieldName = "Archivo";
+            this.gridColumn14.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
+            this.gridColumn14.AppearanceCell.ForeColor = System.Drawing.Color.Blue;
+            this.gridColumn14.AppearanceCell.Options.UseFont = true;
+            this.gridColumn14.AppearanceCell.Options.UseForeColor = true;
+            this.gridColumn14.Caption = "Pregunta";
+            this.gridColumn14.FieldName = "DescPregunta";
             this.gridColumn14.Name = "gridColumn14";
+            this.gridColumn14.OptionsColumn.AllowEdit = false;
+            this.gridColumn14.OptionsColumn.AllowFocus = false;
+            this.gridColumn14.Visible = true;
+            this.gridColumn14.VisibleIndex = 0;
+            this.gridColumn14.Width = 500;
             // 
             // gridColumn15
             // 
-            this.gridColumn15.AppearanceCell.Options.UseTextOptions = true;
-            this.gridColumn15.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn15.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.gridColumn15.Caption = "Documento";
-            this.gridColumn15.ColumnEdit = this.repositoryItemMemoEdit1;
-            this.gridColumn15.FieldName = "NombreArchivo";
+            this.gridColumn15.Caption = "Marcar";
+            this.gridColumn15.FieldName = "FlagCorrecto";
             this.gridColumn15.Name = "gridColumn15";
-            this.gridColumn15.OptionsColumn.AllowEdit = false;
-            this.gridColumn15.OptionsColumn.AllowFocus = false;
             this.gridColumn15.Visible = true;
-            this.gridColumn15.VisibleIndex = 1;
-            this.gridColumn15.Width = 350;
+            this.gridColumn15.VisibleIndex = 0;
+            this.gridColumn15.Width = 100;
+            // 
+            // gridColumn16
+            // 
+            this.gridColumn16.Caption = "Descripción de la Alternativa";
+            this.gridColumn16.ColumnEdit = this.repositoryItemMemoEdit1;
+            this.gridColumn16.FieldName = "DescRespuesta";
+            this.gridColumn16.Name = "gridColumn16";
+            this.gridColumn16.OptionsColumn.AllowEdit = false;
+            this.gridColumn16.OptionsColumn.AllowFocus = false;
+            this.gridColumn16.Visible = true;
+            this.gridColumn16.VisibleIndex = 1;
+            this.gridColumn16.Width = 900;
             // 
             // repositoryItemMemoEdit1
             // 
             this.repositoryItemMemoEdit1.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.repositoryItemMemoEdit1.Name = "repositoryItemMemoEdit1";
             // 
-            // gridColumn16
+            // btnGrabar
             // 
-            this.gridColumn16.AppearanceCell.Options.UseTextOptions = true;
-            this.gridColumn16.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn16.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.gridColumn16.Caption = "Extension";
-            this.gridColumn16.ColumnEdit = this.repositoryItemMemoEdit2;
-            this.gridColumn16.FieldName = "Extension";
-            this.gridColumn16.Name = "gridColumn16";
-            this.gridColumn16.OptionsColumn.AllowEdit = false;
-            this.gridColumn16.OptionsColumn.AllowFocus = false;
-            this.gridColumn16.Width = 300;
+            this.btnGrabar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnGrabar.ImageOptions.Image")));
+            this.btnGrabar.ImageOptions.ImageIndex = 1;
+            this.btnGrabar.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleLeft;
+            this.btnGrabar.Location = new System.Drawing.Point(494, 13);
+            this.btnGrabar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnGrabar.Name = "btnGrabar";
+            this.btnGrabar.Size = new System.Drawing.Size(147, 29);
+            this.btnGrabar.TabIndex = 132;
+            this.btnGrabar.Text = "Grabar Evaluación";
+            this.btnGrabar.Click += new System.EventHandler(this.btnGrabar_Click);
             // 
-            // repositoryItemMemoEdit2
+            // xtraTabPage3
             // 
-            this.repositoryItemMemoEdit2.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.repositoryItemMemoEdit2.Name = "repositoryItemMemoEdit2";
+            this.xtraTabPage3.ImageOptions.Image = global::SSOMA.Presentacion.Properties.Resources.certificado_32x32;
+            this.xtraTabPage3.Name = "xtraTabPage3";
+            this.xtraTabPage3.Size = new System.Drawing.Size(1134, 693);
+            this.xtraTabPage3.Text = "Certificado";
             // 
-            // gridColumn19
+            // label1
             // 
-            this.gridColumn19.AppearanceCell.Options.UseTextOptions = true;
-            this.gridColumn19.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn19.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.gridColumn19.Caption = "Descripción del Documento";
-            this.gridColumn19.ColumnEdit = this.repositoryItemMemoEdit3;
-            this.gridColumn19.FieldName = "Descripcion";
-            this.gridColumn19.Name = "gridColumn19";
-            this.gridColumn19.OptionsColumn.AllowEdit = false;
-            this.gridColumn19.OptionsColumn.AllowFocus = false;
-            this.gridColumn19.Visible = true;
-            this.gridColumn19.VisibleIndex = 2;
-            this.gridColumn19.Width = 550;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.DarkSlateBlue;
+            this.label1.Location = new System.Drawing.Point(76, -12);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(40, 58);
+            this.label1.TabIndex = 136;
+            this.label1.Text = ":";
             // 
-            // repositoryItemMemoEdit3
+            // ls
             // 
-            this.repositoryItemMemoEdit3.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.repositoryItemMemoEdit3.Name = "repositoryItemMemoEdit3";
+            this.ls.AutoSize = true;
+            this.ls.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ls.ForeColor = System.Drawing.Color.DarkSlateBlue;
+            this.ls.Location = new System.Drawing.Point(401, -12);
+            this.ls.Name = "ls";
+            this.ls.Size = new System.Drawing.Size(0, 58);
+            this.ls.TabIndex = 135;
+            this.ls.Visible = false;
             // 
-            // gridColumn20
+            // lm
             // 
-            this.gridColumn20.Caption = "DescSituacion";
-            this.gridColumn20.FieldName = "DescSituacion";
-            this.gridColumn20.Name = "gridColumn20";
+            this.lm.AutoSize = true;
+            this.lm.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lm.ForeColor = System.Drawing.Color.DarkSlateBlue;
+            this.lm.Location = new System.Drawing.Point(103, -9);
+            this.lm.Name = "lm";
+            this.lm.Size = new System.Drawing.Size(83, 58);
+            this.lm.TabIndex = 134;
+            this.lm.Text = "00";
             // 
-            // gridColumn21
+            // lh
             // 
-            this.gridColumn21.Caption = "Situacion";
-            this.gridColumn21.FieldName = "ImageSituacion";
-            this.gridColumn21.Name = "gridColumn21";
-            this.gridColumn21.OptionsColumn.AllowEdit = false;
-            this.gridColumn21.OptionsColumn.AllowFocus = false;
-            this.gridColumn21.Visible = true;
-            this.gridColumn21.VisibleIndex = 3;
+            this.lh.AutoSize = true;
+            this.lh.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lh.ForeColor = System.Drawing.Color.DarkSlateBlue;
+            this.lh.Location = new System.Drawing.Point(3, -9);
+            this.lh.Name = "lh";
+            this.lh.Size = new System.Drawing.Size(83, 58);
+            this.lh.TabIndex = 133;
+            this.lh.Text = "00";
             // 
-            // repositoryItemMemoEdit4
+            // timer1
             // 
-            this.repositoryItemMemoEdit4.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.repositoryItemMemoEdit4.Name = "repositoryItemMemoEdit4";
-            // 
-            // repositoryItemMemoEdit5
-            // 
-            this.repositoryItemMemoEdit5.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.repositoryItemMemoEdit5.Name = "repositoryItemMemoEdit5";
+            this.timer1.Interval = 10;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // frmRegCapacitacionVirtualEdit
             // 
@@ -613,16 +634,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.gcTxtSituacion)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcTxtObservacion)).EndInit();
             this.xtraTabPage2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.bsListadoTemaDetalle)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl2)).EndInit();
             this.splitContainerControl2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gcPregunta)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvPregunta)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsListadoTemaDetalle)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsListadoPregunta)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -658,23 +676,23 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn6;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn7;
         private DevExpress.XtraEditors.SplitContainerControl splitContainerControl2;
-        private DevExpress.XtraGrid.GridControl gridControl1;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private DevExpress.XtraGrid.GridControl gcPregunta;
+        private DevExpress.XtraGrid.Views.Grid.GridView gvPregunta;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn8;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn9;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn10;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn12;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn13;
+        private DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit repositoryItemMemoEdit1;
+        public DevExpress.XtraEditors.SimpleButton btnGrabar;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn14;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn15;
-        private DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit repositoryItemMemoEdit1;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn16;
-        private DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit repositoryItemMemoEdit2;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn19;
-        private DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit repositoryItemMemoEdit3;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn20;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn21;
-        private DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit repositoryItemMemoEdit4;
-        private DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit repositoryItemMemoEdit5;
+        private System.Windows.Forms.BindingSource bsListadoPregunta;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label ls;
+        private System.Windows.Forms.Label lm;
+        private System.Windows.Forms.Label lh;
+        private System.Windows.Forms.Timer timer1;
     }
 }

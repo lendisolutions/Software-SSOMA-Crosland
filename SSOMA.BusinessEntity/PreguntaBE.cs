@@ -38,6 +38,8 @@ namespace SSOMA.BusinessEntity
         [DataMember]
         public String DescCuestionario { get; set; }
         [DataMember]
+        public Int32 IdRespuesta { get; set; }
+        [DataMember]
         public String DescRespuesta { get; set; }
         [DataMember]
         public Boolean FlagCorrecto { get; set; }
