@@ -13,9 +13,32 @@ namespace SSOMA.Presentacion.Modulos.Capacitacion.Registros
 {
     public partial class frmRegCapacitacionVirtualEdit : DevExpress.XtraEditors.XtraForm
     {
+        #region "Propiedades"
+
+        public string  strDescTema { get; set; }
+        public string strParticipante { get; set; }
+
+        #endregion
+
+        #region "Eventos"
+
         public frmRegCapacitacionVirtualEdit()
         {
             InitializeComponent();
         }
+
+        private void frmRegCapacitacionVirtualEdit_Load(object sender, EventArgs e)
+        {
+            txtDescripcion.Text = strDescTema;
+            txtParticipante.Text = strParticipante;
+        }
+
+        #endregion
+
+        #region "Metodos"
+
+        #endregion
+
+
     }
 }

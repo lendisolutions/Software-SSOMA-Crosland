@@ -146,6 +146,7 @@ namespace SSOMA.Presentacion.Modulos.Capacitacion.Registros
             {
                 int intIdEmpresa = int.Parse(tileView1.GetFocusedRowCellValue("IdEmpresa").ToString());
                 int intIdTema = int.Parse(tileView1.GetFocusedRowCellValue("IdTema").ToString());
+                string strDescTema = tileView1.GetFocusedRowCellValue("DescTema").ToString();
 
                 TemaBE objE_Tema = null;
                 objE_Tema = new TemaBL().Selecciona(intIdEmpresa, intIdTema);
@@ -154,6 +155,13 @@ namespace SSOMA.Presentacion.Modulos.Capacitacion.Registros
                     if (objE_Tema.IdSituacion == Parametros.intTEMAInactivo)
                     {
                         XtraMessageBox.Show("El Curso se encuentra inactivo no puede ingresar", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        frmRegCapacitacionVirtualEdit frm = new frmRegCapacitacionVirtualEdit();
+                        frm.strDescTema = strDescTema;
+                        frm.strParticipante = Parametros.strUsuarioNombres;
+                        frm.Show();
                     }
                 }
 

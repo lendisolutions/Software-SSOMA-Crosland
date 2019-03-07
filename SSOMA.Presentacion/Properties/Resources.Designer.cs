@@ -813,6 +813,36 @@ namespace SSOMA.Presentacion.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap MSExcel_48x48 {
+            get {
+                object obj = ResourceManager.GetObject("MSExcel_48x48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap MSPowerPoint_48x48 {
+            get {
+                object obj = ResourceManager.GetObject("MSPowerPoint_48x48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap MSWord_48x48 {
+            get {
+                object obj = ResourceManager.GetObject("MSWord_48x48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Negocio_32x32 {
             get {
                 object obj = ResourceManager.GetObject("Negocio_32x32", resourceCulture);
@@ -876,6 +906,16 @@ namespace SSOMA.Presentacion.Properties {
         internal static System.Drawing.Bitmap pdf_16x16 {
             get {
                 object obj = ResourceManager.GetObject("pdf_16x16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Pdf_48x48 {
+            get {
+                object obj = ResourceManager.GetObject("Pdf_48x48", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -1536,6 +1576,16 @@ namespace SSOMA.Presentacion.Properties {
         internal static System.Drawing.Bitmap ValoracionRiesgo_32x32 {
             get {
                 object obj = ResourceManager.GetObject("ValoracionRiesgo_32x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Video_48x48 {
+            get {
+                object obj = ResourceManager.GetObject("Video_48x48", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
