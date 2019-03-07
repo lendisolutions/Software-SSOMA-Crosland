@@ -37,7 +37,10 @@ namespace SSOMA.BusinessEntity
         public String DescTema { get; set; }
         [DataMember]
         public String DescCuestionario { get; set; }
-
+        [DataMember]
+        public String DescRespuesta { get; set; }
+        [DataMember]
+        public Boolean FlagCorrecto { get; set; }
         #endregion
     }
 }

@@ -125,5 +125,36 @@ namespace SSOMA.DataLogic
             reader.Dispose();
             return Preguntalist;
         }
+
+        public List<PreguntaBE> ListaEvaluacion(int IdEmpresa, int IdTema, int IdCuestionario)
+        {
+            Database db = DatabaseFactory.CreateDatabase("cnSSOMABD");
+            DbCommand dbCommand = db.GetStoredProcCommand("usp_Pregunta_ListaEvaluacion");
+            db.AddInParameter(dbCommand, "pIdEmpresa", DbType.Int32, IdEmpresa);
+            db.AddInParameter(dbCommand, "pIdTema", DbType.Int32, IdTema);
+            db.AddInParameter(dbCommand, "pIdCuestionario", DbType.Int32, IdCuestionario);
+
+            IDataReader reader = db.ExecuteReader(dbCommand);
+            List<PreguntaBE> Preguntalist = new List<PreguntaBE>();
+            PreguntaBE Pregunta;
+            while (reader.Read())
+            {
+                Pregunta = new PreguntaBE();
+                Pregunta.IdPregunta = Int32.Parse(reader["idPregunta"].ToString());
+                Pregunta.IdEmpresa = Int32.Parse(reader["IdEmpresa"].ToString());
+                Pregunta.RazonSocial = reader["RazonSocial"].ToString();
+                Pregunta.IdTema = Int32.Parse(reader["IdTema"].ToString());
+                Pregunta.DescTema = reader["DescTema"].ToString();
+                Pregunta.IdCuestionario = Int32.Parse(reader["IdCuestionario"].ToString());
+                Pregunta.DescCuestionario = reader["DescCuestionario"].ToString();
+                Pregunta.DescPregunta = reader["DescPregunta"].ToString();
+                Pregunta.DescRespuesta = reader["DescRespuesta"].ToString();
+                Pregunta.FlagCorrecto = Boolean.Parse(reader["FlagCorrecto"].ToString());
+                Preguntalist.Add(Pregunta);
+            }
+            reader.Close();
+            reader.Dispose();
+            return Preguntalist;
+        }
     }
 }

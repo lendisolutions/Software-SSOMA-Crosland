@@ -33,6 +33,10 @@ namespace SSOMA.Presentacion.Modulos.Capacitacion.Registros
         public string  strDescTema { get; set; }
         public string strParticipante { get; set; }
 
+        int intIdCuestionario = 0;
+        int intNotaAprobatoria = 0;
+        int intDuracion = 0;
+
         #endregion
 
         #region "Eventos"
@@ -116,14 +120,38 @@ namespace SSOMA.Presentacion.Modulos.Capacitacion.Registros
         {
             if (e.Page.Name.ToString() == "xtraTabPage2")
             {
-                if (XtraMessageBox.Show("Esta seguro de desarrollar el Examén Final \n Para esto ha tenido que leer el contenido del cursso.", this.Text, MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                if (gvTemaDetallePersona.RowCount > 0)
                 {
-                    
+                    for (int i = 0; i < gvTemaDetallePersona.DataRowCount; i++)
+                    {
+                        if (gvTemaDetallePersona.GetRowCellValue(i, "DescSituacion").ToString() == "NO VISTO")
+                        {
+                            XtraMessageBox.Show("Para pasar al examén final es necesario abrir y revisar todos los archivos del contenido del curso.", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            xtraTabControl1.SelectedTabPage = xtraTabPage1;
+                            return;
+                        }
+                    }
                 }
-                else
+
+                //VERIFICAMOS EL CUESTIONARIO
+                List<CuestionarioBE> lstCuestionario = null;
+                lstCuestionario = new CuestionarioBL().ListaTodosActivo(Parametros.intEmpresaId, intIdTema);
+                if (lstCuestionario.Count>0)
                 {
-                    xtraTabControl1.SelectedTabPage = xtraTabPage1;
+                    intIdCuestionario = lstCuestionario[0].IdCuestionario;
+                    intNotaAprobatoria = lstCuestionario[0].NotaAprobatoria;
+                    intDuracion = lstCuestionario[0].Duracion;
+
+                    if (XtraMessageBox.Show("Dispone de " + intDuracion + " minutos para resolver la evaluación? \n Tenga en cuenta que se activará un cronómetro y no podrá cancelar.", this.Text, MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        
+                    }
+                    else
+                    {
+                        xtraTabControl1.SelectedTabPage = xtraTabPage1;
+                    }
                 }
+
             }
         }
 
