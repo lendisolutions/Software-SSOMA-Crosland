@@ -159,6 +159,7 @@ namespace SSOMA.Presentacion.Modulos.Capacitacion.Registros
                     else
                     {
                         frmRegCapacitacionVirtualEdit frm = new frmRegCapacitacionVirtualEdit();
+                        frm.intIdTema = intIdTema;
                         frm.strDescTema = strDescTema;
                         frm.strParticipante = Parametros.strUsuarioNombres;
                         frm.Show();

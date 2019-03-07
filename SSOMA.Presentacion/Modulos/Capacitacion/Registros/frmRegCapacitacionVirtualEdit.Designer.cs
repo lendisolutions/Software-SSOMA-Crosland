@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.splitContainerControl1 = new DevExpress.XtraEditors.SplitContainerControl();
             this.txtParticipante = new DevExpress.XtraEditors.TextEdit();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
@@ -35,14 +36,39 @@
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.xtraTabControl1 = new DevExpress.XtraTab.XtraTabControl();
             this.xtraTabPage1 = new DevExpress.XtraTab.XtraTabPage();
+            this.gcTemaDetalle = new DevExpress.XtraGrid.GridControl();
+            this.gvTemaDetalle = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumn17 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn11 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Archivo = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gcTxtCondicionSubEstandar = new DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit();
+            this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gcTxtClasificacion = new DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit();
+            this.gridColumn18 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gcTxtResponsable = new DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit();
+            this.gcTxtSituacion = new DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit();
+            this.gcTxtObservacion = new DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit();
             this.xtraTabPage2 = new DevExpress.XtraTab.XtraTabPage();
             this.xtraTabPage3 = new DevExpress.XtraTab.XtraTabPage();
+            this.bsListadoTemaDetalle = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).BeginInit();
             this.splitContainerControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtParticipante.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDescripcion.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
             this.xtraTabControl1.SuspendLayout();
+            this.xtraTabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gcTemaDetalle)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvTemaDetalle)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gcTxtCondicionSubEstandar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gcTxtClasificacion)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gcTxtResponsable)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gcTxtSituacion)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gcTxtObservacion)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsListadoTemaDetalle)).BeginInit();
             this.SuspendLayout();
             // 
             // splitContainerControl1
@@ -58,7 +84,7 @@
             this.splitContainerControl1.Panel1.Text = "Panel1";
             this.splitContainerControl1.Panel2.Controls.Add(this.xtraTabControl1);
             this.splitContainerControl1.Panel2.Text = "Panel2";
-            this.splitContainerControl1.Size = new System.Drawing.Size(1107, 777);
+            this.splitContainerControl1.Size = new System.Drawing.Size(1308, 777);
             this.splitContainerControl1.SplitterPosition = 71;
             this.splitContainerControl1.TabIndex = 1;
             this.splitContainerControl1.Text = "splitContainerControl1";
@@ -74,7 +100,7 @@
             this.txtParticipante.Properties.Appearance.Options.UseForeColor = true;
             this.txtParticipante.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtParticipante.Properties.MaxLength = 50;
-            this.txtParticipante.Size = new System.Drawing.Size(976, 22);
+            this.txtParticipante.Size = new System.Drawing.Size(1085, 22);
             this.txtParticipante.TabIndex = 32;
             // 
             // labelControl2
@@ -101,7 +127,7 @@
             this.txtDescripcion.Properties.Appearance.Options.UseForeColor = true;
             this.txtDescripcion.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtDescripcion.Properties.MaxLength = 50;
-            this.txtDescripcion.Size = new System.Drawing.Size(976, 22);
+            this.txtDescripcion.Size = new System.Drawing.Size(1085, 22);
             this.txtDescripcion.TabIndex = 30;
             // 
             // labelControl1
@@ -128,41 +154,193 @@
             this.xtraTabControl1.Name = "xtraTabControl1";
             this.xtraTabControl1.SelectedTabPage = this.xtraTabPage1;
             this.xtraTabControl1.ShowTabHeader = DevExpress.Utils.DefaultBoolean.True;
-            this.xtraTabControl1.Size = new System.Drawing.Size(1107, 700);
+            this.xtraTabControl1.Size = new System.Drawing.Size(1308, 700);
             this.xtraTabControl1.TabIndex = 1;
             this.xtraTabControl1.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.xtraTabPage1,
             this.xtraTabPage2,
             this.xtraTabPage3});
+            this.xtraTabControl1.SelectedPageChanged += new DevExpress.XtraTab.TabPageChangedEventHandler(this.xtraTabControl1_SelectedPageChanged);
             // 
             // xtraTabPage1
             // 
             this.xtraTabPage1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.xtraTabPage1.Controls.Add(this.gcTemaDetalle);
             this.xtraTabPage1.ImageOptions.Image = global::SSOMA.Presentacion.Properties.Resources.DesarrolloCurso_32x32;
             this.xtraTabPage1.Name = "xtraTabPage1";
             this.xtraTabPage1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.xtraTabPage1.Size = new System.Drawing.Size(933, 693);
+            this.xtraTabPage1.Size = new System.Drawing.Size(1134, 693);
             this.xtraTabPage1.Text = "Contenido del Curso";
+            // 
+            // gcTemaDetalle
+            // 
+            this.gcTemaDetalle.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gcTemaDetalle.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.gcTemaDetalle.Location = new System.Drawing.Point(0, 0);
+            this.gcTemaDetalle.MainView = this.gvTemaDetalle;
+            this.gcTemaDetalle.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.gcTemaDetalle.Name = "gcTemaDetalle";
+            this.gcTemaDetalle.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.gcTxtClasificacion,
+            this.gcTxtResponsable,
+            this.gcTxtSituacion,
+            this.gcTxtCondicionSubEstandar,
+            this.gcTxtObservacion});
+            this.gcTemaDetalle.Size = new System.Drawing.Size(1134, 693);
+            this.gcTemaDetalle.TabIndex = 78;
+            this.gcTemaDetalle.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gvTemaDetalle});
+            // 
+            // gvTemaDetalle
+            // 
+            this.gvTemaDetalle.Appearance.ViewCaption.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold);
+            this.gvTemaDetalle.Appearance.ViewCaption.ForeColor = System.Drawing.Color.Navy;
+            this.gvTemaDetalle.Appearance.ViewCaption.Options.UseFont = true;
+            this.gvTemaDetalle.Appearance.ViewCaption.Options.UseForeColor = true;
+            this.gvTemaDetalle.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridColumn17,
+            this.gridColumn1,
+            this.gridColumn11,
+            this.gridColumn3,
+            this.Archivo,
+            this.gridColumn4,
+            this.gridColumn5,
+            this.gridColumn18});
+            this.gvTemaDetalle.GridControl = this.gcTemaDetalle;
+            this.gvTemaDetalle.Name = "gvTemaDetalle";
+            this.gvTemaDetalle.OptionsSelection.MultiSelect = true;
+            this.gvTemaDetalle.OptionsView.AllowHtmlDrawHeaders = true;
+            this.gvTemaDetalle.OptionsView.ColumnAutoWidth = false;
+            this.gvTemaDetalle.OptionsView.RowAutoHeight = true;
+            this.gvTemaDetalle.OptionsView.ShowGroupPanel = false;
+            this.gvTemaDetalle.OptionsView.ShowViewCaption = true;
+            this.gvTemaDetalle.ViewCaption = "LISTADO DE ARCHIVOS DEL CONTENIDO DEL CURSO";
+            this.gvTemaDetalle.DoubleClick += new System.EventHandler(this.gvTemaDetalle_DoubleClick);
+            // 
+            // gridColumn17
+            // 
+            this.gridColumn17.Caption = "IdEmpresa";
+            this.gridColumn17.FieldName = "IdEmpresa";
+            this.gridColumn17.Name = "gridColumn17";
+            // 
+            // gridColumn1
+            // 
+            this.gridColumn1.Caption = "IdTema";
+            this.gridColumn1.FieldName = "IdTema";
+            this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.OptionsColumn.AllowEdit = false;
+            this.gridColumn1.OptionsColumn.AllowFocus = false;
+            // 
+            // gridColumn11
+            // 
+            this.gridColumn11.Caption = "IdTemaDetalle";
+            this.gridColumn11.FieldName = "IdTemaDetalle";
+            this.gridColumn11.Name = "gridColumn11";
+            // 
+            // gridColumn3
+            // 
+            this.gridColumn3.Caption = "Tipo de Documento";
+            this.gridColumn3.FieldName = "Image";
+            this.gridColumn3.Name = "gridColumn3";
+            this.gridColumn3.OptionsColumn.AllowEdit = false;
+            this.gridColumn3.OptionsColumn.AllowFocus = false;
+            this.gridColumn3.Visible = true;
+            this.gridColumn3.VisibleIndex = 0;
+            this.gridColumn3.Width = 130;
+            // 
+            // Archivo
+            // 
+            this.Archivo.Caption = "Archivo";
+            this.Archivo.FieldName = "Archivo";
+            this.Archivo.Name = "Archivo";
+            // 
+            // gridColumn4
+            // 
+            this.gridColumn4.AppearanceCell.Options.UseTextOptions = true;
+            this.gridColumn4.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn4.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.gridColumn4.Caption = "Documento";
+            this.gridColumn4.ColumnEdit = this.gcTxtCondicionSubEstandar;
+            this.gridColumn4.FieldName = "NombreArchivo";
+            this.gridColumn4.Name = "gridColumn4";
+            this.gridColumn4.OptionsColumn.AllowEdit = false;
+            this.gridColumn4.OptionsColumn.AllowFocus = false;
+            this.gridColumn4.Visible = true;
+            this.gridColumn4.VisibleIndex = 1;
+            this.gridColumn4.Width = 350;
+            // 
+            // gcTxtCondicionSubEstandar
+            // 
+            this.gcTxtCondicionSubEstandar.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.gcTxtCondicionSubEstandar.Name = "gcTxtCondicionSubEstandar";
+            // 
+            // gridColumn5
+            // 
+            this.gridColumn5.AppearanceCell.Options.UseTextOptions = true;
+            this.gridColumn5.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn5.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.gridColumn5.Caption = "Extension";
+            this.gridColumn5.ColumnEdit = this.gcTxtClasificacion;
+            this.gridColumn5.FieldName = "Extension";
+            this.gridColumn5.Name = "gridColumn5";
+            this.gridColumn5.OptionsColumn.AllowEdit = false;
+            this.gridColumn5.OptionsColumn.AllowFocus = false;
+            this.gridColumn5.Width = 300;
+            // 
+            // gcTxtClasificacion
+            // 
+            this.gcTxtClasificacion.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.gcTxtClasificacion.Name = "gcTxtClasificacion";
+            // 
+            // gridColumn18
+            // 
+            this.gridColumn18.AppearanceCell.Options.UseTextOptions = true;
+            this.gridColumn18.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn18.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.gridColumn18.Caption = "Descripción del Documento";
+            this.gridColumn18.ColumnEdit = this.gcTxtResponsable;
+            this.gridColumn18.FieldName = "Descripcion";
+            this.gridColumn18.Name = "gridColumn18";
+            this.gridColumn18.OptionsColumn.AllowEdit = false;
+            this.gridColumn18.OptionsColumn.AllowFocus = false;
+            this.gridColumn18.Visible = true;
+            this.gridColumn18.VisibleIndex = 2;
+            this.gridColumn18.Width = 550;
+            // 
+            // gcTxtResponsable
+            // 
+            this.gcTxtResponsable.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.gcTxtResponsable.Name = "gcTxtResponsable";
+            // 
+            // gcTxtSituacion
+            // 
+            this.gcTxtSituacion.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.gcTxtSituacion.Name = "gcTxtSituacion";
+            // 
+            // gcTxtObservacion
+            // 
+            this.gcTxtObservacion.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.gcTxtObservacion.Name = "gcTxtObservacion";
             // 
             // xtraTabPage2
             // 
             this.xtraTabPage2.ImageOptions.Image = global::SSOMA.Presentacion.Properties.Resources.ExamenFinal_32x32;
             this.xtraTabPage2.Name = "xtraTabPage2";
-            this.xtraTabPage2.Size = new System.Drawing.Size(932, 693);
+            this.xtraTabPage2.Size = new System.Drawing.Size(1063, 693);
             this.xtraTabPage2.Text = "Examén FInal";
             // 
             // xtraTabPage3
             // 
             this.xtraTabPage3.ImageOptions.Image = global::SSOMA.Presentacion.Properties.Resources.certificado_32x32;
             this.xtraTabPage3.Name = "xtraTabPage3";
-            this.xtraTabPage3.Size = new System.Drawing.Size(932, 693);
+            this.xtraTabPage3.Size = new System.Drawing.Size(1063, 693);
             this.xtraTabPage3.Text = "Certificado";
             // 
             // frmRegCapacitacionVirtualEdit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1107, 777);
+            this.ClientSize = new System.Drawing.Size(1308, 777);
             this.Controls.Add(this.splitContainerControl1);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -176,6 +354,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtDescripcion.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).EndInit();
             this.xtraTabControl1.ResumeLayout(false);
+            this.xtraTabPage1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gcTemaDetalle)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvTemaDetalle)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gcTxtCondicionSubEstandar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gcTxtClasificacion)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gcTxtResponsable)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gcTxtSituacion)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gcTxtObservacion)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsListadoTemaDetalle)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -191,5 +378,21 @@
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraEditors.TextEdit txtParticipante;
         private DevExpress.XtraEditors.LabelControl labelControl2;
+        private DevExpress.XtraGrid.GridControl gcTemaDetalle;
+        private DevExpress.XtraGrid.Views.Grid.GridView gvTemaDetalle;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn17;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn11;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
+        private DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit gcTxtCondicionSubEstandar;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn5;
+        private DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit gcTxtClasificacion;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn18;
+        private DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit gcTxtResponsable;
+        private DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit gcTxtObservacion;
+        private DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit gcTxtSituacion;
+        private DevExpress.XtraGrid.Columns.GridColumn Archivo;
+        private System.Windows.Forms.BindingSource bsListadoTemaDetalle;
     }
 }

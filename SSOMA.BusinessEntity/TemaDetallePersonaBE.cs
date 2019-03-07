@@ -7,13 +7,17 @@ using System.Runtime.Serialization;
 namespace SSOMA.BusinessEntity
 {
     [DataContract]
-    public class TemaDetalleBE
+    public class TemaDetallePersonaBE
     {
         #region "Atributos"
         [DataMember]
-        public Int32 IdTemaDetalle { get; set; }
+        public Int32 IdTemaDetallePersona { get; set; }
         [DataMember]
         public Int32 IdTema { get; set; }
+        [DataMember]
+        public Int32 Idpersona { get; set; }
+        [DataMember]
+        public byte[] Image { get; set; }
         [DataMember]
         public byte[] Archivo { get; set; }
         [DataMember]
@@ -22,6 +26,10 @@ namespace SSOMA.BusinessEntity
         public String Extension { get; set; }
         [DataMember]
         public String Descripcion { get; set; }
+        [DataMember]
+        public String DescSituacion { get; set; }
+        [DataMember]
+        public byte[] ImageSituacion { get; set; }
         [DataMember]
         public Boolean FlagEstado { get; set; }
         [DataMember]

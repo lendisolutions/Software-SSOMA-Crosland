@@ -242,9 +242,6 @@ namespace SSOMA.Presentacion.Modulos.Capacitacion.Maestros
                         File.Delete(item);
                     }
 
-                    //if (File.Exists(strFullFilePath))
-                    //    Directory.Delete(strFullFilePath);
-
                     File.WriteAllBytes(strFullFilePath, Buffer);
 
                     Process.Start(strFullFilePath);

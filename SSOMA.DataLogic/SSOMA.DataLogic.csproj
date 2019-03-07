@@ -163,6 +163,7 @@
     <Compile Include="TablaDL.cs" />
     <Compile Include="TablaElementoDL.cs" />
     <Compile Include="TemaDetalleDL.cs" />
+    <Compile Include="TemaDetallePersonaDL.cs" />
     <Compile Include="TemaDL.cs" />
     <Compile Include="TemaPersonaDL.cs" />
     <Compile Include="TipoAccidenteDL.cs" />
