@@ -17,6 +17,10 @@ using System.Diagnostics;
 using SSOMA.Presentacion.Funciones;
 using SSOMA.Presentacion.Utils;
 using SSOMA.Presentacion.Modulos.Otros;
+using CrystalDecisions.Shared;
+using CrystalDecisions.CrystalReports.Engine;
+using CrystalDecisions.ReportSource;
+using SSOMA.Presentacion.Modulos.Capacitacion.Rpt;
 using SSOMA.BusinessEntity;
 using SSOMA.BusinessLogic;
 
@@ -311,9 +315,6 @@ namespace SSOMA.Presentacion.Modulos.Capacitacion.Registros
                    
                     break;
             }
-
-            
-
         }
 
         private void xtraTabControl1_SelectedPageChanged(object sender, DevExpress.XtraTab.TabPageChangedEventArgs e)
@@ -336,7 +337,7 @@ namespace SSOMA.Presentacion.Modulos.Capacitacion.Registros
                 //VERIFICAMOS EL CUESTIONARIO
                 List<CuestionarioBE> lstCuestionario = null;
                 lstCuestionario = new CuestionarioBL().ListaTodosActivo(Parametros.intEmpresaId, intIdTema);
-                if (lstCuestionario.Count>0)
+                if (lstCuestionario.Count > 0)
                 {
                     intIdCuestionario = lstCuestionario[0].IdCuestionario;
                     intNotaAprobatoria = lstCuestionario[0].NotaAprobatoria;
@@ -390,11 +391,20 @@ namespace SSOMA.Presentacion.Modulos.Capacitacion.Registros
                     }
                     else
                     {
+                        List<ReporteResumenPersonaBE> lstReporte = null;
+                        lstReporte = new ReporteResumenPersonaBL().Listado(Parametros.intEmpresaId, intIdTema, Parametros.intPersonaId);
+                        if (lstReporte.Count > 0)
+                        {
+                            rptCapacitacion objReporte = new rptCapacitacion();
+                            objReporte.SetDataSource(lstReporte);
+                            this.crystalReportViewer1.ReportSource = objReporte;
+                        }
 
                     }
                 }
 
             }
+        }
 
         #endregion
 
@@ -442,7 +452,7 @@ namespace SSOMA.Presentacion.Modulos.Capacitacion.Registros
             gcTemaDetallePersona.RefreshDataSource();
         }
 
-        #endregion
+       #endregion
 
         
     }

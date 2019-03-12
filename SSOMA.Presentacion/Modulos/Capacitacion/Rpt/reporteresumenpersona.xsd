@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="reporteresumenpersona"
+    targetNamespace="http://tempuri.org/reporteresumenpersona.xsd"
+    elementFormDefault="qualified"
+    xmlns="http://tempuri.org/reporteresumenpersona.xsd"
+    xmlns:mstns="http://tempuri.org/reporteresumenpersona.xsd"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="reporteresumenpersona">
+    <xs:complexType>
+      <xs:sequence />
+      <xs:attribute name="RazonSocial" type="xs:string" />
+      <xs:attribute name="Logo" type="xs:base64Binary" />
+      <xs:attribute name="DescTema" type="xs:string" />
+      <xs:attribute name="ApeNom" type="xs:string" />
+      <xs:attribute name="Fecha" type="xs:string" />
+      <xs:attribute name="Item" type="xs:int" />
+      <xs:attribute name="NotaFinal" type="xs:string" />
+      <xs:attribute name="Situacion" type="xs:string" />
+    </xs:complexType>
+  </xs:element>
+  
+</xs:schema>

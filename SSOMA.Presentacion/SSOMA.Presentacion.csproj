@@ -1033,6 +1033,12 @@
       <DependentUpon>rptCapacitacionTipo.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Modulos\Capacitacion\Rpt\rptCertificado.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptCertificado.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Modulos\Capacitacion\Rpt\rptPlanAnual.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -3031,6 +3037,10 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rptCapacitacionTipo.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Capacitacion\Rpt\rptCertificado.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptCertificado.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Modulos\Capacitacion\Rpt\rptPlanAnual.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rptPlanAnual.cs</LastGenOutput>
@@ -3855,6 +3865,9 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="Modulos\Capacitacion\Rpt\reportepregunta.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Modulos\Capacitacion\Rpt\reporteresumenpersona.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Modulos\Documentario\Rpt\reportedocumento.xsd">

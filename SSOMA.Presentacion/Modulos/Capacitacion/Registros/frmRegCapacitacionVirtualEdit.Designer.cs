@@ -78,6 +78,7 @@
             this.bsListadoTemaDetalle = new System.Windows.Forms.BindingSource(this.components);
             this.bsListadoPregunta = new System.Windows.Forms.BindingSource(this.components);
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.crystalReportViewer1 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).BeginInit();
             this.splitContainerControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtParticipante.Properties)).BeginInit();
@@ -99,6 +100,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.gvPregunta)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.RepCheck)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit1)).BeginInit();
+            this.xtraTabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bsListadoTemaDetalle)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsListadoPregunta)).BeginInit();
             this.SuspendLayout();
@@ -607,6 +609,7 @@
             // 
             // xtraTabPage3
             // 
+            this.xtraTabPage3.Controls.Add(this.crystalReportViewer1);
             this.xtraTabPage3.ImageOptions.Image = global::SSOMA.Presentacion.Properties.Resources.certificado_32x32;
             this.xtraTabPage3.Name = "xtraTabPage3";
             this.xtraTabPage3.Size = new System.Drawing.Size(1134, 693);
@@ -616,6 +619,22 @@
             // 
             this.timer1.Interval = 10;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // crystalReportViewer1
+            // 
+            this.crystalReportViewer1.ActiveViewIndex = -1;
+            this.crystalReportViewer1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.crystalReportViewer1.Cursor = System.Windows.Forms.Cursors.Default;
+            this.crystalReportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.crystalReportViewer1.Location = new System.Drawing.Point(0, 0);
+            this.crystalReportViewer1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.crystalReportViewer1.Name = "crystalReportViewer1";
+            this.crystalReportViewer1.ShowCloseButton = false;
+            this.crystalReportViewer1.ShowGroupTreeButton = false;
+            this.crystalReportViewer1.ShowParameterPanelButton = false;
+            this.crystalReportViewer1.Size = new System.Drawing.Size(1134, 693);
+            this.crystalReportViewer1.TabIndex = 6;
+            this.crystalReportViewer1.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None;
             // 
             // frmRegCapacitacionVirtualEdit
             // 
@@ -650,6 +669,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.gvPregunta)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.RepCheck)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit1)).EndInit();
+            this.xtraTabPage3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.bsListadoTemaDetalle)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsListadoPregunta)).EndInit();
             this.ResumeLayout(false);
@@ -706,5 +726,6 @@
         private System.Windows.Forms.Label lh;
         private System.Windows.Forms.Timer timer1;
         private DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit RepCheck;
+        private CrystalDecisions.Windows.Forms.CrystalReportViewer crystalReportViewer1;
     }
 }
