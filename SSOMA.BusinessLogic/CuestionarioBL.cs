@@ -28,6 +28,7 @@ namespace SSOMA.BusinessLogic
             { throw ex; }
         }
 
+        
         public List<CuestionarioBE> ListaCombo(int IdEmpresa, int Periodo)
         {
             try

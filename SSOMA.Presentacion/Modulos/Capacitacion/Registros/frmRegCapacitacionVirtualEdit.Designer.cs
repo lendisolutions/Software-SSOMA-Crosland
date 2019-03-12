@@ -66,16 +66,17 @@
             this.gridColumn13 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn14 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn15 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.RepCheck = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
             this.gridColumn16 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemMemoEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit();
-            this.btnGrabar = new DevExpress.XtraEditors.SimpleButton();
-            this.xtraTabPage3 = new DevExpress.XtraTab.XtraTabPage();
-            this.bsListadoTemaDetalle = new System.Windows.Forms.BindingSource(this.components);
-            this.bsListadoPregunta = new System.Windows.Forms.BindingSource(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.ls = new System.Windows.Forms.Label();
             this.lm = new System.Windows.Forms.Label();
             this.lh = new System.Windows.Forms.Label();
+            this.btnGrabar = new DevExpress.XtraEditors.SimpleButton();
+            this.xtraTabPage3 = new DevExpress.XtraTab.XtraTabPage();
+            this.bsListadoTemaDetalle = new System.Windows.Forms.BindingSource(this.components);
+            this.bsListadoPregunta = new System.Windows.Forms.BindingSource(this.components);
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).BeginInit();
             this.splitContainerControl1.SuspendLayout();
@@ -96,6 +97,7 @@
             this.splitContainerControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gcPregunta)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvPregunta)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.RepCheck)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsListadoTemaDetalle)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsListadoPregunta)).BeginInit();
@@ -419,7 +421,8 @@
             this.gcPregunta.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.gcPregunta.Name = "gcPregunta";
             this.gcPregunta.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
-            this.repositoryItemMemoEdit1});
+            this.repositoryItemMemoEdit1,
+            this.RepCheck});
             this.gcPregunta.Size = new System.Drawing.Size(1134, 638);
             this.gcPregunta.TabIndex = 79;
             this.gcPregunta.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -515,11 +518,18 @@
             // gridColumn15
             // 
             this.gridColumn15.Caption = "Marcar";
+            this.gridColumn15.ColumnEdit = this.RepCheck;
             this.gridColumn15.FieldName = "FlagCorrecto";
             this.gridColumn15.Name = "gridColumn15";
             this.gridColumn15.Visible = true;
             this.gridColumn15.VisibleIndex = 0;
             this.gridColumn15.Width = 100;
+            // 
+            // RepCheck
+            // 
+            this.RepCheck.AutoHeight = false;
+            this.RepCheck.Name = "RepCheck";
+            this.RepCheck.CheckedChanged += new System.EventHandler(this.RepCheck_CheckedChanged);
             // 
             // gridColumn16
             // 
@@ -537,26 +547,6 @@
             // 
             this.repositoryItemMemoEdit1.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.repositoryItemMemoEdit1.Name = "repositoryItemMemoEdit1";
-            // 
-            // btnGrabar
-            // 
-            this.btnGrabar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnGrabar.ImageOptions.Image")));
-            this.btnGrabar.ImageOptions.ImageIndex = 1;
-            this.btnGrabar.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleLeft;
-            this.btnGrabar.Location = new System.Drawing.Point(494, 13);
-            this.btnGrabar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnGrabar.Name = "btnGrabar";
-            this.btnGrabar.Size = new System.Drawing.Size(147, 29);
-            this.btnGrabar.TabIndex = 132;
-            this.btnGrabar.Text = "Grabar Evaluación";
-            this.btnGrabar.Click += new System.EventHandler(this.btnGrabar_Click);
-            // 
-            // xtraTabPage3
-            // 
-            this.xtraTabPage3.ImageOptions.Image = global::SSOMA.Presentacion.Properties.Resources.certificado_32x32;
-            this.xtraTabPage3.Name = "xtraTabPage3";
-            this.xtraTabPage3.Size = new System.Drawing.Size(1134, 693);
-            this.xtraTabPage3.Text = "Certificado";
             // 
             // label1
             // 
@@ -602,6 +592,26 @@
             this.lh.TabIndex = 133;
             this.lh.Text = "00";
             // 
+            // btnGrabar
+            // 
+            this.btnGrabar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnGrabar.ImageOptions.Image")));
+            this.btnGrabar.ImageOptions.ImageIndex = 1;
+            this.btnGrabar.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleLeft;
+            this.btnGrabar.Location = new System.Drawing.Point(494, 13);
+            this.btnGrabar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnGrabar.Name = "btnGrabar";
+            this.btnGrabar.Size = new System.Drawing.Size(147, 29);
+            this.btnGrabar.TabIndex = 132;
+            this.btnGrabar.Text = "Grabar Evaluación";
+            this.btnGrabar.Click += new System.EventHandler(this.btnGrabar_Click);
+            // 
+            // xtraTabPage3
+            // 
+            this.xtraTabPage3.ImageOptions.Image = global::SSOMA.Presentacion.Properties.Resources.certificado_32x32;
+            this.xtraTabPage3.Name = "xtraTabPage3";
+            this.xtraTabPage3.Size = new System.Drawing.Size(1134, 693);
+            this.xtraTabPage3.Text = "Certificado";
+            // 
             // timer1
             // 
             this.timer1.Interval = 10;
@@ -638,6 +648,7 @@
             this.splitContainerControl2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gcPregunta)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvPregunta)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.RepCheck)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsListadoTemaDetalle)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsListadoPregunta)).EndInit();
@@ -694,5 +705,6 @@
         private System.Windows.Forms.Label lm;
         private System.Windows.Forms.Label lh;
         private System.Windows.Forms.Timer timer1;
+        private DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit RepCheck;
     }
 }

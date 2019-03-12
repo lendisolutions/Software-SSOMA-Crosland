@@ -115,5 +115,34 @@ namespace SSOMA.DataLogic
             reader.Dispose();
             return Respuestalist;
         }
+
+        public List<RespuestaBE> ListaCuestionario(int IdCuestionario)
+        {
+            Database db = DatabaseFactory.CreateDatabase("cnSSOMABD");
+            DbCommand dbCommand = db.GetStoredProcCommand("usp_Respuesta_ListaCuestionario");
+            db.AddInParameter(dbCommand, "pIdCuestionario", DbType.Int32, IdCuestionario);
+
+            IDataReader reader = db.ExecuteReader(dbCommand);
+            List<RespuestaBE> Respuestalist = new List<RespuestaBE>();
+            RespuestaBE Respuesta;
+            while (reader.Read())
+            {
+                Respuesta = new RespuestaBE();
+                Respuesta.IdEmpresa = Int32.Parse(reader["IdEmpresa"].ToString());
+                Respuesta.IdPregunta = Int32.Parse(reader["IdPregunta"].ToString());
+                Respuesta.IdRespuesta = Int32.Parse(reader["IdRespuesta"].ToString());
+                Respuesta.Puntaje = Int32.Parse(reader["Puntaje"].ToString());
+                Respuesta.IdTema = Int32.Parse(reader["IdTema"].ToString());
+                Respuesta.IdCuestionario = Int32.Parse(reader["IdCuestionario"].ToString());
+                Respuesta.DescRespuesta = reader["DescRespuesta"].ToString();
+                Respuesta.FlagCorrecto = Boolean.Parse(reader["FlagCorrecto"].ToString());
+                Respuesta.FlagEstado = Boolean.Parse(reader["flagestado"].ToString());
+                Respuesta.TipoOper = 4; //CONSULTAR
+                Respuestalist.Add(Respuesta);
+            }
+            reader.Close();
+            reader.Dispose();
+            return Respuestalist;
+        }
     }
 }

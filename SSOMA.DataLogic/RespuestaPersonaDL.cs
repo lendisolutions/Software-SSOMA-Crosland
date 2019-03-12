@@ -23,6 +23,8 @@ namespace SSOMA.DataLogic
             db.AddInParameter(dbCommand, "pIdRespuesta", DbType.Int32, pItem.IdRespuesta);
             db.AddInParameter(dbCommand, "pIdPersona", DbType.Int32, pItem.IdPersona);
             db.AddInParameter(dbCommand, "pFlagRespuesta", DbType.Boolean, pItem.FlagRespuesta);
+            db.AddInParameter(dbCommand, "pDescSituacion", DbType.String, pItem.DescSituacion);
+            db.AddInParameter(dbCommand, "pPuntaje", DbType.Int32, pItem.Puntaje);
             db.AddInParameter(dbCommand, "pFlagEstado", DbType.Boolean, pItem.FlagEstado);
             db.AddInParameter(dbCommand, "pUsuario", DbType.String, pItem.Usuario);
             db.AddInParameter(dbCommand, "pMaquina", DbType.String, pItem.Maquina);
@@ -43,6 +45,8 @@ namespace SSOMA.DataLogic
             db.AddInParameter(dbCommand, "pIdRespuesta", DbType.Int32, pItem.IdRespuesta);
             db.AddInParameter(dbCommand, "pIdPersona", DbType.Int32, pItem.IdPersona);
             db.AddInParameter(dbCommand, "pFlagRespuesta", DbType.Boolean, pItem.FlagRespuesta);
+            db.AddInParameter(dbCommand, "pDescSituacion", DbType.String, pItem.DescSituacion);
+            db.AddInParameter(dbCommand, "pPuntaje", DbType.Int32, pItem.Puntaje);
             db.AddInParameter(dbCommand, "pFlagEstado", DbType.Boolean, pItem.FlagEstado);
             db.AddInParameter(dbCommand, "pUsuario", DbType.String, pItem.Usuario);
             db.AddInParameter(dbCommand, "pMaquina", DbType.String, pItem.Maquina);
@@ -89,6 +93,8 @@ namespace SSOMA.DataLogic
                 RespuestaPersona.IdPersona = Int32.Parse(reader["IdPersona"].ToString());
                 RespuestaPersona.ApeNom = reader["ApeNom"].ToString();
                 RespuestaPersona.FlagRespuesta = Boolean.Parse(reader["FlagRespuesta"].ToString());
+                RespuestaPersona.DescSituacion = reader["DescSituacion"].ToString();
+                RespuestaPersona.Puntaje = Int32.Parse(reader["Puntaje"].ToString());
                 RespuestaPersona.FlagEstado = Boolean.Parse(reader["flagestado"].ToString());
             }
             reader.Close();
@@ -126,6 +132,8 @@ namespace SSOMA.DataLogic
                 RespuestaPersona.IdPersona = Int32.Parse(reader["IdPersona"].ToString());
                 RespuestaPersona.ApeNom = reader["ApeNom"].ToString();
                 RespuestaPersona.FlagRespuesta = Boolean.Parse(reader["FlagRespuesta"].ToString());
+                RespuestaPersona.DescSituacion = reader["DescSituacion"].ToString();
+                RespuestaPersona.Puntaje = Int32.Parse(reader["Puntaje"].ToString());
                 RespuestaPersona.FlagEstado = Boolean.Parse(reader["flagestado"].ToString());
                 RespuestaPersonalist.Add(RespuestaPersona);
             }

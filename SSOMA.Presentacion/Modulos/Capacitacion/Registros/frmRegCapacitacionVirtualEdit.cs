@@ -146,7 +146,8 @@ namespace SSOMA.Presentacion.Modulos.Capacitacion.Registros
             {
                 timer1.Enabled = false;
                 XtraMessageBox.Show("El tiempo de la evaluación a terminado. se procederá a emitir la calificación", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
-                btnGrabar.Enabled = false;
+                btnGrabar_Click(sender, e);
+                
             }
         }
 
@@ -154,10 +155,133 @@ namespace SSOMA.Presentacion.Modulos.Capacitacion.Registros
         {
             try
             {
-                timer1.Enabled = false;
-                if (XtraMessageBox.Show("¿Estas de seguro de grabar la evaluación? \n Has verificado las respuestas correctamente.", this.Text, MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                {
+                string strSituacion = "";
 
+                timer1.Enabled = false;
+                if (XtraMessageBox.Show("¿Estas de seguro de grabar la evaluación? \n Ha verificado las respuestas correctamente.", this.Text, MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    Cursor = Cursors.WaitCursor;
+
+                    int NotaFinal = 0;
+
+                    List<RespuestaBE> lstRespuestaCorrecta = null;
+                    lstRespuestaCorrecta = new RespuestaBL().ListaCuestionario(intIdCuestionario);
+
+                    List<RespuestaPersonaBE> lstRespuestaPersona = new List<RespuestaPersonaBE>();
+                 
+
+                    //RESPUESTAS CORRECTAS
+                    foreach (var item in mListaPregunta)
+                    {
+                        if (item.FlagCorrecto == true)
+                        {
+                            foreach (var itemrespuesta in lstRespuestaCorrecta)
+                            {
+                                if (item.IdTema == itemrespuesta.IdTema && item.IdCuestionario == itemrespuesta.IdCuestionario && item.IdPregunta == itemrespuesta.IdPregunta && item.IdRespuesta == itemrespuesta.IdRespuesta && item.FlagCorrecto == itemrespuesta.FlagCorrecto)
+                                {
+                                    NotaFinal = NotaFinal + itemrespuesta.Puntaje;
+
+                                    RespuestaPersonaBE objE_RespuestaPersona = new RespuestaPersonaBE();
+                                    objE_RespuestaPersona.IdRespuestaPersona = 0;
+                                    objE_RespuestaPersona.IdTema = item.IdTema;
+                                    objE_RespuestaPersona.IdCuestionario = item.IdCuestionario;
+                                    objE_RespuestaPersona.IdPregunta = item.IdPregunta;
+                                    objE_RespuestaPersona.IdRespuesta = item.IdRespuesta;
+                                    objE_RespuestaPersona.IdPersona = Parametros.intPersonaId;
+                                    objE_RespuestaPersona.FlagRespuesta = item.FlagCorrecto;
+                                    objE_RespuestaPersona.DescSituacion = "RESPUESTA CORRECTA";
+                                    objE_RespuestaPersona.Puntaje = itemrespuesta.Puntaje;
+                                    objE_RespuestaPersona.FlagEstado = true;
+                                    objE_RespuestaPersona.Usuario = Parametros.strUsuarioLogin;
+                                    objE_RespuestaPersona.Maquina = WindowsIdentity.GetCurrent().Name.ToString();
+                                    objE_RespuestaPersona.IdEmpresa = Parametros.intEmpresaId;
+                                    lstRespuestaPersona.Add(objE_RespuestaPersona);
+                                    
+                                }
+                                
+                            }
+                        }
+                    }
+
+                    //RESPUESTAS INCORRECTAS
+                    foreach (var item in mListaPregunta)
+                    {
+                        if (item.FlagCorrecto == true)
+                        {
+                            foreach (var itemrespuesta in lstRespuestaCorrecta)
+                            {
+                                if (item.IdTema == itemrespuesta.IdTema && item.IdCuestionario == itemrespuesta.IdCuestionario && item.IdPregunta == itemrespuesta.IdPregunta && item.IdRespuesta == itemrespuesta.IdRespuesta && item.FlagCorrecto != itemrespuesta.FlagCorrecto)
+                                {
+                                    RespuestaPersonaBE objE_RespuestaPersona = new RespuestaPersonaBE();
+                                    objE_RespuestaPersona.IdRespuestaPersona = 0;
+                                    objE_RespuestaPersona.IdTema = item.IdTema;
+                                    objE_RespuestaPersona.IdCuestionario = item.IdCuestionario;
+                                    objE_RespuestaPersona.IdPregunta = item.IdPregunta;
+                                    objE_RespuestaPersona.IdRespuesta = item.IdRespuesta;
+                                    objE_RespuestaPersona.IdPersona = Parametros.intPersonaId;
+                                    objE_RespuestaPersona.FlagRespuesta = item.FlagCorrecto;
+                                    objE_RespuestaPersona.DescSituacion = "RESPUESTA INCORRECTA";
+                                    objE_RespuestaPersona.Puntaje =0;
+                                    objE_RespuestaPersona.FlagEstado = true;
+                                    objE_RespuestaPersona.Usuario = Parametros.strUsuarioLogin;
+                                    objE_RespuestaPersona.Maquina = WindowsIdentity.GetCurrent().Name.ToString();
+                                    objE_RespuestaPersona.IdEmpresa = Parametros.intEmpresaId;
+                                    lstRespuestaPersona.Add(objE_RespuestaPersona);
+                                    break;
+                                }
+
+                            }
+                        }
+                    }
+
+
+                    if (NotaFinal >= intNotaAprobatoria)
+                    {
+                        StringBuilder strMensajeAprobatorio = new StringBuilder();
+                        strMensajeAprobatorio.Append("*****************************************************************************\n\n");
+                        strMensajeAprobatorio.Append("Felicitaciones ha Aprobado la evaluación.\n\n");
+                        strMensajeAprobatorio.Append("Nota Aprobatoria : " + NotaFinal + "\n\n");
+                        strMensajeAprobatorio.Append("Condición: Aprobado" + "\n\n");
+                        strMensajeAprobatorio.Append("*****************************************************************************\n\n");
+                        strSituacion = "APROBADO";
+                        XtraMessageBox.Show(strMensajeAprobatorio.ToString(), this.Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        StringBuilder strMensajeDesaprobatorio = new StringBuilder();
+                        strMensajeDesaprobatorio.Append("*****************************************************************************\n\n");
+                        strMensajeDesaprobatorio.Append("Lo Sentimos ha desaprobado la evaluación.\n\n");
+                        strMensajeDesaprobatorio.Append("Nota Desaprobatoria : " + NotaFinal + "\n\n");
+                        strMensajeDesaprobatorio.Append("Condición: Desaprobado" + "\n\n");
+                        strMensajeDesaprobatorio.Append("Comunicarse con el responsable del area." + "\n\n");
+                        strMensajeDesaprobatorio.Append("*****************************************************************************\n\n");
+                        strSituacion = "DESAPROBADO";
+                        XtraMessageBox.Show(strMensajeDesaprobatorio.ToString(), this.Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+
+                    Cursor = Cursors.Default;
+
+                    ResumenPersonaBE objResumenPersona = new ResumenPersonaBE();
+                    ResumenPersonaBL objBL_ResumenPersona = new ResumenPersonaBL();
+
+                    objResumenPersona.IdResumenPersona = 0;
+                    objResumenPersona.IdEmpresa = Parametros.intEmpresaId;
+                    objResumenPersona.IdTema = intIdTema;
+                    objResumenPersona.IdPersona = Parametros.intPersonaId;
+                    objResumenPersona.NotaFinal = NotaFinal;
+                    objResumenPersona.Situacion = strSituacion;
+                    objResumenPersona.FlagEstado = true;
+                    objResumenPersona.Usuario = Parametros.strUsuarioLogin;
+                    objResumenPersona.Maquina = WindowsIdentity.GetCurrent().Name.ToString();
+
+                    objBL_ResumenPersona.Inserta(objResumenPersona, lstRespuestaPersona);
+
+                    if (strSituacion == "APROBADO")
+                    {
+                        XtraMessageBox.Show("La evaluación se registró correctamente. \n Puede ir a la opción del certificado para la emisión del documento.", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+
+                    btnGrabar.Enabled = false;
                 }
             }
             catch (Exception ex)
@@ -165,6 +289,31 @@ namespace SSOMA.Presentacion.Modulos.Capacitacion.Registros
                 Cursor = Cursors.Default;
                 XtraMessageBox.Show(ex.Message, this.Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        
+        private void RepCheck_CheckedChanged(object sender, EventArgs e)
+        {
+            CheckEdit edit = sender as CheckEdit;
+            switch (edit.Checked)
+            {
+                case true:
+                    int intIdPregunta = (int)gvPregunta.GetFocusedRowCellValue("IdPregunta");
+                    //foreach (var item in mListaPregunta)
+                    //{
+                    //    int c = 0;
+                    //    c = mListaPregunta.FindIndex(x => x.IdPregunta == intIdPregunta);
+                    //    gvPregunta.SelectRow(c);
+
+                    //}
+                    break;
+                case false:
+                   
+                    break;
+            }
+
+            
+
         }
 
         private void xtraTabControl1_SelectedPageChanged(object sender, DevExpress.XtraTab.TabPageChangedEventArgs e)

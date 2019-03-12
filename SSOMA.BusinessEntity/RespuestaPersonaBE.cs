@@ -25,6 +25,10 @@ namespace SSOMA.BusinessEntity
         [DataMember]
         public Boolean FlagRespuesta { get; set; }
         [DataMember]
+        public String DescSituacion { get; set; }
+        [DataMember]
+        public Int32 Puntaje { get; set; }
+        [DataMember]
         public Boolean FlagEstado { get; set; }
         [DataMember]
         public String Usuario { get; set; }

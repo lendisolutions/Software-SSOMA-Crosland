@@ -34,6 +34,8 @@ namespace SSOMA.BusinessEntity
         //ATRIBUTOS EXTERNOS
         [DataMember]
         public Int32 TipoOper { get; set; }
+        [DataMember]
+        public Int32 Puntaje { get; set; }
 
         #endregion
 
