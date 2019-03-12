@@ -142,6 +142,7 @@
     <Compile Include="Reportes\ReporteInspeccionTrabajoDL.cs" />
     <Compile Include="Reportes\ReportePlanAnualDL.cs" />
     <Compile Include="Reportes\ReportePreguntaDL.cs" />
+    <Compile Include="Reportes\ReporteResumenPersonaDL.cs" />
     <Compile Include="Reportes\ReporteSeguroSctrDL.cs" />
     <Compile Include="Reportes\ReporteSeguroViajeDL.cs" />
     <Compile Include="Reportes\ReporteSolicitudDL.cs" />

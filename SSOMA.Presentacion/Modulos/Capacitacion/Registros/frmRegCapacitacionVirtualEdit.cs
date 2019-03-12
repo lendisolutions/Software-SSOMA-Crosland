@@ -368,7 +368,33 @@ namespace SSOMA.Presentacion.Modulos.Capacitacion.Registros
                 }
 
             }
-        }
+
+            if (e.Page.Name.ToString() == "xtraTabPage3")
+            {
+                List<ResumenPersonaBE> lstResumenPersona = null;
+                lstResumenPersona = new ResumenPersonaBL().ListaTodosActivo(Parametros.intEmpresaId, intIdTema, Parametros.intPersonaId);
+                if (lstResumenPersona.Count == 0)
+                {
+                    XtraMessageBox.Show("No tiene ningún resutado de evaluación. \n Realice su evaluación.", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    xtraTabControl1.SelectedTabPage = xtraTabPage2;
+                    return;
+                }
+
+                if (lstResumenPersona.Count > 0)
+                {
+                    if (lstResumenPersona[0].Situacion == "DESAPROBADO")
+                    {
+                        XtraMessageBox.Show("Ud. se encuentra desaprobado en la evaluación no se emitirá ningún certificado.", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        xtraTabControl1.SelectedTabPage = xtraTabPage1;
+                        return;
+                    }
+                    else
+                    {
+
+                    }
+                }
+
+            }
 
         #endregion
 
