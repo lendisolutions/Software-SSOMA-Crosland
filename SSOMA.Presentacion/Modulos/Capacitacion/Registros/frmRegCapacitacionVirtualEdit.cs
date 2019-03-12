@@ -395,9 +395,10 @@ namespace SSOMA.Presentacion.Modulos.Capacitacion.Registros
                         lstReporte = new ReporteResumenPersonaBL().Listado(Parametros.intEmpresaId, intIdTema, Parametros.intPersonaId);
                         if (lstReporte.Count > 0)
                         {
-                            rptCapacitacion objReporte = new rptCapacitacion();
+                            rptCertificado objReporte = new rptCertificado();
                             objReporte.SetDataSource(lstReporte);
                             this.crystalReportViewer1.ReportSource = objReporte;
+                            this.crystalReportViewer1.Zoom(75);
                         }
 
                     }
