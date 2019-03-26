@@ -65,6 +65,7 @@ namespace SSOMA.Presentacion
         public static int intTblSituacionSeguroViaje = 23;
         public static int intTblSituacionSeguroSCTR = 24;
         public static int intTblOrdenInterna = 25;
+        public static int intTblTipoTema = 28;
         //TIPO DE EMPRESA
 
         public static int intTECorporativo = 1;
@@ -181,6 +182,10 @@ namespace SSOMA.Presentacion
         //SITUACION CUESTIONARIO
         public static int intCUESTIONARIOActivo = 89;
         public static int intCUESTIONARIOInactivo = 90;
+
+        //TIPO TEMA
+        public static int intTEMAPresencial = 91;
+        public static int intTEMAVirtual = 92;
 
     }
 }

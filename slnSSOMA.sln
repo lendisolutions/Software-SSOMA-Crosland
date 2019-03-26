@@ -54,26 +54,4 @@ Global
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {4FE1D909-AF6A-4C6E-AAED-1286D71CFECE}
 	EndGlobalSection
-	GlobalSection(TeamFoundationVersionControl) = preSolution
-		SccNumberOfProjects = 5
-		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
-		SccTeamFoundationServer = https://lendiapplications.visualstudio.com/
-		SccLocalPath0 = .
-		SccProjectUniqueName1 = SSOMA.BusinessEntity\\SSOMA.BusinessEntity.csproj
-		SccProjectTopLevelParentUniqueName1 = slnSSOMA.sln
-		SccProjectName1 = SSOMA.BusinessEntity
-		SccLocalPath1 = SSOMA.BusinessEntity
-		SccProjectUniqueName2 = SSOMA.BusinessLogic\\SSOMA.BusinessLogic.csproj
-		SccProjectTopLevelParentUniqueName2 = slnSSOMA.sln
-		SccProjectName2 = SSOMA.BusinessLogic
-		SccLocalPath2 = SSOMA.BusinessLogic
-		SccProjectUniqueName3 = SSOMA.DataLogic\\SSOMA.DataLogic.csproj
-		SccProjectTopLevelParentUniqueName3 = slnSSOMA.sln
-		SccProjectName3 = SSOMA.DataLogic
-		SccLocalPath3 = SSOMA.DataLogic
-		SccProjectUniqueName4 = SSOMA.Presentacion\\SSOMA.Presentacion.csproj
-		SccProjectTopLevelParentUniqueName4 = slnSSOMA.sln
-		SccProjectName4 = SSOMA.Presentacion
-		SccLocalPath4 = SSOMA.Presentacion
-	EndGlobalSection
 EndGlobal
