@@ -155,17 +155,27 @@ namespace SSOMA.Presentacion.Modulos.Capacitacion.Registros
                     if (objE_Tema.IdSituacion == Parametros.intTEMAInactivo)
                     {
                         XtraMessageBox.Show("El Curso se encuentra inactivo no puede ingresar", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
-                    else
-                    {
-                        frmRegCapacitacionVirtualEdit frm = new frmRegCapacitacionVirtualEdit();
-                        frm.intIdTema = intIdTema;
-                        frm.strDescTema = strDescTema;
-                        frm.strParticipante = Parametros.strUsuarioNombres;
-                        frm.Show();
-                    }
-                }
+                        return;
 
+                    }
+
+                    List<ResumenPersonaBE> lstResumenPersona = null;
+                    lstResumenPersona = new ResumenPersonaBL().ListaTodosActivo(Parametros.intEmpresaId, intIdTema, Parametros.intPersonaId);
+                    if (lstResumenPersona.Count == 1)
+                    {
+                        if (lstResumenPersona[0].Situacion == "APROBADO")
+                        {
+                            XtraMessageBox.Show("Ud. se encuentra aprobadado en el curso, no puede ingresar.", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            return;
+                        }
+                    }
+
+                    frmRegCapacitacionVirtualEdit frm = new frmRegCapacitacionVirtualEdit();
+                    frm.intIdTema = intIdTema;
+                    frm.strDescTema = strDescTema;
+                    frm.strParticipante = Parametros.strUsuarioNombres;
+                    frm.Show();
+                }
 
             }
         }

@@ -108,13 +108,6 @@ namespace SSOMA.Presentacion.Modulos.Capacitacion.Maestros
                     else
                     { this.picFirma.Image = SSOMA.Presentacion.Properties.Resources.firma; }
 
-                    if (objE_Tema.Firma2 != null)
-                    {
-                        this.picFirma2.Image = new FuncionBase().Bytes2Image((byte[])objE_Tema.Firma2);
-                    }
-                    else
-                    { this.picFirma2.Image = SSOMA.Presentacion.Properties.Resources.firma; }
-
                     IdSituacion = objE_Tema.IdSituacion;
                 }
 
@@ -279,30 +272,13 @@ namespace SSOMA.Presentacion.Modulos.Capacitacion.Maestros
 
             if (openFile.FileName.Length != 0)
             {
-                this.picFirma.Image = new FuncionBase().ScaleImage(Image.FromFile(openFile.FileName), 640, 500);
+                this.picFirma.Image = new FuncionBase().ScaleImage(Image.FromFile(openFile.FileName), 3100, 2184);
             }
         }
 
         private void btnEliminarFirma1_Click(object sender, EventArgs e)
         {
             this.picFirma.Image = SSOMA.Presentacion.Properties.Resources.firma;
-        }
-
-        private void btnAgregarFirma2_Click(object sender, EventArgs e)
-        {
-            OpenFileDialog openFile = new OpenFileDialog();
-            openFile.Filter = "Jpg File|*.Jpg|Jpeg File|*.Jpeg|Png File|*.Png |Gif File|*.Gif|All|*.*";
-            openFile.ShowDialog();
-
-            if (openFile.FileName.Length != 0)
-            {
-                this.picFirma2.Image = new FuncionBase().ScaleImage(Image.FromFile(openFile.FileName), 640, 500);
-            }
-        }
-
-        private void btnEliminarFirma2_Click(object sender, EventArgs e)
-        {
-            this.picFirma2.Image = SSOMA.Presentacion.Properties.Resources.firma;
         }
 
         private void btnGrabar_Click(object sender, EventArgs e)
