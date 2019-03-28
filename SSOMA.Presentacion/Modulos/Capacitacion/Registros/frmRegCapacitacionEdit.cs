@@ -70,7 +70,7 @@ namespace SSOMA.Presentacion.Modulos.Capacitacion.Registros
             BSUtils.LoaderLook(cboTipo, new TipoCapacitacionBL().ListaCombo(Parametros.intEmpresaId), "DescTipoCapacitacion", "IdTipoCapacitacion", true);
             BSUtils.LoaderLook(cboClasificacion, new TablaElementoBL().ListaTodosActivo(Parametros.intEmpresaId, Parametros.intTblClasificacionCapacitacion), "DescTablaElemento", "IdTablaElemento", true);
             cboClasificacion.EditValue = Parametros.intCCSeguridadIndustrial;
-            BSUtils.LoaderLook(cboTema, new TemaBL().ListaCombo(Parametros.intEmpresaId, Parametros.intPeriodo), "DescTema", "IdTema", true);
+            BSUtils.LoaderLook(cboTema, new TemaBL().ListaCombo(Parametros.intEmpresaId, Parametros.intTEMAPresencial, Parametros.intPeriodo), "DescTema", "IdTema", true);
             BSUtils.LoaderLook(cboLugar, new LugarBL().ListaCombo(Parametros.intEmpresaId), "DescLugar", "IdLugar", true);
             BSUtils.LoaderLook(cboExpositor, new ExpositorBL().ListaCombo(Parametros.intEmpresaId), "DescExpositor", "IdExpositor", true);
 

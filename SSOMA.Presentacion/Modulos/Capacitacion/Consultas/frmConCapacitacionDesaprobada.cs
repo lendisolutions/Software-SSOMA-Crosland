@@ -39,7 +39,7 @@ namespace SSOMA.Presentacion.Modulos.Capacitacion.Consultas
             txtPeriodo.EditValue = Parametros.intPeriodo;
             BSUtils.LoaderLook(cboEmpresa, new EmpresaBL().ListaTodosActivo(0, Parametros.intTECorporativo), "RazonSocial", "IdEmpresa", true);
             cboEmpresa.EditValue = Parametros.intEmpresaId;
-            BSUtils.LoaderLook(cboTema, new TemaBL().ListaCombo(Parametros.intEmpresaId, Convert.ToInt32(txtPeriodo.EditValue)), "DescTema", "IdTema", true);
+            BSUtils.LoaderLook(cboTema, new TemaBL().ListaCombo(Parametros.intEmpresaId, Parametros.intTEMAPresencial, Convert.ToInt32(txtPeriodo.EditValue)), "DescTema", "IdTema", true);
         }
 
         private void toolstpExportarExcel_Click(object sender, EventArgs e)

@@ -253,7 +253,7 @@ namespace SSOMA.Presentacion.Modulos.Capacitacion.Maestros
             nodo.Nodes.Clear();
 
             List<TemaBE> lstTema = null;
-            lstTema = new TemaBL().ListaTodosActivo(Parametros.intEmpresaId, IdCategoriaTema, Parametros.intPeriodo);
+            lstTema = new TemaBL().ListaTodosActivo(Parametros.intEmpresaId, IdCategoriaTema, Parametros.intTEMAVirtual, Parametros.intPeriodo);
             foreach (var item in lstTema)
             {
                 TreeNode nuevoNodoChild = new TreeNode();

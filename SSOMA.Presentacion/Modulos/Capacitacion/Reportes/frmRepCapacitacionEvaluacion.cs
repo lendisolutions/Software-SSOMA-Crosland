@@ -30,7 +30,7 @@ namespace SSOMA.Presentacion.Modulos.Capacitacion.Reportes
         private void frmRepCapacitacionEvaluacion_Load(object sender, EventArgs e)
         {
             BSUtils.LoaderLook(cboEmpresa, new EmpresaBL().ListaCombo(Parametros.intTECorporativo), "RazonSocial", "IdEmpresa", true);
-            BSUtils.LoaderLook(cboTema, new TemaBL().ListaCombo(Parametros.intEmpresaId, Parametros.intPeriodo), "DescTema", "IdTema", true);
+            BSUtils.LoaderLook(cboTema, new TemaBL().ListaCombo(Parametros.intEmpresaId, Parametros.intTEMAPresencial, Parametros.intPeriodo), "DescTema", "IdTema", true);
 
             deFechaDesde.EditValue = new DateTime(Parametros.intPeriodo, 1, 1);
             deFechaHasta.EditValue = DateTime.Now;

@@ -246,7 +246,7 @@ namespace SSOMA.Presentacion.Modulos.Capacitacion.Maestros
 
         private void Cargar()
         {
-            mLista = new TemaBL().ListaTodosActivo(Parametros.intEmpresaId, IdCategoriaTema, Convert.ToInt32(txtPeriodo.EditValue));
+            mLista = new TemaBL().ListaTodosActivo(Parametros.intEmpresaId, IdCategoriaTema, Parametros.intTEMAPresencial, Convert.ToInt32(txtPeriodo.EditValue));
             gcTema.DataSource = mLista;
         }
 

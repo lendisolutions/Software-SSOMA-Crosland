@@ -59,7 +59,7 @@ namespace SSOMA.Presentacion.Modulos.Capacitacion.Registros
         private void frmRegPlanAnualEdit_Load(object sender, EventArgs e)
         {
            
-            BSUtils.LoaderLook(cboTema, new TemaBL().ListaCombo(Parametros.intEmpresaId, Parametros.intPeriodo), "DescTema", "IdTema", true);
+            BSUtils.LoaderLook(cboTema, new TemaBL().ListaCombo(Parametros.intEmpresaId, Parametros.intTEMAPresencial, Parametros.intPeriodo), "DescTema", "IdTema", true);
             BSUtils.LoaderLook(cboTipo, new TipoCapacitacionBL().ListaCombo(Parametros.intEmpresaId), "DescTipoCapacitacion", "IdTipoCapacitacion", true);
             BSUtils.LoaderLook(cboClase, new TablaElementoBL().ListaTodosActivo(Parametros.intEmpresaId, Parametros.intTblClaseCapacitacion), "DescTablaElemento", "IdTablaElemento", true);
             BSUtils.LoaderLook(cboSituacion, new TablaElementoBL().ListaTodosActivo(Parametros.intEmpresaId, Parametros.intTblProgramaAnualCapacitacion), "DescTablaElemento", "IdTablaElemento", true);
