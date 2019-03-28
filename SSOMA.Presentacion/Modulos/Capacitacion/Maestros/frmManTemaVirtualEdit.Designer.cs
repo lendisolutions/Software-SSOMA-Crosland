@@ -63,18 +63,18 @@
             this.labelControl17 = new DevExpress.XtraEditors.LabelControl();
             this.cboCategoriaTema = new DevExpress.XtraEditors.LookUpEdit();
             this.labelControl15 = new DevExpress.XtraEditors.LabelControl();
-            this.picFirma = new DevExpress.XtraEditors.PictureEdit();
-            this.btnCancelar = new DevExpress.XtraEditors.SimpleButton();
-            this.btnGrabar = new DevExpress.XtraEditors.SimpleButton();
-            this.bsListadoTemaDetalle = new System.Windows.Forms.BindingSource(this.components);
             this.xtraTabPage2 = new DevExpress.XtraTab.XtraTabPage();
-            this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
-            this.btnEliminarFirma1 = new DevExpress.XtraEditors.SimpleButton();
-            this.btnAgregaFirma1 = new DevExpress.XtraEditors.SimpleButton();
             this.btnEliminarFirma2 = new DevExpress.XtraEditors.SimpleButton();
             this.btnAgregarFirma2 = new DevExpress.XtraEditors.SimpleButton();
             this.picFirma2 = new DevExpress.XtraEditors.PictureEdit();
+            this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.btnEliminarFirma1 = new DevExpress.XtraEditors.SimpleButton();
+            this.btnAgregaFirma1 = new DevExpress.XtraEditors.SimpleButton();
+            this.btnCancelar = new DevExpress.XtraEditors.SimpleButton();
+            this.btnGrabar = new DevExpress.XtraEditors.SimpleButton();
+            this.bsListadoTemaDetalle = new System.Windows.Forms.BindingSource(this.components);
+            this.picFirma = new DevExpress.XtraEditors.PictureEdit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
             this.xtraTabControl1.SuspendLayout();
             this.xtraTabPage1.SuspendLayout();
@@ -92,14 +92,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.deFechaIni.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.deFechaIni.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboCategoriaTema.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picFirma.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsListadoTemaDetalle)).BeginInit();
             this.xtraTabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
-            this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
             this.groupControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picFirma2.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
+            this.groupControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bsListadoTemaDetalle)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picFirma.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // xtraTabControl1
@@ -131,7 +131,6 @@
             this.xtraTabPage1.Controls.Add(this.labelControl17);
             this.xtraTabPage1.Controls.Add(this.cboCategoriaTema);
             this.xtraTabPage1.Controls.Add(this.labelControl15);
-            this.xtraTabPage1.Controls.Add(this.picFirma);
             this.xtraTabPage1.Name = "xtraTabPage1";
             this.xtraTabPage1.Size = new System.Drawing.Size(926, 452);
             this.xtraTabPage1.Text = "Datos Generales del Tema de Capacitación";
@@ -164,7 +163,7 @@
             // 
             this.picImage.Cursor = System.Windows.Forms.Cursors.Default;
             this.picImage.EditValue = ((object)(resources.GetObject("picImage.EditValue")));
-            this.picImage.Location = new System.Drawing.Point(709, 16);
+            this.picImage.Location = new System.Drawing.Point(707, 19);
             this.picImage.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.picImage.Name = "picImage";
             this.picImage.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Office2003;
@@ -458,17 +457,95 @@
             this.labelControl15.TabIndex = 185;
             this.labelControl15.Text = "Categoria:";
             // 
-            // picFirma
+            // xtraTabPage2
             // 
-            this.picFirma.Cursor = System.Windows.Forms.Cursors.Default;
-            this.picFirma.EditValue = global::SSOMA.Presentacion.Properties.Resources.firma;
-            this.picFirma.Location = new System.Drawing.Point(709, 16);
-            this.picFirma.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.picFirma.Name = "picFirma";
-            this.picFirma.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Office2003;
-            this.picFirma.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Stretch;
-            this.picFirma.Size = new System.Drawing.Size(167, 176);
-            this.picFirma.TabIndex = 209;
+            this.xtraTabPage2.Controls.Add(this.groupControl2);
+            this.xtraTabPage2.Controls.Add(this.groupControl1);
+            this.xtraTabPage2.Name = "xtraTabPage2";
+            this.xtraTabPage2.Size = new System.Drawing.Size(926, 452);
+            this.xtraTabPage2.Text = "Firmas";
+            // 
+            // groupControl2
+            // 
+            this.groupControl2.Controls.Add(this.btnEliminarFirma2);
+            this.groupControl2.Controls.Add(this.btnAgregarFirma2);
+            this.groupControl2.Controls.Add(this.picFirma2);
+            this.groupControl2.Location = new System.Drawing.Point(8, 222);
+            this.groupControl2.Name = "groupControl2";
+            this.groupControl2.Size = new System.Drawing.Size(351, 213);
+            this.groupControl2.TabIndex = 1;
+            this.groupControl2.Text = "Firma Digital 2";
+            // 
+            // btnEliminarFirma2
+            // 
+            this.btnEliminarFirma2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminarFirma2.ImageOptions.Image")));
+            this.btnEliminarFirma2.ImageOptions.ImageIndex = 1;
+            this.btnEliminarFirma2.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleLeft;
+            this.btnEliminarFirma2.Location = new System.Drawing.Point(291, 56);
+            this.btnEliminarFirma2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnEliminarFirma2.Name = "btnEliminarFirma2";
+            this.btnEliminarFirma2.Size = new System.Drawing.Size(29, 28);
+            this.btnEliminarFirma2.TabIndex = 213;
+            this.btnEliminarFirma2.Click += new System.EventHandler(this.btnEliminarFirma2_Click);
+            // 
+            // btnAgregarFirma2
+            // 
+            this.btnAgregarFirma2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregarFirma2.ImageOptions.Image")));
+            this.btnAgregarFirma2.ImageOptions.ImageIndex = 1;
+            this.btnAgregarFirma2.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleLeft;
+            this.btnAgregarFirma2.Location = new System.Drawing.Point(291, 29);
+            this.btnAgregarFirma2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnAgregarFirma2.Name = "btnAgregarFirma2";
+            this.btnAgregarFirma2.Size = new System.Drawing.Size(29, 28);
+            this.btnAgregarFirma2.TabIndex = 214;
+            this.btnAgregarFirma2.Click += new System.EventHandler(this.btnAgregarFirma2_Click);
+            // 
+            // picFirma2
+            // 
+            this.picFirma2.Cursor = System.Windows.Forms.Cursors.Default;
+            this.picFirma2.EditValue = global::SSOMA.Presentacion.Properties.Resources.firma;
+            this.picFirma2.Location = new System.Drawing.Point(5, 29);
+            this.picFirma2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.picFirma2.Name = "picFirma2";
+            this.picFirma2.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Office2003;
+            this.picFirma2.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Stretch;
+            this.picFirma2.Size = new System.Drawing.Size(270, 178);
+            this.picFirma2.TabIndex = 212;
+            // 
+            // groupControl1
+            // 
+            this.groupControl1.Controls.Add(this.picFirma);
+            this.groupControl1.Controls.Add(this.btnEliminarFirma1);
+            this.groupControl1.Controls.Add(this.btnAgregaFirma1);
+            this.groupControl1.Location = new System.Drawing.Point(8, 14);
+            this.groupControl1.Name = "groupControl1";
+            this.groupControl1.Size = new System.Drawing.Size(351, 202);
+            this.groupControl1.TabIndex = 0;
+            this.groupControl1.Text = "Firma Digital 1";
+            // 
+            // btnEliminarFirma1
+            // 
+            this.btnEliminarFirma1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminarFirma1.ImageOptions.Image")));
+            this.btnEliminarFirma1.ImageOptions.ImageIndex = 1;
+            this.btnEliminarFirma1.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleLeft;
+            this.btnEliminarFirma1.Location = new System.Drawing.Point(291, 56);
+            this.btnEliminarFirma1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnEliminarFirma1.Name = "btnEliminarFirma1";
+            this.btnEliminarFirma1.Size = new System.Drawing.Size(29, 28);
+            this.btnEliminarFirma1.TabIndex = 210;
+            this.btnEliminarFirma1.Click += new System.EventHandler(this.btnEliminarFirma1_Click);
+            // 
+            // btnAgregaFirma1
+            // 
+            this.btnAgregaFirma1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregaFirma1.ImageOptions.Image")));
+            this.btnAgregaFirma1.ImageOptions.ImageIndex = 1;
+            this.btnAgregaFirma1.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleLeft;
+            this.btnAgregaFirma1.Location = new System.Drawing.Point(291, 29);
+            this.btnAgregaFirma1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnAgregaFirma1.Name = "btnAgregaFirma1";
+            this.btnAgregaFirma1.Size = new System.Drawing.Size(29, 28);
+            this.btnAgregaFirma1.TabIndex = 211;
+            this.btnAgregaFirma1.Click += new System.EventHandler(this.btnAgregaFirma1_Click);
             // 
             // btnCancelar
             // 
@@ -496,94 +573,17 @@
             this.btnGrabar.Text = "Grabar";
             this.btnGrabar.Click += new System.EventHandler(this.btnGrabar_Click);
             // 
-            // xtraTabPage2
+            // picFirma
             // 
-            this.xtraTabPage2.Controls.Add(this.groupControl2);
-            this.xtraTabPage2.Controls.Add(this.groupControl1);
-            this.xtraTabPage2.Name = "xtraTabPage2";
-            this.xtraTabPage2.Size = new System.Drawing.Size(926, 452);
-            this.xtraTabPage2.Text = "Firmas";
-            // 
-            // groupControl1
-            // 
-            this.groupControl1.Controls.Add(this.btnEliminarFirma1);
-            this.groupControl1.Controls.Add(this.btnAgregaFirma1);
-            this.groupControl1.Location = new System.Drawing.Point(8, 14);
-            this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(351, 202);
-            this.groupControl1.TabIndex = 0;
-            this.groupControl1.Text = "Firma Digital 1";
-            // 
-            // groupControl2
-            // 
-            this.groupControl2.Controls.Add(this.btnEliminarFirma2);
-            this.groupControl2.Controls.Add(this.btnAgregarFirma2);
-            this.groupControl2.Controls.Add(this.picFirma2);
-            this.groupControl2.Location = new System.Drawing.Point(8, 222);
-            this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(351, 213);
-            this.groupControl2.TabIndex = 1;
-            this.groupControl2.Text = "Firma Digital 2";
-            // 
-            // btnEliminarFirma1
-            // 
-            this.btnEliminarFirma1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
-            this.btnEliminarFirma1.ImageOptions.ImageIndex = 1;
-            this.btnEliminarFirma1.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleLeft;
-            this.btnEliminarFirma1.Location = new System.Drawing.Point(291, 56);
-            this.btnEliminarFirma1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnEliminarFirma1.Name = "btnEliminarFirma1";
-            this.btnEliminarFirma1.Size = new System.Drawing.Size(29, 28);
-            this.btnEliminarFirma1.TabIndex = 210;
-            this.btnEliminarFirma1.Click += new System.EventHandler(this.btnEliminarFirma1_Click);
-            // 
-            // btnAgregaFirma1
-            // 
-            this.btnAgregaFirma1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton2.ImageOptions.Image")));
-            this.btnAgregaFirma1.ImageOptions.ImageIndex = 1;
-            this.btnAgregaFirma1.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleLeft;
-            this.btnAgregaFirma1.Location = new System.Drawing.Point(291, 29);
-            this.btnAgregaFirma1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnAgregaFirma1.Name = "btnAgregaFirma1";
-            this.btnAgregaFirma1.Size = new System.Drawing.Size(29, 28);
-            this.btnAgregaFirma1.TabIndex = 211;
-            this.btnAgregaFirma1.Click += new System.EventHandler(this.btnAgregaFirma1_Click);
-            // 
-            // btnEliminarFirma2
-            // 
-            this.btnEliminarFirma2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton3.ImageOptions.Image")));
-            this.btnEliminarFirma2.ImageOptions.ImageIndex = 1;
-            this.btnEliminarFirma2.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleLeft;
-            this.btnEliminarFirma2.Location = new System.Drawing.Point(291, 56);
-            this.btnEliminarFirma2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnEliminarFirma2.Name = "btnEliminarFirma2";
-            this.btnEliminarFirma2.Size = new System.Drawing.Size(29, 28);
-            this.btnEliminarFirma2.TabIndex = 213;
-            this.btnEliminarFirma2.Click += new System.EventHandler(this.btnEliminarFirma2_Click);
-            // 
-            // btnAgregarFirma2
-            // 
-            this.btnAgregarFirma2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton4.ImageOptions.Image")));
-            this.btnAgregarFirma2.ImageOptions.ImageIndex = 1;
-            this.btnAgregarFirma2.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleLeft;
-            this.btnAgregarFirma2.Location = new System.Drawing.Point(291, 29);
-            this.btnAgregarFirma2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnAgregarFirma2.Name = "btnAgregarFirma2";
-            this.btnAgregarFirma2.Size = new System.Drawing.Size(29, 28);
-            this.btnAgregarFirma2.TabIndex = 214;
-            this.btnAgregarFirma2.Click += new System.EventHandler(this.btnAgregarFirma2_Click);
-            // 
-            // picFirma2
-            // 
-            this.picFirma2.Cursor = System.Windows.Forms.Cursors.Default;
-            this.picFirma2.EditValue = global::SSOMA.Presentacion.Properties.Resources.firma;
-            this.picFirma2.Location = new System.Drawing.Point(5, 29);
-            this.picFirma2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.picFirma2.Name = "picFirma2";
-            this.picFirma2.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Office2003;
-            this.picFirma2.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Stretch;
-            this.picFirma2.Size = new System.Drawing.Size(270, 160);
-            this.picFirma2.TabIndex = 212;
+            this.picFirma.Cursor = System.Windows.Forms.Cursors.Default;
+            this.picFirma.EditValue = global::SSOMA.Presentacion.Properties.Resources.firma;
+            this.picFirma.Location = new System.Drawing.Point(5, 29);
+            this.picFirma.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.picFirma.Name = "picFirma";
+            this.picFirma.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Office2003;
+            this.picFirma.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Stretch;
+            this.picFirma.Size = new System.Drawing.Size(270, 167);
+            this.picFirma.TabIndex = 212;
             // 
             // frmManTemaVirtualEdit
             // 
@@ -616,14 +616,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.deFechaIni.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.deFechaIni.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboCategoriaTema.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picFirma.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsListadoTemaDetalle)).EndInit();
             this.xtraTabPage2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
-            this.groupControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
             this.groupControl2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picFirma2.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
+            this.groupControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.bsListadoTemaDetalle)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picFirma.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -659,7 +659,6 @@
         private DevExpress.XtraEditors.LabelControl labelControl17;
         public DevExpress.XtraEditors.LookUpEdit cboCategoriaTema;
         private DevExpress.XtraEditors.LabelControl labelControl15;
-        private DevExpress.XtraEditors.PictureEdit picFirma;
         private DevExpress.XtraEditors.SimpleButton btnCancelar;
         private DevExpress.XtraEditors.SimpleButton btnGrabar;
         public System.Windows.Forms.ContextMenuStrip mnuContextualTemaDetalle;
@@ -675,5 +674,6 @@
         private DevExpress.XtraEditors.GroupControl groupControl1;
         private DevExpress.XtraEditors.SimpleButton btnEliminarFirma1;
         private DevExpress.XtraEditors.SimpleButton btnAgregaFirma1;
+        private DevExpress.XtraEditors.PictureEdit picFirma;
     }
 }
