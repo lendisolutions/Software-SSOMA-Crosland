@@ -20,12 +20,15 @@ namespace SSOMA.DataLogic
             db.AddOutParameter(dbCommand, "pIdTema", DbType.Int32, pItem.IdTema);
             db.AddInParameter(dbCommand, "pIdEmpresa", DbType.Int32, pItem.IdEmpresa);
             db.AddInParameter(dbCommand, "pIdCategoriaTema", DbType.Int32, pItem.IdCategoriaTema);
+            db.AddInParameter(dbCommand, "pIdTipoTema", DbType.Int32, pItem.IdTipoTema);
             db.AddInParameter(dbCommand, "pPeriodo", DbType.Int32, pItem.Periodo);
             db.AddInParameter(dbCommand, "pObjetivo", DbType.String, pItem.Objetivo);
             db.AddInParameter(dbCommand, "pDescTema", DbType.String, pItem.DescTema);
             db.AddInParameter(dbCommand, "pFechaIni", DbType.DateTime, pItem.FechaIni);
             db.AddInParameter(dbCommand, "pFechaFin", DbType.DateTime, pItem.FechaFin);
             db.AddInParameter(dbCommand, "pLogo", DbType.Binary, pItem.Logo);
+            db.AddInParameter(dbCommand, "pFirma1", DbType.Binary, pItem.Firma1);
+            db.AddInParameter(dbCommand, "pFirma2", DbType.Binary, pItem.Firma2);
             db.AddInParameter(dbCommand, "pIdSituacion", DbType.Int32, pItem.IdSituacion);
             db.AddInParameter(dbCommand, "pFlagEstado", DbType.Boolean, pItem.FlagEstado);
             db.AddInParameter(dbCommand, "pUsuario", DbType.String, pItem.Usuario);
@@ -47,12 +50,15 @@ namespace SSOMA.DataLogic
             db.AddInParameter(dbCommand, "pIdTema", DbType.Int32, pItem.IdTema);
             db.AddInParameter(dbCommand, "pIdEmpresa", DbType.Int32, pItem.IdEmpresa);
             db.AddInParameter(dbCommand, "pIdCategoriaTema", DbType.Int32, pItem.IdCategoriaTema);
+            db.AddInParameter(dbCommand, "pIdTipoTema", DbType.Int32, pItem.IdTipoTema);
             db.AddInParameter(dbCommand, "pPeriodo", DbType.Int32, pItem.Periodo);
             db.AddInParameter(dbCommand, "pObjetivo", DbType.String, pItem.Objetivo);
             db.AddInParameter(dbCommand, "pDescTema", DbType.String, pItem.DescTema);
             db.AddInParameter(dbCommand, "pFechaIni", DbType.DateTime, pItem.FechaIni);
             db.AddInParameter(dbCommand, "pFechaFin", DbType.DateTime, pItem.FechaFin);
             db.AddInParameter(dbCommand, "pLogo", DbType.Binary, pItem.Logo);
+            db.AddInParameter(dbCommand, "pFirma1", DbType.Binary, pItem.Firma1);
+            db.AddInParameter(dbCommand, "pFirma2", DbType.Binary, pItem.Firma2);
             db.AddInParameter(dbCommand, "pIdSituacion", DbType.Int32, pItem.IdSituacion);
             db.AddInParameter(dbCommand, "pFlagEstado", DbType.Boolean, pItem.FlagEstado);
             db.AddInParameter(dbCommand, "pUsuario", DbType.String, pItem.Usuario);
@@ -105,12 +111,16 @@ namespace SSOMA.DataLogic
                 Tema.RazonSocial = reader["RazonSocial"].ToString();
                 Tema.IdCategoriaTema = Int32.Parse(reader["IdCategoriaTema"].ToString());
                 Tema.DescCategoriaTema = reader["DescCategoriaTema"].ToString();
+                Tema.IdTipoTema = Int32.Parse(reader["IdTipoTema"].ToString());
+                Tema.DescTipoTema = reader["DescTipoTema"].ToString();
                 Tema.Periodo = Int32.Parse(reader["Periodo"].ToString());
                 Tema.Objetivo = reader["Objetivo"].ToString();
                 Tema.DescTema = reader["descTema"].ToString();
                 Tema.FechaIni = DateTime.Parse(reader["FechaIni"].ToString());
                 Tema.FechaFin = DateTime.Parse(reader["FechaFin"].ToString());
                 Tema.Logo = (byte[])reader["Logo"];
+                Tema.Firma1 = (byte[])reader["Firma1"];
+                Tema.Firma2 = (byte[])reader["Firma2"];
                 Tema.IdSituacion = Int32.Parse(reader["IdSituacion"].ToString());
                 Tema.DescSituacion = reader["DescSituacion"].ToString();
                 Tema.FlagEstado = Boolean.Parse(reader["flagestado"].ToString());
@@ -120,12 +130,13 @@ namespace SSOMA.DataLogic
             return Tema;
         }
 
-        public List<TemaBE> ListaTodosActivo(int IdEmpresa, int IdCategoriaTema, int Periodo)
+        public List<TemaBE> ListaTodosActivo(int IdEmpresa, int IdCategoriaTema, int IdTipoTema, int Periodo)
         {
             Database db = DatabaseFactory.CreateDatabase("cnSSOMABD");
             DbCommand dbCommand = db.GetStoredProcCommand("usp_Tema_ListaTodosActivo");
             db.AddInParameter(dbCommand, "pIdEmpresa", DbType.Int32, IdEmpresa);
             db.AddInParameter(dbCommand, "pIdCategoriaTema", DbType.Int32, IdCategoriaTema);
+            db.AddInParameter(dbCommand, "pIdTipoTema", DbType.Int32, IdTipoTema);
             db.AddInParameter(dbCommand, "pPeriodo", DbType.Int32, Periodo);
 
             IDataReader reader = db.ExecuteReader(dbCommand);
@@ -139,6 +150,8 @@ namespace SSOMA.DataLogic
                 Tema.RazonSocial = reader["RazonSocial"].ToString();
                 Tema.IdCategoriaTema = Int32.Parse(reader["IdCategoriaTema"].ToString());
                 Tema.DescCategoriaTema = reader["DescCategoriaTema"].ToString();
+                Tema.IdTipoTema = Int32.Parse(reader["IdTipoTema"].ToString());
+                Tema.DescTipoTema = reader["DescTipoTema"].ToString();
                 Tema.Periodo = Int32.Parse(reader["Periodo"].ToString());
                 Tema.Objetivo = reader["Objetivo"].ToString();
                 Tema.DescTema = reader["descTema"].ToString();
@@ -154,12 +167,13 @@ namespace SSOMA.DataLogic
             return Temalist;
         }
 
-        public List<TemaBE> ListaCombo(int IdEmpresa, int Periodo)
+        public List<TemaBE> ListaCombo(int IdEmpresa,int IdTipoTema, int Periodo)
         {
             Database db = DatabaseFactory.CreateDatabase("cnSSOMABD");
             DbCommand dbCommand = db.GetStoredProcCommand("usp_Tema_ListaCombo");
             db.AddInParameter(dbCommand, "pIdEmpresa", DbType.Int32, IdEmpresa);
-            db.AddInParameter(dbCommand, "pPeriodo", DbType.Int32, Periodo);
+            db.AddInParameter(dbCommand, "pIdTipoTema", DbType.Int32, Periodo);
+            db.AddInParameter(dbCommand, "pPeriodo", DbType.Int32, IdTipoTema);
 
             IDataReader reader = db.ExecuteReader(dbCommand);
             List<TemaBE> Temalist = new List<TemaBE>();

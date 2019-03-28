@@ -18,23 +18,23 @@ namespace SSOMA.BusinessLogic
             Eliminar = 3,
             Consultar = 4
         }
-        public List<TemaBE> ListaTodosActivo(int IdEmpresa, int idCategoriaTema, int Periodo)
+        public List<TemaBE> ListaTodosActivo(int IdEmpresa, int idCategoriaTema, int IdTipoTema, int Periodo)
         {
             try
             {
                 TemaDL Tema = new TemaDL();
-                return Tema.ListaTodosActivo(IdEmpresa, idCategoriaTema,Periodo);
+                return Tema.ListaTodosActivo(IdEmpresa, idCategoriaTema, IdTipoTema, Periodo);
             }
             catch (Exception ex)
             { throw ex; }
         }
 
-        public List<TemaBE> ListaCombo(int IdEmpresa, int Periodo)
+        public List<TemaBE> ListaCombo(int IdEmpresa, int IdTipoTema, int Periodo)
         {
             try
             {
                 TemaDL Tema = new TemaDL();
-                return Tema.ListaCombo(IdEmpresa,Periodo);
+                return Tema.ListaCombo(IdEmpresa, IdTipoTema,Periodo);
             }
             catch (Exception ex)
             { throw ex; }

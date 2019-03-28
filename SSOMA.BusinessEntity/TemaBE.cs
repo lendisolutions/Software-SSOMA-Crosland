@@ -17,6 +17,8 @@ namespace SSOMA.BusinessEntity
         [DataMember]
         public Int32 IdCategoriaTema { get; set; }
         [DataMember]
+        public Int32 IdTipoTema { get; set; }
+        [DataMember]
         public Int32 Periodo { get; set; }
         [DataMember]
         public String Objetivo { get; set; }
@@ -28,6 +30,10 @@ namespace SSOMA.BusinessEntity
         public DateTime FechaFin { get; set; }
         [DataMember]
         public byte[] Logo { get; set; }
+        [DataMember]
+        public byte[] Firma1 { get; set; }
+        [DataMember]
+        public byte[] Firma2 { get; set; }
         [DataMember]
         public Int32 IdSituacion { get; set; }
         [DataMember]
@@ -43,6 +49,8 @@ namespace SSOMA.BusinessEntity
         public String RazonSocial { get; set; }
         [DataMember]
         public String DescCategoriaTema { get; set; }
+        [DataMember]
+        public String DescTipoTema { get; set; }
         [DataMember]
         public String DescSituacion { get; set; }
 
