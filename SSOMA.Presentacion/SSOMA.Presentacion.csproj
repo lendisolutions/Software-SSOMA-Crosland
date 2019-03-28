@@ -4022,6 +4022,7 @@
     <None Include="Resources\Pdf_48x48.gif" />
     <None Include="Resources\NoVisto.png" />
     <None Include="Resources\Visto.png" />
+    <None Include="Resources\firma.png" />
     <Content Include="Seguimiento de Accidentes.xlsx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

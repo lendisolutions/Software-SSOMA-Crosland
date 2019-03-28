@@ -663,6 +663,16 @@ namespace SSOMA.Presentacion.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap firma {
+            get {
+                object obj = ResourceManager.GetObject("firma", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap FuentaLesion_32x32 {
             get {
                 object obj = ResourceManager.GetObject("FuentaLesion_32x32", resourceCulture);

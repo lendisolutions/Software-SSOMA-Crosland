@@ -78,12 +78,12 @@ namespace SSOMA.Presentacion.Modulos.Capacitacion.Maestros
 
             if (pOperacion == Operacion.Nuevo)
             {
-                this.Text = "Tema - Nuevo";
+                this.Text = "Tema Presencial - Nuevo";
                 IdSituacion = Parametros.intTEMAActivo;
             }
             else if (pOperacion == Operacion.Modificar)
             {
-                this.Text = "Tema - Modificar";
+                this.Text = "Tema Presencial - Modificar";
                 TemaBE objE_Tema = null;
                 objE_Tema = new TemaBL().Selecciona(Parametros.intEmpresaId,IdTema);
                 if (objE_Tema != null)
@@ -270,11 +270,14 @@ namespace SSOMA.Presentacion.Modulos.Capacitacion.Maestros
                     objTema.IdTema = IdTema;
                     objTema.Periodo = Convert.ToInt32(txtPeriodo.EditValue);
                     objTema.IdCategoriaTema = Convert.ToInt32(cboCategoriaTema.EditValue);
+                    objTema.IdTipoTema = Parametros.intTEMAPresencial;
                     objTema.Objetivo = txtObjetivo.Text;
                     objTema.DescTema = txtDescripcion.Text;
                     objTema.FechaIni = Convert.ToDateTime(deFechaIni.DateTime.ToShortDateString());
                     objTema.FechaFin = Convert.ToDateTime(deFechaFin.DateTime.ToShortDateString());
                     objTema.Logo = new FuncionBase().Image2Bytes(this.picImage.Image);
+                    objTema.Firma1 = new FuncionBase().Image2Bytes(this.picFirma.Image);
+                    objTema.Firma2 = new FuncionBase().Image2Bytes(this.picFirma.Image);
                     objTema.IdSituacion = IdSituacion;
                     objTema.FlagEstado = true;
                     objTema.Usuario = Parametros.strUsuarioLogin;

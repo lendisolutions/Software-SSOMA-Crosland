@@ -36,7 +36,16 @@
             this.lblFecha = new DevExpress.XtraEditors.LabelControl();
             this.xtraTabControl1 = new DevExpress.XtraTab.XtraTabControl();
             this.xtraTabPage1 = new DevExpress.XtraTab.XtraTabPage();
+            this.btnEliminar = new DevExpress.XtraEditors.SimpleButton();
+            this.btnAgregar = new DevExpress.XtraEditors.SimpleButton();
+            this.picImage = new DevExpress.XtraEditors.PictureEdit();
+            this.txtDescripcion = new DevExpress.XtraEditors.MemoEdit();
+            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.gcTemaDetalle = new DevExpress.XtraGrid.GridControl();
+            this.mnuContextualTemaDetalle = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.nuevoTemaDetalleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.eliminarTemaDetalleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.gvTemaDetalle = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn23 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -56,21 +65,16 @@
             this.labelControl17 = new DevExpress.XtraEditors.LabelControl();
             this.cboCategoriaTema = new DevExpress.XtraEditors.LookUpEdit();
             this.labelControl15 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
-            this.txtDescripcion = new DevExpress.XtraEditors.MemoEdit();
-            this.btnEliminar = new DevExpress.XtraEditors.SimpleButton();
-            this.btnAgregar = new DevExpress.XtraEditors.SimpleButton();
-            this.picImage = new DevExpress.XtraEditors.PictureEdit();
             this.bsListadoTemaDetalle = new System.Windows.Forms.BindingSource(this.components);
-            this.mnuContextualTemaDetalle = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.nuevoTemaDetalleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.eliminarTemaDetalleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.picFirma = new DevExpress.XtraEditors.PictureEdit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPeriodo.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
             this.xtraTabControl1.SuspendLayout();
             this.xtraTabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picImage.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtDescripcion.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcTemaDetalle)).BeginInit();
+            this.mnuContextualTemaDetalle.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gvTemaDetalle)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcTxtArchivo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcTxtDescripcion)).BeginInit();
@@ -80,10 +84,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.deFechaIni.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.deFechaIni.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboCategoriaTema.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtDescripcion.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picImage.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsListadoTemaDetalle)).BeginInit();
-            this.mnuContextualTemaDetalle.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picFirma.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // btnCancelar
@@ -174,9 +176,65 @@
             this.xtraTabPage1.Controls.Add(this.labelControl17);
             this.xtraTabPage1.Controls.Add(this.cboCategoriaTema);
             this.xtraTabPage1.Controls.Add(this.labelControl15);
+            this.xtraTabPage1.Controls.Add(this.picFirma);
             this.xtraTabPage1.Name = "xtraTabPage1";
             this.xtraTabPage1.Size = new System.Drawing.Size(926, 452);
             this.xtraTabPage1.Text = "Datos Generales del Tema de Capacitación";
+            // 
+            // btnEliminar
+            // 
+            this.btnEliminar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminar.ImageOptions.Image")));
+            this.btnEliminar.ImageOptions.ImageIndex = 1;
+            this.btnEliminar.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleLeft;
+            this.btnEliminar.Location = new System.Drawing.Point(882, 49);
+            this.btnEliminar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(29, 28);
+            this.btnEliminar.TabIndex = 207;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            // 
+            // btnAgregar
+            // 
+            this.btnAgregar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregar.ImageOptions.Image")));
+            this.btnAgregar.ImageOptions.ImageIndex = 1;
+            this.btnAgregar.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleLeft;
+            this.btnAgregar.Location = new System.Drawing.Point(882, 19);
+            this.btnAgregar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnAgregar.Name = "btnAgregar";
+            this.btnAgregar.Size = new System.Drawing.Size(29, 28);
+            this.btnAgregar.TabIndex = 208;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
+            // 
+            // picImage
+            // 
+            this.picImage.Cursor = System.Windows.Forms.Cursors.Default;
+            this.picImage.EditValue = ((object)(resources.GetObject("picImage.EditValue")));
+            this.picImage.Location = new System.Drawing.Point(709, 16);
+            this.picImage.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.picImage.Name = "picImage";
+            this.picImage.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Office2003;
+            this.picImage.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Stretch;
+            this.picImage.Size = new System.Drawing.Size(167, 176);
+            this.picImage.TabIndex = 206;
+            // 
+            // txtDescripcion
+            // 
+            this.txtDescripcion.Location = new System.Drawing.Point(162, 122);
+            this.txtDescripcion.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtDescripcion.Name = "txtDescripcion";
+            this.txtDescripcion.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtDescripcion.Properties.MaxLength = 800;
+            this.txtDescripcion.Size = new System.Drawing.Size(539, 43);
+            this.txtDescripcion.TabIndex = 205;
+            // 
+            // labelControl2
+            // 
+            this.labelControl2.Location = new System.Drawing.Point(13, 123);
+            this.labelControl2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.labelControl2.Name = "labelControl2";
+            this.labelControl2.Size = new System.Drawing.Size(70, 16);
+            this.labelControl2.TabIndex = 204;
+            this.labelControl2.Text = "Descripcion:";
             // 
             // gcTemaDetalle
             // 
@@ -193,6 +251,37 @@
             this.gcTemaDetalle.TabIndex = 203;
             this.gcTemaDetalle.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvTemaDetalle});
+            // 
+            // mnuContextualTemaDetalle
+            // 
+            this.mnuContextualTemaDetalle.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.mnuContextualTemaDetalle.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.nuevoTemaDetalleToolStripMenuItem,
+            this.eliminarTemaDetalleToolStripMenuItem,
+            this.toolStripSeparator1});
+            this.mnuContextualTemaDetalle.Name = "contextMenuStrip1";
+            this.mnuContextualTemaDetalle.Size = new System.Drawing.Size(137, 62);
+            // 
+            // nuevoTemaDetalleToolStripMenuItem
+            // 
+            this.nuevoTemaDetalleToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("nuevoTemaDetalleToolStripMenuItem.Image")));
+            this.nuevoTemaDetalleToolStripMenuItem.Name = "nuevoTemaDetalleToolStripMenuItem";
+            this.nuevoTemaDetalleToolStripMenuItem.Size = new System.Drawing.Size(136, 26);
+            this.nuevoTemaDetalleToolStripMenuItem.Text = "Nuevo";
+            this.nuevoTemaDetalleToolStripMenuItem.Click += new System.EventHandler(this.nuevoTemaDetalleToolStripMenuItem_Click);
+            // 
+            // eliminarTemaDetalleToolStripMenuItem
+            // 
+            this.eliminarTemaDetalleToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("eliminarTemaDetalleToolStripMenuItem.Image")));
+            this.eliminarTemaDetalleToolStripMenuItem.Name = "eliminarTemaDetalleToolStripMenuItem";
+            this.eliminarTemaDetalleToolStripMenuItem.Size = new System.Drawing.Size(136, 26);
+            this.eliminarTemaDetalleToolStripMenuItem.Text = "Eliminar";
+            this.eliminarTemaDetalleToolStripMenuItem.Click += new System.EventHandler(this.eliminarTemaDetalleToolStripMenuItem_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(133, 6);
             // 
             // gvTemaDetalle
             // 
@@ -380,97 +469,23 @@
             this.labelControl15.TabIndex = 185;
             this.labelControl15.Text = "Categoria:";
             // 
-            // labelControl2
+            // picFirma
             // 
-            this.labelControl2.Location = new System.Drawing.Point(13, 123);
-            this.labelControl2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(70, 16);
-            this.labelControl2.TabIndex = 204;
-            this.labelControl2.Text = "Descripcion:";
-            // 
-            // txtDescripcion
-            // 
-            this.txtDescripcion.Location = new System.Drawing.Point(162, 122);
-            this.txtDescripcion.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtDescripcion.Name = "txtDescripcion";
-            this.txtDescripcion.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtDescripcion.Properties.MaxLength = 800;
-            this.txtDescripcion.Size = new System.Drawing.Size(539, 43);
-            this.txtDescripcion.TabIndex = 205;
-            // 
-            // btnEliminar
-            // 
-            this.btnEliminar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminar.ImageOptions.Image")));
-            this.btnEliminar.ImageOptions.ImageIndex = 1;
-            this.btnEliminar.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleLeft;
-            this.btnEliminar.Location = new System.Drawing.Point(882, 49);
-            this.btnEliminar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(29, 28);
-            this.btnEliminar.TabIndex = 207;
-            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
-            // 
-            // btnAgregar
-            // 
-            this.btnAgregar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregar.ImageOptions.Image")));
-            this.btnAgregar.ImageOptions.ImageIndex = 1;
-            this.btnAgregar.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleLeft;
-            this.btnAgregar.Location = new System.Drawing.Point(882, 19);
-            this.btnAgregar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(29, 28);
-            this.btnAgregar.TabIndex = 208;
-            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
-            // 
-            // picImage
-            // 
-            this.picImage.Cursor = System.Windows.Forms.Cursors.Default;
-            this.picImage.EditValue = ((object)(resources.GetObject("picImage.EditValue")));
-            this.picImage.Location = new System.Drawing.Point(709, 16);
-            this.picImage.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.picImage.Name = "picImage";
-            this.picImage.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Office2003;
-            this.picImage.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Stretch;
-            this.picImage.Size = new System.Drawing.Size(167, 176);
-            this.picImage.TabIndex = 206;
-            // 
-            // mnuContextualTemaDetalle
-            // 
-            this.mnuContextualTemaDetalle.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.mnuContextualTemaDetalle.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.nuevoTemaDetalleToolStripMenuItem,
-            this.eliminarTemaDetalleToolStripMenuItem,
-            this.toolStripSeparator1});
-            this.mnuContextualTemaDetalle.Name = "contextMenuStrip1";
-            this.mnuContextualTemaDetalle.Size = new System.Drawing.Size(137, 62);
-            // 
-            // nuevoTemaDetalleToolStripMenuItem
-            // 
-            this.nuevoTemaDetalleToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("nuevoTemaDetalleToolStripMenuItem.Image")));
-            this.nuevoTemaDetalleToolStripMenuItem.Name = "nuevoTemaDetalleToolStripMenuItem";
-            this.nuevoTemaDetalleToolStripMenuItem.Size = new System.Drawing.Size(214, 26);
-            this.nuevoTemaDetalleToolStripMenuItem.Text = "Nuevo";
-            this.nuevoTemaDetalleToolStripMenuItem.Click += new System.EventHandler(this.nuevoTemaDetalleToolStripMenuItem_Click);
-            // 
-            // eliminarTemaDetalleToolStripMenuItem
-            // 
-            this.eliminarTemaDetalleToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("eliminarTemaDetalleToolStripMenuItem.Image")));
-            this.eliminarTemaDetalleToolStripMenuItem.Name = "eliminarTemaDetalleToolStripMenuItem";
-            this.eliminarTemaDetalleToolStripMenuItem.Size = new System.Drawing.Size(214, 26);
-            this.eliminarTemaDetalleToolStripMenuItem.Text = "Eliminar";
-            this.eliminarTemaDetalleToolStripMenuItem.Click += new System.EventHandler(this.eliminarTemaDetalleToolStripMenuItem_Click);
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(133, 6);
+            this.picFirma.Cursor = System.Windows.Forms.Cursors.Default;
+            this.picFirma.EditValue = global::SSOMA.Presentacion.Properties.Resources.firma;
+            this.picFirma.Location = new System.Drawing.Point(709, 16);
+            this.picFirma.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.picFirma.Name = "picFirma";
+            this.picFirma.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Office2003;
+            this.picFirma.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Stretch;
+            this.picFirma.Size = new System.Drawing.Size(167, 176);
+            this.picFirma.TabIndex = 209;
             // 
             // frmManTemaEdit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(938, 537);
+            this.ClientSize = new System.Drawing.Size(938, 532);
             this.Controls.Add(this.xtraTabControl1);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnGrabar);
@@ -485,7 +500,10 @@
             this.xtraTabControl1.ResumeLayout(false);
             this.xtraTabPage1.ResumeLayout(false);
             this.xtraTabPage1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picImage.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtDescripcion.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcTemaDetalle)).EndInit();
+            this.mnuContextualTemaDetalle.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gvTemaDetalle)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcTxtArchivo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcTxtDescripcion)).EndInit();
@@ -495,10 +513,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.deFechaIni.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.deFechaIni.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboCategoriaTema.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtDescripcion.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picImage.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsListadoTemaDetalle)).EndInit();
-            this.mnuContextualTemaDetalle.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picFirma.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -541,5 +557,6 @@
         private System.Windows.Forms.ToolStripMenuItem eliminarTemaDetalleToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.BindingSource bsListadoTemaDetalle;
+        private DevExpress.XtraEditors.PictureEdit picFirma;
     }
 }
