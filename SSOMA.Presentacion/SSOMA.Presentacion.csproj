@@ -733,6 +733,18 @@
     <Compile Include="Modulos\Capacitacion\Maestros\frmManTemaEdit.Designer.cs">
       <DependentUpon>frmManTemaEdit.cs</DependentUpon>
     </Compile>
+    <Compile Include="Modulos\Capacitacion\Maestros\frmManTemaVirtual.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\Capacitacion\Maestros\frmManTemaVirtual.Designer.cs">
+      <DependentUpon>frmManTemaVirtual.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Capacitacion\Maestros\frmManTemaVirtualEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\Capacitacion\Maestros\frmManTemaVirtualEdit.Designer.cs">
+      <DependentUpon>frmManTemaVirtualEdit.cs</DependentUpon>
+    </Compile>
     <Compile Include="Modulos\Capacitacion\Maestros\frmManTipoCapacitacion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -2865,6 +2877,12 @@
     <EmbeddedResource Include="Modulos\Capacitacion\Maestros\frmManTemaEdit.resx">
       <DependentUpon>frmManTemaEdit.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Capacitacion\Maestros\frmManTemaVirtual.resx">
+      <DependentUpon>frmManTemaVirtual.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Capacitacion\Maestros\frmManTemaVirtualEdit.resx">
+      <DependentUpon>frmManTemaVirtualEdit.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Modulos\Capacitacion\Maestros\frmManTipoCapacitacion.resx">
       <DependentUpon>frmManTipoCapacitacion.cs</DependentUpon>
     </EmbeddedResource>
@@ -4023,6 +4041,7 @@
     <None Include="Resources\NoVisto.png" />
     <None Include="Resources\Visto.png" />
     <None Include="Resources\firma.png" />
+    <None Include="Resources\TemaVirtual_32x32.gif" />
     <Content Include="Seguimiento de Accidentes.xlsx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
