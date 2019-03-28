@@ -17,6 +17,8 @@
       <xs:attribute name="Item" type="xs:int" />
       <xs:attribute name="NotaFinal" type="xs:string" />
       <xs:attribute name="Situacion" type="xs:string" />
+      <xs:attribute name="Firma1" type="xs:base64Binary" />
+      <xs:attribute name="Firma2" type="xs:base64Binary" />
     </xs:complexType>
   </xs:element>
   

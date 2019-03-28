@@ -23,5 +23,9 @@ namespace SSOMA.BusinessEntity
         public Int32 NotaFinal { get; set; }
         [DataMember]
         public String Situacion { get; set; }
+        [DataMember]
+        public byte[] Firma1 { get; set; }
+        [DataMember]
+        public byte[] Firma2 { get; set; }
     }
 }

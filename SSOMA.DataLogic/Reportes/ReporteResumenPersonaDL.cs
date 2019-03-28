@@ -30,6 +30,8 @@ namespace SSOMA.DataLogic
                 ReporteResumenPersona.Fecha = reader["Fecha"].ToString().Substring(0, 10);
                 ReporteResumenPersona.NotaFinal = Int32.Parse(reader["NotaFinal"].ToString());
                 ReporteResumenPersona.Situacion = reader["Situacion"].ToString();
+                ReporteResumenPersona.Firma1 = (byte[])reader["Firma1"];
+                ReporteResumenPersona.Firma2 = (byte[])reader["Firma2"];
                 ReporteResumenPersonalist.Add(ReporteResumenPersona);
             }
             reader.Close();
