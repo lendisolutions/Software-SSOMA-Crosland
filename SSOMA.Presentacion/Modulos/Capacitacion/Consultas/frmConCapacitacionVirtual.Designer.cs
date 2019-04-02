@@ -252,7 +252,7 @@
             this.gvResumenPersona.OptionsView.ColumnAutoWidth = false;
             this.gvResumenPersona.OptionsView.ShowGroupPanel = false;
             this.gvResumenPersona.OptionsView.ShowViewCaption = true;
-            this.gvResumenPersona.ViewCaption = "LISTADO DE CAPACITACIONES APROBADAS POR TEMA";
+            this.gvResumenPersona.ViewCaption = "LISTADO ASISTENTES POR TEMA";
             this.gvResumenPersona.RowCellStyle += new DevExpress.XtraGrid.Views.Grid.RowCellStyleEventHandler(this.gvResumenPersona_RowCellStyle);
             // 
             // gridColumn3
@@ -283,7 +283,7 @@
             this.gridColumn7.OptionsColumn.AllowFocus = false;
             this.gridColumn7.Visible = true;
             this.gridColumn7.VisibleIndex = 1;
-            this.gridColumn7.Width = 280;
+            this.gridColumn7.Width = 350;
             // 
             // gridColumn4
             // 
@@ -294,11 +294,11 @@
             this.gridColumn4.OptionsColumn.AllowFocus = false;
             this.gridColumn4.Visible = true;
             this.gridColumn4.VisibleIndex = 2;
-            this.gridColumn4.Width = 250;
+            this.gridColumn4.Width = 300;
             // 
             // gridColumn5
             // 
-            this.gridColumn5.Caption = "Fecha";
+            this.gridColumn5.Caption = "Fecha de Registro";
             this.gridColumn5.FieldName = "Fecha";
             this.gridColumn5.Name = "gridColumn5";
             this.gridColumn5.OptionsColumn.AllowEdit = false;

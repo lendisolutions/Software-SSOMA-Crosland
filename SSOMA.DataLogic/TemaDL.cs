@@ -176,8 +176,8 @@ namespace SSOMA.DataLogic
             Database db = DatabaseFactory.CreateDatabase("cnSSOMABD");
             DbCommand dbCommand = db.GetStoredProcCommand("usp_Tema_ListaCombo");
             db.AddInParameter(dbCommand, "pIdEmpresa", DbType.Int32, IdEmpresa);
-            db.AddInParameter(dbCommand, "pIdTipoTema", DbType.Int32, Periodo);
-            db.AddInParameter(dbCommand, "pPeriodo", DbType.Int32, IdTipoTema);
+            db.AddInParameter(dbCommand, "pIdTipoTema", DbType.Int32, IdTipoTema);
+            db.AddInParameter(dbCommand, "pPeriodo", DbType.Int32,Periodo );
 
             IDataReader reader = db.ExecuteReader(dbCommand);
             List<TemaBE> Temalist = new List<TemaBE>();

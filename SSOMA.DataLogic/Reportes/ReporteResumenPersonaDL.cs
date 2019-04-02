@@ -38,5 +38,101 @@ namespace SSOMA.DataLogic
             reader.Dispose();
             return ReporteResumenPersonalist;
         }
+
+        public List<ReporteResumenPersonaBE> ListadoHorasAnualEmpresaResponsable()
+        {
+            Database db = DatabaseFactory.CreateDatabase("cnSSOMABD");
+            DbCommand dbCommand = db.GetStoredProcCommand("usp_rptResumenPersonaHorasAnualEmpresaResponsable");
+
+            IDataReader reader = db.ExecuteReader(dbCommand);
+            List<ReporteResumenPersonaBE> ReporteResumenPersonalist = new List<ReporteResumenPersonaBE>();
+            ReporteResumenPersonaBE ReporteResumenPersona;
+            while (reader.Read())
+            {
+                ReporteResumenPersona = new ReporteResumenPersonaBE();
+                ReporteResumenPersona.Periodo = reader["Periodo"].ToString();
+                ReporteResumenPersona.Logo = (byte[])reader["Logo"];
+                ReporteResumenPersona.EmpresaResponsable = reader["EmpresaResponsable"].ToString();
+                ReporteResumenPersona.Horas = Decimal.Parse(reader["Horas"].ToString());
+                ReporteResumenPersonalist.Add(ReporteResumenPersona);
+            }
+            reader.Close();
+            reader.Dispose();
+            return ReporteResumenPersonalist;
+        }
+
+        public List<ReporteResumenPersonaBE> ListadoHorasAnualUnidadMineraResponsable(int IdEmpresaResponsable)
+        {
+            Database db = DatabaseFactory.CreateDatabase("cnSSOMABD");
+            DbCommand dbCommand = db.GetStoredProcCommand("usp_rptResumenPersonaHorasAnualUnidadMineraResponsable");
+            db.AddInParameter(dbCommand, "pIdEmpresaResponsable", DbType.Int32, IdEmpresaResponsable);
+
+            IDataReader reader = db.ExecuteReader(dbCommand);
+            List<ReporteResumenPersonaBE> ReporteResumenPersonalist = new List<ReporteResumenPersonaBE>();
+            ReporteResumenPersonaBE ReporteResumenPersona;
+            while (reader.Read())
+            {
+                ReporteResumenPersona = new ReporteResumenPersonaBE();
+                ReporteResumenPersona.Periodo = reader["Periodo"].ToString();
+                ReporteResumenPersona.Logo = (byte[])reader["Logo"];
+                ReporteResumenPersona.EmpresaResponsable = reader["EmpresaResponsable"].ToString();
+                ReporteResumenPersona.UnidadMineraResponsable = reader["UnidadMineraResponsable"].ToString();
+                ReporteResumenPersona.Horas = Decimal.Parse(reader["Horas"].ToString());
+                ReporteResumenPersonalist.Add(ReporteResumenPersona);
+            }
+            reader.Close();
+            reader.Dispose();
+            return ReporteResumenPersonalist;
+        }
+
+        public List<ReporteResumenPersonaBE> ListadoHorasMensualEmpresaResponsable(int Periodo)
+        {
+            Database db = DatabaseFactory.CreateDatabase("cnSSOMABD");
+            DbCommand dbCommand = db.GetStoredProcCommand("usp_rptResumenPersonaHorasMensualEmpresaResponsable");
+            db.AddInParameter(dbCommand, "pPeriodo", DbType.Int32, Periodo);
+
+            IDataReader reader = db.ExecuteReader(dbCommand);
+            List<ReporteResumenPersonaBE> ReporteResumenPersonalist = new List<ReporteResumenPersonaBE>();
+            ReporteResumenPersonaBE ReporteResumenPersona;
+            while (reader.Read())
+            {
+                ReporteResumenPersona = new ReporteResumenPersonaBE();
+                ReporteResumenPersona.Periodo = reader["Periodo"].ToString();
+                ReporteResumenPersona.Logo = (byte[])reader["Logo"];
+                ReporteResumenPersona.Mes = reader["Mes"].ToString();
+                ReporteResumenPersona.EmpresaResponsable = reader["EmpresaResponsable"].ToString();
+                ReporteResumenPersona.Horas = Decimal.Parse(reader["Horas"].ToString());
+                ReporteResumenPersonalist.Add(ReporteResumenPersona);
+            }
+            reader.Close();
+            reader.Dispose();
+            return ReporteResumenPersonalist;
+        }
+
+        public List<ReporteResumenPersonaBE> ListadoHorasMensualUnidadMineraResponsable(int Periodo, int IdEmpresaResponsable)
+        {
+            Database db = DatabaseFactory.CreateDatabase("cnSSOMABD");
+            DbCommand dbCommand = db.GetStoredProcCommand("usp_rptResumenPersonaHorasMensualUnidadMineraResponsable");
+            db.AddInParameter(dbCommand, "pPeriodo", DbType.Int32, Periodo);
+            db.AddInParameter(dbCommand, "pIdEmpresaResponsable", DbType.Int32, IdEmpresaResponsable);
+
+            IDataReader reader = db.ExecuteReader(dbCommand);
+            List<ReporteResumenPersonaBE> ReporteResumenPersonalist = new List<ReporteResumenPersonaBE>();
+            ReporteResumenPersonaBE ReporteResumenPersona;
+            while (reader.Read())
+            {
+                ReporteResumenPersona = new ReporteResumenPersonaBE();
+                ReporteResumenPersona.Periodo = reader["Periodo"].ToString();
+                ReporteResumenPersona.Logo = (byte[])reader["Logo"];
+                ReporteResumenPersona.Mes = reader["Mes"].ToString();
+                ReporteResumenPersona.EmpresaResponsable = reader["EmpresaResponsable"].ToString();
+                ReporteResumenPersona.UnidadMineraResponsable = reader["UnidadMineraResponsable"].ToString();
+                ReporteResumenPersona.Horas = Decimal.Parse(reader["Horas"].ToString());
+                ReporteResumenPersonalist.Add(ReporteResumenPersona);
+            }
+            reader.Close();
+            reader.Dispose();
+            return ReporteResumenPersonalist;
+        }
     }
 }

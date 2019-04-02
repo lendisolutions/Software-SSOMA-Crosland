@@ -27,5 +27,21 @@ namespace SSOMA.BusinessEntity
         public byte[] Firma1 { get; set; }
         [DataMember]
         public byte[] Firma2 { get; set; }
+        [DataMember]
+        public Decimal Horas { get; set; }
+        [DataMember]
+        public Int32 Nota { get; set; }
+        [DataMember]
+        public String Periodo { get; set; }
+        [DataMember]
+        public String Mes { get; set; }
+        [DataMember]
+        public String DescNegocio { get; set; }
+        [DataMember]
+        public String EmpresaResponsable { get; set; }
+        [DataMember]
+        public String UnidadMineraResponsable { get; set; }
+        [DataMember]
+        public String AreaResponsable { get; set; }
     }
 }
