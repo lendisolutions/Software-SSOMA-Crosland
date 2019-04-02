@@ -1,6 +1,6 @@
 ﻿namespace SSOMA.Presentacion.Modulos.Capacitacion.Reportes
 {
-    partial class frmRepCapacitacionHorasAnualEmpresa
+    partial class frmRepResumenPersonaHorasAnualEmpresa
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmRepCapacitacionHorasAnualEmpresa));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmRepResumenPersonaHorasAnualEmpresa));
             this.btnInforme = new DevExpress.XtraEditors.SimpleButton();
             this.btnCancelar = new DevExpress.XtraEditors.SimpleButton();
             this.SuspendLayout();
@@ -42,7 +42,7 @@
             this.btnInforme.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnInforme.Name = "btnInforme";
             this.btnInforme.Size = new System.Drawing.Size(87, 28);
-            this.btnInforme.TabIndex = 82;
+            this.btnInforme.TabIndex = 84;
             this.btnInforme.Text = "Informe";
             this.btnInforme.Click += new System.EventHandler(this.btnInforme_Click);
             // 
@@ -55,11 +55,11 @@
             this.btnCancelar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(87, 28);
-            this.btnCancelar.TabIndex = 81;
+            this.btnCancelar.TabIndex = 83;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
-            // frmRepCapacitacionHorasAnualEmpresa
+            // frmRepResumenPersonaHorasAnualEmpresa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -68,9 +68,9 @@
             this.Controls.Add(this.btnCancelar);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "frmRepCapacitacionHorasAnualEmpresa";
+            this.Name = "frmRepResumenPersonaHorasAnualEmpresa";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Load += new System.EventHandler(this.frmRepCapacitacionHorasAnualEmpresa_Load);
+            this.Load += new System.EventHandler(this.frmRepResumenPersonaHorasAnualEmpresa_Load);
             this.ResumeLayout(false);
 
         }

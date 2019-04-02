@@ -919,6 +919,30 @@
     <Compile Include="Modulos\Capacitacion\Reportes\frmRepCapacitacionTipo.Designer.cs">
       <DependentUpon>frmRepCapacitacionTipo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Modulos\Capacitacion\Reportes\frmRepResumenPersonaHorasAnualEmpresa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\Capacitacion\Reportes\frmRepResumenPersonaHorasAnualEmpresa.Designer.cs">
+      <DependentUpon>frmRepResumenPersonaHorasAnualEmpresa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Capacitacion\Reportes\frmRepResumenPersonaHorasAnualUnidadMinera.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\Capacitacion\Reportes\frmRepResumenPersonaHorasAnualUnidadMinera.Designer.cs">
+      <DependentUpon>frmRepResumenPersonaHorasAnualUnidadMinera.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Capacitacion\Reportes\frmRepResumenPersonaHorasMensualEmpresa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\Capacitacion\Reportes\frmRepResumenPersonaHorasMensualEmpresa.Designer.cs">
+      <DependentUpon>frmRepResumenPersonaHorasMensualEmpresa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Capacitacion\Reportes\frmRepResumenPersonaHorasMensualUnidadMinera.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\Capacitacion\Reportes\frmRepResumenPersonaHorasMensualUnidadMinera.Designer.cs">
+      <DependentUpon>frmRepResumenPersonaHorasMensualUnidadMinera.cs</DependentUpon>
+    </Compile>
     <Compile Include="Modulos\Capacitacion\Rpt\rptCapacitacion.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -3005,6 +3029,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Modulos\Capacitacion\Reportes\frmRepCapacitacionTipo.resx">
       <DependentUpon>frmRepCapacitacionTipo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Capacitacion\Reportes\frmRepResumenPersonaHorasAnualEmpresa.resx">
+      <DependentUpon>frmRepResumenPersonaHorasAnualEmpresa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Capacitacion\Reportes\frmRepResumenPersonaHorasAnualUnidadMinera.resx">
+      <DependentUpon>frmRepResumenPersonaHorasAnualUnidadMinera.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Capacitacion\Reportes\frmRepResumenPersonaHorasMensualEmpresa.resx">
+      <DependentUpon>frmRepResumenPersonaHorasMensualEmpresa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Capacitacion\Reportes\frmRepResumenPersonaHorasMensualUnidadMinera.resx">
+      <DependentUpon>frmRepResumenPersonaHorasMensualUnidadMinera.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Modulos\Capacitacion\Rpt\rptCapacitacion.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
