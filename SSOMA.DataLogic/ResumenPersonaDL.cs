@@ -118,5 +118,40 @@ namespace SSOMA.DataLogic
             reader.Dispose();
             return ResumenPersonalist;
         }
+
+        public List<ResumenPersonaBE> ListaCursoVirtual(int IdEmpresa, int Periodo, int IdTema)
+        {
+            Database db = DatabaseFactory.CreateDatabase("cnSSOMABD");
+            DbCommand dbCommand = db.GetStoredProcCommand("usp_ResumenPersona_ListaCursoVirtual");
+            db.AddInParameter(dbCommand, "pIdEmpresa", DbType.Int32, IdEmpresa);
+            db.AddInParameter(dbCommand, "pPeriodo", DbType.Int32, Periodo);
+            db.AddInParameter(dbCommand, "pIdTema", DbType.Int32, IdTema);
+
+            IDataReader reader = db.ExecuteReader(dbCommand);
+            List<ResumenPersonaBE> ResumenPersonalist = new List<ResumenPersonaBE>();
+            ResumenPersonaBE ResumenPersona;
+            while (reader.Read())
+            {
+                ResumenPersona = new ResumenPersonaBE();
+                ResumenPersona.IdEmpresa = Int32.Parse(reader["IdEmpresa"].ToString());
+                ResumenPersona.IdResumenPersona = Int32.Parse(reader["idResumenPersona"].ToString());
+                ResumenPersona.IdTema = Int32.Parse(reader["IdTema"].ToString());
+                ResumenPersona.DescTema = reader["DescTema"].ToString();
+                ResumenPersona.IdPersona = Int32.Parse(reader["IdPersona"].ToString());
+                ResumenPersona.Dni = reader["Dni"].ToString();
+                ResumenPersona.ApeNom = reader["ApeNom"].ToString();
+                ResumenPersona.EmpresaPersona = reader["EmpresaPersona"].ToString();
+                ResumenPersona.SedePersona = reader["SedePersona"].ToString();
+                ResumenPersona.DescArea = reader["DescArea"].ToString();
+                ResumenPersona.Fecha = DateTime.Parse(reader["Fecha"].ToString());
+                ResumenPersona.NotaFinal = Int32.Parse(reader["NotaFinal"].ToString());
+                ResumenPersona.Situacion = reader["Situacion"].ToString();
+                ResumenPersona.FlagEstado = Boolean.Parse(reader["flagestado"].ToString());
+                ResumenPersonalist.Add(ResumenPersona);
+            }
+            reader.Close();
+            reader.Dispose();
+            return ResumenPersonalist;
+        }
     }
 }

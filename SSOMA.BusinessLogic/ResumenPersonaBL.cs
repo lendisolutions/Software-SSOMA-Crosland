@@ -21,6 +21,17 @@ namespace SSOMA.BusinessLogic
             { throw ex; }
         }
 
+        public List<ResumenPersonaBE> ListaCursoVirtual(int IdEmpresa, int Periodo, int Idtema)
+        {
+            try
+            {
+                ResumenPersonaDL ResumenPersona = new ResumenPersonaDL();
+                return ResumenPersona.ListaCursoVirtual(IdEmpresa, Periodo, Idtema);
+            }
+            catch (Exception ex)
+            { throw ex; }
+        }
+
         public ResumenPersonaBE Selecciona(int IdResumenPersona)
         {
             try

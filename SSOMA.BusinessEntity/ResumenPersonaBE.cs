@@ -35,9 +35,15 @@ namespace SSOMA.BusinessEntity
         [DataMember]
         public String DescTema { get; set; }
         [DataMember]
+        public String Dni { get; set; }
+        [DataMember]
         public String ApeNom { get; set; }
-        
-
+        [DataMember]
+        public String EmpresaPersona { get; set; }
+        [DataMember]
+        public String SedePersona { get; set; }
+        [DataMember]
+        public String DescArea { get; set; }
         #endregion
     }
 }
