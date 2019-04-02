@@ -94,6 +94,7 @@ namespace SSOMA.Presentacion.Modulos.Capacitacion.Maestros
                     txtDescripcion.Text = objE_Tema.DescTema;
                     deFechaIni.DateTime = objE_Tema.FechaIni;
                     deFechaFin.DateTime = objE_Tema.FechaFin;
+                    txtHoras.EditValue = objE_Tema.Horas;
                     if (objE_Tema.Logo != null)
                     {
                         this.picImage.Image = new FuncionBase().Bytes2Image((byte[])objE_Tema.Logo);
@@ -300,6 +301,7 @@ namespace SSOMA.Presentacion.Modulos.Capacitacion.Maestros
                     objTema.DescTema = txtDescripcion.Text;
                     objTema.FechaIni = Convert.ToDateTime(deFechaIni.DateTime.ToShortDateString());
                     objTema.FechaFin = Convert.ToDateTime(deFechaFin.DateTime.ToShortDateString());
+                    objTema.Horas = Convert.ToInt32(txtHoras.EditValue);
                     objTema.Logo = new FuncionBase().Image2Bytes(this.picImage.Image);
                     objTema.Firma1 = new FuncionBase().Image2Bytes(this.picFirma.Image);
                     objTema.Firma2 = new FuncionBase().Image2Bytes(this.picFirma2.Image);

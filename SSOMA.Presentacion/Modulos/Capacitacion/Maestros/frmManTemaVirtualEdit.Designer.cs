@@ -72,6 +72,9 @@
             this.btnCancelar = new DevExpress.XtraEditors.SimpleButton();
             this.btnGrabar = new DevExpress.XtraEditors.SimpleButton();
             this.bsListadoTemaDetalle = new System.Windows.Forms.BindingSource(this.components);
+            this.txtHoras = new DevExpress.XtraEditors.SpinEdit();
+            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
             this.xtraTabControl1.SuspendLayout();
             this.xtraTabPage1.SuspendLayout();
@@ -95,6 +98,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.picFirma.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picFirma2.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsListadoTemaDetalle)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtHoras.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // xtraTabControl1
@@ -110,6 +114,9 @@
             // 
             // xtraTabPage1
             // 
+            this.xtraTabPage1.Controls.Add(this.labelControl4);
+            this.xtraTabPage1.Controls.Add(this.txtHoras);
+            this.xtraTabPage1.Controls.Add(this.labelControl3);
             this.xtraTabPage1.Controls.Add(this.btnEliminar);
             this.xtraTabPage1.Controls.Add(this.btnAgregar);
             this.xtraTabPage1.Controls.Add(this.picImage);
@@ -545,6 +552,49 @@
             this.btnGrabar.Text = "Grabar";
             this.btnGrabar.Click += new System.EventHandler(this.btnGrabar_Click);
             // 
+            // txtHoras
+            // 
+            this.txtHoras.EditValue = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.txtHoras.Location = new System.Drawing.Point(515, 174);
+            this.txtHoras.Name = "txtHoras";
+            this.txtHoras.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.txtHoras.Properties.Mask.EditMask = "n0";
+            this.txtHoras.Properties.MaxValue = new decimal(new int[] {
+            20,
+            0,
+            0,
+            0});
+            this.txtHoras.Properties.MinValue = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.txtHoras.Size = new System.Drawing.Size(60, 22);
+            this.txtHoras.TabIndex = 210;
+            // 
+            // labelControl3
+            // 
+            this.labelControl3.Location = new System.Drawing.Point(454, 177);
+            this.labelControl3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.labelControl3.Name = "labelControl3";
+            this.labelControl3.Size = new System.Drawing.Size(55, 16);
+            this.labelControl3.TabIndex = 209;
+            this.labelControl3.Text = "Duración:";
+            // 
+            // labelControl4
+            // 
+            this.labelControl4.Location = new System.Drawing.Point(581, 177);
+            this.labelControl4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.labelControl4.Name = "labelControl4";
+            this.labelControl4.Size = new System.Drawing.Size(33, 16);
+            this.labelControl4.TabIndex = 211;
+            this.labelControl4.Text = "Horas";
+            // 
             // frmManTemaVirtualEdit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -582,6 +632,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.picFirma.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picFirma2.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsListadoTemaDetalle)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtHoras.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -630,5 +681,8 @@
         private DevExpress.XtraEditors.SimpleButton btnAgregaFirma1;
         private DevExpress.XtraEditors.PictureEdit picFirma;
         private DevExpress.XtraEditors.PictureEdit picFirma2;
+        private DevExpress.XtraEditors.LabelControl labelControl4;
+        private DevExpress.XtraEditors.SpinEdit txtHoras;
+        private DevExpress.XtraEditors.LabelControl labelControl3;
     }
 }

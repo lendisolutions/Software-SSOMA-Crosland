@@ -29,6 +29,8 @@ namespace SSOMA.BusinessEntity
         [DataMember]
         public DateTime FechaFin { get; set; }
         [DataMember]
+        public Int32 Horas { get; set; }
+        [DataMember]
         public byte[] Logo { get; set; }
         [DataMember]
         public byte[] Firma1 { get; set; }

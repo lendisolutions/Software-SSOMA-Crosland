@@ -275,6 +275,7 @@ namespace SSOMA.Presentacion.Modulos.Capacitacion.Maestros
                     objTema.DescTema = txtDescripcion.Text;
                     objTema.FechaIni = Convert.ToDateTime(deFechaIni.DateTime.ToShortDateString());
                     objTema.FechaFin = Convert.ToDateTime(deFechaFin.DateTime.ToShortDateString());
+                    objTema.Horas = 0;
                     objTema.Logo = new FuncionBase().Image2Bytes(this.picImage.Image);
                     objTema.Firma1 = new FuncionBase().Image2Bytes(this.picFirma.Image);
                     objTema.Firma2 = new FuncionBase().Image2Bytes(this.picFirma.Image);

@@ -26,6 +26,7 @@ namespace SSOMA.DataLogic
             db.AddInParameter(dbCommand, "pDescTema", DbType.String, pItem.DescTema);
             db.AddInParameter(dbCommand, "pFechaIni", DbType.DateTime, pItem.FechaIni);
             db.AddInParameter(dbCommand, "pFechaFin", DbType.DateTime, pItem.FechaFin);
+            db.AddInParameter(dbCommand, "pHoras", DbType.Int32, pItem.Horas);
             db.AddInParameter(dbCommand, "pLogo", DbType.Binary, pItem.Logo);
             db.AddInParameter(dbCommand, "pFirma1", DbType.Binary, pItem.Firma1);
             db.AddInParameter(dbCommand, "pFirma2", DbType.Binary, pItem.Firma2);
@@ -56,6 +57,7 @@ namespace SSOMA.DataLogic
             db.AddInParameter(dbCommand, "pDescTema", DbType.String, pItem.DescTema);
             db.AddInParameter(dbCommand, "pFechaIni", DbType.DateTime, pItem.FechaIni);
             db.AddInParameter(dbCommand, "pFechaFin", DbType.DateTime, pItem.FechaFin);
+            db.AddInParameter(dbCommand, "pHoras", DbType.Int32, pItem.Horas);
             db.AddInParameter(dbCommand, "pLogo", DbType.Binary, pItem.Logo);
             db.AddInParameter(dbCommand, "pFirma1", DbType.Binary, pItem.Firma1);
             db.AddInParameter(dbCommand, "pFirma2", DbType.Binary, pItem.Firma2);
@@ -118,6 +120,7 @@ namespace SSOMA.DataLogic
                 Tema.DescTema = reader["descTema"].ToString();
                 Tema.FechaIni = DateTime.Parse(reader["FechaIni"].ToString());
                 Tema.FechaFin = DateTime.Parse(reader["FechaFin"].ToString());
+                Tema.Horas = Int32.Parse(reader["Horas"].ToString());
                 Tema.Logo = (byte[])reader["Logo"];
                 Tema.Firma1 = (byte[])reader["Firma1"];
                 Tema.Firma2 = (byte[])reader["Firma2"];
@@ -157,6 +160,7 @@ namespace SSOMA.DataLogic
                 Tema.DescTema = reader["descTema"].ToString();
                 Tema.FechaIni = DateTime.Parse(reader["FechaIni"].ToString());
                 Tema.FechaFin = DateTime.Parse(reader["FechaFin"].ToString());
+                Tema.Horas = Int32.Parse(reader["Horas"].ToString());
                 Tema.IdSituacion = Int32.Parse(reader["IdSituacion"].ToString());
                 Tema.DescSituacion = reader["DescSituacion"].ToString();
                 Tema.FlagEstado = Boolean.Parse(reader["flagestado"].ToString());
