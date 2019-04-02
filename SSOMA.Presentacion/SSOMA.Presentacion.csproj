@@ -1075,6 +1075,30 @@
       <DependentUpon>rptPregunta.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Modulos\Capacitacion\Rpt\rptResumenPersonaHorasAnualEmpresa.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptResumenPersonaHorasAnualEmpresa.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modulos\Capacitacion\Rpt\rptResumenPersonaHorasAnualUnidadMinera.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptResumenPersonaHorasAnualUnidadMinera.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modulos\Capacitacion\Rpt\rptResumenPersonaHorasMensualEmpresa.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptResumenPersonaHorasMensualEmpresa.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modulos\Capacitacion\Rpt\rptResumenPersonaHorasMensualUnidadMinera.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptResumenPersonaHorasMensualUnidadMinera.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Modulos\Configuracion\frmManArea.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -3085,6 +3109,22 @@
     <EmbeddedResource Include="Modulos\Capacitacion\Rpt\rptPregunta.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rptPregunta.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Capacitacion\Rpt\rptResumenPersonaHorasAnualEmpresa.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptResumenPersonaHorasAnualEmpresa.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Capacitacion\Rpt\rptResumenPersonaHorasAnualUnidadMinera.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptResumenPersonaHorasAnualUnidadMinera.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Capacitacion\Rpt\rptResumenPersonaHorasMensualEmpresa.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptResumenPersonaHorasMensualEmpresa.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Capacitacion\Rpt\rptResumenPersonaHorasMensualUnidadMinera.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptResumenPersonaHorasMensualUnidadMinera.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Modulos\Configuracion\frmManArea.resx">
       <DependentUpon>frmManArea.cs</DependentUpon>

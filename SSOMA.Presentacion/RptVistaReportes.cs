@@ -1529,6 +1529,34 @@ namespace SSOMA.Presentacion
             this.crystalReportViewer1.ReportSource = objReporte;
         }
 
+        public void VerRptResumenPersonaHorasAnualEmpresa(List<ReporteResumenPersonaBE> lstReporte)
+        {
+            rptResumenPersonaHorasAnualEmpresa objReporte = new rptResumenPersonaHorasAnualEmpresa();
+            objReporte.SetDataSource(lstReporte);
+            this.crystalReportViewer1.ReportSource = objReporte;
+        }
+
+        public void VerRptResumenPersonaHorasAnualUnidadMinera(List<ReporteResumenPersonaBE> lstReporte)
+        {
+            rptResumenPersonaHorasAnualUnidadMinera objReporte = new rptResumenPersonaHorasAnualUnidadMinera();
+            objReporte.SetDataSource(lstReporte);
+            this.crystalReportViewer1.ReportSource = objReporte;
+        }
+
+        public void VerRptResumenPersonaHorasMensualEmpresa(List<ReporteResumenPersonaBE> lstReporte)
+        {
+            rptResumenPersonaHorasMensualEmpresa objReporte = new rptResumenPersonaHorasMensualEmpresa();
+            objReporte.SetDataSource(lstReporte);
+            this.crystalReportViewer1.ReportSource = objReporte;
+        }
+
+        public void VerRptResumenPersonaHorasMensualUnidadMinera(List<ReporteResumenPersonaBE> lstReporte)
+        {
+            rptResumenPersonaHorasMensualUnidadMinera objReporte = new rptResumenPersonaHorasMensualUnidadMinera();
+            objReporte.SetDataSource(lstReporte);
+            this.crystalReportViewer1.ReportSource = objReporte;
+        }
+
         #endregion
     }
 }
