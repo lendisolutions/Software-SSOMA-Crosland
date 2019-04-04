@@ -198,7 +198,7 @@ namespace SSOMA.Presentacion.Modulos.Capacitacion.Registros
                                     objE_RespuestaPersona.FlagEstado = true;
                                     objE_RespuestaPersona.Usuario = Parametros.strUsuarioLogin;
                                     objE_RespuestaPersona.Maquina = WindowsIdentity.GetCurrent().Name.ToString();
-                                    objE_RespuestaPersona.IdEmpresa = 0;
+                                    objE_RespuestaPersona.IdEmpresa = Parametros.intEmpresaId;
                                     lstRespuestaPersona.Add(objE_RespuestaPersona);
                                     
                                 }
@@ -229,7 +229,7 @@ namespace SSOMA.Presentacion.Modulos.Capacitacion.Registros
                                     objE_RespuestaPersona.FlagEstado = true;
                                     objE_RespuestaPersona.Usuario = Parametros.strUsuarioLogin;
                                     objE_RespuestaPersona.Maquina = WindowsIdentity.GetCurrent().Name.ToString();
-                                    objE_RespuestaPersona.IdEmpresa = 0;
+                                    objE_RespuestaPersona.IdEmpresa = Parametros.intEmpresaId;
                                     lstRespuestaPersona.Add(objE_RespuestaPersona);
                                     break;
                                 }
@@ -269,7 +269,7 @@ namespace SSOMA.Presentacion.Modulos.Capacitacion.Registros
                     ResumenPersonaBL objBL_ResumenPersona = new ResumenPersonaBL();
 
                     objResumenPersona.IdResumenPersona = 0;
-                    objResumenPersona.IdEmpresa = 0;
+                    objResumenPersona.IdEmpresa = Parametros.intEmpresaId;
                     objResumenPersona.IdTema = intIdTema;
                     objResumenPersona.IdPersona = Parametros.intPersonaId;
                     objResumenPersona.NotaFinal = NotaFinal;
