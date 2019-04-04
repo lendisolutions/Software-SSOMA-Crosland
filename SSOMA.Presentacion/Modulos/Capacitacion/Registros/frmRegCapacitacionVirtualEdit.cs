@@ -427,7 +427,7 @@ namespace SSOMA.Presentacion.Modulos.Capacitacion.Registros
                 objE_TemaDetallePersona.IdPersona = Parametros.intPersonaId;
                 if (item.Extension == ".xlsx")
                     objE_TemaDetallePersona.Image = new FuncionBase().Image2Bytes(SSOMA.Presentacion.Properties.Resources.MSExcel_48x48);
-                if (item.Extension == ".pptx")
+                if (item.Extension == ".pptx" || item.Extension == ".ppsx")
                     objE_TemaDetallePersona.Image = new FuncionBase().Image2Bytes(SSOMA.Presentacion.Properties.Resources.MSPowerPoint_48x48);
                 if (item.Extension == ".docx")
                     objE_TemaDetallePersona.Image = new FuncionBase().Image2Bytes(SSOMA.Presentacion.Properties.Resources.MSWord_48x48);
