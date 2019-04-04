@@ -139,7 +139,7 @@ namespace SSOMA.Presentacion.Modulos.Capacitacion.Maestros
             tvwDatos.Nodes.Add(nuevoNodo);
 
             List<CategoriaTemaBE> lstCategoriaTema = null;
-            lstCategoriaTema = new CategoriaTemaBL().ListaTodosActivo(Parametros.intEmpresaId);
+            lstCategoriaTema = new CategoriaTemaBL().ListaTodosActivo(0);
             foreach (var item in lstCategoriaTema)
             {
                 TreeNode nuevoNodoChild = new TreeNode();
@@ -159,7 +159,7 @@ namespace SSOMA.Presentacion.Modulos.Capacitacion.Maestros
             nodo.Nodes.Clear();
 
             List<TemaBE> lstTema = null;
-            lstTema = new TemaBL().ListaTodosActivo(Parametros.intEmpresaId, IdCategoriaTema, Parametros.intTEMAVirtual, Parametros.intPeriodo);
+            lstTema = new TemaBL().ListaTodosActivo(0, IdCategoriaTema, Parametros.intTEMAVirtual, Parametros.intPeriodo);
             foreach (var item in lstTema)
             {
                 TreeNode nuevoNodoChild = new TreeNode();
@@ -173,7 +173,7 @@ namespace SSOMA.Presentacion.Modulos.Capacitacion.Maestros
 
         private void Cargar()
         {
-            mLista = new TemaPersonaBL().ListaTodosActivo(Parametros.intEmpresaId, IdTema,0);
+            mLista = new TemaPersonaBL().ListaTodosActivo(0, IdTema,0);
             gcTemaPersona.DataSource = mLista;
 
             

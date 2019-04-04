@@ -95,7 +95,7 @@ namespace SSOMA.Presentacion.Modulos.Capacitacion.Maestros
                         objE_Pregunta.IdPregunta = int.Parse(gvPregunta.GetFocusedRowCellValue("IdPregunta").ToString());
                         objE_Pregunta.Usuario = Parametros.strUsuarioLogin;
                         objE_Pregunta.Maquina = WindowsIdentity.GetCurrent().Name.ToString();
-                        objE_Pregunta.IdEmpresa = Parametros.intEmpresaId;
+                        objE_Pregunta.IdEmpresa = 0;
 
                         PreguntaBL objBL_Pregunta = new PreguntaBL();
                         objBL_Pregunta.Elimina(objE_Pregunta);
@@ -225,7 +225,7 @@ namespace SSOMA.Presentacion.Modulos.Capacitacion.Maestros
             tvwDatos.Nodes.Add(nuevoNodo);
 
             List<CategoriaTemaBE> lstCategoriaTema = null;
-            lstCategoriaTema = new CategoriaTemaBL().ListaTodosActivo(Parametros.intEmpresaId);
+            lstCategoriaTema = new CategoriaTemaBL().ListaTodosActivo(0);
             foreach (var item in lstCategoriaTema)
             {
                 TreeNode nuevoNodoChild = new TreeNode();
@@ -245,7 +245,7 @@ namespace SSOMA.Presentacion.Modulos.Capacitacion.Maestros
             nodo.Nodes.Clear();
 
             List<TemaBE> lstTema = null;
-            lstTema = new TemaBL().ListaTodosActivo(Parametros.intEmpresaId, IdCategoriaTema, Parametros.intTEMAVirtual, Parametros.intPeriodo);
+            lstTema = new TemaBL().ListaTodosActivo(0, IdCategoriaTema, Parametros.intTEMAVirtual, Parametros.intPeriodo);
             foreach (var item in lstTema)
             {
                 TreeNode nuevoNodoChild = new TreeNode();
@@ -262,7 +262,7 @@ namespace SSOMA.Presentacion.Modulos.Capacitacion.Maestros
             nodo.Nodes.Clear();
 
             List<CuestionarioBE> lstCuestionario = null;
-            lstCuestionario = new CuestionarioBL().ListaTodosActivo(Parametros.intEmpresaId, IdTema);
+            lstCuestionario = new CuestionarioBL().ListaTodosActivo(0, IdTema);
             foreach (var item in lstCuestionario)
             {
                 TreeNode nuevoNodoChild = new TreeNode();
@@ -276,7 +276,7 @@ namespace SSOMA.Presentacion.Modulos.Capacitacion.Maestros
 
         private void Cargar()
         {
-            mLista = new PreguntaBL().ListaTodosActivo(Parametros.intEmpresaId, IdTema, IdCuestionario);
+            mLista = new PreguntaBL().ListaTodosActivo(0, IdTema, IdCuestionario);
             gcPregunta.DataSource = mLista;
         }
 
