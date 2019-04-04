@@ -76,6 +76,8 @@ namespace SSOMA.Presentacion.Modulos.Capacitacion.Maestros
             deFechaIni.EditValue = DateTime.Now;
             deFechaFin.EditValue = DateTime.Now;
 
+            BSUtils.LoaderLook(cboTipoCapacitacion, new TipoCapacitacionBL().ListaCombo(Parametros.intEmpresaId), "DescTipoCapacitacion", "IdTipoCapacitacion", true);
+
             if (pOperacion == Operacion.Nuevo)
             {
                 this.Text = "Tema Virtual - Nuevo";
@@ -113,6 +115,7 @@ namespace SSOMA.Presentacion.Modulos.Capacitacion.Maestros
                     txtResponsable.Text = objE_Tema.Responsable;
                     txtResponsableCargo.Text = objE_Tema.ResponsableCargo;
                     txtResponsableEmpresa.Text = objE_Tema.ResponsableEmpresa;
+                    cboTipoCapacitacion.EditValue = objE_Tema.IdTipoCapacitacion;
                 }
 
             }
@@ -311,6 +314,7 @@ namespace SSOMA.Presentacion.Modulos.Capacitacion.Maestros
                     objTema.Responsable = txtResponsable.Text;
                     objTema.ResponsableCargo = txtResponsableCargo.Text;
                     objTema.ResponsableEmpresa = txtResponsableEmpresa.Text;
+                    objTema.IdTipoCapacitacion = Convert.ToInt32(cboTipoCapacitacion.EditValue);
                     objTema.IdSituacion = IdSituacion;
                     objTema.FlagEstado = true;
                     objTema.Usuario = Parametros.strUsuarioLogin;

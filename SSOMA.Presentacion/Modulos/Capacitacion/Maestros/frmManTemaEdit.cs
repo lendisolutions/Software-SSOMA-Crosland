@@ -76,6 +76,8 @@ namespace SSOMA.Presentacion.Modulos.Capacitacion.Maestros
             deFechaIni.EditValue = DateTime.Now;
             deFechaFin.EditValue = DateTime.Now;
 
+            BSUtils.LoaderLook(cboTipoCapacitacion, new TipoCapacitacionBL().ListaCombo(Parametros.intEmpresaId), "DescTipoCapacitacion", "IdTipoCapacitacion", true);
+
             if (pOperacion == Operacion.Nuevo)
             {
                 this.Text = "Tema Presencial - Nuevo";
@@ -101,6 +103,8 @@ namespace SSOMA.Presentacion.Modulos.Capacitacion.Maestros
                     else
                     { this.picImage.Image = SSOMA.Presentacion.Properties.Resources.noImage; }
                     IdSituacion = objE_Tema.IdSituacion;
+
+                    cboTipoCapacitacion.EditValue = objE_Tema.IdTipoCapacitacion;
                 }
 
             }
@@ -279,6 +283,7 @@ namespace SSOMA.Presentacion.Modulos.Capacitacion.Maestros
                     objTema.Logo = new FuncionBase().Image2Bytes(this.picImage.Image);
                     objTema.Firma1 = new FuncionBase().Image2Bytes(this.picFirma.Image);
                     objTema.Firma2 = new FuncionBase().Image2Bytes(this.picFirma.Image);
+                    objTema.IdTipoCapacitacion = Convert.ToInt32(cboTipoCapacitacion.EditValue);
                     objTema.IdSituacion = IdSituacion;
                     objTema.FlagEstado = true;
                     objTema.Usuario = Parametros.strUsuarioLogin;

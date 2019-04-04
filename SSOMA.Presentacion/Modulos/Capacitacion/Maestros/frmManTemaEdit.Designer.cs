@@ -65,8 +65,10 @@
             this.labelControl17 = new DevExpress.XtraEditors.LabelControl();
             this.cboCategoriaTema = new DevExpress.XtraEditors.LookUpEdit();
             this.labelControl15 = new DevExpress.XtraEditors.LabelControl();
-            this.bsListadoTemaDetalle = new System.Windows.Forms.BindingSource(this.components);
             this.picFirma = new DevExpress.XtraEditors.PictureEdit();
+            this.bsListadoTemaDetalle = new System.Windows.Forms.BindingSource(this.components);
+            this.cboTipoCapacitacion = new DevExpress.XtraEditors.LookUpEdit();
+            this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.txtPeriodo.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
             this.xtraTabControl1.SuspendLayout();
@@ -84,8 +86,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.deFechaIni.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.deFechaIni.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboCategoriaTema.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsListadoTemaDetalle)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picFirma.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsListadoTemaDetalle)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cboTipoCapacitacion.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // btnCancelar
@@ -481,11 +484,33 @@
             this.picFirma.Size = new System.Drawing.Size(167, 176);
             this.picFirma.TabIndex = 209;
             // 
+            // cboTipoCapacitacion
+            // 
+            this.cboTipoCapacitacion.Location = new System.Drawing.Point(164, 499);
+            this.cboTipoCapacitacion.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.cboTipoCapacitacion.Name = "cboTipoCapacitacion";
+            this.cboTipoCapacitacion.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cboTipoCapacitacion.Properties.NullText = "";
+            this.cboTipoCapacitacion.Size = new System.Drawing.Size(337, 22);
+            this.cboTipoCapacitacion.TabIndex = 199;
+            // 
+            // labelControl9
+            // 
+            this.labelControl9.Location = new System.Drawing.Point(16, 502);
+            this.labelControl9.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.labelControl9.Name = "labelControl9";
+            this.labelControl9.Size = new System.Drawing.Size(124, 16);
+            this.labelControl9.TabIndex = 198;
+            this.labelControl9.Text = "Tipo de Capacitacion:";
+            // 
             // frmManTemaEdit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(938, 532);
+            this.Controls.Add(this.cboTipoCapacitacion);
+            this.Controls.Add(this.labelControl9);
             this.Controls.Add(this.xtraTabControl1);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnGrabar);
@@ -513,9 +538,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.deFechaIni.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.deFechaIni.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboCategoriaTema.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsListadoTemaDetalle)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picFirma.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsListadoTemaDetalle)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cboTipoCapacitacion.Properties)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -558,5 +585,7 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.BindingSource bsListadoTemaDetalle;
         private DevExpress.XtraEditors.PictureEdit picFirma;
+        public DevExpress.XtraEditors.LookUpEdit cboTipoCapacitacion;
+        private DevExpress.XtraEditors.LabelControl labelControl9;
     }
 }
