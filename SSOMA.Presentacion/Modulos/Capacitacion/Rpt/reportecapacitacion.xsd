@@ -42,6 +42,12 @@
     <xs:attribute name="EmpresaResponsable" type="xs:string" />
     <xs:attribute name="UnidadMineraResponsable" type="xs:string" />
     <xs:attribute name="AreaResponsable" type="xs:string" />
+    <xs:attribute name="Responsable" type="xs:string" />
+    <xs:attribute name="ResponsableCargo" type="xs:string" />
+    <xs:attribute name="ResponsableEmpresa" type="xs:string" />
+    <xs:attribute name="NotaFinal" type="xs:integer" />
+    <xs:attribute name="Situacion" type="xs:string" />
+    <xs:attribute name="Dni" type="xs:string" />
   </xs:complexType>
   </xs:element>
   

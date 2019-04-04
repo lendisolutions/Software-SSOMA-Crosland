@@ -919,6 +919,12 @@
     <Compile Include="Modulos\Capacitacion\Reportes\frmRepCapacitacionTipo.Designer.cs">
       <DependentUpon>frmRepCapacitacionTipo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Modulos\Capacitacion\Reportes\frmRepCapacitacionVirtualAsistencia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\Capacitacion\Reportes\frmRepCapacitacionVirtualAsistencia.Designer.cs">
+      <DependentUpon>frmRepCapacitacionVirtualAsistencia.cs</DependentUpon>
+    </Compile>
     <Compile Include="Modulos\Capacitacion\Reportes\frmRepResumenPersonaHorasAnualEmpresa.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1073,6 +1079,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>rptCapacitacionTipo.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modulos\Capacitacion\Rpt\rptCapacitacionVirtual.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptCapacitacionVirtual.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Modulos\Capacitacion\Rpt\rptCertificado.cs">
@@ -3030,6 +3042,9 @@
     <EmbeddedResource Include="Modulos\Capacitacion\Reportes\frmRepCapacitacionTipo.resx">
       <DependentUpon>frmRepCapacitacionTipo.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Capacitacion\Reportes\frmRepCapacitacionVirtualAsistencia.resx">
+      <DependentUpon>frmRepCapacitacionVirtualAsistencia.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Modulos\Capacitacion\Reportes\frmRepResumenPersonaHorasAnualEmpresa.resx">
       <DependentUpon>frmRepResumenPersonaHorasAnualEmpresa.cs</DependentUpon>
     </EmbeddedResource>
@@ -3129,6 +3144,10 @@
     <EmbeddedResource Include="Modulos\Capacitacion\Rpt\rptCapacitacionTipo.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rptCapacitacionTipo.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Capacitacion\Rpt\rptCapacitacionVirtual.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptCapacitacionVirtual.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Modulos\Capacitacion\Rpt\rptCertificado.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

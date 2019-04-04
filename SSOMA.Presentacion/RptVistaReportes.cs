@@ -434,6 +434,13 @@ namespace SSOMA.Presentacion
             this.crystalReportViewer1.ReportSource = objReporte;
         }
 
+        public void VerRptCapacitacionVirtual(List<ReporteResumenPersonaBE> lstReporte)
+        {
+            rptCapacitacionVirtual objReporte = new rptCapacitacionVirtual();
+            objReporte.SetDataSource(lstReporte);
+            this.crystalReportViewer1.ReportSource = objReporte;
+        }
+
         public void VerRptPregunta(List<ReportePreguntaBE> lstReporte)
         {
             rptPregunta objReporte = new rptPregunta();
