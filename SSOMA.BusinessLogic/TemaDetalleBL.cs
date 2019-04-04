@@ -6,7 +6,6 @@ using SSOMA.DataLogic;
 using System.Data;
 using System.Transactions;
 
-
 namespace SSOMA.BusinessLogic
 {
     public class TemaDetalleBL

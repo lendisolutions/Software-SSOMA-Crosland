@@ -144,12 +144,11 @@ namespace SSOMA.Presentacion.Modulos.Capacitacion.Registros
         {
             if (tileView1.RowCount > 0)
             {
-                int intIdEmpresa = int.Parse(tileView1.GetFocusedRowCellValue("IdEmpresa").ToString());
                 int intIdTema = int.Parse(tileView1.GetFocusedRowCellValue("IdTema").ToString());
                 string strDescTema = tileView1.GetFocusedRowCellValue("DescTema").ToString();
 
                 TemaBE objE_Tema = null;
-                objE_Tema = new TemaBL().Selecciona(intIdEmpresa, intIdTema);
+                objE_Tema = new TemaBL().Selecciona(0, intIdTema);
                 if (objE_Tema != null)
                 {
                     if (objE_Tema.IdSituacion == Parametros.intTEMAInactivo)
