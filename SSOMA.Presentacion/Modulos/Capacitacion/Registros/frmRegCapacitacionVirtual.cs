@@ -38,7 +38,7 @@ namespace SSOMA.Presentacion.Modulos.Capacitacion.Registros
                 Cursor = Cursors.WaitCursor;
                 //TRAEMOS LA INFORMACION DE LA BASE DE DATOS
                 List<TemaPersonaBE> lstTemaPersonal = null;
-                lstTemaPersonal = new TemaPersonaBL().ListaPersona(Parametros.intEmpresaId, Parametros.intPersonaId);
+                lstTemaPersonal = new TemaPersonaBL().ListaPersona(0, Parametros.intPersonaId);
 
                 //var homesTable = VideoCatalogDataSet();
                 var homesTable = new FuncionBase().ToDataTable(lstTemaPersonal);
@@ -160,7 +160,7 @@ namespace SSOMA.Presentacion.Modulos.Capacitacion.Registros
                     }
 
                     List<ResumenPersonaBE> lstResumenPersona = null;
-                    lstResumenPersona = new ResumenPersonaBL().ListaTodosActivo(Parametros.intEmpresaId, intIdTema, Parametros.intPersonaId);
+                    lstResumenPersona = new ResumenPersonaBL().ListaTodosActivo(0, intIdTema, Parametros.intPersonaId);
                     if (lstResumenPersona.Count == 1)
                     {
                         if (lstResumenPersona[0].Situacion == "APROBADO")
