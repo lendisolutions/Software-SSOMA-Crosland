@@ -37,6 +37,14 @@ namespace SSOMA.BusinessEntity
         [DataMember]
         public byte[] Firma2 { get; set; }
         [DataMember]
+        public String Responsable { get; set; }
+        [DataMember]
+        public String ResponsableCargo { get; set; }
+        [DataMember]
+        public String ResponsableEmpresa { get; set; }
+        [DataMember]
+        public Int32 IdTipoCapacitacion { get; set; }
+        [DataMember]
         public Int32 IdSituacion { get; set; }
         [DataMember]
         public Boolean FlagEstado { get; set; }
@@ -53,6 +61,8 @@ namespace SSOMA.BusinessEntity
         public String DescCategoriaTema { get; set; }
         [DataMember]
         public String DescTipoTema { get; set; }
+        [DataMember]
+        public String DescTipoCapacitacion { get; set; }
         [DataMember]
         public String DescSituacion { get; set; }
 

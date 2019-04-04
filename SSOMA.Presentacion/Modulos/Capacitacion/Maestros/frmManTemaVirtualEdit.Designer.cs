@@ -32,6 +32,9 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmManTemaVirtualEdit));
             this.xtraTabControl1 = new DevExpress.XtraTab.XtraTabControl();
             this.xtraTabPage1 = new DevExpress.XtraTab.XtraTabPage();
+            this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
+            this.txtHoras = new DevExpress.XtraEditors.SpinEdit();
+            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.btnEliminar = new DevExpress.XtraEditors.SimpleButton();
             this.btnAgregar = new DevExpress.XtraEditors.SimpleButton();
             this.picImage = new DevExpress.XtraEditors.PictureEdit();
@@ -72,12 +75,17 @@
             this.btnCancelar = new DevExpress.XtraEditors.SimpleButton();
             this.btnGrabar = new DevExpress.XtraEditors.SimpleButton();
             this.bsListadoTemaDetalle = new System.Windows.Forms.BindingSource(this.components);
-            this.txtHoras = new DevExpress.XtraEditors.SpinEdit();
-            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
+            this.xtraTabPage3 = new DevExpress.XtraTab.XtraTabPage();
+            this.lblDescripcion = new DevExpress.XtraEditors.LabelControl();
+            this.txtResponsable = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
+            this.txtResponsableCargo = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
+            this.txtResponsableEmpresa = new DevExpress.XtraEditors.TextEdit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
             this.xtraTabControl1.SuspendLayout();
             this.xtraTabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtHoras.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picImage.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDescripcion.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcTemaDetalle)).BeginInit();
@@ -98,7 +106,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.picFirma.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picFirma2.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsListadoTemaDetalle)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtHoras.Properties)).BeginInit();
+            this.xtraTabPage3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtResponsable.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtResponsableCargo.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtResponsableEmpresa.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // xtraTabControl1
@@ -110,6 +121,7 @@
             this.xtraTabControl1.TabIndex = 195;
             this.xtraTabControl1.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.xtraTabPage1,
+            this.xtraTabPage3,
             this.xtraTabPage2});
             // 
             // xtraTabPage1
@@ -136,6 +148,49 @@
             this.xtraTabPage1.Name = "xtraTabPage1";
             this.xtraTabPage1.Size = new System.Drawing.Size(926, 452);
             this.xtraTabPage1.Text = "Datos Generales del Tema de Capacitación";
+            // 
+            // labelControl4
+            // 
+            this.labelControl4.Location = new System.Drawing.Point(581, 177);
+            this.labelControl4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.labelControl4.Name = "labelControl4";
+            this.labelControl4.Size = new System.Drawing.Size(33, 16);
+            this.labelControl4.TabIndex = 211;
+            this.labelControl4.Text = "Horas";
+            // 
+            // txtHoras
+            // 
+            this.txtHoras.EditValue = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.txtHoras.Location = new System.Drawing.Point(515, 174);
+            this.txtHoras.Name = "txtHoras";
+            this.txtHoras.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.txtHoras.Properties.Mask.EditMask = "n0";
+            this.txtHoras.Properties.MaxValue = new decimal(new int[] {
+            20,
+            0,
+            0,
+            0});
+            this.txtHoras.Properties.MinValue = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.txtHoras.Size = new System.Drawing.Size(60, 22);
+            this.txtHoras.TabIndex = 210;
+            // 
+            // labelControl3
+            // 
+            this.labelControl3.Location = new System.Drawing.Point(454, 177);
+            this.labelControl3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.labelControl3.Name = "labelControl3";
+            this.labelControl3.Size = new System.Drawing.Size(55, 16);
+            this.labelControl3.TabIndex = 209;
+            this.labelControl3.Text = "Duración:";
             // 
             // btnEliminar
             // 
@@ -552,48 +607,74 @@
             this.btnGrabar.Text = "Grabar";
             this.btnGrabar.Click += new System.EventHandler(this.btnGrabar_Click);
             // 
-            // txtHoras
+            // xtraTabPage3
             // 
-            this.txtHoras.EditValue = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.txtHoras.Location = new System.Drawing.Point(515, 174);
-            this.txtHoras.Name = "txtHoras";
-            this.txtHoras.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.txtHoras.Properties.Mask.EditMask = "n0";
-            this.txtHoras.Properties.MaxValue = new decimal(new int[] {
-            20,
-            0,
-            0,
-            0});
-            this.txtHoras.Properties.MinValue = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.txtHoras.Size = new System.Drawing.Size(60, 22);
-            this.txtHoras.TabIndex = 210;
+            this.xtraTabPage3.Controls.Add(this.labelControl6);
+            this.xtraTabPage3.Controls.Add(this.txtResponsableEmpresa);
+            this.xtraTabPage3.Controls.Add(this.labelControl5);
+            this.xtraTabPage3.Controls.Add(this.txtResponsableCargo);
+            this.xtraTabPage3.Controls.Add(this.lblDescripcion);
+            this.xtraTabPage3.Controls.Add(this.txtResponsable);
+            this.xtraTabPage3.Name = "xtraTabPage3";
+            this.xtraTabPage3.Size = new System.Drawing.Size(926, 452);
+            this.xtraTabPage3.Text = "Responsable";
             // 
-            // labelControl3
+            // lblDescripcion
             // 
-            this.labelControl3.Location = new System.Drawing.Point(454, 177);
-            this.labelControl3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(55, 16);
-            this.labelControl3.TabIndex = 209;
-            this.labelControl3.Text = "Duración:";
+            this.lblDescripcion.Location = new System.Drawing.Point(16, 31);
+            this.lblDescripcion.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.lblDescripcion.Name = "lblDescripcion";
+            this.lblDescripcion.Size = new System.Drawing.Size(77, 16);
+            this.lblDescripcion.TabIndex = 2;
+            this.lblDescripcion.Text = "Responsable:";
             // 
-            // labelControl4
+            // txtResponsable
             // 
-            this.labelControl4.Location = new System.Drawing.Point(581, 177);
-            this.labelControl4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.labelControl4.Name = "labelControl4";
-            this.labelControl4.Size = new System.Drawing.Size(33, 16);
-            this.labelControl4.TabIndex = 211;
-            this.labelControl4.Text = "Horas";
+            this.txtResponsable.Location = new System.Drawing.Point(99, 28);
+            this.txtResponsable.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtResponsable.Name = "txtResponsable";
+            this.txtResponsable.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtResponsable.Properties.MaxLength = 200;
+            this.txtResponsable.Size = new System.Drawing.Size(700, 22);
+            this.txtResponsable.TabIndex = 3;
+            // 
+            // labelControl5
+            // 
+            this.labelControl5.Location = new System.Drawing.Point(16, 61);
+            this.labelControl5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.labelControl5.Name = "labelControl5";
+            this.labelControl5.Size = new System.Drawing.Size(39, 16);
+            this.labelControl5.TabIndex = 4;
+            this.labelControl5.Text = "Cargo:";
+            // 
+            // txtResponsableCargo
+            // 
+            this.txtResponsableCargo.Location = new System.Drawing.Point(99, 58);
+            this.txtResponsableCargo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtResponsableCargo.Name = "txtResponsableCargo";
+            this.txtResponsableCargo.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtResponsableCargo.Properties.MaxLength = 200;
+            this.txtResponsableCargo.Size = new System.Drawing.Size(700, 22);
+            this.txtResponsableCargo.TabIndex = 5;
+            // 
+            // labelControl6
+            // 
+            this.labelControl6.Location = new System.Drawing.Point(16, 91);
+            this.labelControl6.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.labelControl6.Name = "labelControl6";
+            this.labelControl6.Size = new System.Drawing.Size(55, 16);
+            this.labelControl6.TabIndex = 6;
+            this.labelControl6.Text = "Empresa:";
+            // 
+            // txtResponsableEmpresa
+            // 
+            this.txtResponsableEmpresa.Location = new System.Drawing.Point(99, 88);
+            this.txtResponsableEmpresa.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtResponsableEmpresa.Name = "txtResponsableEmpresa";
+            this.txtResponsableEmpresa.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtResponsableEmpresa.Properties.MaxLength = 200;
+            this.txtResponsableEmpresa.Size = new System.Drawing.Size(700, 22);
+            this.txtResponsableEmpresa.TabIndex = 7;
             // 
             // frmManTemaVirtualEdit
             // 
@@ -612,6 +693,7 @@
             this.xtraTabControl1.ResumeLayout(false);
             this.xtraTabPage1.ResumeLayout(false);
             this.xtraTabPage1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtHoras.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picImage.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDescripcion.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcTemaDetalle)).EndInit();
@@ -632,7 +714,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.picFirma.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picFirma2.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsListadoTemaDetalle)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtHoras.Properties)).EndInit();
+            this.xtraTabPage3.ResumeLayout(false);
+            this.xtraTabPage3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtResponsable.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtResponsableCargo.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtResponsableEmpresa.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -684,5 +770,12 @@
         private DevExpress.XtraEditors.LabelControl labelControl4;
         private DevExpress.XtraEditors.SpinEdit txtHoras;
         private DevExpress.XtraEditors.LabelControl labelControl3;
+        private DevExpress.XtraTab.XtraTabPage xtraTabPage3;
+        private DevExpress.XtraEditors.LabelControl lblDescripcion;
+        private DevExpress.XtraEditors.TextEdit txtResponsable;
+        private DevExpress.XtraEditors.LabelControl labelControl5;
+        private DevExpress.XtraEditors.TextEdit txtResponsableCargo;
+        private DevExpress.XtraEditors.LabelControl labelControl6;
+        private DevExpress.XtraEditors.TextEdit txtResponsableEmpresa;
     }
 }

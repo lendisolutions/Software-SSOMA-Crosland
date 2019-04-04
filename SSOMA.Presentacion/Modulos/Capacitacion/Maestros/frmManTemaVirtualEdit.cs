@@ -110,6 +110,9 @@ namespace SSOMA.Presentacion.Modulos.Capacitacion.Maestros
                     { this.picFirma.Image = SSOMA.Presentacion.Properties.Resources.firma; }
 
                     IdSituacion = objE_Tema.IdSituacion;
+                    txtResponsable.Text = objE_Tema.Responsable;
+                    txtResponsableCargo.Text = objE_Tema.ResponsableCargo;
+                    txtResponsableEmpresa.Text = objE_Tema.ResponsableEmpresa;
                 }
 
             }
@@ -305,6 +308,9 @@ namespace SSOMA.Presentacion.Modulos.Capacitacion.Maestros
                     objTema.Logo = new FuncionBase().Image2Bytes(this.picImage.Image);
                     objTema.Firma1 = new FuncionBase().Image2Bytes(this.picFirma.Image);
                     objTema.Firma2 = new FuncionBase().Image2Bytes(this.picFirma2.Image);
+                    objTema.Responsable = txtResponsable.Text;
+                    objTema.ResponsableCargo = txtResponsableCargo.Text;
+                    objTema.ResponsableEmpresa = txtResponsableEmpresa.Text;
                     objTema.IdSituacion = IdSituacion;
                     objTema.FlagEstado = true;
                     objTema.Usuario = Parametros.strUsuarioLogin;

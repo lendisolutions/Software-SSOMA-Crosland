@@ -30,6 +30,10 @@ namespace SSOMA.DataLogic
             db.AddInParameter(dbCommand, "pLogo", DbType.Binary, pItem.Logo);
             db.AddInParameter(dbCommand, "pFirma1", DbType.Binary, pItem.Firma1);
             db.AddInParameter(dbCommand, "pFirma2", DbType.Binary, pItem.Firma2);
+            db.AddInParameter(dbCommand, "pResponsable", DbType.String, pItem.Responsable);
+            db.AddInParameter(dbCommand, "pResponsableCargo", DbType.String, pItem.ResponsableCargo);
+            db.AddInParameter(dbCommand, "pResponsableEmpresa", DbType.String, pItem.ResponsableEmpresa);
+            db.AddInParameter(dbCommand, "pIdTipoCapacitacion", DbType.Int32, pItem.IdTipoCapacitacion);
             db.AddInParameter(dbCommand, "pIdSituacion", DbType.Int32, pItem.IdSituacion);
             db.AddInParameter(dbCommand, "pFlagEstado", DbType.Boolean, pItem.FlagEstado);
             db.AddInParameter(dbCommand, "pUsuario", DbType.String, pItem.Usuario);
@@ -61,6 +65,10 @@ namespace SSOMA.DataLogic
             db.AddInParameter(dbCommand, "pLogo", DbType.Binary, pItem.Logo);
             db.AddInParameter(dbCommand, "pFirma1", DbType.Binary, pItem.Firma1);
             db.AddInParameter(dbCommand, "pFirma2", DbType.Binary, pItem.Firma2);
+            db.AddInParameter(dbCommand, "pResponsable", DbType.String, pItem.Responsable);
+            db.AddInParameter(dbCommand, "pResponsableCargo", DbType.String, pItem.ResponsableCargo);
+            db.AddInParameter(dbCommand, "pResponsableEmpresa", DbType.String, pItem.ResponsableEmpresa);
+            db.AddInParameter(dbCommand, "pIdTipoCapacitacion", DbType.Int32, pItem.IdTipoCapacitacion);
             db.AddInParameter(dbCommand, "pIdSituacion", DbType.Int32, pItem.IdSituacion);
             db.AddInParameter(dbCommand, "pFlagEstado", DbType.Boolean, pItem.FlagEstado);
             db.AddInParameter(dbCommand, "pUsuario", DbType.String, pItem.Usuario);
@@ -126,6 +134,11 @@ namespace SSOMA.DataLogic
                 Tema.Firma2 = (byte[])reader["Firma2"];
                 Tema.IdSituacion = Int32.Parse(reader["IdSituacion"].ToString());
                 Tema.DescSituacion = reader["DescSituacion"].ToString();
+                Tema.Responsable = reader["Responsable"].ToString();
+                Tema.ResponsableCargo = reader["ResponsableCargo"].ToString();
+                Tema.ResponsableEmpresa = reader["ResponsableEmpresa"].ToString();
+                Tema.IdTipoCapacitacion = Int32.Parse(reader["IdTipoCapacitacion"].ToString());
+                Tema.DescTipoCapacitacion = reader["DescTipoCapacitacion"].ToString();
                 Tema.FlagEstado = Boolean.Parse(reader["flagestado"].ToString());
             }
             reader.Close();
@@ -163,6 +176,11 @@ namespace SSOMA.DataLogic
                 Tema.Horas = Int32.Parse(reader["Horas"].ToString());
                 Tema.IdSituacion = Int32.Parse(reader["IdSituacion"].ToString());
                 Tema.DescSituacion = reader["DescSituacion"].ToString();
+                Tema.Responsable = reader["Responsable"].ToString();
+                Tema.ResponsableCargo = reader["ResponsableCargo"].ToString();
+                Tema.ResponsableEmpresa = reader["ResponsableEmpresa"].ToString();
+                Tema.IdTipoCapacitacion = Int32.Parse(reader["IdTipoCapacitacion"].ToString());
+                Tema.DescTipoCapacitacion = reader["DescTipoCapacitacion"].ToString();
                 Tema.FlagEstado = Boolean.Parse(reader["flagestado"].ToString());
                 Temalist.Add(Tema);
             }
