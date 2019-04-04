@@ -70,7 +70,7 @@ namespace SSOMA.Presentacion.Modulos.Capacitacion.Maestros
         private void frmManTemaEdit_Load(object sender, EventArgs e)
         {
             txtPeriodo.EditValue = Parametros.intPeriodo;
-            BSUtils.LoaderLook(cboCategoriaTema, new CategoriaTemaBL().ListaCombo(Parametros.intEmpresaId), "DescCategoriaTema", "IdCategoriaTema", true);
+            BSUtils.LoaderLook(cboCategoriaTema, new CategoriaTemaBL().ListaCombo(0), "DescCategoriaTema", "IdCategoriaTema", true);
             cboCategoriaTema.EditValue = IdCategoriaTema;
 
             deFechaIni.EditValue = DateTime.Now;

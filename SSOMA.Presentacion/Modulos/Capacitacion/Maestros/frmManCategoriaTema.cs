@@ -169,7 +169,7 @@ namespace SSOMA.Presentacion.Modulos.Capacitacion.Maestros
 
         private void Cargar()
         {
-            mLista = new CategoriaTemaBL().ListaTodosActivo(Parametros.intEmpresaId);
+            mLista = new CategoriaTemaBL().ListaTodosActivo(0);
             gcCategoriaTema.DataSource = mLista;
         }
 
