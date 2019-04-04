@@ -198,7 +198,7 @@ namespace SSOMA.Presentacion.Modulos.Capacitacion.Registros
                                     objE_RespuestaPersona.FlagEstado = true;
                                     objE_RespuestaPersona.Usuario = Parametros.strUsuarioLogin;
                                     objE_RespuestaPersona.Maquina = WindowsIdentity.GetCurrent().Name.ToString();
-                                    objE_RespuestaPersona.IdEmpresa = Parametros.intEmpresaId;
+                                    objE_RespuestaPersona.IdEmpresa = 0;
                                     lstRespuestaPersona.Add(objE_RespuestaPersona);
                                     
                                 }
@@ -229,7 +229,7 @@ namespace SSOMA.Presentacion.Modulos.Capacitacion.Registros
                                     objE_RespuestaPersona.FlagEstado = true;
                                     objE_RespuestaPersona.Usuario = Parametros.strUsuarioLogin;
                                     objE_RespuestaPersona.Maquina = WindowsIdentity.GetCurrent().Name.ToString();
-                                    objE_RespuestaPersona.IdEmpresa = Parametros.intEmpresaId;
+                                    objE_RespuestaPersona.IdEmpresa = 0;
                                     lstRespuestaPersona.Add(objE_RespuestaPersona);
                                     break;
                                 }
@@ -269,7 +269,7 @@ namespace SSOMA.Presentacion.Modulos.Capacitacion.Registros
                     ResumenPersonaBL objBL_ResumenPersona = new ResumenPersonaBL();
 
                     objResumenPersona.IdResumenPersona = 0;
-                    objResumenPersona.IdEmpresa = Parametros.intEmpresaId;
+                    objResumenPersona.IdEmpresa = 0;
                     objResumenPersona.IdTema = intIdTema;
                     objResumenPersona.IdPersona = Parametros.intPersonaId;
                     objResumenPersona.NotaFinal = NotaFinal;
@@ -336,7 +336,7 @@ namespace SSOMA.Presentacion.Modulos.Capacitacion.Registros
 
                 //VERIFICAMOS EL CUESTIONARIO
                 List<CuestionarioBE> lstCuestionario = null;
-                lstCuestionario = new CuestionarioBL().ListaTodosActivo(Parametros.intEmpresaId, intIdTema);
+                lstCuestionario = new CuestionarioBL().ListaTodosActivo(0, intIdTema);
                 if (lstCuestionario.Count > 0)
                 {
                     intIdCuestionario = lstCuestionario[0].IdCuestionario;
@@ -345,7 +345,7 @@ namespace SSOMA.Presentacion.Modulos.Capacitacion.Registros
 
                     if (XtraMessageBox.Show("Dispone de " + intDuracion + " minutos para resolver la evaluación? \n Tenga en cuenta que se activará un cronómetro y no podrá cancelar.", this.Text, MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
-                        mListaPregunta = new PreguntaBL().ListaEvaluacion(Parametros.intEmpresaId, intIdTema, intIdCuestionario);
+                        mListaPregunta = new PreguntaBL().ListaEvaluacion(0, intIdTema, intIdCuestionario);
                         bsListadoPregunta.DataSource = mListaPregunta;
                         gcPregunta.DataSource = bsListadoPregunta;
                         gcPregunta.RefreshDataSource();
@@ -373,7 +373,7 @@ namespace SSOMA.Presentacion.Modulos.Capacitacion.Registros
             if (e.Page.Name.ToString() == "xtraTabPage3")
             {
                 List<ResumenPersonaBE> lstResumenPersona = null;
-                lstResumenPersona = new ResumenPersonaBL().ListaTodosActivo(Parametros.intEmpresaId, intIdTema, Parametros.intPersonaId);
+                lstResumenPersona = new ResumenPersonaBL().ListaTodosActivo(0, intIdTema, Parametros.intPersonaId);
                 if (lstResumenPersona.Count == 0)
                 {
                     XtraMessageBox.Show("No tiene ningún resutado de evaluación. \n Realice su evaluación.", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -392,7 +392,7 @@ namespace SSOMA.Presentacion.Modulos.Capacitacion.Registros
                     else
                     {
                         List<ReporteResumenPersonaBE> lstReporte = null;
-                        lstReporte = new ReporteResumenPersonaBL().Listado(Parametros.intEmpresaId, intIdTema, Parametros.intPersonaId);
+                        lstReporte = new ReporteResumenPersonaBL().Listado(0, intIdTema, Parametros.intPersonaId);
                         if (lstReporte.Count > 0)
                         {
                             rptCertificado1 objReporte = new rptCertificado1();

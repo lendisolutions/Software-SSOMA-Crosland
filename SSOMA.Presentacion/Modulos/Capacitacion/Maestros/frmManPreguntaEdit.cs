@@ -85,7 +85,7 @@ namespace SSOMA.Presentacion.Modulos.Capacitacion.Maestros
             {
                 this.Text = "Pregunta del cuestionario - Modificar";
                 PreguntaBE objE_Pregunta = null;
-                objE_Pregunta = new PreguntaBL().Selecciona(Parametros.intEmpresaId,IdPregunta);
+                objE_Pregunta = new PreguntaBL().Selecciona(0,IdPregunta);
                 if (objE_Pregunta != null)
                 {
                     txtDescPregunta.Text = objE_Pregunta.DescPregunta;
