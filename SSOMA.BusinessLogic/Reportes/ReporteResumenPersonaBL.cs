@@ -22,6 +22,17 @@ namespace SSOMA.BusinessLogic
             { throw ex; }
         }
 
+        public List<ReporteResumenPersonaBE> ListadoAsistencia(int IdEmpresa, int IdTema, int Periodo)
+        {
+            try
+            {
+                ReporteResumenPersonaDL ReporteResumenPersona = new ReporteResumenPersonaDL();
+                return ReporteResumenPersona.ListadoAsistencia(IdEmpresa, IdTema, Periodo);
+            }
+            catch (Exception ex)
+            { throw ex; }
+        }
+
         public List<ReporteResumenPersonaBE> ListadoHorasAnualEmpresaResponsable()
         {
             try

@@ -16,9 +16,15 @@ namespace SSOMA.BusinessEntity
         [DataMember]
         public String DescTema { get; set; }
         [DataMember]
+        public String DescTipoCapacitacion { get; set; }
+        [DataMember]
+        public String Dni { get; set; }
+        [DataMember]
         public String ApeNom { get; set; }
         [DataMember]
         public String Fecha { get; set; }
+        [DataMember]
+        public String FechaIni { get; set; }
         [DataMember]
         public Int32 NotaFinal { get; set; }
         [DataMember]
@@ -43,5 +49,11 @@ namespace SSOMA.BusinessEntity
         public String UnidadMineraResponsable { get; set; }
         [DataMember]
         public String AreaResponsable { get; set; }
+        [DataMember]
+        public String Responsable { get; set; }
+        [DataMember]
+        public String ResponsableCargo { get; set; }
+        [DataMember]
+        public String ResponsableEmpresa { get; set; }
     }
 }
