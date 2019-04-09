@@ -153,5 +153,18 @@ namespace SSOMA.DataLogic
             reader.Dispose();
             return ResumenPersonalist;
         }
+
+        public int CuentaDesaprobado(int IdEmpresa, int IdPersona, int IdTema)
+        {
+            int intRowCount = 0;
+            Database db = DatabaseFactory.CreateDatabase("cnSSOMABD");
+            DbCommand dbCommand = db.GetStoredProcCommand("usp_ResumenPersona_CuentaDesaprobado");
+            db.AddInParameter(dbCommand, "pIdEmpresa", DbType.Int32, IdEmpresa);
+            db.AddInParameter(dbCommand, "pIdPersona", DbType.Int32, IdPersona);
+            db.AddInParameter(dbCommand, "pIdTema", DbType.Int32, IdTema);
+
+            intRowCount = int.Parse(db.ExecuteScalar(dbCommand).ToString());
+            return intRowCount;
+        }
     }
 }

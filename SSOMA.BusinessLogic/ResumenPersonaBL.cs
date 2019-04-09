@@ -44,6 +44,17 @@ namespace SSOMA.BusinessLogic
             { throw ex; }
         }
 
+        public int CuentaDesaprobado(int IdEmpresa, int IdPersona, int IdTema)
+        {
+            try
+            {
+                ResumenPersonaDL ResumenPersona = new ResumenPersonaDL();
+                return ResumenPersona.CuentaDesaprobado(IdEmpresa, IdPersona, IdTema);
+            }
+            catch (Exception ex)
+            { throw ex; }
+        }
+
         public void Inserta(ResumenPersonaBE pItem, List<RespuestaPersonaBE> pListaRespuestaPersona)
         {
             try

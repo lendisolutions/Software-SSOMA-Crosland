@@ -174,6 +174,7 @@ namespace SSOMA.DataLogic
                 Tema.FechaIni = DateTime.Parse(reader["FechaIni"].ToString());
                 Tema.FechaFin = DateTime.Parse(reader["FechaFin"].ToString());
                 Tema.Horas = Int32.Parse(reader["Horas"].ToString());
+                Tema.Logo = (byte[])reader["Logo"];
                 Tema.IdSituacion = Int32.Parse(reader["IdSituacion"].ToString());
                 Tema.DescSituacion = reader["DescSituacion"].ToString();
                 Tema.Responsable = reader["Responsable"].ToString();

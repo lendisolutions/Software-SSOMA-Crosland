@@ -283,9 +283,15 @@ namespace SSOMA.Presentacion.Modulos.Capacitacion.Registros
                     if (strSituacion == "APROBADO")
                     {
                         XtraMessageBox.Show("La evaluación se registró correctamente. \n Puede ir a la opción del certificado para la emisión del documento.", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        btnGrabar.Enabled = false;
+                    }
+                    else
+                    {
+                        btnGrabar.Enabled = false;
+                        this.Close();
                     }
 
-                    btnGrabar.Enabled = false;
+                    
                 }
             }
             catch (Exception ex)

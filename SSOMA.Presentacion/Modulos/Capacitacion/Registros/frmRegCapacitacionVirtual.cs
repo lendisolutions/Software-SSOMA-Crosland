@@ -37,11 +37,11 @@ namespace SSOMA.Presentacion.Modulos.Capacitacion.Registros
             {
                 Cursor = Cursors.WaitCursor;
                 //TRAEMOS LA INFORMACION DE LA BASE DE DATOS
-                List<TemaPersonaBE> lstTemaPersonal = null;
-                lstTemaPersonal = new TemaPersonaBL().ListaPersona(0, Parametros.intPersonaId);
+                List<TemaBE> lstTema = null;
+                lstTema = new TemaBL().ListaTodosActivo(0, 0,Parametros.intTEMAVirtual,Parametros.intPeriodo);
 
                 //var homesTable = VideoCatalogDataSet();
-                var homesTable = new FuncionBase().ToDataTable(lstTemaPersonal);
+                var homesTable = new FuncionBase().ToDataTable(lstTema);
                 homesTable.Columns.Add("Image", typeof(Image));
                 homesTable.Columns.Add("Curso", typeof(String));
                 foreach (DataRow row in homesTable.Rows)
@@ -158,6 +158,16 @@ namespace SSOMA.Presentacion.Modulos.Capacitacion.Registros
 
                     }
 
+                    List<TemaPersonaBE> lstTemaPersona = null;
+                    lstTemaPersona = new TemaPersonaBL().ListaTodosActivo(0, intIdTema, Parametros.intPersonaId);
+                    if (lstTemaPersona.Count == 0)
+                    {
+                        
+                        XtraMessageBox.Show("Ud. No tiene permiso para ingresar al curso virtual.", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        return;
+                        
+                    }
+
                     List<ResumenPersonaBE> lstResumenPersona = null;
                     lstResumenPersona = new ResumenPersonaBL().ListaTodosActivo(0, intIdTema, Parametros.intPersonaId);
                     if (lstResumenPersona.Count == 1)
@@ -168,6 +178,15 @@ namespace SSOMA.Presentacion.Modulos.Capacitacion.Registros
                             return;
                         }
                     }
+
+                    int intCuentaDesaprobado = 0;
+                    intCuentaDesaprobado = new ResumenPersonaBL().CuentaDesaprobado(0, Parametros.intPersonaId, intIdTema);
+                    if (intCuentaDesaprobado == 2)
+                    {
+                        XtraMessageBox.Show("Ud. Tiene dos intentos desaprobados del curso virtual\n Comuníquese con el correo: jvillanueva@crosland.com.pe", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        return;
+                    }
+
 
                     frmRegCapacitacionVirtualEdit frm = new frmRegCapacitacionVirtualEdit();
                     frm.intIdTema = intIdTema;
