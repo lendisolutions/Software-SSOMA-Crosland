@@ -531,7 +531,7 @@
             // 
             this.RepCheck.AutoHeight = false;
             this.RepCheck.Name = "RepCheck";
-            this.RepCheck.CheckedChanged += new System.EventHandler(this.RepCheck_CheckedChanged);
+            
             // 
             // gridColumn16
             // 

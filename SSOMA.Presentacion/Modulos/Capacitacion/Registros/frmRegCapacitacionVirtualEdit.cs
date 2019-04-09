@@ -172,7 +172,33 @@ namespace SSOMA.Presentacion.Modulos.Capacitacion.Registros
                     lstRespuestaCorrecta = new RespuestaBL().ListaCuestionario(intIdCuestionario);
 
                     List<RespuestaPersonaBE> lstRespuestaPersona = new List<RespuestaPersonaBE>();
-                 
+
+                    //VALIDACION
+
+                    var lstPreguntas = from p in mListaPregunta
+                                     group p by p.IdPregunta into grupo
+                                     select grupo;
+
+                    foreach (var itempregunta in lstPreguntas)
+                    {
+                        int contador = 0;
+                        foreach (var itempreguntatemporal in mListaPregunta)
+                        {
+                            if (itempregunta.Key == itempreguntatemporal.IdPregunta && itempreguntatemporal.FlagCorrecto)
+                            {
+                                contador++;
+                            }
+                        }
+
+                        if (contador == 2)
+                        {
+                            XtraMessageBox.Show("No puede haber mas de una respuesta por pregunta.\nPor favor vuelva a verificar.", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            Cursor = Cursors.Default;
+                            return;
+
+                        }
+
+                    }
 
                     //RESPUESTAS CORRECTAS
                     foreach (var item in mListaPregunta)
@@ -298,28 +324,6 @@ namespace SSOMA.Presentacion.Modulos.Capacitacion.Registros
             {
                 Cursor = Cursors.Default;
                 XtraMessageBox.Show(ex.Message, this.Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-        
-        private void RepCheck_CheckedChanged(object sender, EventArgs e)
-        {
-            CheckEdit edit = sender as CheckEdit;
-            switch (edit.Checked)
-            {
-                case true:
-                    int intIdPregunta = (int)gvPregunta.GetFocusedRowCellValue("IdPregunta");
-                    //foreach (var item in mListaPregunta)
-                    //{
-                    //    int c = 0;
-                    //    c = mListaPregunta.FindIndex(x => x.IdPregunta == intIdPregunta);
-                    //    gvPregunta.SelectRow(c);
-
-                    //}
-                    break;
-                case false:
-                   
-                    break;
             }
         }
 
