@@ -325,13 +325,13 @@ namespace SSOMA.Presentacion.Modulos.Capacitacion.Registros
                     {
                         StringBuilder strMensaje = new StringBuilder();
                         strMensaje.Append("*****************************************************************************\n\n");
-                        strMensaje.Append("Razón Social : " + Parametros.strEmpresaNombre + "\n\n");
-                        strMensaje.Append("Area         : " + Parametros.strAreaNombre + "\n\n");
                         strMensaje.Append("Tema         : " + strDescTema + "\n\n");
                         strMensaje.Append("Participante : " + Parametros.strUsuarioNombres + "\n\n");
                         strMensaje.Append("Cargo        : " + Parametros.strCargoNombre + "\n\n");
+                        strMensaje.Append("Area         : " + Parametros.strAreaNombre + "\n\n");
+                        strMensaje.Append("Razón Social : " + Parametros.strEmpresaNombre + "\n\n");
                         strMensaje.Append("Fecha y Hora : " + DateTime.Now.ToString() + "\n\n");
-                        strMensaje.Append("Nota Final   : " + NotaFinal.ToString() + "\n\n");
+                        strMensaje.Append("Nota         : " + NotaFinal.ToString() + "\n\n");
                         strMensaje.Append("Situación    : " + strSituacion + "\n\n");
                         strMensaje.Append("Emitido Por el Area de Seguridad y Salud en el Trabajo" + "\n\n");
                         strMensaje.Append("*****************************************************************************\n\n");

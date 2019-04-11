@@ -133,7 +133,7 @@ namespace SSOMA.Presentacion.Modulos.Capacitacion.Maestros
                     
                 }
 
-                BSUtils.EmailSend(strMailTO, "Registro de Matricula de Capacitaciones Virtuales", strMensaje.ToString(), "", "", "", "");
+                BSUtils.EmailSend(strMailTO, "MATRÍCULA DE CAPACITACIÓN VIRTUAL", strMensaje.ToString(), "", "", "", "");
 
                 Application.DoEvents();
 
