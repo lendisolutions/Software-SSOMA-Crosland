@@ -308,6 +308,22 @@ namespace SSOMA.Presentacion.Modulos.Capacitacion.Registros
 
                     if (strSituacion == "APROBADO")
                     {
+                        StringBuilder strMensaje = new StringBuilder();
+                        strMensaje.Append("*****************************************************************************\n\n");
+                        strMensaje.Append("Razón Social : " + Parametros.strEmpresaNombre + "\n\n");
+                        strMensaje.Append("Area         : " + Parametros.strAreaNombre + "\n\n");
+                        strMensaje.Append("Tema         : " + strDescTema + "\n\n");
+                        strMensaje.Append("Participante : " + Parametros.strUsuarioNombres + "\n\n");
+                        strMensaje.Append("Fecha y Hora : " + DateTime.Now.ToString() + "\n\n");
+                        strMensaje.Append("Nota Final   : " + NotaFinal.ToString() + "\n\n");
+                        strMensaje.Append("Situación    : " + strSituacion + "\n\n");
+                        strMensaje.Append("Emitido Por el Area de Seguridad y Salud en el Trabajo" + "\n\n");
+                        strMensaje.Append("*****************************************************************************\n\n");
+
+                        BSUtils.EmailSend("ssoma@crosland.com.pe", "Registro de Evaluación de Capacitaciones Virtuales", strMensaje.ToString(), "", "", "", "");
+
+                        Application.DoEvents();
+
                         XtraMessageBox.Show("La evaluación se registró correctamente. \n Puede ir a la opción del certificado para la emisión del documento.", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
                         btnGrabar.Enabled = false;
                     }

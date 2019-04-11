@@ -181,6 +181,7 @@ namespace SSOMA.Presentacion.Inicio
                     {
                         Parametros.intPersonaId = objE_Persona.IdPersona;
                         Parametros.intAreaId = objE_Persona.IdArea;
+                        Parametros.strAreaNombre = objE_Persona.DescArea;
                     }
 
                     //Obtenemos todos los permisos del usuario logueado

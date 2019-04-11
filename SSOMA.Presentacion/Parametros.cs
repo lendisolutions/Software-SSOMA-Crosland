@@ -39,6 +39,7 @@ namespace SSOMA.Presentacion
         public static string strDescTienda = "";
         public static string strEmpresaNombre = "";
         public static string strUnidadNombre = "";
+        public static string strAreaNombre = "";
         public static int intNinguno = 0;
 
 
