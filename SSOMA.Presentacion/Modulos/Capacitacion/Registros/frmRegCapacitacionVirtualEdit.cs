@@ -278,15 +278,30 @@ namespace SSOMA.Presentacion.Modulos.Capacitacion.Registros
                     }
                     else
                     {
-                        StringBuilder strMensajeDesaprobatorio = new StringBuilder();
-                        strMensajeDesaprobatorio.Append("*****************************************************************************\n\n");
-                        strMensajeDesaprobatorio.Append("Lo Sentimos ha desaprobado la evaluación.\n\n");
-                        strMensajeDesaprobatorio.Append("Nota Desaprobatoria : " + NotaFinal + "\n\n");
-                        strMensajeDesaprobatorio.Append("Condición: Desaprobado" + "\n\n");
-                        strMensajeDesaprobatorio.Append("Comunicarse con el responsable del area." + "\n\n");
-                        strMensajeDesaprobatorio.Append("*****************************************************************************\n\n");
-                        strSituacion = "DESAPROBADO";
-                        XtraMessageBox.Show(strMensajeDesaprobatorio.ToString(), this.Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        int intCuentaDesaprobado = 0;
+                        intCuentaDesaprobado = new ResumenPersonaBL().CuentaDesaprobado(0, Parametros.intPersonaId, intIdTema);
+                        if (intCuentaDesaprobado == 0)
+                        {
+                            StringBuilder strMensajeDesaprobatorio = new StringBuilder();
+                            strMensajeDesaprobatorio.Append("*****************************************************************************\n\n");
+                            strMensajeDesaprobatorio.Append("Lo Sentimos ha desaprobado la evaluación.\n\n");
+                            strMensajeDesaprobatorio.Append("Nota Desaprobatoria : " + NotaFinal + "\n\n");
+                            strMensajeDesaprobatorio.Append("Condición: Desaprobado" + "\n\n");
+                            strMensajeDesaprobatorio.Append("UD. TIENE UN INTENTO MAS PARA VOLVER A REALIZAR EL EXAMEN" + "\n\n");
+                            strMensajeDesaprobatorio.Append("Comunicarse con el responsable del area." + "\n\n");
+                            strMensajeDesaprobatorio.Append("*****************************************************************************\n\n");
+                            strSituacion = "DESAPROBADO";
+                            XtraMessageBox.Show(strMensajeDesaprobatorio.ToString(), this.Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+
+                        if (intCuentaDesaprobado == 1)
+                        {
+                            strSituacion = "DESAPROBADO";
+                            XtraMessageBox.Show("Ud. Tiene dos intentos desaprobados del curso virtual\n Comuníquese con el correo: jvillanueva@crosland.com.pe", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+
+
+                        
                     }
 
                     Cursor = Cursors.Default;
