@@ -38,7 +38,7 @@ namespace SSOMA.Presentacion.Modulos.Capacitacion.Registros
                 Cursor = Cursors.WaitCursor;
                 //TRAEMOS LA INFORMACION DE LA BASE DE DATOS
                 List<TemaBE> lstTema = null;
-                lstTema = new TemaBL().ListaTodosActivo(0, 0,Parametros.intTEMAVirtual,Parametros.intPeriodo);
+                lstTema = new TemaBL().ListaTodosActivo(0, 0,Parametros.intTEMAVirtual, Parametros.intTEMAActivo, Parametros.intPeriodo);
 
                 //var homesTable = VideoCatalogDataSet();
                 var homesTable = new FuncionBase().ToDataTable(lstTema);

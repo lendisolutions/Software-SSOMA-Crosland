@@ -146,13 +146,14 @@ namespace SSOMA.DataLogic
             return Tema;
         }
 
-        public List<TemaBE> ListaTodosActivo(int IdEmpresa, int IdCategoriaTema, int IdTipoTema, int Periodo)
+        public List<TemaBE> ListaTodosActivo(int IdEmpresa, int IdCategoriaTema, int IdTipoTema, int IdSituacion, int Periodo)
         {
             Database db = DatabaseFactory.CreateDatabase("cnSSOMABD");
             DbCommand dbCommand = db.GetStoredProcCommand("usp_Tema_ListaTodosActivo");
             db.AddInParameter(dbCommand, "pIdEmpresa", DbType.Int32, IdEmpresa);
             db.AddInParameter(dbCommand, "pIdCategoriaTema", DbType.Int32, IdCategoriaTema);
             db.AddInParameter(dbCommand, "pIdTipoTema", DbType.Int32, IdTipoTema);
+            db.AddInParameter(dbCommand, "pIdSituacion", DbType.Int32, IdSituacion);
             db.AddInParameter(dbCommand, "pPeriodo", DbType.Int32, Periodo);
 
             IDataReader reader = db.ExecuteReader(dbCommand);
