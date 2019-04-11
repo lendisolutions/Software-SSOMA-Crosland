@@ -314,6 +314,7 @@ namespace SSOMA.Presentacion.Modulos.Capacitacion.Registros
                         strMensaje.Append("Area         : " + Parametros.strAreaNombre + "\n\n");
                         strMensaje.Append("Tema         : " + strDescTema + "\n\n");
                         strMensaje.Append("Participante : " + Parametros.strUsuarioNombres + "\n\n");
+                        strMensaje.Append("Cargo        : " + Parametros.strCargoNombre + "\n\n");
                         strMensaje.Append("Fecha y Hora : " + DateTime.Now.ToString() + "\n\n");
                         strMensaje.Append("Nota Final   : " + NotaFinal.ToString() + "\n\n");
                         strMensaje.Append("Situación    : " + strSituacion + "\n\n");

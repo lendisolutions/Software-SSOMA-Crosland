@@ -13,6 +13,7 @@ using DevExpress.XtraGrid.Views.Grid;
 using DevExpress.XtraGrid.Views.Grid.ViewInfo;
 using SSOMA.BusinessEntity;
 using SSOMA.BusinessLogic;
+using SSOMA.Presentacion.Utils;
 
 namespace SSOMA.Presentacion.Modulos.Capacitacion.Maestros
 {
@@ -23,6 +24,7 @@ namespace SSOMA.Presentacion.Modulos.Capacitacion.Maestros
         private List<TemaPersonaBE> mLista = new List<TemaPersonaBE>();
         int IdCategoriaTema = 0;
         int IdTema = 0;
+        string strDescTema = "";
 
         #endregion
 
@@ -52,6 +54,7 @@ namespace SSOMA.Presentacion.Modulos.Capacitacion.Maestros
                     break;
                 case "TEM":
                     IdTema = Convert.ToInt32(e.Node.Tag.ToString().Substring(3, e.Node.Tag.ToString().Length - 3));
+                    strDescTema = e.Node.Text;
                     Cargar();
                     break;
             }
@@ -89,11 +92,50 @@ namespace SSOMA.Presentacion.Modulos.Capacitacion.Maestros
 
                 TemaPersonaBL objBL_TemaPersona = new TemaPersonaBL();
 
-
                 objBL_TemaPersona.Actualiza(mLista, IdTema, Parametros.strUsuarioLogin, WindowsIdentity.GetCurrent().Name.ToString());
-                XtraMessageBox.Show("La asignación de los documentos se actualizó correctamente. ", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                XtraMessageBox.Show("La matricula se realizó correctamente. ", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 Cargar();
+
+                //ENVIO DE CORREO
+                StringBuilder strMensaje = new StringBuilder();
+                strMensaje.Append("*****************************************************************************\n\n");
+
+                int i = 1;
+                foreach (var item in mLista)
+                {
+                    if (item.FlagMatricula)
+                    {
+                        strMensaje.Append(" " + i.ToString() + "   " + item.ApeNom + "\n\n");
+                    }
+
+                    i = i + 1;
+                }
+
+                strMensaje.Append("*****************************************************************************\n\n");
+                strMensaje.Append("Tema : " + strDescTema + "\n\n");
+                string strMailTO = "JVILLANUEVA@CROSLAND.COM.PE";
+                foreach (var itempersona in mLista)
+                {
+                    if (itempersona.FlagMatricula)
+                    {
+                        PersonaBE objE_Persona = new PersonaBE();
+                        objE_Persona = new PersonaBL().Selecciona(0, 0, 0, itempersona.IdPersona);
+                        if (objE_Persona != null)
+                        {
+                            if (objE_Persona.Email.Length > 0 && objE_Persona.Email != "JVILLANUEVA@CROSLAND.COM.PE")
+                            {
+                                strMailTO = strMailTO + ";" + objE_Persona.Email;
+                            }
+                            
+                        }
+                    }
+                    
+                }
+
+                BSUtils.EmailSend(strMailTO, "Registro de Matricula de Capacitaciones Virtuales", strMensaje.ToString(), "", "", "", "");
+
+                Application.DoEvents();
 
                 Cursor = Cursors.Default;
 
