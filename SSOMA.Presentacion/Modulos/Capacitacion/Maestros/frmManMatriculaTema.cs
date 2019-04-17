@@ -97,10 +97,25 @@ namespace SSOMA.Presentacion.Modulos.Capacitacion.Maestros
 
                 Cargar();
 
+                string strFechaIni = "";
+                string strFechaFin = "";
+                int intDuracion = 0;
+
+                TemaBE objE_Tema = null;
+                objE_Tema = new TemaBL().Selecciona(0, IdTema);
+                if (objE_Tema != null)
+                {
+                    strFechaIni = objE_Tema.FechaIni.ToString("dd/MM/yyyy");
+                    strFechaFin = objE_Tema.FechaFin.ToString("dd/MM/yyyy");
+                    intDuracion = objE_Tema.Horas;
+                }
+
                 //ENVIO DE CORREO
                 StringBuilder strMensaje = new StringBuilder();
                 strMensaje.Append("*****************************************************************************\n\n");
-
+                strMensaje.Append("Tema              : " + strDescTema + "\n");
+                strMensaje.Append("Fecha de Vigencia : " + "DEL " + strFechaIni + "AL " + strFechaFin + "\n");
+                strMensaje.Append("Duración          : " + intDuracion.ToString() + " Horas" + "\n");
                 int i = 1;
                 foreach (var item in mLista)
                 {
@@ -112,8 +127,10 @@ namespace SSOMA.Presentacion.Modulos.Capacitacion.Maestros
                     i = i + 1;
                 }
 
+                strMensaje.Append("SE ADJUNTA EL MANUAL DE USUARIO\n\n");
                 strMensaje.Append("*****************************************************************************\n\n");
-                strMensaje.Append("Tema : " + strDescTema + "\n\n");
+                
+
                 string strMailTO = "JVILLANUEVA@CROSLAND.COM.PE";
                 foreach (var itempersona in mLista)
                 {
