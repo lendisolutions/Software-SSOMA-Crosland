@@ -14,6 +14,7 @@ using DevExpress.XtraGrid.Views.Grid.ViewInfo;
 using SSOMA.BusinessEntity;
 using SSOMA.BusinessLogic;
 using SSOMA.Presentacion.Utils;
+using System.IO;
 
 namespace SSOMA.Presentacion.Modulos.Capacitacion.Maestros
 {
@@ -121,7 +122,7 @@ namespace SSOMA.Presentacion.Modulos.Capacitacion.Maestros
                 {
                     if (item.FlagMatricula)
                     {
-                        strMensaje.Append(" " + i.ToString() + "   " + item.ApeNom + "\n\n");
+                        strMensaje.Append(" " + item.ApeNom + "\n\n");
                     }
 
                     i = i + 1;
@@ -150,7 +151,9 @@ namespace SSOMA.Presentacion.Modulos.Capacitacion.Maestros
                     
                 }
 
-                BSUtils.EmailSend(strMailTO, "MATRÍCULA DE CAPACITACIÓN VIRTUAL", strMensaje.ToString(), "", "", "", "");
+                string filename = Path.Combine(Directory.GetCurrentDirectory(), "Pdf\\Manual_SSOMA_Capacitacion.pdf");
+
+                BSUtils.EmailSend(strMailTO, "MATRÍCULA DE CAPACITACIÓN VIRTUAL", strMensaje.ToString(), filename, "", "", "");
 
                 Application.DoEvents();
 

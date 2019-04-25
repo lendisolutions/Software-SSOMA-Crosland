@@ -4089,6 +4089,9 @@
     <Content Include="Pdf\PdfiumViewer.Demo.vshost.exe.config">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Pdf\Manual_SSOMA_Capacitacion.pdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <None Include="Pdf\PdfiumViewer.Demo.vshost.exe.manifest">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
