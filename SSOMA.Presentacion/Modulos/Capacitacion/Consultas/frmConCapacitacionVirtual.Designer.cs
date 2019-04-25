@@ -35,6 +35,7 @@
             this.toolstpSalir = new System.Windows.Forms.ToolStripButton();
             this.splitContainerControl1 = new DevExpress.XtraEditors.SplitContainerControl();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.btnImprimir = new DevExpress.XtraEditors.SimpleButton();
             this.txtPeriodo = new DevExpress.XtraEditors.SpinEdit();
             this.lblFecha = new DevExpress.XtraEditors.LabelControl();
             this.cboTema = new DevExpress.XtraEditors.LookUpEdit();
@@ -46,6 +47,7 @@
             this.gvResumenPersona = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn8 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -72,7 +74,7 @@
             this.toolstpSalir});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1161, 27);
+            this.toolStrip1.Size = new System.Drawing.Size(1317, 27);
             this.toolStrip1.TabIndex = 64;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -111,13 +113,14 @@
             this.splitContainerControl1.Panel1.Text = "Panel1";
             this.splitContainerControl1.Panel2.Controls.Add(this.gcResumenPersona);
             this.splitContainerControl1.Panel2.Text = "Panel2";
-            this.splitContainerControl1.Size = new System.Drawing.Size(1161, 565);
+            this.splitContainerControl1.Size = new System.Drawing.Size(1317, 565);
             this.splitContainerControl1.SplitterPosition = 67;
             this.splitContainerControl1.TabIndex = 65;
             this.splitContainerControl1.Text = "splitContainerControl1";
             // 
             // groupControl1
             // 
+            this.groupControl1.Controls.Add(this.btnImprimir);
             this.groupControl1.Controls.Add(this.txtPeriodo);
             this.groupControl1.Controls.Add(this.lblFecha);
             this.groupControl1.Controls.Add(this.cboTema);
@@ -129,9 +132,20 @@
             this.groupControl1.Location = new System.Drawing.Point(0, 0);
             this.groupControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(1161, 67);
+            this.groupControl1.Size = new System.Drawing.Size(1317, 67);
             this.groupControl1.TabIndex = 29;
             this.groupControl1.Text = "Criterios de Búsqueda";
+            // 
+            // btnImprimir
+            // 
+            this.btnImprimir.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnImprimir.ImageOptions.Image")));
+            this.btnImprimir.Location = new System.Drawing.Point(1162, 32);
+            this.btnImprimir.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnImprimir.Name = "btnImprimir";
+            this.btnImprimir.Size = new System.Drawing.Size(150, 25);
+            this.btnImprimir.TabIndex = 194;
+            this.btnImprimir.Text = "Imprimir Evaluación";
+            this.btnImprimir.Click += new System.EventHandler(this.btnImprimir_Click);
             // 
             // txtPeriodo
             // 
@@ -226,7 +240,7 @@
             this.gcResumenPersona.MainView = this.gvResumenPersona;
             this.gcResumenPersona.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.gcResumenPersona.Name = "gcResumenPersona";
-            this.gcResumenPersona.Size = new System.Drawing.Size(1161, 492);
+            this.gcResumenPersona.Size = new System.Drawing.Size(1317, 492);
             this.gcResumenPersona.TabIndex = 67;
             this.gcResumenPersona.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvResumenPersona});
@@ -240,6 +254,7 @@
             this.gvResumenPersona.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.gridColumn3,
             this.gridColumn8,
+            this.gridColumn2,
             this.gridColumn7,
             this.gridColumn4,
             this.gridColumn5,
@@ -273,6 +288,14 @@
             this.gridColumn8.Visible = true;
             this.gridColumn8.VisibleIndex = 0;
             this.gridColumn8.Width = 100;
+            // 
+            // gridColumn2
+            // 
+            this.gridColumn2.Caption = "IdPersona";
+            this.gridColumn2.FieldName = "IdPersona";
+            this.gridColumn2.Name = "gridColumn2";
+            this.gridColumn2.OptionsColumn.AllowEdit = false;
+            this.gridColumn2.OptionsColumn.AllowFocus = false;
             // 
             // gridColumn7
             // 
@@ -334,7 +357,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1161, 592);
+            this.ClientSize = new System.Drawing.Size(1317, 592);
             this.Controls.Add(this.splitContainerControl1);
             this.Controls.Add(this.toolStrip1);
             this.Name = "frmConCapacitacionVirtual";
@@ -381,5 +404,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn10;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
+        private DevExpress.XtraEditors.SimpleButton btnImprimir;
     }
 }

@@ -24,6 +24,7 @@ namespace SSOMA.Presentacion.Modulos.Capacitacion.Consultas
         #region "Propiedades"
 
         private List<ResumenPersonaBE> mLista = new List<ResumenPersonaBE>();
+        int intIdPersona = 0;
 
         #endregion
 
@@ -97,6 +98,39 @@ namespace SSOMA.Presentacion.Modulos.Capacitacion.Consultas
             }
         }
 
+        private void btnImprimir_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Cursor = Cursors.WaitCursor;
+
+                if (mLista.Count > 0)
+                {
+                    intIdPersona = int.Parse(gvResumenPersona.GetFocusedRowCellValue("IdPersona").ToString());
+                    List<ReporteRespuestaPersonaBE> lstReporte = null;
+
+                    lstReporte = new ReporteRespuestaPersonaBL().Listado(Convert.ToInt32(cboTema.EditValue), intIdPersona);
+
+                    if (lstReporte != null)
+                    {
+                        RptVistaReportes objRptCapacitacion = new RptVistaReportes();
+                        objRptCapacitacion.VerRptRespuestaPersona(lstReporte);
+                        objRptCapacitacion.ShowDialog();
+
+                    }
+                    else
+                        XtraMessageBox.Show("No hay información para el periodo seleccionado", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+
+                Cursor = Cursors.Default;
+            }
+            catch (Exception ex)
+            {
+                Cursor = Cursors.Default;
+                XtraMessageBox.Show(ex.Message, this.Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
         #endregion
 
         #region "Metodos"
@@ -108,6 +142,7 @@ namespace SSOMA.Presentacion.Modulos.Capacitacion.Consultas
 
 
         }
+
 
 
         #endregion

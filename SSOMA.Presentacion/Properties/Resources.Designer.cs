@@ -1053,9 +1053,9 @@ namespace SSOMA.Presentacion.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Print_16x16 {
+        internal static System.Drawing.Bitmap print_16x16 {
             get {
-                object obj = ResourceManager.GetObject("Print_16x16", resourceCulture);
+                object obj = ResourceManager.GetObject("print_16x16", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

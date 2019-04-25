@@ -132,7 +132,7 @@
             // btnExportar
             // 
             this.btnExportar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnExportar.Image = global::SSOMA.Presentacion.Properties.Resources.Excel_16x16;
+            this.btnExportar.Image = ((System.Drawing.Image)(resources.GetObject("btnExportar.Image")));
             this.btnExportar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnExportar.Name = "btnExportar";
             this.btnExportar.Size = new System.Drawing.Size(24, 24);

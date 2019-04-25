@@ -336,7 +336,22 @@ namespace SSOMA.Presentacion.Modulos.Capacitacion.Registros
                         strMensaje.Append("Emitido Por el Area de Seguridad y Salud en el Trabajo" + "\n\n");
                         strMensaje.Append("*****************************************************************************\n\n");
 
-                        BSUtils.EmailSend("ssoma@crosland.com.pe", "Registro de Evaluación de Capacitaciones Virtuales", strMensaje.ToString(), "", "", "", "");
+                        //ELIMINAMOS LOR ARCHIVOS CREADOS
+                        foreach (var item in Directory.GetFiles(@"D:\", "*.pdf"))
+                        {
+                            File.SetAttributes(item, FileAttributes.Normal);
+                            File.Delete(item);
+                        }
+
+                        //GENERAR EL REPORTE EN PDF
+                        string strEvaluacion = "evaluacion";
+                        List<ReporteRespuestaPersonaBE> lstReporteRespuestaPersona = null;
+                        lstReporteRespuestaPersona = new ReporteRespuestaPersonaBL().Listado(intIdTema, Parametros.intPersonaId);
+                        rptRespuestaPersona objReporte = new rptRespuestaPersona();
+                        objReporte.SetDataSource(lstReporteRespuestaPersona);
+                        objReporte.ExportToDisk(ExportFormatType.PortableDocFormat, @"D:\" + strEvaluacion + ".pdf");
+
+                        BSUtils.EmailSend("ssoma@crosland.com.pe", "Registro de Evaluación de Capacitaciones Virtuales", strMensaje.ToString(), @"D:\" + strEvaluacion + ".pdf", "", "", "");
 
                         Application.DoEvents();
 
