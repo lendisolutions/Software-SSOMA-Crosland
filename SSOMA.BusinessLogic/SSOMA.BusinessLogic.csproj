@@ -120,6 +120,7 @@
     <Compile Include="ProbabilidadBL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ProveedorBL.cs" />
+    <Compile Include="ReporteRespuestaPersonaBL.cs" />
     <Compile Include="Reportes\ReporteAccidenteBL.cs" />
     <Compile Include="Reportes\ReporteCapacitacionBL.cs" />
     <Compile Include="Reportes\ReporteDocumentoBL.cs" />

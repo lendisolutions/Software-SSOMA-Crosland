@@ -7,7 +7,7 @@ using System.Runtime.Serialization;
 namespace SSOMA.BusinessEntity
 {
     [DataContract]
-    public class ReportePreguntaBE
+    public class ReporteRespuestaPersonaBE
     {
         [DataMember]
         public String RazonSocial { get; set; }
@@ -20,10 +20,14 @@ namespace SSOMA.BusinessEntity
         [DataMember]
         public String DescPregunta { get; set; }
         [DataMember]
-        public Int32 Puntaje { get; set; }
-        [DataMember]
         public String DescRespuesta { get; set; }
         [DataMember]
-        public Boolean FlagCorrecto { get; set; }
+        public String ApeNom { get; set; }
+        [DataMember]
+        public String DescSituacion { get; set; }
+        [DataMember]
+        public Int32 Puntaje { get; set; }
+        
+        
     }
 }
