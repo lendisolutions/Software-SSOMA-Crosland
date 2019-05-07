@@ -4110,9 +4110,11 @@
     <Content Include="Pdf\Manual_SSOMA_Capacitacion.pdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="Pdf\nl\Manual_SSOMA_Capacitacion.pdf" />
     <None Include="Pdf\PdfiumViewer.Demo.vshost.exe.manifest">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Include="Pdf\x86\Manual_SSOMA_Capacitacion.pdf" />
     <None Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Inicio\frmIDE.resx">
       <DependentUpon>frmIDE.cs</DependentUpon>
