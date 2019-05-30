@@ -13,8 +13,9 @@ namespace SSOMA.DataLogic
 
         public List<PersonaAdryanBE> ListaTodosActivo()
         {
+
             Database db = DatabaseFactory.CreateDatabase("cnPERSONABD");
-            String strSQL = "SELECT ROW_NUMBER()Over(Order by ID_TRABAJADOR ASc) AS Secuencia, LTRIM(RTRIM(NUM_DOCUMENTO)) AS DNI,NUM_RUC AS RUC_EMPRESA,NOM_DISTRITO_TRABAJO AS UNIDAD,NOM_UNIDAD AS SEDE,NOM_AREA AS AREA,NOM_COMPLETO,FEC_NACIMIENTO AS FECHA_NACIMIENTO,DATEDIFF(D,FEC_NACIMIENTO,GETDATE()) AS EDAD,ISNULL(FEC_INGRESO,'') AS FECHA_INGRESO,FEC_RETIRO AS FECHA_RETIRO,NOM_PUESTO AS PUESTO,NOM_GENERO AS SEXO, CASE DES_TIPO_CONTRATO WHEN '' THEN 'Incremento Actividad' ELSE DES_TIPO_CONTRATO END AS TIPO_CONTRATO,NOM_ESTADO_CIVIL AS ESTADO_CIVIL,DES_EMAIL AS EMAIL_TRABAJO,CASE IND_ACTIVO WHEN 1 THEN 'ACTIVO' ELSE 'INACTIVO' END AS SITUACION FROM TRABAJADOR_SAP";
+            String strSQL = "SELECT ROW_NUMBER()Over(Order by ID_TRABAJADOR ASc) AS Secuencia, LTRIM(RTRIM(NUM_DOCUMENTO)) AS DNI,NUM_RUC AS RUC_EMPRESA,NOM_DISTRITO_TRABAJO AS UNIDAD,NOM_UNIDAD AS SEDE,NOM_AREA AS AREA,NOM_COMPLETO,FEC_NACIMIENTO AS FECHA_NACIMIENTO,DATEDIFF(YEAR,FEC_NACIMIENTO,GETDATE()) AS EDAD,ISNULL(FEC_INGRESO,'') AS FECHA_INGRESO,FEC_RETIRO AS FECHA_RETIRO,NOM_PUESTO AS PUESTO,NOM_GENERO AS SEXO, CASE DES_TIPO_CONTRATO WHEN '' THEN 'Incremento Actividad' ELSE DES_TIPO_CONTRATO END AS TIPO_CONTRATO,NOM_ESTADO_CIVIL AS ESTADO_CIVIL,DES_EMAIL AS EMAIL_TRABAJO,CASE IND_ACTIVO WHEN 1 THEN 'ACTIVO' ELSE 'INACTIVO' END AS SITUACION FROM TRABAJADOR_SAP";
             DbCommand dbCommand = db.GetSqlStringCommand(strSQL);
             
             IDataReader reader = db.ExecuteReader(dbCommand);
@@ -33,7 +34,7 @@ namespace SSOMA.DataLogic
                 PersonaAdryan.FECHA_NACIMIENTO = DateTime.Parse(reader["FECHA_NACIMIENTO"].ToString());
                 PersonaAdryan.EDAD = Int32.Parse(reader["EDAD"].ToString());
                 PersonaAdryan.FECHA_INGRESO = DateTime.Parse(reader["FECHA_INGRESO"].ToString());
-                PersonaAdryan.FECHA_RETIRO = reader.IsDBNull(reader.GetOrdinal("FECHA_RETIRO")) ? (DateTime?)null : reader.GetDateTime(reader.GetOrdinal("FECHA_RETIRO"));
+                //PersonaAdryan.FECHA_RETIRO = reader.IsDBNull(reader.GetOrdinal("FECHA_RETIRO")) ? (DateTime?)null : reader.GetDateTime(reader.GetOrdinal("FECHA_RETIRO"));
                 PersonaAdryan.PUESTO = reader["PUESTO"].ToString();
                 PersonaAdryan.SEXO = reader["SEXO"].ToString();
                 PersonaAdryan.TIPO_CONTRATO = reader["TIPO_CONTRATO"].ToString();

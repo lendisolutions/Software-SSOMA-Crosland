@@ -503,6 +503,7 @@ namespace SSOMA.Presentacion.Inicio
 
         private void ActualizaPersonal()
         {
+            int i = 1;
             try
             {
                 Cursor = Cursors.WaitCursor;
@@ -511,6 +512,8 @@ namespace SSOMA.Presentacion.Inicio
                 lstPersonaAdrian = new PersonaAdryanBL().ListaTodosActivo();
 
                 List<PersonaBE> lstPersona = new List<PersonaBE>();
+
+                
 
                 foreach (var item in lstPersonaAdrian)
                 {
@@ -718,6 +721,9 @@ namespace SSOMA.Presentacion.Inicio
                         objE_Persona.Maquina = WindowsIdentity.GetCurrent().Name.ToString();
 
                         lstPersona.Add(objE_Persona);
+
+                        i = i + 1;
+
                     }
                 }
                     
@@ -729,7 +735,7 @@ namespace SSOMA.Presentacion.Inicio
             catch (Exception ex)
             {
                 Cursor = Cursors.Default;
-                XtraMessageBox.Show(ex.Message, this.Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                XtraMessageBox.Show(ex.Message  + " " + i.ToString(), this.Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
